@@ -1,7 +1,7 @@
 #logout
 alias logout='pkill -KILL -u natkiypie'
 # open all files in current directory with vim text editor
-alias vimall="vim -p *"
+alias vimall='vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab" -p *'
 # alias xdg-open to open.
 alias open='xdg-open'
 # take screenshot

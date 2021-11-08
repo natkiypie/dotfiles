@@ -1,640 +1,3 @@
-node calcGameStatusRefactorFive.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorFive.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorFive.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorFive.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorFive.js 
-clear
-node calcGameStatusRefactorFive.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorFive.js 
-cp calcGameStatusRefactorFive.js calcGameStatusRefactorSix.js
-clear
-node calcGameStatusRefactorSix.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSix.js 
-clear
-node calcGameStatusRefactorSix.js 
-clear
-goodbye
-exit
-node calcGameStatusRefactorSix.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSix.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSix.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSix.js 
-goodbye
-exit
-node calcGameStatusRefactorSix.js 
-node calcGameStatusRefactorSix.js clear
-clear
-node calcGameStatusRefactorSix.js clear
-clear
-node calcGameStatusRefactorSix.js
-clear
-node calcGameStatusRefactorSix.js
-cp calcGameStatusRefactorSix.js calcGameStatusRefactorSeven.js
-ls
-clear
-node calcGameStatusRefactorSeven.js 
-goodbye
-exit
-node calcGameStatusRefactorSeven.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSeven.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSeven.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorSeven.js 
-cp calcGameStatusRefactorSeven.js calcGameStatusRefactorEight.js
-rm calcGameStatusRefactorSeven.js 
-cp calcGameStatusRefactorEight.js calcGameStatusRefactorSeven.js
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-clear
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorEight.js 
-cp calcGameStatusRefactorEight.js calcGameStatusRefactorNine.js
-ls
-laer
-claer
-clear
-node calcGameStatusRefactorNine.js 
-goodbye
-exit
-node calcGameStatusRefactorNine.js 
-cp calcGameStatusRefactorNine.js calcGameStatusRefactorTen.js
-clear
-node calcGameStatusRefactorTen.js 
-LS
-ls
-clear
-ls
-node calcGameStatusRefactorTen.js 
-clear
-ls
-clear
-node calcGameStatusRefactorTen.js 
-node oldCalcGameStatusFun.js 
-node calcGameStatusRefactorTen.js 
-clear
-node calcGameStatusRefactorTen.js 
-goodbye
-exit
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-git branch
-ncu
-npm start
-ls
-cd src/
-ls
-code -r .
-cp ../../../../playground/calcGameStatusRefactorTen.js .
-npm start
-ls
-mv calcGameStatusRefactorTen.js state/reducers/
-ls
-npm start
-play
-ls
-touch calcDrawRefactor.js
-code calcDrawRefactor.js 
-npm start
-ls
-cp calcGameStatusRefactorTen.js calcGameStatusRefactorEleven.js
-code calcGameStatusRefactorEleven.js 
-goodbye
-exit
-npm start
-play
-ls
-code -r .
-node calcGameStatusRefactorEleven.js 
-react
-ls
-cd redux/
-ls
-cd t3
-ls
-cd src
-ls
-code -r .
-git status
-git restore .
-npm start
-ls
-cd state/
-ls
-cd reducers/
-ls
-cp ../../../../../../playground/calcGameStatusRefactorEleven.js .
-npm start
-git restore .
-ls
-cd state/reducers/
-ls
-cp ../../../../../../playground/calcGameStatusRefactorTen.js .
-ls
-npm start
-git restore .
-npm start
-exit
-goodbye
-exit
-play
-ls
-code -r .
-ls
-rm calcGameStatusRefactorEleven.js 
-mkdir cgsr
-ls
-mv calcGameStatusRefactor* cgsr
-ls
-cd cgsr/
-ls
-code -r .
-ls
-mv calcGameStatusRefactor.js 00.js
-mv calcGameStatusRefactorTwo.js 01.js
-mv calcGameStatusRefactorThree.js 02.js
-mv calcGameStatusRefactorFour.js 03.js
-mv calcGameStatusRefactorFive.js 04.js
-mv calcGameStatusRefactorSix.js 05.js
-mv calcGameStatusRefactorSeven.js 06.js
-mv calcGameStatusRefactorEight.js 07.js
-mv calcGameStatusRefactorNine.js 08.js
-mv calcGameStatusRefactorTen.js 09.js
-cp 09.js 10.js
-clear
-node 10.js 
-ls
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-cd src
-ls
-code -r .
-cd state/
-ls
-cd reducers/
-ls
-cp ../../../../../../playground/cgsr/10.js .
-ls
-npm start
-git status
-git add .
-git commit -m "Include functional calculateWin functionality."
-git branch 
-git checkout main
-npm start
-ls
-git checkout refactor2 
-npm start
-git branch
-play
-ls
-cd cgsr/
-ls
-code -r .
-node 10.js 
-goodbye
-exit
-ls
-node 10.js 
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-cd src
-ls
-code -r .
-exit
-git status
-git branch 
-git checkout main
-git checkout -b calcwin
-npm start
-ls
-cd state/
-ls
-cd reducers/
-ls
-cp ../../../../../../playground/cgsr/10.js .
-ls
-mv 10.js functionalHelpers.js
-ls
-npm start
-git status
-git add .
-git commit -m "Calculate winner functionally/declaratively."
-git status
-npm start
-git checkout main 
-npm start
-git checkout calcwin 
-npm start
-git checkout main 
-npm start
-git status
-git merge calcwin 
-git commit
-git status
-git branch
-git branch -d refactor refactor2
-git branch -D refactor refactor2
-git branch
-git checkout -b refactor
-git branhc
-git branch
-npm start
-play
-ls
-cd cgsr/
-ls
-cp 10.js 11.js
-ls
-code -r .
-node 11.js 
-exit
-goodbye
-exit
-pwd
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-cd src/
-ls
-cd ..
-ls
-git status
-git branch
-git checkout calcwin 
-git status
-git branch 
-code -r .
-pwd
-npm start
-play
-ls
-cd cgsr/
-ls
-code 10.js 
-pass -c proton/natkiypie 
-exit
-play
-ls
-mkdir codewars
-ls
-cd codewars/
-ls
-touch flattenAndSortArray.js
-ls
-code flattenAndSortArray.js 
-goodbye
-exit
-ls
-pwd
-play
-ls
-cd cgsr/
-ls
-code -r .
-cp 00.js 12.js
-ls
-cd ..
-ls
-code oldCalcGameStatusFun.js 
-goodbye
-clear
-ls
-exit
-goodbye
-exit
-ld
-ls
-cd ..
-ls
-cp oldCalcGameStatusFun.js 13.js
-ls
-mv 13.js cgsr
-ls
-cd cgsr/
-ls
-clear
-code -r .
-goodbye
-exit
-ls
-cd ..
-ls
-touch forEach.js
-code forEach.js 
-node oldCalcGameStatusFun.js 
-code oldCalcGameStatusFun.js 
-node oldCalcGameStatusFun.js 
-node forEach.js 
-node oldCalcGameStatusFun.js 
-node forEach.js 
-node oldCalcGameStatusFun.js 
-clear
-node oldCalcGameStatusFun.js 
-node forEach.js 
-ls
-cp forEach.js forEachTwo.js
-code forEachTwo.js 
-node forEachTwo.js 
-node forEach.js 
-node forEachTwo.js 
-node forEach.js 
-node forEachTwo.js 
-ls
-mkdir cgsr2
-ls
-mv forEach* cgsr2/
-ls
-cd cgsr2/
-ls
-code -r .
-ls
-cd ..
-ls
-node oldCalcGameStatusFun.js 
-code oldCalcGameStatusFun.js 
-node oldCalcGameStatusFun.js 
-ls
-cd ..
-ls
-node oldCalcGameStatusFun.js 
-cd ..
-ls
-node oldCalcGameStatusFun.js 
-ls
-cd cgsr
-ls
-code 00.js 
-cd ..
-ls
-code oldCalcGameStatusFun.js 
-node oldCalcGameStatusFun.js 
-ls
-mv forEach.js 00.js
-mv forEachTwo.js 01.js
-cp 01.js 02.js
-node 02.js 
-ls
-cp 02.js 03.js
-node 03.js 
-ls
-cp 03.js 04.js
-clear
-ls
-node 04.js 
-ls
-cp 04.js 05.js
-node 05.js 
-ls
-cp 05.js 06.js
-ls
-clear
-ls
-node 06.js 
-clear
-ls
-node 06.js 
-node 05.js 
-node 06.js 
-node 05.js 
-node 06.js 
-node 05.js 
-node 06.js 
-node 05.js 
-node 06.js 
-goodbye
-exit
-cp 00.js 07.js
-ls
-rm 07.js 
-ls
-clear
-node 06.js 
-react
-ls
-cd redux/
-ls
-cd t3
-ls
-code -r .
-ls
-git branch
-git checkout main 
-git status
-git restore 
-git restore .
-git status
-git restore .
-git log -10
-git log -20
-clear
-git log -20
-git reset --hard f8ea797dfcb5b5b6dcc2fcad7a9da9590e8aef01
-git status
-git branch
-git branch -d calcwin 
-git branch -D calcwin 
-ls
-git branch
-git branch -D refactor 
-clear
-ls
-git checkout -b refactor
-npm start
-ls
-clear
-ls
-cp ../../../playground/cgsr2/06.js .
-ls
-play
-ls
-cd cgsr2/
-ls
-code -r .
-ls
-cp 06.js 07.js
-ls
-clear
-ls
-node 07.js 
-node 05.js 
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-code -r .
-ls
-npm start
-git status
-git add .
-git commit -m "Refactor to be more functional & declarative."
-git status
-git checkout main 
-git merge refactor 
-git status
-git checkout refactor 
-git checkout main 
-goodbye
-exit
-play
-ls
-mkdir functional_helpers
-ls
-cd functional_helpers/
-ls
-cp ../../react/redux/t3/src/state/reducers/helpers.js .
-cp ../../react/redux/t3/src/state/reducers/gameReducer.js .
-cp ../../react/redux/t3/src/state/middleware/checkGameStatus.js .
-ls
-clear
-ls
-code -r .
-touch 00.js
-pass -c master/natkiypie 
-sudo systemctl status btusb
-sudo vim /etc/bluetooth/main.conf 
-exit
-temp
-temps
-sensors
-powertop
-clear
-pass -c master
-pass -c master/natkiypie 
-sudo powertop
-clear
-reboot
-pass -c master
-pass -c master/natkiypie 
-sudo service bluetooth status
-sudo service bluetooth stop
-sudo systemctl disable bluetooth.service
-sudo service bluetooth status
-exit
-sudo powertop
-clear
-reboot
-sudo service bluetooth status
-goodbye
-exit
-goodbye
-exit
-ls
-clear
-ls
-cd ..
-ls
-cd cgsr2/
-ls
-code 07.js 
-code 06.js 
-code 05.js 
-cp 05.js 08.js
-code 08.js 
-node 08.js 
-ls
-code 00.js 
-node 08.js 
-ls
-pwd
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-code -r .
-ls
-cd src
-ls
-cd state
-ls
-touch functionalHelpers.js
-ls
-rm functionalHelpers.js 
-cp ../../../../../playground/functional_helpers/
-ls
-cp ../../../../../playground/functional_helpers/00.js .
-l
-mv 00.js functionalHelpers.js
-ls
-code functionalHelpers.js 
-ls
-clear
-ls
-cd ..
-ls
-cd ..
-ls
-clear
-ls
-npm start
-play
-ls
-code cgsr.js 
-touch array.js
-code array.js 
-ls
-redux
-ls
-react
-ls
-cd redux/
-ls
-cd 01
-ls
-cd src/
-ls
-cd state/
-ls
-cd action-creators/
-ls
-code index.js 
-ls
-cd ..
 ls
 npm start
 ls
@@ -1997,4 +1360,641 @@ ls i3/
 ls
 exit
 pass -c gmail/natkiypie 
+exit
+ls
+cd .dotfiles/
+ls
+ls i3/
+rm i3/config.bak 
+ls
+cd i3/
+ls
+vim config.orig
+ls
+cd ..
+ls
+git status
+ls
+stow --target=/home/natkiypie/.config/i3 i3
+ls
+mkdir bash
+ls
+cd bash/
+ls
+vim .bash_orig
+ls
+la
+cp ~/.bash* .
+la
+rm .bashrc.bak 
+ls
+cd ..
+ls
+clear
+ls
+mv bash/ ..
+ls
+la
+cd ..
+ls
+mv bash/ .dotfiles/
+ls
+cd .dotfiles/
+ls
+mkdir chrome_bookmarks
+ls
+mv ../bookmarks_11_7_21.html chrome_bookmarks/
+ls
+help stow
+info stow
+man -k stow
+info stow
+man stow
+ls
+clear
+la bash/
+vim bash/.bash_aliases 
+ls
+la bash/
+stow target=/home/natkiypie bash
+ls
+stow --target=/home/natkiypie/ bash
+ls
+la
+mkdir password-store
+ls
+cd password-store/
+ls
+la
+ls
+la
+cat .password-store 
+ls
+cd ..
+ls
+rm -rf password-store/
+ls
+mkdir password-store
+ls
+pwd
+ls
+ls password-store/
+cat password-store/experian
+ls
+cd password-store/
+ls
+la
+cat .gpg-id 
+cd irs
+ls
+cd ..
+ls
+cd ..
+ls
+rm -rf password-store/
+ls
+git status
+git add .
+git commit -m "Initialize repository."
+git status
+git branch -M main
+git branch
+git remote add origin https://github.com/natkiypie/dotfiles.git
+git push -u origin main
+exit
+cd .config/
+ls
+cd i3/
+la
+rm -rf
+ls
+pwd
+cd ..
+ls
+cd i3/
+la
+rm *
+ls
+cd ..
+ls
+ls i3/
+cd ..
+ls
+la
+ls
+clear
+la
+rm .bashrc.bak 
+ls
+clear
+pwd
+ls
+la
+ls
+la
+pwd
+rm .bash*
+pwd
+ls
+la
+rm -rf .quokka/
+ls
+clear
+la
+ls .wallaby/
+la .wallaby/
+rm -rf .wallaby/
+ls
+clear
+la
+cd .password-store/
+ls
+la
+cd master/
+ls
+ls natkiypie.gpg 
+cat natkiypie.gpg 
+ls
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+la
+which firefox
+ls
+rm -rf .mozilla
+la
+ls .js-repl/
+rm -rf .js-repl/
+ls
+la
+clear
+la
+less .dmrc 
+clar
+clear
+ls
+la
+cat .gitconfig 
+ls
+ln -s .password-store/ .dotfiles/password-store/
+ls
+stow --target=/home/natkiypie/.dotfiles/password-store .password-store/
+ls
+pass -c github/natkiypie 
+exit
+goodbye
+cd .config/
+ls
+cd nvim/
+ls
+ls lua
+exit
+play
+ls
+cd functional_helpers/
+ls
+vimall
+vim 00.js 
+vim checkGameStatus.js 
+vimall
+vim .
+vim checkGameStatus.js 
+exit
+npm install -g tree-sitter
+ncu
+npm list -g
+npm update -g
+npm audit fix
+npm audit fix -g
+ls
+npm update -g
+npm install npm@latest -g
+npm outdated -g
+ls
+npm outdated -g --depth=0
+exit
+npm i -g tree-sitter-cli
+exit
+top
+ls
+exit
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+cd
+ls
+vim .bashrc 
+ls
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+vim temp.html
+vim helpers.js 
+ls
+vimall
+ls
+vim helpers.js 
+vimall
+vim helpers.js 
+vim helpers.js
+vim gameReducer.js 
+vim helpers.js 
+ls
+vim temp.html
+ls
+vim temp.css
+npm i -g vscode-langservers-extracted
+ls
+vim temp.html
+vim temp.css
+npm install -g typescript typescript-language-server
+ls
+clear
+ls
+vim helpers.js 
+ls
+vim temp.css
+ls
+vimall
+ls
+vim -p .
+ls
+vim -p*
+vim -p *
+vim "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab=true" -p *
+vim "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab" -p *
+vim -p * "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab"
+vim -p .
+vim "--cmd set shiftwidth=2" "--cmd set softtabstop=2" "--cmd set expandtab=true" -p *
+vim -p * "--cmd set shiftwidth=2"
+vim --cmdx set shiftwidth=2 -p *
+vim -p * "--cmdset shiftwidth=2"
+vim -p * --cmd "set shiftwidth=2"
+vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab=true" -p *
+vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab" -p *
+clear
+ls
+exit
+man vim
+exit
+play
+ls
+cd functional_helpers/
+ls
+vimall
+exit
+vim temp
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+cd lua/
+ls
+mkdir test
+ls
+rm -rf test/
+ls
+clear
+ls
+pwd
+cd ..
+ls
+ls after/
+ls after/syntax/
+ls
+cd after/
+ls
+vim syntax/
+cd syntax/
+ls
+vim typescript.vim 
+cd ..
+ls
+cd ..
+ls
+clear
+ls
+pwd
+ls
+vim init.lua 
+vim lua/packer-config/init.lua 
+ls
+vim init.lua 
+pwd
+vim init.lua 
+cd ..
+ls
+cd bash/
+ls
+la
+less .bash_aliases 
+:man vim
+man vim
+ls
+pwd
+la
+vim .bash_aliases 
+exit
+ls
+vim temp.html
+vim temp.cs
+vim temp.css
+ls
+play
+ls
+vim curry.js 
+vim temp.css
+cd functional_helpers/
+ls
+vimall
+react 
+ls
+301 
+ls
+cd 00/
+ls
+cd react-tic-tac-toe/
+ls
+cd src/
+ls
+vim helpers.js 
+cd ..
+ls
+exit
+301
+ls
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+cd ..
+ls
+cd src/
+ls
+vim helpers.js 
+vim app.js 
+cd Components/
+ls
+vim Board.js 
+git status
+git restore .
+ls
+git status
+ls
+git status
+cd ..
+ls
+git status
+git restore .
+git status
+ls
+clear
+ls
+play
+ls
+vim play.ts 
+vim composition.js 
+301
+ls
+cd 00
+ls
+cd react-tic-tac-toe/
+ls
+cd src/
+ls
+vim helpers.js 
+:q
+exit
+ls
+cd .dotfiles/
+ls
+cd nvim/
+ls
+cd lua/
+la
+mkdir treesitter-config
+ls
+cd treesitter-config/
+ls
+vim init.lua
+ls
+cd ..
+ls
+mv nvim-comment-config/ comment-config/
+ls
+mkdir autopairs-config
+ls
+cd autopairs-config/
+ls
+vim init.lua
+ls
+cd ..
+ls
+mkdir cmp-config
+cd cmp-config/
+ls
+vim init.lua
+ls
+cd ..
+ls
+cd bufferline-config/
+ls
+vim init.lua 
+cd ..
+ls
+cd cmp-config/
+ls
+vim init.lua 
+ls
+vim init.lua 
+ls
+cd ..
+ls
+vim lualine-config/init.lua 
+cd
+clear
+goodbye
+301
+ls
+cd 00/
+ls
+cd react-tic-tac-toe/
+ls
+cd src/
+ls
+vim helpers.js 
+exit
+pass -c master/natkiypie 
+sudo apt install ninja-build 
+exit
+cd .dotfiles/nvim/
+ls
+cd lua/
+ls
+cd lualine-config/
+ls
+cp init.lua alt.lua
+ls
+vim init.lua 
+ls
+vim alt.lua 
+ls
+cd ..
+ls
+mkdir galaxyline-config
+ls
+cd galaxyline-config/
+ls
+vim init.lua
+ls
+pwd
+ls
+vim init.lua
+ls
+pwd
+vim init.lua 
+ls
+cd ..
+ls
+mv galaxyline-config/ spaceline-config
+ls
+cd spaceline-config/
+ls
+vim init.lua 
+ls
+vim init.lua 
+cd ..
+ls
+rm -rf spaceline-config/
+vim packer-config/init.lua 
+clear
+ls
+mv cmp-config/ lsp
+ls
+cd lsp/
+ls
+mv init.lua cmp.lua
+ls
+touch language_servers.lua
+touch diagnostic_signs.lua
+ls
+vimall
+vim init.lua
+vim init.lua 
+vimall
+ls
+vimall
+ls
+;s
+ls
+vimall
+exit
+clear
+ex_mon_only_on.sh 
+clear
+ls
+ls nkp/
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim init.lua 
+clear
+ls
+vim init.lua 
+ls
+vim init.lua 
+ls
+cd ..
+ls
+cd nvim/
+ls
+rm -rf after/
+ls
+clear
+ls
+vim init.lua 
+pwd
+git clone https://github.com/sumneko/lua-language-server
+ls
+cd lua-language-server/
+git submodule update --init --recursive
+ls
+clear
+ls
+cd 3rd/luamake/
+ls
+./compile/install.sh
+cd ../..
+ls
+./3rd/luamake/luamake rebuild
+ls
+cd ..
+ls
+la
+cd ..
+la
+touch .gitignore
+vim .gitignore 
+cd .git/
+cd ..
+ls
+cd nvim/
+ls
+ls plugin/
+cd ..
+ls
+vim .gitignore 
+cd i3/
+ls
+vim config
+i3-msg reload
+clear
+pwd
+cd ../nvim/
+clear
+pwd
+ls
+pwd
+ls
+vim init.lua 
+ls
+vim init.lua 
+exit
+vim temp.js
+301
+ls
+cd 00/react-redux/src/
+ls
+cd state/
+ls
+cd reducers/
+ls
+vim index.js 
+ls
+vim accountReducer.js 
+vim index.js 
+ls
+cd ..
+ls
+cd ..
+ls
+la
+cd ..
+ls
+ls public/
+cd public/
+ls
+vim index.html 
+cd
+exit
+vim
+goodbye
 exit

@@ -7,12 +7,16 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
+  use 'p00f/nvim-ts-rainbow'
+  use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'
   use 'neovim/nvim-lspconfig'
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  use 'onsails/lspkind-nvim'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -24,6 +28,10 @@ return require('packer').startup(function(use)
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons'
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
   if packer_bootstrap then
     require('packer').sync()

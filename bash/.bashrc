@@ -76,3 +76,5 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
 # run startup script
 on_open.sh
+
+alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake
