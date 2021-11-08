@@ -1,0 +1,7 @@
+require('configuration')
+require('keybindings')
+require('packer-config')
+require('colors')
+require('lualine-config')
+require('nvim-comment-config')
+require('bufferline-config')
