@@ -1,271 +1,3 @@
-cd plugin/
-ls
-vim packer_compiled.lua 
-ls
-cd ..
-ls
-vim init.lua 
-ls
-clear
-pwd
-mkdir lua
-ls
-touch lua/settings.lua lua/keymaps.lua
-ls
-less init.lua 
-vim init.lua 
-less init.lua 
-vim init.lua 
-less init.lua 
-vim init.lua 
-cd ..
-ls
-cd nvim
-ls
-vim init.lua 
-less init.lua 
-vim init.lua 
-less init.lua 
-vim init.lua 
-ls
-vim init.lua 
-ls
-vim lua/bufferline-config/init.lua 
-ls
-clear
-ls
-play
-ls
-clear
-ls
-cd cgsr2/
-ls
-vimall
-cd
-clear
-goodbye
-exit
-play
-ls
-vim cgsr.js 
-exit
-play
-ls
-vim cgsr.js 
-ls
-vim cgsr.js 
-exit
-ls
-cd .config/nvim_bak/
-ls
-vim init.vim 
-exit
-ls
-cd .config/nvim
-ls
-cd lua/
-ls
-mv packagemanager.lua package_manager.lua
-ls
-mkdir keybindings
-ls
-mv keybindings.lua keybindings
-ls
-cd keybindings/
-ls
-mv keybindings.lua init.lua
-ls
-cd ..
-ls
-mkdir color-scheme
-mv color_scheme.lua color-scheme/
-ls
-mv color-scheme/ colors
-ls
-cd colors/
-ls
-mv color_scheme.lua init.lua
-ls
-cd ..
-ls
-mkdir configuration
-ls
-mv config.lua configuration/
-ls
-cd configuration/
-ls
-mv config.lua init.lua
-ls
-cd ..
-ls
-mkdir packer-config
-ls
-mv package_manager.lua packer-config/
-ls
-cd packer-config/
-ls
-mv package_manager.lua init.lua
-ls
-cd ..
-ls
-mv packer-config/ packer
-ls
-mv packer/ packer-config
-ls
-cd keybindings/
-ls
-touch nvim_comment.lua
-ls
-vim init.lua 
-cd ..
-ls
-cd ..
-ls
-vim init.lua 
-ls
-cd lua/
-ls
-cd keybindings/
-ls
-vim all
-vimall
-ls
-mv nvim_comment.lua nvim_comment_kb.lua 
-ls
-vim init.lua 
-ls
-rm nvim_comment_kb.lua 
-ls
-clear
-ls
-vim init.lua 
-exit
-pass -c master/natkiypie 
-sudo apt-get install ripgrep
-ls
-man ripgrep
-exit
-sudo apt install fd-find
-ls
-exit
-cd .config/nvim
-ls
-vim init.lua 
-ls
-cd lua/
-ls
-mkdir nvim-comment-config
-ls
-cd nvim-comment-config/
-ls
-vim init.lua
-ls
-pwd
-vim init.lua 
-cd ..
-ls
-cd ..
-ls
-vim init.lua 
-ls
-cd lua/nvim-comment-config/
-ls
-vim init.lua 
-cd ..
-ls
-vim keybindings.lua 
-cd nvim-comment-config/
-ls
-vim init.lua 
-cd ..
-ls
-vim keybindings.lua 
-cd ..
-ls
-vim init.lua 
-ls
-cd lua/
-ls
-cd nvim-comment-config/
-ls
-vim init.lua 
-cd ..
-ls
-vim keybindings.lua 
-cd ..
-ls
-vim init.lua 
-cd lua/nvim-comment-config/
-ls
-vim init.lua 
-cd ..
-ls
-vim keybindings.lua 
-ls
-cd nvim-comment-config/
-ls
-vim init.lua 
-cd ..
-ls
-cd ..
-ls
-vim init.lua 
-cd lua/
-ls
-cd nvim-comment-config/
-vim init.lua 
-cd ..
-ls
-vim keybindings.lua 
-ls
-cd nvim-comment-config/
-vim init.lua 
-ls
-cd ..
-ls
-clear
-ls
-mv colorscheme.lua color_scheme.lua
-cd ..
-ls
-vim init.lua 
-ls
-clear
-ls
-vim init.lua 
-exit
-ls
-cd .config/nvim
-ls
-cd lua/
-ls
-cd packer-config/
-ls
-vim init.lua 
-exit
-play
-ls
-cd cgsr2/
-ls
-vim 00.js 
-cd
-clear
-goodbye
-play
-ls
-cd cgsr2/
-ls
-vimall
-vim 01.js 
-vim 00.js 
-cd
-clear
-ls
-cd .config/
-ls
-cd nvim
-cd ../nvim_bak/
-ls
 vim init.vim 
 exit
 cd .config/nvim
@@ -1997,4 +1729,278 @@ ls
 cd reducers/
 ls
 vim accountReducer.js 
+exit
+301
+ls
+cd 00/
+ls
+cd react-tic-tac-toe/
+ls
+cd src/
+ls
+vim
+cd
+ls
+cd .dotfiles/
+ls
+cd nvim/
+ls
+git status
+git add .
+git status
+cd ..
+ls
+git add .
+ls
+git status
+git commit -m "Made changes."
+git push
+exit
+ls
+cd lua
+ls
+ls cmp-config/
+ls
+mv cmp-config/ language-server-providers-config
+ls
+ls language-server-providers-config/
+ls
+mv language-servers language-server-providers-config/
+ls
+exit
+ls
+cd lua/
+ls
+mv language-server-providers-config/ lsp-config
+ls
+mv lspconfig-config/ tmp
+ls
+exit
+ex_mon_only_on.sh 
+cd
+clear
+cd .dotfiles/
+ls
+clear
+ls
+cd nvim/
+ls
+vim
+vim init.lua 
+vim
+exit
+301
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+exit
+ls
+cd lua/
+ls
+mv lsp-config/language-servers/ .
+ls
+cd ..
+ls
+cd lua/
+ls
+mv language-servers/ ../
+ls
+cd ..
+ls
+exit
+ls
+pwd
+mkdir after
+ls
+mkdir after/options
+touch after/options/init.lua
+:q
+exit
+play
+ls
+vim curry.js 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+mkdir after/ftplugin
+mkdir after
+ls
+mkdir after/ftplugin
+ls
+cd after/
+ls
+cd ftplugin/
+ls
+touch lua.vim
+ls
+vim lua.vim 
+ls
+mv lua.vim options.vim
+ls
+mv options.vim lua.vim
+ls
+xit
+exit
+play
+ls
+cd cgsr2/
+ls
+vimall
+exit
+play
+ls
+cd cgsr2/
+ls
+vimall
+exit
+play
+ls
+cd cgsr2/
+ls
+vimall
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+cd lua/
+ls
+cd lsp-config/
+ls
+vim init.lua 
+ls
+vim init.lua 
+cd ..
+ls
+cd ..
+ls
+vim
+ls
+la
+cd ..
+la
+vim .gitignore 
+cd i3/
+ls
+cd ..
+ls
+cd nvim/
+ls
+vim
+clear
+ls
+vim
+ls
+vim
+rm -rf after/
+ls
+mkdir after
+ls
+touch after/options
+vim after/options 
+mv after/options.vim
+mv after/options after/options.vim
+ls
+vim after/options.vim 
+ls
+vim init.lua 
+vim
+ls
+rm -rf after/
+ls
+clear
+ls
+vim
+ls
+vim
+ls
+vim
+ls
+vim
+ls
+vim
+ls
+vim
+cd ..
+ls
+vim bash/.bash_aliases 
+ls
+cd nvim/
+ls
+vim after/ftplugin/lua.vim 
+ls
+cd ..
+ls
+cd bash/
+ls
+la
+vim .bash_aliases 
+cd ..
+ls
+vim nvim/init.lua 
+ls
+vim bash/.bash_aliases 
+ls
+source bash/.bash_aliases 
+ls
+cd nvim/
+ls
+vim
+exit
+play
+ls
+code composition.js 
+vim composition.js 
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+exit
+play
+ls
+cd functional_helpers/
+ls
+vim checkGameStatus.js 
+vim helpers.js 
+ls
+vim checkGameStatus.js 
+vim gameReducer.js 
+vim helpers.js 
+exit
+vim
+ls
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+ls
+vim
+exit
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+exit
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+clear
+ls
+vim helpers.js 
+ls
+vim helpers.js 
+vim temp.css 
+exit
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
 exit

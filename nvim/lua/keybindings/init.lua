@@ -34,7 +34,7 @@ keymap('i', 'jk', '<ESC>', opts)
 keymap('c', 'jk', '<ESC>', opts)
 
 -- TEMP!!!!
-keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', silent_opts)
+-- keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', silent_opts)
 -- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.type_definition()<CR>', silent_opts)
 -- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.rename()<CR>', silent_opts)
 -- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.code_action()<CR>', silent_opts)

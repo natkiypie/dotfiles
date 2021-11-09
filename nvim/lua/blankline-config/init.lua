@@ -1,5 +1,5 @@
 vim.g.indent_blankline_use_treesitter = true
-vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.indent_blankline_filetype={'html', 'css', 'javascript', 'typescript'}
 
 require("indent_blankline").setup {
   char = "|",
