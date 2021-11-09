@@ -32,3 +32,4 @@ vim.wo.signcolumn = 'yes'
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
+vim.bo.formatoptions = vim.bo.formatoptions:gsub('cro', '')

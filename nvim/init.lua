@@ -1,6 +1,6 @@
 require('options')
 require('keybindings')
-require('packer-config')
+require('plugins')
 require('cmp-config')
 require('treesitter-config')
 require('telescope-config')

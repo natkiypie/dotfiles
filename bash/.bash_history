@@ -1,107 +1,3 @@
-sudo update-alternatives --config vim
-sudo update-alternatives --config editor
-sudo update-alternatives --list
-sudo update-alternatives --list editor
-ls
-claer
-cd .config
-ls
-clear
-pwd
-ls
-cp -r nvim_bak/ nvim
-ls
-cd
-clear
-ls
-play
-ls
-vim cgsr.js 
-nvim --version
-vim cgsr.js 
-exit
-vim .bashrc
-vim .bash_aliases 
-play
-ls
-cd cgsr2/
-ls
-vimall
-ls
-exit
-cd .config/
-ls
-cd nvim_bak/
-ls
-clar
-clear
-less init.vim 
-vim init.vim 
-exit
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-exit
-cd .local/share/nvim/
-ls
-ls site/
-la site/
-ls site/pack/
-ls
-cd ..
-ls
-cd nvim/
-ls
-cd site/
-ls
-ls pack/
-ls
-cd ..
-ls
-cd ..
-ls
-cd nvim/
-ls
-ls site/
-ls pack
-ls site/pack/
-ls
-la
-cd ..
-ls
-cd nvim/
-ls
-ls shada/
-ls site/
-ls swap/
-pwd
-exit
-vim temp
-:q
-ls
-exit
-cd .config/nvim/lua/
-ls
-vim settings.lua 
-mv keymaps.lua keybindings.lua
-ls
-vim keybindings.lua 
-exit
-cd .local/share/
-ls
-mkdir fonts
-ls
-cd fonts/
-mv ~/Hack\ Regular\ Nerd\ Font\ Complete.ttf .
-ls
-pwd
-clear
-ls
-mv Hack\ Regular\ Nerd\ Font\ Complete.ttf Hack-Regular.ttf 
-ls
-cd
-ls
-pwd
-ls
-cd .local/share/fonts/
 ls
 mkdir nerd
 ls
@@ -1998,3 +1894,135 @@ ls
 vim
 exit
 goodbye
+ls
+cd lua/
+ls
+mv packer-config/ plugins
+ls
+ls plugins/
+exit
+ls
+ls lua/
+exit
+ls
+cd lua/
+la
+mkdir lspconfig-config
+ls
+cd lspconfig-config/
+touch init.lua
+exit
+ls
+cd lua/cmp-config/
+ls
+mv diagnostic_symbols.lua diagnostic_signs.lua 
+ls
+exit
+301
+ls
+cd 00/
+ls
+301
+ls
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+ls
+cd Components/
+ls
+vim Game.js 
+exit
+top
+top -p `pgrep "nvim"`
+top -p `pgrep "neovim"`
+top -p `pidof [process name]`
+top -p `pidof nvim`
+top -p `pidof neovim`
+pidof nvim
+pidof vim
+top -p 7864
+pidof vim
+top -p 8284
+exit
+301
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+ls
+cd Components/
+ls
+vim Game.js 
+ls
+vim Square.js 
+vim Game.js 
+ls
+vim Board.js 
+vim Game.js 
+vim Board.js 
+ls
+vim Game.js 
+vim Board.js 
+vin Board.js 
+vim Board.js 
+la
+cd ..
+ls
+la
+cd ..
+la
+ls
+cd src/
+ls
+vim helpers.js 
+exit
+cd .dotfiles/
+ls
+vim .gitignore 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+cd lua/
+ls
+cd language-servers/
+ls
+cd ..
+ls
+cd language-servers/
+pwd
+exit
+ls
+cd lua/
+ls
+mkdir toggleterm-config
+touch toggleterm-config/init.lua
+exit
+ls
+exit
+ls
+clear
+ls
+exit
+ls
+cd lua
+ls
+exit
+ls
+pwd
+exit
+cd lua/
+ls
+mkdir toggleterm-config
+toubh toggleterm-config/init.lua
+touch toggleterm-config/init.lua
+ls
+exit
+ls
+exit
+ls
+ncu
+npm update -g
+ls
+cd lua/
+rm -rf toggleterm-config/

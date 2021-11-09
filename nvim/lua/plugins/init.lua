@@ -14,8 +14,6 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'lukas-reineke/indent-blankline.nvim'
   use {
@@ -33,6 +31,15 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup{ current_line_blame = true }
+    end
   }
   if PACKER_BOOTSTRAP then
     require('packer').sync()

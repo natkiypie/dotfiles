@@ -1,2 +1,2 @@
-lua-language-server/
-plugin/packer_compiled.lua
+nvim/lua/language-servers/
+nvim/plugin/packer_compiled.lua
