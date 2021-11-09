@@ -1,246 +1,3 @@
-ls
-npm start
-ls
-cc
-cf
-301
-ls
-cd 00/
-ls
-cd react-tic-tac-toe/
-ls
-npm start
-pass -c master/natkiypie 
-sudo systemctl status cups.service
-sudo systemctl disable cups.service
-sudo systemctl status cups.service
-sudo systemctl stop cups.service
-sudo systemctl status cups.service
-sudo systemctl disable cups.service
-clear
-sudo systemctl status cups.service
-sudo systemctl status btusb.service
-sudo systemctl status bluetooth.service
-reboot
-sudo systemctl status btusb.service
-sudo systemctl status bluetooth.service
-sudo systemctl status cups.service
-clear
-sudo systemctl --reverse list-dependencies cups.service
-sudo systemctl disable cups-browsed.service 
-sudo systemctl disable cups.service
-sudo systemctl status cups-browsed.service
-sudo systemctl stop cups-browsed.service
-sudo systemctl stop cups.service
-sudo systemctl disable cups-browsed.service 
-sudo systemctl disable cups.service
-reboot
-sudo systemctl status cups.service
-clear
-exit
-goodbye
-sudo systemctl status bluetooth.service
-sudo systemctl status cups.service
-clear
-exit
-ls
-play
-ls
-cd cgsr2/
-ls
-code -r .
-node 08.js 
-goodbye
-exit
-top
-exit
-pass -c master/natkiypie 
-sudo systemctl status bluetooth.service
-exit
-pass -c master/natkiypie 
-sudo powertop
-exit
-top
-ls
-exit
-pass -c master/natkiypie 
-sudo vim /etc/modprobe.d/blacklist.conf 
-sudo powertop
-exit
-play
-ls
-cd cgsr2/
-ls
-vim 08.js 
-reboot
-sudo powertop
-exit
-ls
-cd .config/nvim_bak/
-ls
-vim init.vim 
-ls colr
-ls colors/
-ls plugged/
-cd ..
-ls
-cd nvim_bak/
-ls
-vim init.vim 
-exit
-play
-ls
-cd cgsr2/
-ls
-vim 08.js 
-la
-vim 07.js 
-exit
-play
-ls
-cd cgsr2/
-ls
-vim 08.js 
-cd 
-la
-ls .local/
-cd .local/
-ls
-ls share/
-cd share/
-ls
-cd nvim/
-ls
-ls site/
-ls plugged
-ls
-cd site/
-ls
-ls plugged/
-cd ..
-ls
-ls site/
-ls site/autoload/
-ls
-cd ..
-ls
-ls nvim/
-ls nvim/swap/
-cd nvim/
-ls
-clear
-ls
-ls shada/
-cat shada/main.shada 
-:q
-claer
-clear
-ls
-ls site/
-la site/
-mv site/ ../../../.config/nvim
-ls
-exit
-ls
-cd .config/nvim_bak/
-ls
-vim init.vim
-ls autoload/
-exit
-play
-ls
-cd cgsr2/
-ls
-vim 08.js 
-exit
-cd .config/nvim/
-ls
-cd ..
-ls
-cp -r nvim/ nvim_bak
-ls
-cd nvim
-ls
-vim init.vim 
-ls
-rm -rf plugged/
-ls
-mkdir plugged
-ls
-vim init.vim 
-ls colors/
-ls
-cd plugged/
-cp -r ../../nvim_bak/plugged/vim-code-dark/
-cp -r ../../nvim_bak/plugged/vim-code-dark/ .
-ls
-cd ..
-ls
-pwd
-vim init.vim 
-ls
-ls site/plugged/
-ls
-rm -rf plugged/
-mv site/* .
-ls
-ls site/
-rm -rf autoload/
-mv site/autoload/ .
-ls
-rm -rf site/
-ls
-vim init.vim 
-pwd
-ls
-mv plugged/vim-code-dark/ .
-ls
-rm -rf plugged/ vim-code-dark/ autoload/
-ls colors/
-rm -rf colors/
-ls
-vim init.vim 
-ls
-cd ..
-ls
-rm -rf nvim
-cp -r nvim_bak/ nvim
-ls
-cd nvim
-ls
-vim init.vim 
-ls
-clear
-ls
-cd ..
-ls
-ls coc/
-rm -rf coc/
-ls
-exit
-top
-exit
-play
-ls
-cd cgsr
-ls
-vim 13.js 
-ls
-cd
-cd .config/nvim
-ls
-vim init.vim 
-play
-ls
-cd cgsr
-ls
-vim 00.js 
-cd
-cd .config/nvim
-ls
-vim init.vim 
-play
-ls
 vim calcDrawRefactor.js 
 vim functional_tictactoe
 vim functional_tictactoe.js 
@@ -1998,3 +1755,246 @@ exit
 vim
 goodbye
 exit
+ex_mon_only_on.sh 
+exit
+cd .dotfiles/
+ls
+cd i3/
+ls
+vim config
+exit
+cd .dotfiles/
+ls
+cd i3/
+ls
+vim config
+i3-msg reload
+exit
+cd .dotfiles/nvim/
+ls
+clear
+ls
+vim init.lua 
+ls
+mkdir language-servers
+ls
+mv lua-language-server/ language-servers/
+ls
+vim init.lua 
+mv language-servers/ lua/
+ls
+vim init.lua 
+cd lua/cmp-config/
+ls
+vimall
+ls
+mv config.lua cmp.lua
+ls
+vimall
+ls
+touch keybindings.lua
+ls
+vimall
+ls
+rm keybindings.lua 
+ls
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd i3/
+ls
+vim config
+i3-msg reload
+ls
+vim config
+i3-msg reload
+ls
+clear
+ls
+cd ..
+ls
+git status
+cd ..
+ls
+cd .dotfiles/
+ls
+git status
+git add .
+git status
+git commit -m "This is a very dirty commit. Oops."
+git push
+ls
+clear
+ls
+git status
+cd nvim/
+ls
+vim init.lua 
+ls
+vim init.lua 
+vim lua/keybindings/init.lua 
+exit
+ls
+cd .dotfiles/nvim/lua
+ls
+ls lsp/
+mv lsp/ cmp-config
+ls
+vim cmp-config/init.lua 
+vim cmp-config/
+ls
+vim cmp-config/init.lua 
+ls
+cd cmp-config/
+ls
+vimall
+mv cmp.lua config.lua
+vim init.lua 
+ls
+mv diagnostic_signs.lua diagnostic_symbols.lua
+ls
+clear
+ls
+vim init.lua 
+vimall
+ls
+cd ..
+ls
+vim cmp-config/language_servers.lua 
+clear
+ls
+cd bufferline-config/
+ls
+vim init.lua 
+touch keybindings.lua
+ls
+vimall
+ls
+vimall
+ls
+cd ..
+ls
+cd bufferline-config/
+ls
+vimall
+ls
+clear
+ls
+cd ..
+ls
+clear
+ls
+cd ..
+ls
+pwd
+cd lua/
+ls
+clear
+ls
+touch telescope-config/init.lua
+mkdir telescope-config
+ls
+cd telescope-config/
+ls
+vim init.lua
+vim init.lua 
+vim  init.lua 
+vim init.lua 
+cd ..
+ls
+clear
+ls
+vim telescope-config/init.lua 
+vim telescope-config/
+vim telescope-config/init.lua 
+cd ..
+ls
+cd lua/
+ls
+vim telescope-config/init.lua 
+ls
+clear
+ls
+mkdir whichkey-config
+ls
+cd whichkey-config/
+ls
+vim init.lua
+vim init.lua 
+cd ..
+ls
+rm -rf whichkey-config/
+ls
+cd bufferline-config/
+ls
+vimall
+ls
+cd ..
+ls
+vim bufferline-config/init.lua 
+ls
+cd telescope-config/
+ls
+touch keybindings.lua
+ls
+vimall
+ls
+cd ..
+ls
+cd colors/
+ls
+vim init.lua 
+cd ..
+ls
+cd telescope-config/
+ls
+vim init.lua 
+cd ..
+ls
+cd colors/
+ls
+vim init.lua 
+ls
+cd ..
+ls
+clear
+ls
+vim telescope-config/init.lua 
+ls
+cd ..
+ls
+vim init.lua 
+ls
+vim init.lua 
+exit
+cd .dotfiles/nvim/
+ls
+vim init.lua 
+exit
+play
+ls
+cd cgsr2/
+ls
+vim 00.js 
+vimall
+301
+ls
+cd 00/react-tic-tac-toe/
+ls
+cd src/
+ls
+vim helpers.js 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim init.lua 
+cd
+clear
+goodbye

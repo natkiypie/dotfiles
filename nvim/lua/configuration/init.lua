@@ -12,6 +12,8 @@ vim.go.lazyredraw = true
 vim.go.hlsearch = false
 -- enable clickable buffer tabs
 vim.go.mouse = 'a'
+-- set milliseconds to wait for a mapped sequence to complete
+vim.go.timeoutlen = 200
 
 -- Window
 -- set line numbers
@@ -22,6 +24,8 @@ vim.wo.relativenumber = true
 vim.wo.cursorline = true
 -- highlight cursor column
 vim.wo.cursorcolumn = true
+-- text does not move if errors or diagnostics
+vim.wo.signcolumn = 'yes'
 
 -- Buffer
 -- set tabs to spaces

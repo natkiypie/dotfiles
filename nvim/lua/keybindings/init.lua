@@ -14,3 +14,6 @@ keymap('n', '<C-k>', '<S-{>', opts)
 
 -- Use keys 'jk' to exit insert mode
 keymap('i', 'jk', '<Esc>', opts)
+
+-- TEMP!!!!
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
