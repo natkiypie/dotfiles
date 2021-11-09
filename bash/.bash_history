@@ -1,99 +1,3 @@
-vim calcDrawRefactor.js 
-vim functional_tictactoe
-vim functional_tictactoe.js 
-cd
-cd .config/
-ls
-rm -rf nvim
-cp -r nvim_bak/ nvim
-ls
-play
-ls
-clear
-ls
-vim functional_tictactoe.js 
-vim
-vim functional_tictactoe.js 
-source .
-source ~/.bashrc
-ls
-vim destructuring.js 
-vim functional_tictactoe.js 
-exit
-cd .i3/
-ls
-vim config
-i3-msg restart
-vim config
-i3-msg restart
-clear
-ls
-play
-exit
-cd .config/nvim
-ls
-vim init.vim 
-exit
-play
-ls
-vim functional_tictactoe.js 
-ls
-vim functional_tictactoe.js 
-exit
-play
-ls
-vim functional_tictactoe.js 
-exit
-ls
-:q
-vim curry.js 
-ls
-exit
-cd .config/nvim
-ls
-vim init.vim 
-exit
-play
-ls
-vim 2Darray.js 
-exit
-play
-ls
-vim functional_tictactoe.js 
-ls
-vim composition.js 
-goodbye
-play
-ls
-vim array.js 
-vim composition.js 
-vim curry.js 
-cd
-vim .config/nvim/init.vim 
-play
-ls
-clear
-ls
-vim array.js 
-goodbye
-ls
-clear
-ls
-cd .config
-ls
-rm -rf nvim_bak/
-mv nvim/ nvim_bak
-ls
-sudo apt purge neovim
-$ sudo apt-get purge --auto-remove neovim 
-sudo apt-get purge --auto-remove neovim 
-ls
-clear
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt update
-sudo apt install neovim
-sudo update-alternatives --config vim
-sudo update-alternatives --install $(which vim) vim $(which nvim) 10
 sudo update-alternatives --config vim
 sudo update-alternatives --config editor
 sudo update-alternatives --list
@@ -1997,4 +1901,100 @@ ls
 vim init.lua 
 cd
 clear
+goodbye
+ls
+cd lua/
+ls
+mv configuration/ options
+ls
+:q
+cd ..
+ls
+exit
+ls
+cd lua/
+ls
+mkdir indentline-config
+ls
+touch indentline-config/index.lua
+ls
+exit
+ls
+cd lua/
+ls
+mv indentline-config/ blankline-config
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+clear
+ls
+cd ..
+la
+git status
+git add .
+git stats
+git status
+git commit -m "Configure Telescope."
+git push
+git status
+ls
+clear
+ls
+cd nvim/
+ls
+vim
+ls
+vim init.lua 
+vim
+ls
+vim
+ls
+vim
+exit
+ls
+ls lua/
+ls lua/blankline-config/index.lua 
+mv lua/blankline-config/index.lua lua/blankline-config/init.lua
+exit
+301
+ls
+cd 00/
+ls
+cd react-tic-tac-toe/src/
+vim helpers.js 
+exit
+ls
+cd lua/cmp-config/
+ls
+vimall
+ls
+exit
+301
+ls
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+ls
+cd lua/
+ls
+cd comment-config/
+ls
+cd ..
+ls
+cd cmp-config/
+ls
+vimall
+ls
+cd ../..
+ls
+vim
+exit
 goodbye

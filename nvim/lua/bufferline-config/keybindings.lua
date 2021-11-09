@@ -1,7 +1,7 @@
-vim.cmd[[
-  nnoremap <silent><TAB> :BufferLineCycleNext<CR>
-  nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
-  nnoremap <silent><Leader><Tab> :BufferLineMoveNext<CR>
-  nnoremap <silent><Leader><S-Tab> :BufferLineMovePrev<CR>
-  nnoremap <silent><C-q> <Cmd>bd<CR>
-]]
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<TAB>', '<CMD>BufferLineCycleNext<CR>', opts)
+keymap('n', '<S-TAB>', '<CMD>BufferLineCyclePrev<CR>', opts)
+keymap('n', '<LEADER><TAB>', '<CMD>BufferLineMoveNext<CR>', opts)
+keymap('n', '<LEADER><S-TAB>', '<CMD>BufferLineMovePrev<CR>', opts)

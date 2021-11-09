@@ -1,7 +1,7 @@
--- :Telescope find_files<cr>"
--- :Telescope live_grep<cr>"
--- nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ winblend = 25 }))<cr>
--- nnoremap <Leader>f :lua require'telescope.builtin'.find_files({ winblend = 25 })<cr>
-vim.cmd[[
-  nnoremap <Leader>f :lua require'telescope.builtin'.find_files()<cr>
-]]
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<LEADER>f', "<CMD>Telescope find_files<CR>", opts)
+keymap('n', '<LEADER>g', "<CMD>Telescope live_grep<CR>", opts)
+keymap('n', '<LEADER>o', "<CMD>Telescope oldfiles<CR>", opts)
+

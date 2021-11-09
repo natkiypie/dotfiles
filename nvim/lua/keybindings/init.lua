@@ -1,5 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true }
+local silent_opts = { noremap = true, silent = true }
 
 -- Remove key mapping for spacebar
 keymap('n', '<SPACE>', '<Nop>', opts)
@@ -9,11 +10,31 @@ keymap('n', 'j', 'gj', opts)
 keymap('n', 'k', 'gk', opts)
 
 -- Use control j and k to navigate vertically by paragraph
-keymap('n', '<C-j>', '<S-}>', opts)
-keymap('n', '<C-k>', '<S-{>', opts)
+-- keymap('n', '<C-j>', '<S-}>', opts)
+-- keymap('n', '<C-k>', '<S-{>', opts)
+
+-- Save & source file
+keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
+
+-- Delete buffer
+keymap('n', '<C-q>', '<CMD>bd<CR>', opts)
+
+-- Save all buffers and exit Vim
+keymap('n', 'Q', '<CMD>xa<CR>', opts)
+
+-- Temporarily show file path in status bar
+keymap('n', '<LEADER>p', '<CMD>echo expand("%:p")<CR>', silent_opts)
+
+-- Switch between split windows
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
 
 -- Use keys 'jk' to exit insert mode
-keymap('i', 'jk', '<Esc>', opts)
+keymap('i', 'jk', '<ESC>', opts)
 
+-- Use keys 'jk' to exit insert mode
+keymap('c', 'jk', '<ESC>', opts)
 -- TEMP!!!!
-keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', opts)
