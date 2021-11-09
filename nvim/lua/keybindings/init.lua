@@ -9,10 +9,6 @@ keymap('n', '<SPACE>', '<Nop>', opts)
 keymap('n', 'j', 'gj', opts)
 keymap('n', 'k', 'gk', opts)
 
--- Use control j and k to navigate vertically by paragraph
--- keymap('n', '<C-j>', '<S-}>', opts)
--- keymap('n', '<C-k>', '<S-{>', opts)
-
 -- Save & source file
 keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
 
@@ -38,7 +34,7 @@ keymap('i', 'jk', '<ESC>', opts)
 keymap('c', 'jk', '<ESC>', opts)
 
 -- TEMP!!!!
--- keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', silent_opts)
+keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', silent_opts)
 -- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.type_definition()<CR>', silent_opts)
 -- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.rename()<CR>', silent_opts)
 -- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.code_action()<CR>', silent_opts)
@@ -46,4 +42,4 @@ keymap('c', 'jk', '<ESC>', opts)
 -- keymap('n', '[d', '<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>', silent_opts)
 -- keymap('n', ']d', '<CMD>lua vim.lsp.diagnostic.goto_next()<CR>', silent_opts)
 -- keymap('n', '<LEADER>q', '<CMD>lua vim.lsp.diagnostic.set_loclist()<CR>', silent_opts)
-keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.formatting()<CR>', silent_opts)
+-- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.formatting()<CR>', silent_opts)

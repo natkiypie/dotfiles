@@ -1,132 +1,3 @@
-ls
-mkdir nerd
-ls
-mv Hack-Regular.ttf nerd/
-ls
-cd nerd/
-ls
-mv ~/Fira\ Code\ Regular\ Nerd\ Font\ Complete.ttf .
-ls
-mv Fira-Code-Regular.ttf 
-ls
-mv Fira\ Code\ Regular\ Nerd\ Font\ Complete.ttf Fira-Code-Regular.ttf 
-ls
-clear
-ls
-play
-ls
-vim curry.js 
-exit
-cd .config/nvim/lua/
-ls
-vim keymaps.lua 
-ls
-mv settings.lua config.lua
-ls
-vim config.lua 
-vim keybindings.lua 
-ls
-touch packer.lua
-vim packer.lua 
-vim keybindings.lua 
-vim config.lua 
-lss
-ls
-rm packer.lua 
-ls
-less config.lua 
-less keybindings.lua 
-ls
-touch packagemanager.lua
-ls
-vim packagemanager.lua 
-vim colorscheme.lua
-ls
-clear
-ls
-mkdir lualine
-ls
-cd lualine/
-ls
-touch init.lua
-ls
-vim init.lua 
-ls
-cd ..
-ls
-mv lualine/ lualine-config
-ls
-cd lualine-config/
-ls
-clear
-ls
-pwd
-ls
-cd ..
-ls
-mv lualine-config/ lualine
-ls
-cd lualine/
-ls
-vim init.lua 
-ls
-cd ..
-ls
-vim packagemanager.lua 
-cd lualine/
-ls
-cd ..
-ls
-cd ..
-ls
-ls plugin/
-cd lua/
-ls
-mv lualine/ lualine-config
-ls
-vim lualine-config/init.lua 
-ls
-cd lualine-config/
-ls
-vim init.lua 
-ls
-cd ..
-ls
-vim packagemanager.lua 
-ls
-mkdir bufferline-config
-cd bufferline-config/
-ls
-vim init.lua
-exit
-cd .config/nvim_bak/
-ls
-less init.vim 
-exit
-cd .config
-ls
-rm -rf nvim
-ls
-mkdir nvim
-ls
-cd nvim
-ls
-touch init.lua
-ls
-vim init.lua 
-ls
-pwd
-ls
-pwd
-ls
-ls plugin/
-vim init.lua 
-ls
-ls plugin/
-vim init.lua 
-ls
-la
-ls plugin/
 cd plugin/
 ls
 vim packer_compiled.lua 
@@ -2026,3 +1897,104 @@ npm update -g
 ls
 cd lua/
 rm -rf toggleterm-config/
+cd .dotfiles/
+ls
+git status
+git add .
+git status
+clear
+git status
+git commit -m "Configure stuff."
+git push
+git status
+clear
+ls
+cd nvim/
+ls
+vim
+ls
+cd ..
+cd nvim/
+ls
+vim
+ls
+vim
+ls
+cp ../.gitignore .
+ls
+vim
+ls
+la
+rm .gitignore 
+ls
+cd ..
+ls
+cd nvim/
+clear
+ls
+pwd
+cd ..
+vim .gitignore 
+vim
+ls
+cd nvim/
+ls
+cd .
+cd ..
+ls
+la
+cd nvim/
+ls
+vim
+ls
+vim
+cd lua/toggleterm-config/
+ls
+vim init.lua 
+vim
+cd ..
+ls
+rm -rf toggleterm-config/
+cd ..
+ls
+vim
+cd ..
+ls
+cd nvim/
+ls
+vim
+clear
+ls
+cd ..
+ls
+git status
+git add .
+git commit -m "Git wrecked."
+git push
+ls
+vim
+ls
+cd nvim/
+ls
+vim
+clear
+ls
+vim
+vim init.lua 
+vim
+vim init.lua 
+goodbye
+301
+ls
+cd 00/
+ls
+cd react-redux/
+ls
+cd src/
+ls
+cd state/
+ls
+cd reducers/
+ls
+vim accountReducer.js 
+exit

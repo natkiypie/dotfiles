@@ -32,4 +32,9 @@ vim.wo.signcolumn = 'yes'
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
-vim.bo.formatoptions = vim.bo.formatoptions:gsub('cro', '')
+
+-- Prevent vim from adding extending comments to new line
+-- vim.bo.formatoptions = vim.bo.formatoptions:gsub('cro', '')
+-- vim.cmd[[set formatoptions-=cro]]
+ vim.api.nvim_command([[set formatoptions-=cro]])
+
