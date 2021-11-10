@@ -7,7 +7,6 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
-  use 'glepnir/dashboard-nvim'
   use 'p00f/nvim-ts-rainbow'
   use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'

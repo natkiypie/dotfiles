@@ -32,14 +32,3 @@ keymap('i', 'jk', '<ESC>', opts)
 
 -- Use keys 'jk' to exit insert mode
 keymap('c', 'jk', '<ESC>', opts)
-
--- TEMP!!!!
--- keymap('n', 'K', '<CMD>lua vim.lsp.buf.hover()<CR>', silent_opts)
--- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.type_definition()<CR>', silent_opts)
--- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.rename()<CR>', silent_opts)
--- keymap('n', '<C-k>', '<CMD>lua vim.lsp.buf.code_action()<CR>', silent_opts)
--- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.references()<CR>', silent_opts)
--- keymap('n', '[d', '<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>', silent_opts)
--- keymap('n', ']d', '<CMD>lua vim.lsp.diagnostic.goto_next()<CR>', silent_opts)
--- keymap('n', '<LEADER>q', '<CMD>lua vim.lsp.diagnostic.set_loclist()<CR>', silent_opts)
--- keymap('n', '<C-n>', '<CMD>lua vim.lsp.buf.formatting()<CR>', silent_opts)

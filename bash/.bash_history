@@ -1,139 +1,3 @@
-vim init.vim 
-exit
-cd .config/nvim
-ls
-cd lua/
-ls
-cd bufferline-config/
-ls
-vim init.lua 
-ls
-vim init.lua 
-cd ..
-ls
-vim bufferline-config/init.lua 
-vim keybindings/init.lua 
-vim configuration/init.lua 
-exit
-ls
-react
-ls
-cd redux/
-ls
-cd t3/
-ls
-code -r .
-play
-ls
-cd cgsr2/
-ls
-vim 07.js 
-code 07.js 
-vim 07.js 
-exit
-sudo apt purge code
-ls
-sudo apt autoremove
-cd .config/
-ls
-rm -rf Code/
-cd ..
-ls
-la
-rm -rf .vscode/
-ls
-which vscode
-find code
-exit
-clear
-ls
-cd .config/nvim
-ls
-vim init.lua 
-ls
-pwd
-mkdir after
-ls
-cd after/
-ls
-mkdir syntax
-ls
-cd syntax/
-ls
-vim js.vim
-mv js.vim javascript.vim
-ls
-vim javascript.vim 
-cd ..
-ls
-cd ..
-ls
-cd after/
-ls
-cd syntax/
-ls
-cp javascript.vim typescript.vim
-ls
-cd ..
-ls
-cd ..
-ls
-clear
-ls
-cd
-clear
-ls
-reboot
-ls
-exit
-clear
-vim
-ls
-cd .config/
-ls
-cd nvim
-ls
-vim init.lua 
-exit
-ls
-cd .config/
-ls
-cd nvim
-ls
-cd lua/
-ls
-clear
-ls
-vim packer-config/init.lua 
-ls
-mkdir nvim-tree-config
-ls
-vim nvim-tree-config/init.lua
-cd nvim-tree-config/
-ls
-vim init.lua 
-nvim
-vim
-ls
-vim init.lua 
-ls
-nvim .
-ls
-nvim .
-vim .
-ls
-vim init.lua 
-vim .
-vim init.lua 
-vim .
-vim init.lua 
-vim .
-ls
-vim init.lua 
-vim .
-ls
-vim init.lua 
-vim ../packer-config/init.lua 
 vim init.lua 
 vim .
 vim init.lua 
@@ -2003,4 +1867,138 @@ ls
 cd functional_helpers/
 ls
 vim helpers.js 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim 
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+vim init.lua 
+ls
+git status
+git add .
+git status
+cd ..
+ls
+mv chrome_bookmarks/ bookmarks
+ls
+git status
+git add .
+git status
+git commit -m "Update nvim and bookmarks."
+git push
+ls
+cd
+clear
+ls
+reboot
+play
+ls
+cd functional_helpers/
+ls
+vim helpers.js 
+exit
+ls
+mkdir lua/dashboard-config
+touch lua/dashboard-config/init.lua
+exit
+ls
+mkdir lua/lspsaga-config
+touch lua/lspsaga-config/init.lua
+exit
+play
+301
+ls
+cd 00
+ls
+cd react-tic-tac-toe/
+ls
+cd src/
+ls
+vim helpers.js 
+exit
+cd lua/comment-config/
+ls
+touch keybindings.lua
+exit
+play
+ls
+301
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+exit
+cd .dotfiles/nvim/
+ls
+vim
+clear
+ls
+vim
+ls
+vim
+ls
+rm lua/dashboard-config/init.lua 
+touch lua/dashboard-config/init.lua 
+ls
+vim
+ls
+rm -rf lua/dashboard-config/
+vim
+ls
+rm -rf lua/lspsaga-config/
+ls
+vim init.lua 
+cd
+clear
+ls
+goodbye
+ls
+exit
+ls
+cd lua/
+ls
+mkdir terminal-config
+touch terminal-config/init.lua
+ls
+exit
+ls
+exit
+ls
+exit
+ks
+ls
+exut
+exit
+top
+ls
+exit
+301
+ls
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+ls
+rm -rf lua/terminal-config/
+vim
+ls
+clear
+ls
+vim
+vim init.lua 
+vim
+exit
+cd .dotfiles/
+ls
+git status
 exit
