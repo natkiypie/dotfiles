@@ -59,10 +59,8 @@ fi
 PS1=""
 # Remove /snap/bin from PATH environment
 PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
-# Add /home/natkiypie/.scripts to PATH environment
-PATH=$PATH:/home/natkiypie/.scripts && export PATH
-# Add /home/natkiypie/.scripts/.init to PATH environment
-PATH=$PATH:/home/natkiypie/.scripts/.init && export PATH
+# Include initialization scripts in path
+PATH=$PATH:/home/natkiypie/.config/scripts/initialization && export PATH
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

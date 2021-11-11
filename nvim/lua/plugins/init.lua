@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     },
     config = function()
-      require('gitsigns').setup{ current_line_blame = true }
+      require('gitsigns').setup()
     end
   }
   if PACKER_BOOTSTRAP then

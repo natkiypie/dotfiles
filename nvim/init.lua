@@ -9,4 +9,3 @@ require('bufferline-config')
 require('autopairs-config')
 require('blankline-config')
 require('lsp-config')
-

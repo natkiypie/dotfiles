@@ -2,6 +2,7 @@
 -- Global
 -- set map leader key
 vim.g.mapleader = ' '
+vim.cmd[[highlight Pmenu guibg=none]]
 
 -- OPTIONS
 -- Global
@@ -15,6 +16,8 @@ vim.go.mouse = 'a'
 vim.go.timeoutlen = 200
 -- remove statusline
 vim.go.laststatus = 0
+-- set transparency for popup menus
+vim.go.pumblend = 30
 
 -- Window
 -- set line numbers

@@ -1,129 +1,3 @@
-npm install -g tree-sitter
-ncu
-npm list -g
-npm update -g
-npm audit fix
-npm audit fix -g
-ls
-npm update -g
-npm install npm@latest -g
-npm outdated -g
-ls
-npm outdated -g --depth=0
-exit
-npm i -g tree-sitter-cli
-exit
-top
-ls
-exit
-play
-ls
-cd functional_helpers/
-ls
-vim helpers.js 
-cd
-ls
-vim .bashrc 
-ls
-play
-ls
-cd functional_helpers/
-ls
-vim helpers.js 
-vim temp.html
-vim helpers.js 
-ls
-vimall
-ls
-vim helpers.js 
-vimall
-vim helpers.js 
-vim helpers.js
-vim gameReducer.js 
-vim helpers.js 
-ls
-vim temp.html
-ls
-vim temp.css
-npm i -g vscode-langservers-extracted
-ls
-vim temp.html
-vim temp.css
-npm install -g typescript typescript-language-server
-ls
-clear
-ls
-vim helpers.js 
-ls
-vim temp.css
-ls
-vimall
-ls
-vim -p .
-ls
-vim -p*
-vim -p *
-vim "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab=true" -p *
-vim "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab" -p *
-vim -p * "+set shiftwidth=2" "+set softtabstop=2" "+set expandtab"
-vim -p .
-vim "--cmd set shiftwidth=2" "--cmd set softtabstop=2" "--cmd set expandtab=true" -p *
-vim -p * "--cmd set shiftwidth=2"
-vim --cmdx set shiftwidth=2 -p *
-vim -p * "--cmdset shiftwidth=2"
-vim -p * --cmd "set shiftwidth=2"
-vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab=true" -p *
-vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab" -p *
-clear
-ls
-exit
-man vim
-exit
-play
-ls
-cd functional_helpers/
-ls
-vimall
-exit
-vim temp
-exit
-cd .dotfiles/
-ls
-cd nvim/
-ls
-cd lua/
-ls
-mkdir test
-ls
-rm -rf test/
-ls
-clear
-ls
-pwd
-cd ..
-ls
-ls after/
-ls after/syntax/
-ls
-cd after/
-ls
-vim syntax/
-cd syntax/
-ls
-vim typescript.vim 
-cd ..
-ls
-cd ..
-ls
-clear
-ls
-pwd
-ls
-vim init.lua 
-vim lua/packer-config/init.lua 
-ls
-vim init.lua 
-pwd
 vim init.lua 
 cd ..
 ls
@@ -1997,4 +1871,140 @@ ls
 clear
 reboot
 settings
+exit
+cd .dotfiles/i3/
+ls
+tail config
+vim config
+ls
+cd ..
+ls
+git status
+git branch
+git add .
+git status
+git commit -m 
+git commit -m "Update plugins & configs."
+git status
+git push
+updatecc 
+exit
+cd /usr/share/xfce4/backdrops/
+ls
+pwd
+exit
+cd .scripts/
+ls
+clear
+ls
+less ex_mon_on.sh 
+xdpyinfo | grep 'dimensions:'
+ls
+cd .init/
+ls
+vim ex_mon_only_on.sh 
+ex_mon_only_on.sh 
+exit
+vim
+ls
+cd nkp/
+ls
+cd ..
+ls
+cd nkp/
+ls
+cd
+ls
+vim
+ls
+la
+cd .dotfiles/
+ls
+cd b
+cd bash/
+ls
+la
+vim .bash_aliases 
+vim .bashrc 
+exit
+ls
+cd .config/
+la
+cp -r ../.scripts/ .
+ls
+la
+mv .scripts/ scripts
+ls
+exit
+ls
+echo $PATH
+echo $PATH | less
+ls
+cd .dotfiles/
+ls
+cd bash/
+ls
+vim .bashrc
+exit
+cd /home/natkiypie/.config/
+ls
+la
+pwd
+cd scripts/
+ls
+clear
+pwd
+exit
+ls
+cd .config/scripts/
+ls
+cd .init/
+ls
+pwd
+ls
+cd ..
+ls
+mv .init/ init
+ls
+mv init initialization
+ls
+cd initialization/
+pwd
+exit
+ls
+cd .dotfiles/
+ls
+echo $PATH | less
+ls
+cd bash/
+vim .bashrc
+exit
+cd .dotfiles/
+ls
+cd nvim/
+ls
+vim
+exit
+ls
+cd lua/
+ls
+cd keybindings/
+ls
+cd utils/
+ls
+cp close.lua set_keys.lua
+ls
+exit
+cd lua/
+la
+exit
+play
+cd functional_helpers/
+ls
+vim helpers.js 
+301
+ls
+cd 00/react-tic-tac-toe/src/
+ls
+vim helpers.js 
 exit
