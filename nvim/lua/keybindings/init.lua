@@ -14,8 +14,7 @@ keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
 
 -- Close all floating windows & delete buffer
 -- use with auto hover docs
--- keymap('n', '<C-q>', '<CMD>lua require"keybindings.utils.close".close_float_win()<CR>', silent_opts)
-keymap('n', '<C-q>', '<CMD>bd<CR>', silent_opts)
+keymap('n', '<C-q>', '<CMD>lua require"keybindings.utils.close".close_float_win()<CR>', silent_opts)
 
 -- Save all buffers and exit Vim
 keymap('n', 'Q', '<CMD>xa<CR>', opts)
@@ -34,3 +33,9 @@ keymap('i', 'jk', '<ESC>', opts)
 
 -- Use keys 'jk' to exit insert mode
 keymap('c', 'jk', '<ESC>', opts)
+
+-- TODO
+-- toggle terminal
+-- toggle mouse on and off
+-- move line down: <CMD>m+1<CR>
+-- move line up: <CMD>m-2<CR>

@@ -1,3 +1,6 @@
+-- local blacklist = {"help"}
+-- local key = vim.bo.filetype
+-- print(blacklist[key] ~= nil )
 local M = {}
 
 function M.close_float_win()
