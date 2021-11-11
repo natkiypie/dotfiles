@@ -1,2 +1,2 @@
 require('codi-config/options')
--- require('codi-config/keybindings')
+require('codi-config/keybindings')

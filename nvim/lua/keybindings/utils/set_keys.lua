@@ -10,9 +10,9 @@
 --   return keys.map(table => table.map({(a,b) => keymap(mode, a, b, opts )}))
 
 
--- local M = {}
--- 
--- function M.set_keys(mode, keys, opts)
--- end
--- 
--- return M
+local M = {}
+
+function M.set_keys(mode, keys, opts)
+end
+
+return M
