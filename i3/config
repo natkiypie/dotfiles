@@ -32,10 +32,10 @@ bindsym $mod+Control+k move up
 bindsym $mod+Control+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mo+Control+Left focus left
-bindsym $mo+Control+Down focus down
-bindsym $mo+Control+Up focus up
-bindsym $mo+Control+Right focus right
+bindsym $mod+Control+Left move left
+bindsym $mod+Control+Down move down
+bindsym $mod+Control+Up move up
+bindsym $mod+Control+Right move right
 
 # switch focused window
 bindsym $mod+j focus down
@@ -135,3 +135,9 @@ exec --no-startup-id synergy
 #Border Size
 default_border pixel 1
 hide_edge_borders smart
+
+# load compositor for transparency
+# exec --no-startup-id compton
+# exec --no-startup-id compton --config ./compton.conf
+# exec --no-startup-id compton
+exec compton

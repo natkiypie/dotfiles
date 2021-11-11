@@ -1,3 +1,6 @@
+-- Source: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/completion.lua
+-- local is_wsl = vim.env.USER == "natkiypie"
+
 -- Sources:
 -- https://github.com/hrsh7th/nvim-cmp
 -- https://youtu.be/5lPA8LpMytI
@@ -29,6 +32,9 @@ cmp.setup({
   --     require'snippy'.expand_snippet(args.body) -- For `snippy` users.
   --   end,
   -- },
+  documentation = {
+    border = { '┌', '─', '┐', '│', '┘', '─', '└', '│'},
+  },
   mapping = {
 
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -45,6 +51,7 @@ cmp.setup({
     }),
 
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<C>'] = cmp.mapping
 
     -- Source: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
     ["<Tab>"] = cmp.mapping(function(fallback)
@@ -72,9 +79,29 @@ cmp.setup({
   }),
 
   -- Source: https://github.com/onsails/lspkind-nvim
-  formatting = {
-    -- format = lspkind.cmp_format({with_text = false, maxwidth = 50})
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
- },
+ --  formatting = {
+ --    -- format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+ --    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
+ -- },
+   formatting = {
+     format = lspkind.cmp_format {
+       with_text = true,
+       menu = {
+         buffer = "[buf]",
+         nvim_lsp = "[LSP]",
+         nvim_lua = "[api]",
+         path = "[path]",
+         -- luasnip = "[snip]",
+         -- gh_issues = "[issues]",
+         -- tn = "[TabNine]",
+       },
+     },
+   },
+
+   -- Source: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/completion.lua
+  --  experimental = {
+  --    native_menu = false,
+  --    ghost_text = not is_wsl,
+  -- },
 
 })

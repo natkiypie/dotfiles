@@ -12,14 +12,16 @@ keymap('n', 'k', 'gk', opts)
 -- Save & source file
 keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
 
--- Delete buffer
-keymap('n', '<C-q>', '<CMD>bd<CR>', opts)
+-- Close all floating windows & delete buffer
+-- use with auto hover docs
+-- keymap('n', '<C-q>', '<CMD>lua require"keybindings.utils.close".close_float_win()<CR>', silent_opts)
+keymap('n', '<C-q>', '<CMD>bd<CR>', silent_opts)
 
 -- Save all buffers and exit Vim
 keymap('n', 'Q', '<CMD>xa<CR>', opts)
 
 -- Temporarily show file path in status bar
-keymap('n', '<LEADER>p', '<CMD>echo expand("%:p")<CR>', silent_opts)
+keymap('n', '<C-p>', '<CMD>echo expand("%:p")<CR>', silent_opts)
 
 -- Switch between split windows
 keymap('n', '<C-h>', '<C-w>h', opts)

@@ -4,7 +4,6 @@
 vim.g.mapleader = ' '
 
 -- OPTIONS
-
 -- Global
 -- enable lazy redraw
 vim.go.lazyredraw = true
@@ -14,6 +13,8 @@ vim.go.hlsearch = false
 vim.go.mouse = 'a'
 -- set milliseconds to wait for a mapped sequence to complete
 vim.go.timeoutlen = 200
+-- remove statusline
+vim.go.laststatus = 0
 
 -- Window
 -- set line numbers

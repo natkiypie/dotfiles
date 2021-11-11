@@ -100,11 +100,6 @@ _G.packer_plugins = {
     path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
