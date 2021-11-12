@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'metakirby5/codi.vim'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }

@@ -18,6 +18,7 @@ vim.go.timeoutlen = 200
 vim.go.laststatus = 0
 -- set transparency for popup menus
 vim.go.pumblend = 30
+-- vim.go.winblend = 30
 
 -- Window
 -- set line numbers

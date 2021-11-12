@@ -59,6 +59,8 @@ fi
 PS1=""
 # Remove /snap/bin from PATH environment
 PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
+# Include custom scripts in path
+PATH=$PATH:/home/natkiypie/.config/scripts && export PATH
 # Include initialization scripts in path
 PATH=$PATH:/home/natkiypie/.config/scripts/initialization && export PATH
 # nvm
@@ -75,5 +77,6 @@ PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && exp
 # run startup script
 on_open.sh
 
+# for lua language server
 alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake
 

@@ -36,7 +36,5 @@ keymap('i', 'jk', '<ESC>', opts)
 keymap('c', 'jk', '<ESC>', opts)
 
 -- TODO
--- toggle terminal
--- toggle mouse on and off
 -- move line down: <CMD>m+1<CR>
 -- move line up: <CMD>m-2<CR>

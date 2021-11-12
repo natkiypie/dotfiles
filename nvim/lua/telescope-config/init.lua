@@ -1,4 +1,5 @@
 require('telescope-config/keybindings')
+require('telescope-config/options')
 local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {

@@ -8,5 +8,6 @@ require('colors')
 require('bufferline-config')
 require('autopairs-config')
 require('blankline-config')
-require('codi-config')
 require('lsp-config')
+-- Temp - open telescope when entering vim in workspace
+vim.cmd('autocmd VimEnter * Telescope find_files')
