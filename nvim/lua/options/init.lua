@@ -2,7 +2,6 @@
 -- Global
 -- set map leader key
 vim.g.mapleader = ' '
-vim.cmd[[highlight Pmenu guibg=none]]
 
 -- OPTIONS
 -- Global

@@ -9,5 +9,7 @@ require('bufferline-config')
 require('autopairs-config')
 require('blankline-config')
 require('lsp-config')
--- Temp - open telescope when entering vim in workspace
-vim.cmd('autocmd VimEnter * Telescope find_files')
+
+-- If no file is passed to vim, open telescope find files picker
+-- Note: I'm sure there's a better place to put this. Baby steps.
+vim.cmd([[autocmd VimEnter * if empty(bufname()) == 1 | call nvim_command('Telescope find_files') | endif]])
