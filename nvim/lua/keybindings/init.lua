@@ -9,8 +9,10 @@ local silent_opts = { noremap = true, silent = true }
 keymap('n', 'j', 'gj', opts)
 keymap('n', 'k', 'gk', opts)
 
--- Save & source file
+-- Save & Source file
 keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
+-- Source file
+keymap('n', '<C-s>', '<CMD>so %<CR>', opts)
 
 -- Close all floating windows & delete buffer
 -- use with auto hover docs
@@ -34,11 +36,17 @@ keymap('n', '<C-J>', '<CMD>m+1<CR>', opts)
 -- move current line up
 keymap('n', '<C-K>', '<CMD>m-2<CR>', opts)
 
+-- UNTIL I MAKE A TOGGLE UTIL FUNCTION
+-- enable mouse
+keymap('n', '<C-M>', '<CMD>set mouse="a"<CR>', opts)
+-- disable mouse
+keymap('n', '<C-M>', '<CMD>set mouse=""<CR>', opts)
+
 -- Use keys 'jk' to exit insert mode
 keymap('i', 'jk', '<ESC>', opts)
 
 -- Use keys 'jk' to exit insert mode
-keymap('c', 'jk', '<ESC>', opts)
+keymap('c', 'jk', '<ESC>', silent_opts)
 
 -- Open terminal
 keymap('n', '<C-t>', '<CMD>terminal<CR>', opts)

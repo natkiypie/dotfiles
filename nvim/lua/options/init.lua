@@ -1,38 +1,35 @@
 -- VARIABLES:
--- Global
--- set map leader key
+
+-- Set map leader key
 vim.g.mapleader = ' '
 
 -- OPTIONS
--- Global
--- enable lazy redraw
+
+-- Enable lazy redraw
 vim.go.lazyredraw = true
--- disable search highlighting
+-- Disable search highlighting
 vim.go.hlsearch = false
--- enable clickable buffer tabs
+-- Enable clickable buffer tabs
 vim.go.mouse = 'a'
--- set milliseconds to wait for a mapped sequence to complete
+-- Set milliseconds to wait for a mapped sequence to complete
 vim.go.timeoutlen = 200
--- remove statusline
+-- Remove statusline
 vim.go.laststatus = 0
--- set transparency for popup menus
+-- Set transparency for popup menus
 vim.go.pumblend = 30
 -- vim.go.winblend = 30
 
--- Window
--- set line numbers
+-- Set line numbers
 vim.wo.number = true
--- set relative line numbers
+-- Set relative line numbers
 vim.wo.relativenumber = true
--- highlight cursor row
+-- Highlight cursor row
 vim.wo.cursorline = true
--- highlight cursor column
+-- Highlight cursor column
 vim.wo.cursorcolumn = true
--- text does not move if errors or diagnostics
+-- Text does not move if errors or diagnostics
 vim.wo.signcolumn = 'yes'
-
--- Buffer
--- set tabs to spaces
-vim.bo.expandtab = true
-vim.bo.shiftwidth = 2
+-- Set tabs to spaces
 vim.bo.softtabstop = 2
+vim.bo.shiftwidth = 2
+vim.bo.expandtab = true

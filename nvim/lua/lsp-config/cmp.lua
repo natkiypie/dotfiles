@@ -51,7 +51,6 @@ cmp.setup({
     }),
 
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    -- ['<C>'] = cmp.mapping
 
     -- Source: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
     ["<Tab>"] = cmp.mapping(function(fallback)
