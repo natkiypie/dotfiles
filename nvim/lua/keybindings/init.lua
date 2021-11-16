@@ -39,8 +39,9 @@ keymap('n', '<C-K>', '<CMD>m-2<CR>', opts)
 -- UNTIL I MAKE A TOGGLE UTIL FUNCTION
 -- enable mouse
 keymap('n', '<C-M>', '<CMD>set mouse="a"<CR>', opts)
+
 -- disable mouse
-keymap('n', '<C-M>', '<CMD>set mouse=""<CR>', opts)
+keymap('n', '<C-m>', '<CMD>set mouse=""<CR>', opts)
 
 -- Use keys 'jk' to exit insert mode
 keymap('i', 'jk', '<ESC>', opts)
