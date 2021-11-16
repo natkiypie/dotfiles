@@ -137,7 +137,4 @@ default_border pixel 1
 hide_edge_borders smart
 
 # load compositor for transparency
-# exec --no-startup-id compton
-# exec --no-startup-id compton --config ./compton.conf
-# exec --no-startup-id compton
 exec compton

@@ -4,6 +4,7 @@ local silent_opts = { noremap = true, silent = true }
 
 -- Remove key mapping for spacebar
 -- keymap('n', '<SPACE>', '<Nop>', silent_opts)
+keymap('n', '<C-T>', '<Nop>', silent_opts)
 
 -- Disable wrapped line skips during vertical navigation
 keymap('n', 'j', 'gj', opts)
@@ -14,8 +15,7 @@ keymap('n', '<C-w>', '<CMD>w | so %<CR>', opts)
 -- Source file
 keymap('n', '<C-s>', '<CMD>so %<CR>', opts)
 
--- Close all floating windows & delete buffer
--- use with auto hover docs
+-- Close all floating windows & delete buffer (use with auto hover docs)
 -- keymap('n', '<C-q>', '<CMD>lua require"keybindings.utils.close".close_float_win()<CR>', silent_opts)
 keymap('n', '<C-q>', '<CMD>bd!<CR>', silent_opts)
 
@@ -48,9 +48,3 @@ keymap('i', 'jk', '<ESC>', opts)
 
 -- Use keys 'jk' to exit insert mode
 keymap('c', 'jk', '<ESC>', silent_opts)
-
--- Open terminal
-keymap('n', '<C-t>', '<CMD>terminal<CR>', opts)
-
--- Leave terminal
-keymap('t', '<C-t>', '<C-\\><C-n>', silent_opts)

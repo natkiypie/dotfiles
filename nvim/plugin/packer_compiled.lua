@@ -159,6 +159,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-floaterm"] = {
+    loaded = true,
+    path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/vim-floaterm",
+    url = "https://github.com/voldikss/vim-floaterm"
   }
 }
 

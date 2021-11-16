@@ -19,8 +19,7 @@ vim.go.timeoutlen = 200
 -- Remove statusline
 vim.go.laststatus = 0
 
--- Set transparency for popup menus
--- for nvim-cmp autocomplete menu
+-- Set transparency for popup menus (for nvim-cmp autocomplete menu)
 vim.go.pumblend = 30
 
 -- Set line numbers
