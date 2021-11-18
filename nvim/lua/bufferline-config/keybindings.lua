@@ -1,7 +1,8 @@
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local K = require('util.init')
 
-keymap('n', '<TAB>', '<CMD>BufferLineCycleNext<CR>', opts)
-keymap('n', '<S-TAB>', '<CMD>BufferLineCyclePrev<CR>', opts)
-keymap('n', '<LEADER><TAB>', '<CMD>BufferLineMoveNext<CR>', opts)
-keymap('n', '<LEADER><S-TAB>', '<CMD>BufferLineMovePrev<CR>', opts)
+K.bind_normal_mode({
+  {'<TAB>', '<CMD>BufferLineCycleNext<CR>'},
+  {'<S-TAB>', '<CMD>BufferLineCyclePrev<CR>'},
+  {'<LEADER><TAB>', '<CMD>BufferLineMoveNext<CR>'},
+  {'<LEADER><S-TAB>', '<CMD>BufferLineMovePrev<CR>'}
+})

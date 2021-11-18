@@ -1,6 +1,6 @@
 require('plugins')
-require('keybindings')
 require('options')
+require('keybindings')
 require('treesitter-config')
 require('telescope-config')
 require('comment-config')
