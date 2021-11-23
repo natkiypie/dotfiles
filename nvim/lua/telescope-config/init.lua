@@ -25,7 +25,7 @@ require('telescope').setup {
     path_display = {},
     border = {},
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    color_devicons = false,
+    color_devicons = true,
     set_env = {['COLORTERM'] = 'truecolor'},
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -35,16 +35,62 @@ require('telescope').setup {
         i = {
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
+            ["<CR>"] = actions.select_default + actions.center,
+            ["L"] = actions.select_default + actions.center,
             ["<C-q>"] = actions.close,
             ["<esc>"] = actions.close,
-            ["<CR>"] = actions.select_default + actions.center,
-            ["<Tab>"] = actions.select_default + actions.center
+            ["<Tab>"] = false
         },
         n = {
-            ["<C-q>"] = actions.close,
+            ["l"] = actions.select_default + actions.center,
+            ["<esc>"] = actions.close,
             ["q"] = actions.close,
-            ["<Tab>"] = actions.select_default + actions.center
+            ["<Tab>"] = false
         }
     },
-  }
+  },
+
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      },
+      layout_config = {
+        height = 0.65,
+      },
+    },
+    live_grep = {
+      theme = "dropdown",
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      },
+    },
+    oldfiles = {
+      prompt_title = "History",
+      initial_mode = "normal",
+      theme = "dropdown",
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      },
+      layout_config = {
+        height = 0.65,
+      },
+    },
+  },
 }

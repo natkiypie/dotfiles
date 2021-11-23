@@ -27,11 +27,6 @@ vim.wo.number = true
 
 -- Set relative line numbers
 vim.wo.relativenumber = true
--- Highlight cursor row
--- vim.wo.cursorline = true
-
--- Highlight cursor column
--- vim.wo.cursorcolumn = true
 
 -- Text does not move if errors or diagnostics
 vim.wo.signcolumn = 'yes'

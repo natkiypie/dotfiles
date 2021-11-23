@@ -7,22 +7,26 @@ K.bind_normal_mode({
   -- Save & Source file
   {'<C-w>', '<CMD>w | so %<CR>'},
   -- Close all floating windows & delete buffer
-  {'<C-q>', '<CMD>lua require"util.init".close_float_win()<CR>'},
+  {'q', '<CMD>lua require"util.init".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
-  {'Q', '<CMD>q<CR>'},
+  {'<C-q>', '<CMD>q<CR>'},
+  -- Remove keybinding for shit+q
+  {'Q', '<Nop>'},
   -- Toggle mouse
   {'<C-m>', '<CMD>lua require"util.init".toggle("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
   {'<C-p>', '<CMD>lua require"util.init".toggle_path()<CR>'},
   -- Split window vertically right
   {'<Leader>v', '<CMD>vsp<CR>'},
-  -- Switch between split windows
+  -- Split navigation
+  {'<Left>', '<C-w>h'},
+  {'<Right>', '<C-w>l'},
+  {'<Up>', '<C-w>k'},
+  {'<Down>', '<C-w>j'},
   {'<C-h>', '<C-w>h'},
   {'<C-l>', '<C-w>l'},
-  -- move current line down
-  {'<C-j>', '<CMD>m+1<CR>'},
-  -- move current line up
-  {'<C-k>', '<CMD>m-2<CR>'},
+  {'<C-k>', '<C-w>k'},
+  {'<C-j>', '<C-w>j'},
 })
 
 K.bind_insert_mode({

@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  chadtree = {
+    loaded = true,
+    path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/chadtree",
+    url = "https://github.com/ms-jpq/chadtree"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/natkiypie/.local/share/nvim/site/pack/packer/start/cmp-buffer",
