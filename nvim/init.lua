@@ -1,4 +1,4 @@
-require('plugins')
+require('packer-config')
 require('options')
 require('keybindings')
 require('treesitter-config')

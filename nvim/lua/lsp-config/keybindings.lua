@@ -1,4 +1,4 @@
-local K = require('util.init')
+local K = require('utils.init')
 
 K.bind_normal_mode({
   -- Show hover docs
