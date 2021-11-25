@@ -13,7 +13,6 @@ K.bind_normal_mode({
   -- Remove keybinding for shit+q
   {'Q', '<Nop>'},
   -- Toggle mouse
-  -- {'<C-m>', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
   {'<C-m>', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
   {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},

@@ -4,12 +4,7 @@ require("bufferline").setup({
     enforce_regular_tabs = true,
     separator_style = {'', ''},
     close_icon = '',
-    diagnostics = "nvim_lsp",
-  },
-  highlights = {
-    indicator_selected = {
-      guifg = '#fff',
-    }
+    indicator_icon = '',
   },
 })
 

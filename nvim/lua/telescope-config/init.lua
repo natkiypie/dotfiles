@@ -1,13 +1,15 @@
 require('telescope-config/keybindings')
 require('telescope-config/options')
+
 local actions = require('telescope.actions')
+
 require('telescope').setup {
   defaults = {
     layout_config = {
       width = 0.5,
       height = 0.75,
       prompt_position = "top",
-      preview_cutoff = 500,
+      preview_cutoff = 100,
       horizontal = {mirror = false},
       vertical = {mirror = false},
     },
@@ -33,25 +35,26 @@ require('telescope').setup {
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
     mappings = {
         i = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<CR>"] = actions.select_default + actions.center,
+            ["<Tab>"] = false,
+            ["J"] = actions.move_selection_next,
+            ["K"] = actions.move_selection_previous,
             ["L"] = actions.select_default + actions.center,
-            ["<C-q>"] = actions.close,
+            ["Q"] = actions.close,
             ["<esc>"] = actions.close,
-            ["<Tab>"] = false
         },
         n = {
+            ["<Tab>"] = false,
             ["l"] = actions.select_default + actions.center,
-            ["<esc>"] = actions.close,
+            -- ["h"] = actions.select_default + actions.center,
             ["q"] = actions.close,
-            ["<Tab>"] = false
+            ["<esc>"] = actions.close,
         }
     },
   },
 
   pickers = {
     find_files = {
+      initial_mode = "insert",
       theme = "dropdown",
       previewer = false,
       border = {},
@@ -63,6 +66,17 @@ require('telescope').setup {
       },
       layout_config = {
         height = 0.65,
+      },
+    },
+    file_browser = {
+      theme = "dropdown",
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
     },
     live_grep = {
@@ -78,7 +92,6 @@ require('telescope').setup {
     },
     oldfiles = {
       prompt_title = "History",
-      initial_mode = "normal",
       theme = "dropdown",
       previewer = false,
       border = {},
