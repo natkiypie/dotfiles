@@ -19,8 +19,8 @@ K.bind_normal_mode({
   -- Split window vertically right
   {'<Leader>v', '<CMD>vsp<CR>'},
   -- Buffer navigation
-  {'<S-l>', '<CMD>bn<CR>gg0'},
-  {'<S-h>', '<CMD>bn<CR>gg0'},
+  {'<S-l>', '<CMD>bn<CR>'},
+  {'<S-h>', '<CMD>bn<CR>'},
   -- Show open buffers
   {'<C-b>', ':buffers<CR>:buffer<Space>'},
   -- Split navigation

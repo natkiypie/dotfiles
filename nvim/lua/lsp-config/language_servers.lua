@@ -26,7 +26,6 @@ table.insert(runtime_path, "lua/?/init.lua")
 local langservers = {
   'html',
   'cssls',
-  'tsserver',
   'sumneko_lua'
 }
 
