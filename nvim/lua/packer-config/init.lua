@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'voldikss/vim-floaterm'
+  use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -25,10 +26,6 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
-  }
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons'
   }
   use {
     'lewis6991/gitsigns.nvim',

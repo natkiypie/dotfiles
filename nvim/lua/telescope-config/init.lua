@@ -36,6 +36,7 @@ require('telescope').setup {
     mappings = {
         i = {
             ["<Tab>"] = false,
+            ["<C-q>"] = false,
             ["J"] = actions.move_selection_next,
             ["K"] = actions.move_selection_previous,
             ["L"] = actions.select_default + actions.center,
@@ -66,6 +67,17 @@ require('telescope').setup {
       },
       layout_config = {
         height = 0.65,
+      },
+    },
+    buffers = {
+      theme = "dropdown",
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
+        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
     },
     file_browser = {

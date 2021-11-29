@@ -9,7 +9,7 @@ K.bind_normal_mode({
   -- Close all floating windows & delete buffer
   {'q', '<CMD>lua require"utils.init".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
-  {'<C-q>', '<CMD>q<CR>'},
+  {'<C-q>', '<CMD>wq<CR>'},
   -- Remove keybinding for shit+q
   {'Q', '<Nop>'},
   -- Toggle mouse
@@ -18,15 +18,20 @@ K.bind_normal_mode({
   {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},
   -- Split window vertically right
   {'<Leader>v', '<CMD>vsp<CR>'},
+  -- Buffer navigation
+  {'<S-l>', '<CMD>bn<CR>gg0'},
+  {'<S-h>', '<CMD>bn<CR>gg0'},
+  -- Show open buffers
+  {'<C-b>', ':buffers<CR>:buffer<Space>'},
   -- Split navigation
-  {'<Left>', '<C-w>h'},
-  {'<Right>', '<C-w>l'},
-  {'<Up>', '<C-w>k'},
-  {'<Down>', '<C-w>j'},
   {'<C-h>', '<C-w>h'},
   {'<C-l>', '<C-w>l'},
   {'<C-k>', '<C-w>k'},
   {'<C-j>', '<C-w>j'},
+  {'<Left>', '<C-w>h'},
+  {'<Right>', '<C-w>l'},
+  {'<Up>', '<C-w>k'},
+  {'<Down>', '<C-w>j'},
 })
 
 K.bind_insert_mode({
