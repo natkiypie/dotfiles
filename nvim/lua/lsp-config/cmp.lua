@@ -22,8 +22,8 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ['L'] = cmp.mapping.confirm({ select = true }),
-    ['J'] = cmp.mapping(function(fallback)
+    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-j>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif has_words_before() then
@@ -33,7 +33,7 @@ cmp.setup({
       end
     end, { "i", "s" }),
 
-    ['K'] = cmp.mapping(function()
+    ['<C-k>'] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
       end
