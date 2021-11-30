@@ -5,4 +5,5 @@ vim.cmd[[
   hi TelescopePromptTitle ctermfg=234
   hi TelescopeResultsTitle ctermfg=234
   hi TelescopePreviewTitle ctermfg=234
+  hi TelescopeSelection guibg=blue
 ]]

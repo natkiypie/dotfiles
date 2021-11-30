@@ -27,7 +27,7 @@ require('telescope').setup {
     path_display = {},
     border = {},
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    color_devicons = true,
+    color_devicons = false,
     set_env = {['COLORTERM'] = 'truecolor'},
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,

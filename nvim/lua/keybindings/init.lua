@@ -22,7 +22,7 @@ K.bind_normal_mode({
   {'<S-l>', '<CMD>bn<CR>'},
   {'<S-h>', '<CMD>bn<CR>'},
   -- Show open buffers
-  {'<C-b>', ':buffers<CR>:buffer<Space>'},
+  {'<C-b>', '<CMD>buffers<CR>'},
   -- Split navigation
   {'<C-h>', '<C-w>h'},
   {'<C-l>', '<C-w>l'},

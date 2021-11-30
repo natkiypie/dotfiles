@@ -5,6 +5,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
+  use 'ThePrimeagen/vim-be-good'
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use 'p00f/nvim-ts-rainbow'
