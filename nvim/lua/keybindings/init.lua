@@ -9,7 +9,7 @@ K.bind_normal_mode({
   -- Close all floating windows & delete buffer
   {'q', '<CMD>lua require"utils.init".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
-  {'<C-q>', '<CMD>wq<CR>'},
+  {'<C-q>', '<CMD>wqa<CR>'},
   -- Remove keybinding for shit+q
   {'Q', '<Nop>'},
   -- -- Toggle mouse
