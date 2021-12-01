@@ -10,9 +10,8 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit lua/lsp-config/language_servers.lua
+edit init.lua
 argglobal
-balt lua/lsp-config/language_servers.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -23,15 +22,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 14 - ((13 * winheight(0) + 21) / 42)
+let s:l = 4 - ((3 * winheight(0) + 21) / 42)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 14
+keepjumps 4
 normal! 0
 if exists(':tcd') == 2 | tcd ~/.dotfiles/config/.config/nvim | endif
 tabnext 1
-badd +0 ~/.dotfiles/config/.config/nvim/lua/lsp-config/language_servers.lua
+badd +1 ~/.dotfiles/config/.config/nvim/init.lua
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
