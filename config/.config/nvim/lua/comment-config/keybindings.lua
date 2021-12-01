@@ -1,4 +1,4 @@
 vim.cmd[[
-  nnoremap <C-_> :CommentToggle<CR>
-  vnoremap <C-_> :CommentToggle<CR>
+  nnoremap <silent><C-_> :CommentToggle<CR>
+  vnoremap <silent><C-_> :CommentToggle<CR>
 ]]
