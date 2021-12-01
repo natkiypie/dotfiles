@@ -76,9 +76,10 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # STEAM
 # Add /home/natkiypie/.steam/root/steamapps/common/Aseprite to PATH environment
 PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
+# command to make directory and file
+mkf() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }
 # run startup script
 on_open.sh
 
 # for lua language server
 alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake
-
