@@ -3,9 +3,11 @@ alias logout='pkill -KILL -u natkiypie'
 # open all files in current directory with vim text editor
 alias vimall='vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab" -p *'
 # open nvim dotfiles in editor -- temp
-alias n='cd ~/.dotfiles/nvim ; vim'
+alias n='cd ~/.dotfiles/config/.config/nvim ; vim'
 # shorthand for nvim
 alias v='vim'
+# shortcut to dot files
+alias dot='cd ~/.dotfiles'
 # alias xdg-open to open.
 alias open='xdg-open'
 # take screenshot
