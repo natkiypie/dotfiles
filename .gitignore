@@ -1,5 +1,6 @@
 nvim/language-servers/
 nvim/plugin/packer_compiled.lua
 nvim/.todo
+nvim/sessions
 bash/.bash_history
 bash/.bash_logout
