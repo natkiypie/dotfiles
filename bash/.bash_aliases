@@ -4,6 +4,8 @@ alias logout='pkill -KILL -u natkiypie'
 alias vimall='vim --cmd "set shiftwidth=2" --cmd "set softtabstop=2" --cmd "set expandtab" -p *'
 # open nvim dotfiles in editor -- temp
 alias n='cd ~/.dotfiles/nvim ; vim'
+# shorthand for nvim
+alias v='vim'
 # alias xdg-open to open.
 alias open='xdg-open'
 # take screenshot

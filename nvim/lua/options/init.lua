@@ -13,17 +13,8 @@ vim.go.hlsearch = false
 -- Set milliseconds to wait for a mapped sequence to complete
 vim.go.timeoutlen = 200
 
--- Statusline
-vim.cmd[[
-  set laststatus=2
-  set statusline=
-  set statusline+=%f
-  set statusline+=%h%m%r%w
-  set statusline+=%=
-  set statusline+=%-6n
-  set statusline+=\%-7{strlen(&ft)?&ft:'none'}
-  set statusline+=%-8(%l,%c%V%)
-]]
+-- Hide statusline
+vim.go.laststatus = 0
 
 -- Set transparency for popup menus (for nvim-cmp autocomplete menu)
 vim.go.pumblend = 30

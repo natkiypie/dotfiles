@@ -20,7 +20,7 @@ K.bind_normal_mode({
   {'<Leader>v', '<CMD>vsp<CR>'},
   -- Buffer navigation
   {'<S-l>', '<CMD>bn<CR>'},
-  {'<S-h>', '<CMD>bn<CR>'},
+  {'<S-h>', '<CMD>bp<CR>'},
   -- Split navigation
   {'<', '<C-w>h'},
   {'>', '<C-w>l'},
