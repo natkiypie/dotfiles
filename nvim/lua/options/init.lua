@@ -10,14 +10,20 @@ vim.go.lazyredraw = true
 -- Disable search highlighting
 vim.go.hlsearch = false
 
--- Enable clickable buffer tabs
-vim.go.mouse = 'a'
-
 -- Set milliseconds to wait for a mapped sequence to complete
 vim.go.timeoutlen = 200
 
--- Remove statusline
-vim.go.laststatus = 0
+-- Statusline
+vim.cmd[[
+  set laststatus=2
+  set statusline=
+  set statusline+=%f
+  set statusline+=%h%m%r%w
+  set statusline+=%=
+  set statusline+=%-6n
+  set statusline+=\%-7{strlen(&ft)?&ft:'none'}
+  set statusline+=%-8(%l,%c%V%)
+]]
 
 -- Set transparency for popup menus (for nvim-cmp autocomplete menu)
 vim.go.pumblend = 30

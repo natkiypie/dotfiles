@@ -35,27 +35,27 @@ require('telescope').setup {
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
     mappings = {
         i = {
-            ["<Tab>"] = false,
-            ["<C-q>"] = false,
             ["J"] = actions.move_selection_next,
             ["K"] = actions.move_selection_previous,
             ["L"] = actions.select_default + actions.center,
             ["Q"] = actions.close,
             ["<esc>"] = actions.close,
+            ["<Tab>"] = false,
+            ["<C-q>"] = false,
         },
         n = {
-            ["<Tab>"] = false,
             ["l"] = actions.select_default + actions.center,
-            -- ["h"] = actions.select_default + actions.center,
             ["q"] = actions.close,
             ["<esc>"] = actions.close,
+            ["<Tab>"] = false,
+            ["<C-q>"] = false,
         }
     },
   },
 
   pickers = {
     find_files = {
-      initial_mode = "insert",
+      prompt_title = "Files",
       theme = "dropdown",
       previewer = false,
       border = {},
@@ -81,6 +81,7 @@ require('telescope').setup {
       },
     },
     file_browser = {
+      prompt_title = "Explorer",
       theme = "dropdown",
       previewer = false,
       border = {},
@@ -92,6 +93,7 @@ require('telescope').setup {
       },
     },
     live_grep = {
+      prompt_title = "Grep",
       theme = "dropdown",
       previewer = false,
       border = {},

@@ -5,7 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  use 'ThePrimeagen/vim-be-good'
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use 'p00f/nvim-ts-rainbow'
@@ -18,6 +17,8 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'windwp/nvim-ts-autotag'
   use 'voldikss/vim-floaterm'
@@ -39,6 +40,10 @@ return require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
+
+  -- Temporary
+  use 'ThePrimeagen/vim-be-good'
+
   if PACKER_BOOTSTRAP then
     require('packer').sync()
   end

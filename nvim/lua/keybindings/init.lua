@@ -12,7 +12,7 @@ K.bind_normal_mode({
   {'<C-q>', '<CMD>wq<CR>'},
   -- Remove keybinding for shit+q
   {'Q', '<Nop>'},
-  -- Toggle mouse
+  -- -- Toggle mouse
   {'<C-m>', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
   {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},
@@ -21,13 +21,9 @@ K.bind_normal_mode({
   -- Buffer navigation
   {'<S-l>', '<CMD>bn<CR>'},
   {'<S-h>', '<CMD>bn<CR>'},
-  -- Show open buffers
-  {'<C-b>', '<CMD>buffers<CR>'},
   -- Split navigation
-  {'<C-h>', '<C-w>h'},
-  {'<C-l>', '<C-w>l'},
-  {'<C-k>', '<C-w>k'},
-  {'<C-j>', '<C-w>j'},
+  {'<', '<C-w>h'},
+  {'>', '<C-w>l'},
   {'<Left>', '<C-w>h'},
   {'<Right>', '<C-w>l'},
   {'<Up>', '<C-w>k'},
