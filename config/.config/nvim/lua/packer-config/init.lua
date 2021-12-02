@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
+  use 'rmagatti/auto-session'
+  use 'rmagatti/session-lens'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -43,7 +45,6 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
-  use 'rmagatti/auto-session'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

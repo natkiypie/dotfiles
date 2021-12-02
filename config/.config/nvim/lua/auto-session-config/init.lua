@@ -5,7 +5,11 @@ local opts = {
   auto_session_enabled = true,
   auto_save_enabled = nil,
   auto_restore_enabled = nil,
-  auto_session_suppress_dirs = {'~/', '~/.dotfiles/bash'}
+  auto_session_suppress_dirs = {
+    '~/',
+    '~/.dotfiles/bash',
+    '~/.dotfiles/config/.config/nvim',
+  }
 }
 
 require('auto-session').setup(opts)
