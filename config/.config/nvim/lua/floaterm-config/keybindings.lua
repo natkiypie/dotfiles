@@ -8,9 +8,9 @@ K.bind_normal_mode({
 
 K.bind_terminal_mode({
   {'<C-t>', '<CMD>FloatermToggle<CR>'},
-  {'<S-n>', '<CMD>FloatermNew<CR>'},
-  {'H', '<CMD>FloatermPrev<CR>'},
-  {'L', '<CMD>FloatermNext<CR>'},
+  {'<C-n>', '<CMD>FloatermNew<CR>'},
+  {'<', '<CMD>FloatermPrev<CR>'},
+  {'>', '<CMD>FloatermNext<CR>'},
   {'q', '<CMD>FloatermKill<CR>'},
-  {'<ESC>', '<CMD>FloatermKill!<CR>'}
+  {'<C-q>', '<CMD>FloatermKill!<CR>'}
 })

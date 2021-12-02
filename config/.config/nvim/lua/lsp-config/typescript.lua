@@ -1,9 +1,11 @@
 local lspconfig = require("lspconfig")
+
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
         silent = true,
     })
 end
+
 local on_attach = function(client, bufnr)
     vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
     vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
@@ -30,6 +32,7 @@ local on_attach = function(client, bufnr)
         vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
     end
 end
+
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
@@ -49,5 +52,7 @@ lspconfig.tsserver.setup({
         on_attach(client, bufnr)
     end,
 })
+
 require("null-ls").config({})
+
 lspconfig["null-ls"].setup({ on_attach = on_attach })
