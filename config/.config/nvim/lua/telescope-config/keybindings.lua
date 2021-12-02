@@ -7,5 +7,6 @@ K.bind_normal_mode({
   {'<C-g>', "<CMD>Telescope live_grep<CR>"},
   {'<C-h>', "<CMD>Telescope oldfiles<CR>"},
   {'<C-k>', "<CMD>Telescope keymaps<CR>"},
-  {'<C-s>', "<CMD>Telescope session-lens search_session<CR>"},
+  {'<C-s>', ":lua require('session-lens').setup { theme_conf = { borderchars = { { '─', '│', '─', '│', '┌', '┐', '┘', '└'}, prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'}, results = {'─', '│', '─', '│', '├', '┤', '┘', '└'}, preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'}, } }, } ; require('session-lens').search_session()<CR>"},
 })
+
