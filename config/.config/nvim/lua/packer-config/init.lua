@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
+  use 'dhruvmanila/telescope-bookmarks.nvim'
+  use 'tyru/open-browser.vim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

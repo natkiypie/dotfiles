@@ -120,4 +120,12 @@ require('telescope').setup {
       },
     },
   },
+  extensions = {
+    bookmarks = {
+      selected_browser = 'brave',
+      url_open_plugin = 'open_browser',
+    },
+  },
 }
+
+require('telescope').load_extension('bookmarks')
