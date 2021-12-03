@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'rmagatti/auto-session'
   use 'rmagatti/session-lens'
+  use 'dhruvmanila/telescope-bookmarks.nvim'
+  use 'tyru/open-browser.vim'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
@@ -45,8 +47,6 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
-  use 'dhruvmanila/telescope-bookmarks.nvim'
-  use 'tyru/open-browser.vim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

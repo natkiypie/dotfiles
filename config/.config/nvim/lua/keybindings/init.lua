@@ -10,8 +10,8 @@ K.bind_normal_mode({
   {'q', '<CMD>lua require"utils.init".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
   {'<C-q>', '<CMD>wqa<CR>'},
-  -- Remove keybinding for shit+q
-  {'Q', '<Nop>'},
+  -- Used to quit splits
+  {'Q', '<CMD>q<CR>'},
   -- -- Toggle mouse
   {'m', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
