@@ -27,19 +27,14 @@ return require('packer').startup(function(use)
   use 'rmagatti/session-lens'
   use 'dhruvmanila/telescope-bookmarks.nvim'
   use 'tyru/open-browser.vim'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
     config = function()
       require('gitsigns').setup()
     end
@@ -47,6 +42,7 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
+  use 'chentau/marks.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

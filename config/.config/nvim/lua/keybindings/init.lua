@@ -13,7 +13,7 @@ K.bind_normal_mode({
   -- Used to quit splits
   {'Q', '<CMD>q<CR>'},
   -- -- Toggle mouse
-  {'m', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
+  {'M', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
   {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},
   -- Split window vertically right
