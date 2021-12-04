@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
-  use 'chentau/marks.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
