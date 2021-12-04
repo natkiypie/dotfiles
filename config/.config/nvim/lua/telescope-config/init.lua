@@ -45,7 +45,11 @@ require('telescope').setup {
         },
         n = {
             ["l"] = actions.select_default + actions.center,
+            ["h"] = actions.select_tab,
             ["q"] = actions.close,
+            [" "] = actions.toggle_selection,
+            ["J"] = actions.toggle_selection + actions.move_selection_worse,
+            ["K"] = actions.toggle_selection + actions.move_selection_better,
             ["<esc>"] = actions.close,
             ["<Tab>"] = false,
             ["<C-q>"] = false,
