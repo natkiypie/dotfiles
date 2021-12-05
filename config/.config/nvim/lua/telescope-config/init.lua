@@ -113,7 +113,7 @@ require('telescope').setup {
       }
     },
     live_grep = {
-      prompt_title = "Grep",
+      prompt_title = "Rip Grep",
       theme = "dropdown",
       previewer = false,
       border = {},
