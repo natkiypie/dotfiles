@@ -5,6 +5,8 @@ K.bind_normal_mode({
   {'<C-t>', '<CMD>FloatermToggle<CR>'},
   {'<C-l>', '<CMD>FloatermNew --height=0.99 --width=0.99 --name=LazyGit --title=─ lazygit<CR>'},
   {'<C-m>', '<CMD>FloatermNew --height=0.99 --width=0.99 --name=Glow --title=─ glow_script.sh<CR>'},
+  {'<F7>', '<CMD>FloatermNew --wintype=split --height=0.5 --name=htop htop -p `pidof vim`<CR>'},
+  {'<F5>', '<CMD>FloatermNew --wintype=split --height=0.5 --name=node node<CR>'},
 })
 
 K.bind_terminal_mode({

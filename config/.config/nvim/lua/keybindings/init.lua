@@ -28,6 +28,8 @@ K.bind_normal_mode({
   {'<Right>', '<C-w>l'},
   {'<Up>', '<C-w>k'},
   {'<Down>', '<C-w>j'},
+  -- Set current working directory to directory of opened file
+  -- {'<C->', '<CMD>cd %:h<CR>'},
 })
 
 K.bind_insert_mode({

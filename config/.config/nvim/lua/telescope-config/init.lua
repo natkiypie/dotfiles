@@ -67,7 +67,6 @@ require('telescope').setup {
       layout_config = {
         height = 0.65,
       },
-      initial_mode = "insert",
       prompt_title = "",
       theme = "dropdown",
       previewer = false,

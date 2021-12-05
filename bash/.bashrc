@@ -1,5 +1,3 @@
-# Use Vim mode
-# set -o vi
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -82,5 +80,3 @@ mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }
 tdd() { todo --done $1 ; todo --purge ; }
 # run startup script
 on_open.sh
-# for lua language server
-alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake

@@ -50,3 +50,5 @@ alias exmon=ex_mon_only_on.sh
 alias setex=ex_mon_on.sh
 # pull down code fellow git repository diffs
 alias updatecc=update_code_fellows_git_repos.sh
+# for lua language server
+alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake
