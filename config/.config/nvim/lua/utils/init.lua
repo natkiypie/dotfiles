@@ -20,30 +20,29 @@ function M.close_float_win()
 end
 
 function M.toggle (a, b)
-  local i = b
+  local x = b
   return function ()
-    if i == a then i = b else i = a end
-    return i
+    if x == a then x = b else x = a end
+    return x
   end
 end
 
-local c1 = M.toggle('x', 'y')
+-- Toggle mouse
+local tm = M.toggle('a', '')
+function M.toggle_mouse()
+  local cmd = 'set mouse='..tm()
+  vim.cmd(cmd)
+end
 
-print(c1())
-print(c1())
-print(c1())
-print(c1())
-
--- function M.toggle_mouse(cmd, option, values)
---   local result
---   local eval = vim.api.nvim_eval
---   if eval('&'..option) == values[1] then
---     result = cmd..' '..option..'='..values[2]
---   else
---     result = cmd..' '..option..'='..values[1]
---   end
---   vim.cmd(result)
--- end
+-- Toggle floaterm winsize
+local tf = M.toggle(
+  '--width=0.99 --height=0.99',
+  '--width=0.6 --height=0.6'
+)
+function M.toggle_ft_winsize()
+  local cmd = 'FloatermUpdate '..tf()
+  vim.cmd(cmd)
+end
 
 function M.toggle_path()
   local eval = vim.api.nvim_eval
