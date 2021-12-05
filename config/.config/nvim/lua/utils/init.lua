@@ -44,19 +44,14 @@ function M.toggle_ft_winsize()
   vim.cmd(cmd)
 end
 
+-- Toggle tabline file path
+local tp = M.toggle(
+  '+=%=\\ %t\\ %M',
+  '+=%=\\ %f\\ %M'
+)
 function M.toggle_path()
-  local eval = vim.api.nvim_eval
-  local path = eval('expand("%:p")')
-  local status = eval('&statusline')
-  if status == '' then
-    vim.cmd[[ set statusline=..path ]]
-    print(path)
-  else
-    vim.cmd[[
-      set statusline=""
-      echo ""
-    ]]
-  end
+  local cmd = 'set tabline=|set tabline'..tp()
+  vim.cmd(cmd)
 end
 
 function M.bind_key(mode, keymap)

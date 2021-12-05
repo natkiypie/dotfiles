@@ -4,6 +4,13 @@
 vim.g.mapleader = ' '
 
 -- OPTIONS
+
+vim.cmd[[
+  set showtabline=2
+  set tabline=
+  set tabline+=%=\ %t\ %M
+]]
+
 -- Enable lazy redraw
 vim.go.lazyredraw = true
 
