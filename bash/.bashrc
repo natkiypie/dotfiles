@@ -75,8 +75,10 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 # Add /home/natkiypie/.steam/root/steamapps/common/Aseprite to PATH environment
 PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
 # command to make directory and file
-mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }
+mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 # todo delete & purge
 tdd() { todo --done $1 ; todo --purge ; }
+# *TEMPORARY* quick git wf for nvim config
+gcu() { git add . ; git commit -m "$1" ; git checkout main ; git merge update ; git push ; git checkout update ; }
 # run startup script
 on_open.sh
