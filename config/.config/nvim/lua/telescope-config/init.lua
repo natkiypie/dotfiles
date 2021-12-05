@@ -45,7 +45,6 @@ require('telescope').setup {
         },
         n = {
             ["l"] = actions.select_default + actions.center,
-            ["h"] = actions.select_tab,
             ["q"] = actions.close,
             [" "] = actions.toggle_selection,
             ["J"] = actions.toggle_selection + actions.move_selection_worse,
@@ -125,11 +124,5 @@ require('telescope').setup {
     },
   },
   extensions = {
-    bookmarks = {
-      selected_browser = 'brave',
-      url_open_plugin = 'open_browser',
-    },
   },
 }
-
-require('telescope').load_extension('bookmarks')

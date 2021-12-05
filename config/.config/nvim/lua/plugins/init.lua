@@ -25,8 +25,6 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'rmagatti/auto-session'
   use 'rmagatti/session-lens'
-  use 'dhruvmanila/telescope-bookmarks.nvim'
-  use 'tyru/open-browser.vim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use {
