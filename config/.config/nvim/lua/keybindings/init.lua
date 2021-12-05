@@ -39,5 +39,13 @@ K.bind_insert_mode({
 
 K.bind_command_mode({
   -- Use keys 'jk' to exit insert mode
-  {'jk', '<ESC>'}
+  {'jk', '<ESC>'},
 })
+
+-- Keybindings for wildmenu
+vim.cmd[[
+  cnoremap <expr> K wildmenumode() ? "\<left>" : "K"
+  cnoremap <expr> J wildmenumode() ? "\<right>" : "J"
+  cnoremap <expr> H wildmenumode() ? "\<up>" : "H"
+  cnoremap <expr> L wildmenumode() ? "\<CR>" : "L"
+]]
