@@ -24,7 +24,7 @@ require('telescope').setup {
     path_display = {},
     border = {},
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    color_devicons = true,
+    color_devicons = false,
     set_env = {['COLORTERM'] = 'truecolor'},
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -49,13 +49,15 @@ require('telescope').setup {
             ["<esc>"] = actions.close,
             ["<Tab>"] = false,
             ["<C-q>"] = false,
+            ["s"] = false,
+            ["S"] = false,
             ["h"] = fb_actions.goto_prev_dir,
             ["e"] = fb_actions.create_file,
             ["."] = fb_actions.toggle_hidden,
             ["x"] = fb_actions.remove_file,
             ["gh"] = fb_actions.goto_cwd,
             ["p"] = fb_actions.copy_file,
-            ["r"] = fb_actions.rename_file,
+            ["rn"] = fb_actions.rename_file,
         }
     },
   },
@@ -65,6 +67,7 @@ require('telescope').setup {
       layout_config = {
         height = 0.65,
       },
+      initial_mode = "insert",
       prompt_title = "",
       theme = "dropdown",
       previewer = false,
@@ -84,7 +87,7 @@ require('telescope').setup {
           ["x"] = false,
           ["gh"] = false,
           ["p"] = false,
-          ["r"] = false,
+          ["rn"] = false,
         },
       }
     },
@@ -108,7 +111,7 @@ require('telescope').setup {
           ["x"] = false,
           ["gh"] = false,
           ["p"] = false,
-          ["r"] = false,
+          ["rn"] = false,
         },
       }
     },
@@ -133,7 +136,7 @@ require('telescope').setup {
           ["x"] = false,
           ["gh"] = false,
           ["p"] = false,
-          ["r"] = false,
+          ["rn"] = false,
         },
       }
     },
@@ -153,7 +156,7 @@ require('telescope').setup {
           ["x"] = false,
           ["gh"] = false,
           ["p"] = false,
-          ["r"] = false,
+          ["rn"] = false,
         },
       }
     },
@@ -173,7 +176,7 @@ require('telescope').setup {
           ["x"] = false,
           ["gh"] = false,
           ["p"] = false,
-          ["r"] = false,
+          ["rn"] = false,
         },
       }
     },

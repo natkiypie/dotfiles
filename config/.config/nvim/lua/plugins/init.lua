@@ -38,8 +38,12 @@ return require('packer').startup(function(use)
       require('gitsigns').setup()
     end
   }
-
   -- Temporary
+  use {
+    'ggandor/lightspeed.nvim',
+    requires = 'tpope/vim-repeat'
+  }
+
   use 'ThePrimeagen/vim-be-good'
 
   if PACKER_BOOTSTRAP then
