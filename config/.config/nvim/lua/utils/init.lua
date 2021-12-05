@@ -46,8 +46,8 @@ end
 
 -- Toggle tabline file path
 local tp = M.toggle(
-  '+=%=\\ %t\\ %M',
-  '+=%=\\ %f\\ %M'
+  '+=%=\\ %M\\ %f',
+  '+=%=\\ %M\\ %t'
 )
 function M.toggle_path()
   local cmd = 'set tabline=|set tabline'..tp()

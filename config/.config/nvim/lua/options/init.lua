@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.cmd[[
   set showtabline=2
   set tabline=
-  set tabline+=%=\ %t\ %M
+  set tabline+=%=\ %M\ %t
 ]]
 
 -- Enable lazy redraw
