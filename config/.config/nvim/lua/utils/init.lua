@@ -19,16 +19,31 @@ function M.close_float_win()
   M.close_win_on_last_buf()
 end
 
-function M.toggle_mouse(cmd, option, values)
-  local result
-  local eval = vim.api.nvim_eval
-  if eval('&'..option) == values[1] then
-    result = cmd..' '..option..'='..values[2]
-  else
-    result = cmd..' '..option..'='..values[1]
+function M.toggle (a, b)
+  local i = b
+  return function ()
+    if i == a then i = b else i = a end
+    return i
   end
-  vim.cmd(result)
 end
+
+local c1 = M.toggle('x', 'y')
+
+print(c1())
+print(c1())
+print(c1())
+print(c1())
+
+-- function M.toggle_mouse(cmd, option, values)
+--   local result
+--   local eval = vim.api.nvim_eval
+--   if eval('&'..option) == values[1] then
+--     result = cmd..' '..option..'='..values[2]
+--   else
+--     result = cmd..' '..option..'='..values[1]
+--   end
+--   vim.cmd(result)
+-- end
 
 function M.toggle_path()
   local eval = vim.api.nvim_eval

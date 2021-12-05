@@ -12,6 +12,7 @@ K.bind_normal_mode({
 K.bind_terminal_mode({
   {'<C-t>', '<CMD>FloatermToggle<CR>'},
   {'<C-n>', '<CMD>FloatermNew<CR>'},
+  {'<C-f>', '<CMD>FloatermUpdate --width=0.99 --height=0.99<CR>'},
   {'<', '<CMD>FloatermPrev<CR>'},
   {'>', '<CMD>FloatermNext<CR>'},
   {'q', '<CMD>FloatermKill<CR>'},
