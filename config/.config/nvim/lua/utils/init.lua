@@ -19,7 +19,7 @@ function M.close_float_win()
   M.close_win_on_last_buf()
 end
 
-function M.toggle(cmd, option, values)
+function M.toggle_mouse(cmd, option, values)
   local result
   local eval = vim.api.nvim_eval
   if eval('&'..option) == values[1] then

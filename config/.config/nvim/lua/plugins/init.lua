@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   }
 
   use 'ThePrimeagen/vim-be-good'
+  use 'metakirby5/codi.vim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

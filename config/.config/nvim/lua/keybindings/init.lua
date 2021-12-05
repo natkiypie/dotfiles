@@ -13,7 +13,7 @@ K.bind_normal_mode({
   -- Used to quit splits
   {'Q', '<CMD>q<CR>'},
   -- -- Toggle mouse
-  {'M', '<CMD>lua require"utils.init".toggle("set", "mouse", {"a", ""})<CR>'},
+  {'M', '<CMD>lua require"utils.init".toggle_mouse("set", "mouse", {"a", ""})<CR>'},
   -- Temporarily show file path in status bar
   {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},
   -- Split window vertically right
@@ -29,7 +29,7 @@ K.bind_normal_mode({
   {'<Up>', '<C-w>k'},
   {'<Down>', '<C-w>j'},
   -- Set current working directory to directory of opened file
-  -- {'<C->', '<CMD>cd %:h<CR>'},
+  {'++', '<CMD>cd %:h<CR>'},
 })
 
 K.bind_insert_mode({
