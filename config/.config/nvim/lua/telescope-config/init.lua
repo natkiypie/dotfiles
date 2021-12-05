@@ -2,24 +2,21 @@ require('telescope-config/keybindings')
 require('telescope-config/options')
 
 local actions = require('telescope.actions')
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 require('telescope').setup {
   defaults = {
     layout_config = {
-      width = 0.5,
-      height = 0.75,
       prompt_position = "top",
-      preview_cutoff = 100,
-      horizontal = {mirror = false},
-      vertical = {mirror = false},
     },
     find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
     prompt_prefix = " ",
     selection_caret = " ",
     entry_prefix = " ",
     initial_mode = "normal",
+    results_title = "",
     selection_strategy = "reset",
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     layout_strategy = "horizontal",
     file_sorter = require'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = {},
@@ -27,7 +24,7 @@ require('telescope').setup {
     path_display = {},
     border = {},
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-    color_devicons = false,
+    color_devicons = true,
     set_env = {['COLORTERM'] = 'truecolor'},
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
@@ -52,12 +49,23 @@ require('telescope').setup {
             ["<esc>"] = actions.close,
             ["<Tab>"] = false,
             ["<C-q>"] = false,
+            -- file-browser extension keybindings
+            ["h"] = fb_actions.goto_prev_dir,
+            ["e"] = fb_actions.create_file,
+            ["."] = fb_actions.toggle_hidden,
+            ["x"] = fb_actions.remove_file,
+            ["gh"] = fb_actions.goto_cwd,
+            ["p"] = fb_actions.copy_file,
+            ["r"] = fb_actions.rename_file,
         }
     },
   },
 
   pickers = {
     find_files = {
+      layout_config = {
+        height = 0.65,
+      },
       prompt_title = "Files",
       theme = "dropdown",
       previewer = false,
@@ -68,9 +76,18 @@ require('telescope').setup {
         results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
-      layout_config = {
-        height = 0.65,
-      },
+      mappings = {
+        i = {},
+        n = {
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["r"] = false,
+        },
+      }
     },
     buffers = {
       theme = "dropdown",
@@ -82,18 +99,18 @@ require('telescope').setup {
         results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
-    },
-    file_browser = {
-      prompt_title = "Explorer",
-      theme = "dropdown",
-      previewer = false,
-      border = {},
-      borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-      },
+      mappings = {
+        i = {},
+        n = {
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["r"] = false,
+        },
+      }
     },
     live_grep = {
       prompt_title = "Grep",
@@ -106,8 +123,23 @@ require('telescope').setup {
         results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
+      mappings = {
+        i = {},
+        n = {
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["r"] = false,
+        },
+      }
     },
     oldfiles = {
+      layout_config = {
+        height = 0.65,
+      },
       prompt_title = "History",
       theme = "dropdown",
       previewer = false,
@@ -118,11 +150,19 @@ require('telescope').setup {
         results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
-      layout_config = {
-        height = 0.65,
-      },
+      mappings = {
+        i = {},
+        n = {
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["r"] = false,
+        },
+      }
     },
   },
-  extensions = {
-  },
+  extensions = {},
 }
