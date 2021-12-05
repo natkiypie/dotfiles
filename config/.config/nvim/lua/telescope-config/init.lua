@@ -49,8 +49,6 @@ require('telescope').setup {
             ["<esc>"] = actions.close,
             ["<Tab>"] = false,
             ["<C-q>"] = false,
-            ["Q"] = false,
-            -- file-browser extension keybindings
             ["h"] = fb_actions.goto_prev_dir,
             ["e"] = fb_actions.create_file,
             ["."] = fb_actions.toggle_hidden,
