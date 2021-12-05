@@ -43,12 +43,13 @@ require('telescope').setup {
         n = {
             ["l"] = actions.select_default + actions.center,
             ["q"] = actions.close,
-            [" "] = actions.toggle_selection,
+            ["v"] = actions.toggle_selection,
             ["J"] = actions.toggle_selection + actions.move_selection_worse,
             ["K"] = actions.toggle_selection + actions.move_selection_better,
             ["<esc>"] = actions.close,
             ["<Tab>"] = false,
             ["<C-q>"] = false,
+            ["Q"] = false,
             -- file-browser extension keybindings
             ["h"] = fb_actions.goto_prev_dir,
             ["e"] = fb_actions.create_file,
@@ -66,7 +67,7 @@ require('telescope').setup {
       layout_config = {
         height = 0.65,
       },
-      prompt_title = "Files",
+      prompt_title = "",
       theme = "dropdown",
       previewer = false,
       border = {},
@@ -92,6 +93,7 @@ require('telescope').setup {
     buffers = {
       theme = "dropdown",
       previewer = false,
+      prompt_title = "",
       border = {},
       borderchars = {
         { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
@@ -113,7 +115,8 @@ require('telescope').setup {
       }
     },
     live_grep = {
-      prompt_title = "Rip Grep",
+      initial_mode = "insert",
+      prompt_title = "",
       theme = "dropdown",
       previewer = false,
       border = {},
@@ -140,16 +143,29 @@ require('telescope').setup {
       layout_config = {
         height = 0.65,
       },
-      prompt_title = "History",
-      theme = "dropdown",
-      previewer = false,
-      border = {},
-      borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-        prompt = {"─", "│", " ", "│", '┌', '┐', "│", "│"},
-        results = {"─", "│", "─", "│", "├", "┤", "┘", "└"},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      prompt_title = "",
+      results_title = "",
+      preview_title = "",
+      mappings = {
+        i = {},
+        n = {
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["r"] = false,
+        },
+      }
+    },
+    jumplist = {
+      layout_config = {
+        height = 0.65,
       },
+      prompt_title = "",
+      results_title = "",
+      preview_title = "",
       mappings = {
         i = {},
         n = {
