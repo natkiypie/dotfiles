@@ -1,8 +1,6 @@
-local K = require('utils.init')
+local keys = require'utils.keybindings'
 
-K.bind_normal_mode({
-  -- Show hover docs
+keys.bind_normal_mode({
   {'<leader>k', '<CMD>lua vim.lsp.buf.hover()<CR>'},
-  -- Reload LSP server
   {'<leader>r', '<CMD>LspRestart<CR>'},
 })

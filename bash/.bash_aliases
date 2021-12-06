@@ -8,6 +8,8 @@ alias n='cd ~/.dotfiles/config/.config/nvim ; vim'
 alias v='vim'
 # shortcut to dot files
 alias dot='cd ~/.dotfiles'
+# todo
+alias td='todo'
 # alias xdg-open to open.
 alias open='xdg-open'
 # take screenshot

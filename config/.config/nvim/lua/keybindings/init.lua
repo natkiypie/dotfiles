@@ -1,6 +1,6 @@
-local K = require('utils.init')
+local keys = require'utils.keybindings'
 
-K.bind_normal_mode({
+keys.bind_normal_mode {
   -- Disable wrapped line skips during vertical navigation
   {'j', 'gj'},
   {'k', 'gk'},
@@ -30,26 +30,36 @@ K.bind_normal_mode({
   {'<Down>', '<C-w>j'},
   -- Set current working directory to directory of opened file
   {'==', '<CMD>cd %:h<CR>'},
-})
+}
 
-K.bind_insert_mode({
+keys.bind_insert_mode {
   -- Use keys 'jk' to exit insert mode
   {'jk', '<ESC>'},
-})
-
-K.bind_command_mode({
-  -- Use keys 'jk' to exit insert mode
-  {'jk', '<ESC>'},
-})
-
-K.bind_terminal_mode({
-  {'<Esc>','<C-\\><C-n>'}
-})
-
+}
 -- Keybindings for wildmenu
-vim.cmd[[
-  cnoremap <expr> K wildmenumode() ? "\<left>" : "K"
-  cnoremap <expr> J wildmenumode() ? "\<right>" : "J"
-  cnoremap <expr> H wildmenumode() ? "\<up>" : "H"
-  cnoremap <expr> L wildmenumode() ? "\<CR>" : "L"
-]]
+-- vim.cmd[[
+--   cnoremap <expr> K wildmenumode() ? "\<left>" : "K"
+--   cnoremap <expr> J wildmenumode() ? "\<right>" : "J"
+--   cnoremap <expr> H wildmenumode() ? "\<up>" : "H"
+--   cnoremap <expr> L wildmenumode() ? "\<CR>" : "L"
+-- ]]
+
+-- keys.bind_expr_command_mode {
+--   {'K', 'v:lua.wildm_up()'}
+-- }
+keys.bind_expr_command_mode {
+  {'K', 'v:lua.wildm_up()'},
+  {'J', 'v:lua.wildm_down()'},
+  {'H', 'v:lua.wildm_left()'},
+  {'L', 'v:lua.wildm_right()'},
+}
+
+keys.bind_command_mode {
+  -- Use keys 'jk' to exit insert mode
+  {'jk', '<ESC>'},
+}
+
+keys.bind_terminal_mode {
+  {'q','<C-\\><C-n>'}
+}
+
