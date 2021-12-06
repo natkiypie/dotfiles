@@ -1,4 +1,6 @@
-#logout
+# exit terminal
+alias q='exit'
+# logout
 alias logout='pkill -KILL -u natkiypie'
 # open nvim dotfiles in editor -- temp
 alias n='cd ~/.dotfiles/config/.config/nvim ; vim'

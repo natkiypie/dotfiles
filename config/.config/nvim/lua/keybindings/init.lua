@@ -29,7 +29,7 @@ K.bind_normal_mode({
   {'<Up>', '<C-w>k'},
   {'<Down>', '<C-w>j'},
   -- Set current working directory to directory of opened file
-  {'++', '<CMD>cd %:h<CR>'},
+  {'==', '<CMD>cd %:h<CR>'},
 })
 
 K.bind_insert_mode({
