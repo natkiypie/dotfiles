@@ -5,7 +5,7 @@ K.bind_normal_mode({
   {'<Leader>c', '<CMD>SlimeConfig<CR>'},
 })
 
-K.bind_visual_mode({
-  {'<Leader>s','<CMD>SlimeSend<CR><CMD>FloatermToggle<CR>'},
-})
+vim.cmd[[
+  xmap <Leader>s <Plug>SlimeRegionSend <CMD> FloatermToggle <CR>
+]]
 
