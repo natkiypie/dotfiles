@@ -44,6 +44,12 @@ function M.toggle_ft_winsize()
   vim.cmd(cmd)
 end
 
+-- node repl floaterm
+-- let b:slime_config = {"jobid": b:terminal_job_id}
+function M.float_repl()
+  vim.cmd('FloatermNew --name=node node | let g:slime_jobid = &channel')
+end
+
 -- Toggle tabline file path
 local tp = M.toggle(
   '+=%=\\ %M\\ %f',
@@ -87,6 +93,12 @@ end
 function M.bind_terminal_mode(keymaps)
   for _, keymap in ipairs(keymaps) do
     M.bind_key('t', keymap)
+  end
+end
+
+function M.bind_x_mode(keymaps)
+  for _, keymap in ipairs(keymaps) do
+    M.bind_key('x', keymap)
   end
 end
 

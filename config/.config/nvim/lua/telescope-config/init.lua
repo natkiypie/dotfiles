@@ -78,8 +78,11 @@ require('telescope').setup {
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
       mappings = {
-        i = {},
+        i = {
+          ["<C-f>"] = actions.close,
+        },
         n = {
+          ["<C-f>"] = actions.close,
           ["h"] = false,
           ["e"] = false,
           ["."] = false,
@@ -102,8 +105,11 @@ require('telescope').setup {
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
       mappings = {
-        i = {},
+        i = {
+          ["<C-b>"] = actions.close,
+        },
         n = {
+          ["<C-b>"] = actions.close,
           ["h"] = false,
           ["e"] = false,
           ["."] = false,
@@ -127,8 +133,11 @@ require('telescope').setup {
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
       mappings = {
-        i = {},
+        i = {
+          ["<C-g>"] = actions.close,
+        },
         n = {
+          ["<C-g>"] = actions.close,
           ["h"] = false,
           ["e"] = false,
           ["."] = false,
@@ -147,8 +156,11 @@ require('telescope').setup {
       results_title = "",
       preview_title = "",
       mappings = {
-        i = {},
+        i = {
+          ["<C-h>"] = actions.close,
+        },
         n = {
+          ["<C-h>"] = actions.close,
           ["h"] = false,
           ["e"] = false,
           ["."] = false,
@@ -167,8 +179,11 @@ require('telescope').setup {
       results_title = "",
       preview_title = "",
       mappings = {
-        i = {},
+        i = {
+          ["<C-j>"] = actions.close,
+        },
         n = {
+          ["<C-j>"] = actions.close,
           ["h"] = false,
           ["e"] = false,
           ["."] = false,
@@ -179,6 +194,41 @@ require('telescope').setup {
         },
       }
     },
+     keymaps = {
+      -- prompt_title = "",
+      -- results_title = "",
+      -- preview_title = "",
+      mappings = {
+        i = {
+          ["<C-k>"] = actions.close,
+        },
+        n = {
+          ["<C-k>"] = actions.close,
+          ["h"] = false,
+          ["e"] = false,
+          ["."] = false,
+          ["x"] = false,
+          ["gh"] = false,
+          ["p"] = false,
+          ["rn"] = false,
+          ["l"] = false,
+          ["<CR>"] = false,
+        },
+      }
+    } },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      mappings = {
+        ["i"] = {
+          ["<C-e>"] = actions.close,
+        },
+        ["n"] = {
+          ["<C-e>"] = actions.close,
+        },
+      },
+    },
   },
-  extensions = {},
 }
+
+require("telescope").load_extension "file_browser"

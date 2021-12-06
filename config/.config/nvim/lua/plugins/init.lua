@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
+  use 'jpalardy/vim-slime'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

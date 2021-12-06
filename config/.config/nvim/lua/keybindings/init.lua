@@ -42,6 +42,10 @@ K.bind_command_mode({
   {'jk', '<ESC>'},
 })
 
+K.bind_terminal_mode({
+  {'<Esc>','<C-\\><C-n>'}
+})
+
 -- Keybindings for wildmenu
 vim.cmd[[
   cnoremap <expr> K wildmenumode() ? "\<left>" : "K"
