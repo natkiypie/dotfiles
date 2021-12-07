@@ -22,6 +22,7 @@ keys.bind_normal_mode {
   {'<S-l>', '<CMD>bn<CR>'},
   {'<S-h>', '<CMD>bp<CR>'},
   -- Split navigation
+  -- THIS WILL BE AN <expr> MAPPING - I WANT TO BE ABLE TO USE THESE KEYS TO QUICKLY INDENT
   {'<', '<C-w>h'},
   {'>', '<C-w>l'},
   {'<Left>', '<C-w>h'},
@@ -42,9 +43,9 @@ keys.bind_command_mode {
   {'jk', '<ESC>'},
 }
 
-keys.bind_terminal_mode {
-  {'q','<C-\\><C-n>'}
-}
+-- keys.bind_terminal_mode {
+--   {'q','<C-\\><C-n>'}
+-- }
 
 keys.bind_expr_command_mode {
   {'<C-k>', 'v:lua.wildm("\\<Left\\>")'},

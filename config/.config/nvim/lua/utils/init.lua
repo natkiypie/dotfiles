@@ -1,5 +1,3 @@
-require'utils/keybindings'
-
 local M = {}
 
 function M.close_win_on_last_buf()
@@ -29,6 +27,40 @@ function M.toggle (a, b)
   end
 end
 
+-- Toggle floaterms
+-- 1. create new terminal
+-- 2. get channel number
+-- 3. if terminal exists @ channel, show/hide terminal. if it doesn't, create it.
+-- interesting: match("...", "...")
+
+-- if foo is nil:
+   -- 1. create new terminal
+   -- 2. assign jobpid to foo
+-- if foo && foo = jobpid && &channel > 0:
+   -- 1. hide terminal
+-- if foo && foo = jobpid && &channel < 0:
+   -- 1. show terminal
+-- if foo &&  && &channel < 0:
+
+local set = vim.api.nvim_set_var
+set('foo', nil)
+
+function M.toggle_test ()
+  local eval = vim.api.nvim_eval
+  local bar = eval('foo')
+  local baz = eval('&channel')
+
+  if not bar then
+    vim.cmd('FloatermNew --name=Terminal')
+    local id = eval('jobpid(&channel)')
+    set('foo', id)
+  elseif bar and baz > 0 then
+    vim.cmd('FloatermHide Terminal')
+  else
+    vim.cmd('FloatermToggle Terminal')
+  end
+end
+
 -- Toggle mouse
 local tm = M.toggle('a', '')
 function M.toggle_mouse()
@@ -44,12 +76,6 @@ local tf = M.toggle(
 function M.toggle_ft_winsize()
   local cmd = 'FloatermUpdate '..tf()
   vim.cmd(cmd)
-end
-
--- node repl floaterm
--- let b:slime_config = {"jobid": b:terminal_job_id}
-function M.float_repl()
-  vim.cmd('FloatermNew --name=node node | let g:slime_jobid = &channel')
 end
 
 -- Toggle tabline file path
