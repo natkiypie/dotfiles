@@ -47,9 +47,9 @@ keys.bind_terminal_mode {
 }
 
 keys.bind_expr_command_mode {
-  {'K', 'v:lua.wildm("\\<Left\\>")'},
-  {'J', 'v:lua.wildm("\\<Right\\>")'},
-  {'H', 'v:lua.wildm("\\<Up\\>")'},
-  {'L', 'v:lua.wildm("\\<CR\\>")'},
+  {'<C-k>', 'v:lua.wildm("\\<Left\\>")'},
+  {'<C-j>', 'v:lua.wildm("\\<Right\\>")'},
+  {'<C-h>', 'v:lua.wildm("\\<Up\\>")'},
+  {'<C-l>', 'v:lua.wildm("\\<CR\\>")'},
 }
 

@@ -5,11 +5,10 @@ vim.g.mapleader = ' '
 
 -- OPTIONS
 
-vim.cmd[[
-  set showtabline=2
-  set tabline=
-  set tabline+=%=\ %M\ %t
-]]
+-- Tabline options
+vim.go.showtabline = 2
+vim.go.tabline = ''
+vim.go.tabline = vim.go.tabline..'%= %M  %t'
 
 -- Enable lazy redraw
 vim.go.lazyredraw = true
@@ -22,9 +21,6 @@ vim.go.timeoutlen = 200
 
 -- Hide statusline
 vim.go.laststatus = 0
-
--- Set transparency for popup menus (for nvim-cmp autocomplete menu)
-vim.go.pumblend = 30
 
 -- Set line numbers
 vim.wo.number = true

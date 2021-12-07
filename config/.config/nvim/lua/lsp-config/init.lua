@@ -1,6 +1,7 @@
-require('lsp-config/cmp')
-require('lsp-config/diagnostic_signs')
-require('lsp-config/language_servers')
-require('lsp-config/options')
-require('lsp-config/typescript')
-require('lsp-config/keybindings')
+require'lsp-config/cmp'
+require'lsp-config/diagnostic_signs'
+require'lsp-config/language_servers'
+require'lsp-config/options'
+require'lsp-config/typescript'
+require'lsp-config/keybindings'
+require'lsp-config/colors/init'

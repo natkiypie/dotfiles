@@ -1,3 +1,4 @@
+-- Defining syntax/highlights - The syntax API is still a work in progress (https://github.com/nanotee/nvim-lua-guide#defining-syntaxhighlights)
 vim.cmd[[
   hi TelescopePromptBorder ctermfg=234
   hi TelescopeResultsBorder ctermfg=234

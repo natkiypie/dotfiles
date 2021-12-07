@@ -30,6 +30,12 @@ function M.bind_visual_mode(keymaps)
   end
 end
 
+function M.bind_x_mode(keymaps)
+  for _, keymap in ipairs(keymaps) do
+    M.bind_key('x', keymap)
+  end
+end
+
 function M.bind_command_mode(keymaps)
   for _, keymap in ipairs(keymaps) do
     M.bind_key('c', keymap)
@@ -39,12 +45,6 @@ end
 function M.bind_terminal_mode(keymaps)
   for _, keymap in ipairs(keymaps) do
     M.bind_key('t', keymap)
-  end
-end
-
-function M.bind_x_mode(keymaps)
-  for _, keymap in ipairs(keymaps) do
-    M.bind_key('x', keymap)
   end
 end
 

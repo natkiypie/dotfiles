@@ -1,4 +1,4 @@
-local keys = require 'utils.keybindings'
+local keys = require'utils.keybindings'
 
 keys.bind_normal_mode {
   {'<Leader>s', '<CMD>SlimeSendCurrentLine<CR><CMD>FloatermToggle<CR>'},
@@ -8,4 +8,3 @@ keys.bind_normal_mode {
 vim.cmd[[
   xmap <Leader>s <Plug>SlimeRegionSend<CMD>FloatermToggle<CR>
 ]]
-

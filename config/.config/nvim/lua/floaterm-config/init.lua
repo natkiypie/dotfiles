@@ -1,2 +1,2 @@
-require('floaterm-config/options')
-require('floaterm-config/keybindings')
+require'floaterm-config/options'
+require'floaterm-config/keybindings'

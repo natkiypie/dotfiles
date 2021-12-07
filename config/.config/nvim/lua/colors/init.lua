@@ -1,5 +1,7 @@
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_transparent = true
+require'colors/options'
+require'colors/highlights'
+
+-- Defining syntax/highlights - The syntax API is still a work in progress (https://github.com/nanotee/nvim-lua-guide#defining-syntaxhighlights)
 
 -- Color Scheme
 vim.cmd('colorscheme tokyonight')
