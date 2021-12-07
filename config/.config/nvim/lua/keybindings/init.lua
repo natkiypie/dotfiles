@@ -36,23 +36,6 @@ keys.bind_insert_mode {
   -- Use keys 'jk' to exit insert mode
   {'jk', '<ESC>'},
 }
--- Keybindings for wildmenu
--- vim.cmd[[
---   cnoremap <expr> K wildmenumode() ? "\<left>" : "K"
---   cnoremap <expr> J wildmenumode() ? "\<right>" : "J"
---   cnoremap <expr> H wildmenumode() ? "\<up>" : "H"
---   cnoremap <expr> L wildmenumode() ? "\<CR>" : "L"
--- ]]
-
--- keys.bind_expr_command_mode {
---   {'K', 'v:lua.wildm_up()'}
--- }
-keys.bind_expr_command_mode {
-  {'K', 'v:lua.wildm_up()'},
-  {'J', 'v:lua.wildm_down()'},
-  {'H', 'v:lua.wildm_left()'},
-  {'L', 'v:lua.wildm_right()'},
-}
 
 keys.bind_command_mode {
   -- Use keys 'jk' to exit insert mode
@@ -61,5 +44,12 @@ keys.bind_command_mode {
 
 keys.bind_terminal_mode {
   {'q','<C-\\><C-n>'}
+}
+
+keys.bind_expr_command_mode {
+  {'K', 'v:lua.wildm("\\<Left\\>")'},
+  {'J', 'v:lua.wildm("\\<Right\\>")'},
+  {'H', 'v:lua.wildm("\\<Up\\>")'},
+  {'L', 'v:lua.wildm("\\<CR\\>")'},
 }
 
