@@ -32,7 +32,7 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-e>'] = cmp.mapping.complete({ sources = { { name = 'vsnip' } } }),
     ['<C-h>'] = cmp.mapping.close(),
-    ['<C-l'] = cmp.mapping.confirm({ select = true }),
+    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     ['<C-j>'] = cmp.mapping(function(fallback)
       if cmp.visible() then

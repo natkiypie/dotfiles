@@ -27,40 +27,6 @@ function M.toggle (a, b)
   end
 end
 
--- Toggle floaterms
--- 1. create new terminal
--- 2. get channel number
--- 3. if terminal exists @ channel, show/hide terminal. if it doesn't, create it.
--- interesting: match("...", "...")
-
--- if foo is nil:
-   -- 1. create new terminal
-   -- 2. assign jobpid to foo
--- if foo && foo = jobpid && &channel > 0:
-   -- 1. hide terminal
--- if foo && foo = jobpid && &channel < 0:
-   -- 1. show terminal
--- if foo &&  && &channel < 0:
-
-local set = vim.api.nvim_set_var
-set('foo', nil)
-
-function M.toggle_test ()
-  local eval = vim.api.nvim_eval
-  local bar = eval('foo')
-  local baz = eval('&channel')
-
-  if not bar then
-    vim.cmd('FloatermNew --name=Terminal')
-    local id = eval('jobpid(&channel)')
-    set('foo', id)
-  elseif bar and baz > 0 then
-    vim.cmd('FloatermHide Terminal')
-  else
-    vim.cmd('FloatermToggle Terminal')
-  end
-end
-
 -- Toggle mouse
 local tm = M.toggle('a', '')
 function M.toggle_mouse()
@@ -86,6 +52,59 @@ local tp = M.toggle(
 function M.toggle_path()
   local cmd = 'set tabline=|set tabline'..tp()
   vim.cmd(cmd)
+end
+
+local floaterm_lookup_table = {}
+
+function M.add_to_set(set, key, value)
+  set[key] = value
+end
+
+function M.remove_from_set(set, key)
+  set[key] = nil
+end
+
+function M.set_contains(set, key)
+  return set[key] ~= nil
+end
+
+function M.get_set_contents(set, key)
+  for k,v in pairs(set) do
+    if k == key then
+    return v
+  end
+  end
+end
+
+function M._test()
+  local get_id = M.get_set_contents(floaterm_lookup_table, 'terminal')
+  print(get_id)
+end
+
+function M.create_floaterm(key)
+  local eval = vim.api.nvim_eval
+  vim.cmd('FloatermNew --name='..key)
+  local id = eval('&channel')
+  M.add_to_set(floaterm_lookup_table, key, id)
+end
+
+function M.handle_floaterm(key)
+  local eval = vim.api.nvim_eval
+  local channel = eval('&channel')
+  local id = M.get_set_contents(floaterm_lookup_table, key)
+  if channel == id then
+    vim.cmd('FloatermHide --name='..key)
+  else
+    vim.cmd('FloatermShow --name='..key)
+  end
+end
+
+function M.toggle_test(key)
+  if M.set_contains(floaterm_lookup_table, key) then
+    M.handle_floaterm(key)
+  else
+    M.create_floaterm(key)
+  end
 end
 
 return M

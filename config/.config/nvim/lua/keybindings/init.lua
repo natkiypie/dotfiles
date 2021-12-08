@@ -9,7 +9,7 @@ keys.bind_normal_mode {
   -- Close all floating windows & delete buffer
   {'q', '<CMD>lua require"utils.init".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
-  {'<C-q>', '<CMD>wqa<CR>'},
+  {'<C-q>', '<CMD>wa | qa<CR>'},
   -- Used to quit splits
   {'Q', '<CMD>q<CR>'},
   -- -- Toggle mouse
@@ -43,9 +43,9 @@ keys.bind_command_mode {
   {'jk', '<ESC>'},
 }
 
--- keys.bind_terminal_mode {
---   {'q','<C-\\><C-n>'}
--- }
+keys.bind_terminal_mode {
+  {'<ESC>','<C-\\><C-n>'}
+}
 
 keys.bind_expr_command_mode {
   {'<C-k>', 'v:lua.wildm("\\<Left\\>")'},
