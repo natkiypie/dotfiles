@@ -29,6 +29,7 @@ function F.handle(key)
   local channel = eval('&channel')
   local id = utils.get_table_value(ft_table, key)
   if channel == id then
+    F.return_winsize()
     vim.cmd('FloatermHide '..key)
   elseif channel == 0 then
     vim.cmd('FloatermShow '..key)
@@ -60,6 +61,13 @@ end
 
 function F.test(args)
   print(F.parse_opts(args))
+end
+
+function F.return_winsize()
+  local winsize = eval('winwidth(0)')
+  if winsize > 86 then
+    F.toggle_winsize()
+  end
 end
 
 local tf = utils.toggle(

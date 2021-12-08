@@ -34,17 +34,15 @@ keys.bind_normal_mode {
 }
 
 keys.bind_insert_mode {
-  -- Use keys 'jk' to exit insert mode
   {'jk', '<ESC>'},
 }
 
 keys.bind_command_mode {
-  -- Use keys 'jk' to exit insert mode
   {'jk', '<ESC>'},
 }
 
 -- keys.bind_terminal_mode {
---   {'<C-q>','<C-\\><C-n>'}
+--   {'<ESC>','<C-\\><C-n>'}
 -- }
 
 keys.bind_expr_command_mode {

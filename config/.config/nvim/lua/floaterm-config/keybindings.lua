@@ -6,6 +6,7 @@ keys.bind_normal_mode {
   {'<C-c>', '<CMD>lua require"floaterm-config.utils".toggle{name="Glow", cmd="glow_script.sh"}<CR>'},
   {'<F7>', '<CMD>lua require"floaterm-config.utils".toggle{wintype="split", height="0.5", name="htop", cmd="htop -p `pidof vim`"}<CR>'},
   -- {'<C-n>', '<CMD>FloatermNew --wintype=split node<CR><C-l><C-\\><CMD>let chnl = &channel<CR><CMD>FloatermToggle<CR><CMD>let b:slime_config = {"jobid": chnl}<CR><CMD>echo "Node.js REPL @" chnl<CR>'},
+  {'<C-n>', '<CMD>lua require"floaterm-config.utils".toggle{wintype="split", height="0.5", cmd="node"}<CR>'},
 }
 
 keys.bind_terminal_mode {

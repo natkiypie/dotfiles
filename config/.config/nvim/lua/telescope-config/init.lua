@@ -2,7 +2,15 @@ require'telescope-config/keybindings'
 require'telescope-config/colors/init'
 
 local actions = require'telescope.actions'
-local fb_actions = require'telescope'.extensions.file_browser.actions
+-- local fb_actions = require'telescope'.extensions.file_browser.actions
+
+local function fb_action(f)
+  return function (b)
+    require'telescope'.extensions.file_browser.actions[f](b)
+  end
+end
+
+local nmaps = {}
 
 require'telescope'.setup {
   defaults = {
@@ -51,13 +59,6 @@ require'telescope'.setup {
             ['<C-q>'] = false,
             ['s'] = false,
             ['S'] = false,
-            ['h'] = fb_actions.goto_prev_dir,
-            ['e'] = fb_actions.create_file,
-            ['.'] = fb_actions.toggle_hidden,
-            ['x'] = fb_actions.remove_file,
-            ['gh'] = fb_actions.goto_cwd,
-            ['p'] = fb_actions.copy_file,
-            ['rn'] = fb_actions.rename_file,
         }
     },
   },
@@ -83,13 +84,6 @@ require'telescope'.setup {
         },
         n = {
           ['<C-f>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
         },
       }
     },
@@ -110,13 +104,6 @@ require'telescope'.setup {
         },
         n = {
           ['<C-b>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
         },
       }
     },
@@ -138,17 +125,11 @@ require'telescope'.setup {
         },
         n = {
           ['<C-g>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
         },
       }
     },
     oldfiles = {
+      initial_mode = 'normal',
       layout_config = {
         height = 0.65,
       },
@@ -161,13 +142,6 @@ require'telescope'.setup {
         },
         n = {
           ['<C-h>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
         },
       }
     },
@@ -184,51 +158,40 @@ require'telescope'.setup {
         },
         n = {
           ['<C-j>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
         },
       }
     },
      keymaps = {
-      -- prompt_title = '',
-      -- results_title = '',
-      -- preview_title = '',
+      prompt_title = '',
+      results_title = '',
+      preview_title = '',
       mappings = {
         i = {
           ['<C-k>'] = actions.close,
         },
         n = {
           ['<C-k>'] = actions.close,
-          ['h'] = false,
-          ['e'] = false,
-          ['.'] = false,
-          ['x'] = false,
-          ['gh'] = false,
-          ['p'] = false,
-          ['rn'] = false,
-          ['l'] = false,
-          ['<CR>'] = false,
         },
       }
-    } },
+    },
+  },
   extensions = {
     file_browser = {
-      theme = 'ivy',
-      mappings = {
-        ['i'] = {
-          ['<C-e>'] = actions.close,
-        },
-        ['n'] = {
-          ['<C-e>'] = actions.close,
-        },
+      theme = 'dropdown',
+      previewer = false,
+        mappings = {
+          n = vim.tbl_extend('force', nmaps, {
+            ['w'] = false,
+            ['e'] = false,
+            ['h'] = fb_action 'goto_parent_dir',
+            ['o'] = fb_action'create_file',
+            ['.'] = fb_action'toggle_hidden',
+            ['gh'] = fb_action'goto_cwd',
+            ['p'] = fb_action'copy_file',
+          }),
       },
     },
   },
 }
 
-require'telescope'.load_extension'file_browser'
+require'telescope'.load_extension 'file_browser'
