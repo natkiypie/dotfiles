@@ -2,7 +2,6 @@ require'telescope-config/keybindings'
 require'telescope-config/colors/init'
 
 local actions = require'telescope.actions'
--- local fb_actions = require'telescope'.extensions.file_browser.actions
 
 local function fb_action(f)
   return function (b)
@@ -10,7 +9,7 @@ local function fb_action(f)
   end
 end
 
-local nmaps = {}
+local fb_keybindings = {}
 
 require'telescope'.setup {
   defaults = {
@@ -129,7 +128,6 @@ require'telescope'.setup {
       }
     },
     oldfiles = {
-      initial_mode = 'normal',
       layout_config = {
         height = 0.65,
       },
@@ -180,10 +178,10 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
         mappings = {
-          n = vim.tbl_extend('force', nmaps, {
+          n = vim.tbl_extend('force', fb_keybindings, {
             ['w'] = false,
             ['e'] = false,
-            ['h'] = fb_action 'goto_parent_dir',
+            ['h'] = fb_action'goto_parent_dir',
             ['o'] = fb_action'create_file',
             ['.'] = fb_action'toggle_hidden',
             ['gh'] = fb_action'goto_cwd',
