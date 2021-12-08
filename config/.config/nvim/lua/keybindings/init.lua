@@ -43,9 +43,9 @@ keys.bind_command_mode {
   {'jk', '<ESC>'},
 }
 
-keys.bind_terminal_mode {
-  {'<ESC>','<C-\\><C-n>'}
-}
+-- keys.bind_terminal_mode {
+--   {'<C-q>','<C-\\><C-n>'}
+-- }
 
 keys.bind_expr_command_mode {
   {'<C-k>', 'v:lua.wildm("\\<Left\\>")'},

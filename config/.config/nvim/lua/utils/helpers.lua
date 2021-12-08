@@ -16,6 +16,12 @@ function H.remove_from_table(table, key)
   table[key] = nil
 end
 
+function H.emty_table(table)
+  for k in pairs (table) do
+    table[k] = nil
+  end
+end
+
 function H.table_contains(table, key)
   return table[key] ~= nil
 end
@@ -34,6 +40,18 @@ function H.get_table_key(table, value)
     return k
   end
   end
+end
+
+function H.get_table_contents(table)
+  for k,v in pairs(table) do
+    print(k, v)
+  end
+end
+
+function H.table_length(table)
+  local count = 0
+  for _ in pairs(table) do count = count + 1 end
+  return count
 end
 
 return H
