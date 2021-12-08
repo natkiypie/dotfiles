@@ -7,15 +7,15 @@ keys.bind_normal_mode {
   -- Save & Source file
   {'<C-w>', '<CMD>w | so %<CR>'},
   -- Close all floating windows & delete buffer
-  {'q', '<CMD>lua require"utils.init".close_float_win()<CR>'},
+  {'q', '<CMD>lua require"utils.global".close_float_win()<CR>'},
   -- Save all buffers and exit Vim
   {'<C-q>', '<CMD>wa | qa<CR>'},
   -- Used to quit splits
   {'Q', '<CMD>q<CR>'},
   -- -- Toggle mouse
-  {'M', '<CMD>lua require"utils.init".toggle_mouse()<CR>'},
+  {'M', '<CMD>lua require"utils.global".toggle_mouse()<CR>'},
   -- Temporarily show file path in status bar
-  {'<C-p>', '<CMD>lua require"utils.init".toggle_path()<CR>'},
+  {'<C-p>', '<CMD>lua require"utils.global".toggle_path()<CR>'},
   -- Split window vertically right
   {'<Leader>v', '<CMD>vsp<CR>'},
   -- Buffer navigation

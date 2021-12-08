@@ -1,10 +1,8 @@
 local keys = require'utils.keybindings'
 
 keys.bind_normal_mode {
-
-  {'<C-t>', '<CMD>lua require"utils.init".toggle_test("terminal")<CR>'},
-  {'<C-l>', '<CMD>lua require"utils.init"._test("boop")<CR>'},
-
+  {'<C-t>', '<CMD>lua require"floaterm-config.utils".toggle_floaterm("terminal")<CR>'},
+  {'<C-l>', '<CMD>lua require"floaterm-config.utils"._test("boop")<CR>'},
   -- {'<C-t>', '<CMD>FloatermToggle<CR>'},
   -- {'<C-l>', '<CMD>FloatermNew --name=LazyGit lazygit<CR>'},
   {'<C-m>', '<CMD>FloatermNew --name=Glow glow_script.sh<CR>'},
@@ -13,10 +11,11 @@ keys.bind_normal_mode {
 }
 
 keys.bind_terminal_mode {
-  {'<C-t>', '<CMD>lua require"utils.init".toggle_test("terminal")<CR>'},
-  {'<C-f>', '<CMD>lua require"utils.init".toggle_ft_winsize()<CR>'},
+  {'<C-t>', '<CMD>lua require"floaterm-config.utils".toggle_floaterm("terminal")<CR>'},
+  {'<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_ft_winsize()<CR>'},
   {'<', '<CMD>FloatermPrev<CR>'},
   {'>', '<CMD>FloatermNext<CR>'},
-  {'q', '<CMD>FloatermKill<CR>'},
+  -- {'q', '<CMD>FloatermKill<CR>'},
+  {'q', '<CMD>lua require"floaterm-config.utils".quit_test()<CR>'},
   {'<C-q>', '<CMD>FloatermKill!<CR>'}
 }
