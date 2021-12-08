@@ -1,25 +1,24 @@
 local utils = require'utils.helpers'
 
+local eval = vim.api.nvim_eval
+
 local F = {}
 
-local lookup_table = {}
+local ft_table = {}
 
-function F._test()
-  local get_id = utils.get_table_contents(lookup_table, 'terminal')
-  print(get_id)
-end
-
-function F.create_floaterm(key)
-  local eval = vim.api.nvim_eval
-  vim.cmd('FloatermNew --name='..key)
+function F.create(args)
+  if args.cmd then
+    vim.cmd('FloatermNew --name='..args.name..' '..args.cmd)
+  else
+    vim.cmd('FloatermNew --name='..args.name)
+  end
   local id = eval('&channel')
-  utils.add_to_table(lookup_table, key, id)
+  utils.add_to_table(ft_table, args.name, id)
 end
 
-function F.handle_floaterm(key)
-  local eval = vim.api.nvim_eval
+function F.handle(key)
   local channel = eval('&channel')
-  local id = utils.get_table_value(lookup_table, key)
+  local id = utils.get_table_value(ft_table, key)
   if channel == id then
     vim.cmd('FloatermHide --name='..key)
   else
@@ -27,27 +26,34 @@ function F.handle_floaterm(key)
   end
 end
 
-function F.toggle_floaterm(key)
-  if utils.table_contains(lookup_table, key) then
-    F.handle_floaterm(key)
-  else
-    F.create_floaterm(key)
+function F.toggle(args)
+  local channel = eval('&channel')
+  if utils.table_contains(ft_table, args.name) then
+    F.handle(args.name)
+  elseif channel == 0 then
+    F.create(args)
   end
 end
 
-function F.quit_test()
-  local eval = vim.api.nvim_eval
-  local channel = eval('&channel')
-  local key = utils.get_table_key(lookup_table, channel)
-  utils.remove_from_table(lookup_table, key)
+function F.quit()
+  local id = eval('&channel')
+  local key = utils.get_table_key(ft_table, id)
+  utils.remove_from_table(ft_table, key)
   vim.cmd('FloatermKill')
+end
+
+function F.test(args)
+  print('name: '..args.name)
+  if args.cmd then
+    print('cmd: '..args.cmd)
+  end
 end
 
 local tf = utils.toggle(
   '--width=0.99 --height=0.99',
   '--width=0.6 --height=0.6'
 )
-function F.toggle_ft_winsize()
+function F.toggle_winsize()
   local cmd = 'FloatermUpdate '..tf()
   vim.cmd(cmd)
 end
