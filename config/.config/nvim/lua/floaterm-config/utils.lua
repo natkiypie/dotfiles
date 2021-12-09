@@ -74,14 +74,10 @@ function F.slime()
 end
 
 function F.return_winsize(key)
-  -- local black_list = {'REPL', 'htop'}
-  -- local winsize = eval('winwidth(0)')
-  -- if utils.table_contains(black_list, key) == nil and winsize > 86 then
-  --   F.toggle_winsize()
-  -- end
-  local winsize = eval('winwidth(0)')
-  if winsize > 86 then
-    F.toggle_winsize()
+  local min_win_height = 19
+  local winsize = eval('winheight(0)')
+  if winsize > min_win_height then
+    F.toggle_winsize(key)
   end
 end
 
@@ -91,12 +87,18 @@ local float_winsize = utils.toggle(
 )
 
 local split_winsize = utils.toggle(
-  '--width=0.99 --height=0.99',
-  '--width=0.6 --height=0.6'
+  '--height=0.99',
+  '--height=0.5'
 )
 
-function F.toggle_winsize()
-  local cmd = 'silent FloatermUpdate '..float_winsize()
+function F.toggle_winsize(key)
+  local cmd
+  local split_list = {'REPL', 'htop'}
+  if utils.table_contains(split_list, key) == nil then
+    cmd = 'silent FloatermUpdate '..float_winsize()
+  else
+    cmd = 'silent FloatermUpdate '..split_winsize()
+  end
   vim.cmd(cmd)
 end
 
