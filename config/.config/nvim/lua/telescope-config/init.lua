@@ -65,15 +65,18 @@ require'telescope'.setup {
   pickers = {
     find_files = {
       layout_config = {
-        height = 0.65,
+        width = 0.5,
+        height = 0.5,
       },
       prompt_title = '',
+      results_title = '',
+      preview_title = '',
       theme = 'dropdown',
       previewer = false,
       border = {},
       borderchars = {
         { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
+        prompt = {'─', '│', 'x', '│', '┌', '┐', '│', '│'},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
@@ -87,6 +90,10 @@ require'telescope'.setup {
       }
     },
     buffers = {
+      layout_config = {
+        width = 0.5,
+        height = 0.4,
+      },
       theme = 'dropdown',
       previewer = false,
       prompt_title = '',
@@ -107,6 +114,10 @@ require'telescope'.setup {
       }
     },
     live_grep = {
+      layout_config = {
+        width = 0.5,
+        height = 0.4,
+      },
       initial_mode = 'insert',
       prompt_title = '',
       theme = 'dropdown',
@@ -129,11 +140,21 @@ require'telescope'.setup {
     },
     oldfiles = {
       layout_config = {
-        height = 0.65,
+        width = 0.5,
+        height = 0.5,
       },
       prompt_title = '',
       results_title = '',
       preview_title = '',
+      theme = 'dropdown',
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
+        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      },
       mappings = {
         i = {
           ['<C-h>'] = actions.close,
@@ -160,9 +181,22 @@ require'telescope'.setup {
       }
     },
      keymaps = {
+      layout_config = {
+        width = 0.5,
+        height = 0.5,
+      },
       prompt_title = '',
       results_title = '',
       preview_title = '',
+      theme = 'dropdown',
+      previewer = false,
+      border = {},
+      borderchars = {
+        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
+        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+      },
       mappings = {
         i = {
           ['<C-k>'] = actions.close,
@@ -175,11 +209,6 @@ require'telescope'.setup {
   },
   extensions = {
     file_browser = {
-      theme = 'dropdown',
-      prompt_title = '',
-      results_title = '',
-      preview_title = '',
-      previewer = false,
         mappings = {
           n = vim.tbl_extend('force', fb_keybindings, {
             ['w'] = false,

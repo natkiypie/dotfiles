@@ -74,25 +74,38 @@ function F.slime()
 end
 
 function F.return_winsize(key)
-  local black_list = {'REPL', 'htop'}
+  -- local black_list = {'REPL', 'htop'}
+  -- local winsize = eval('winwidth(0)')
+  -- if utils.table_contains(black_list, key) == nil and winsize > 86 then
+  --   F.toggle_winsize()
+  -- end
   local winsize = eval('winwidth(0)')
-  if utils.table_contains(black_list, key) == nil and winsize > 86 then
+  if winsize > 86 then
     F.toggle_winsize()
   end
 end
 
-local tf = utils.toggle(
+local float_winsize = utils.toggle(
   '--width=0.99 --height=0.99',
   '--width=0.6 --height=0.6'
 )
+
+local split_winsize = utils.toggle(
+  '--width=0.99 --height=0.99',
+  '--width=0.6 --height=0.6'
+)
+
 function F.toggle_winsize()
-  local cmd = 'silent FloatermUpdate '..tf()
+  local cmd = 'silent FloatermUpdate '..float_winsize()
   vim.cmd(cmd)
 end
 
-function F.test(args)
-  print(F.parse_opts(args))
+function F.test()
+  local win_width = eval('winwidth(0)')
+  local win_height = eval('winheight(0)')
+  local id = eval('&channel')
+  local key = utils.get_table_key(ft_table, id)
+  print(key, 'width:', win_width, 'height:', win_height)
 end
-
 
 return F
