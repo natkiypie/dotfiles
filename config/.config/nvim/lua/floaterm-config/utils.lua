@@ -62,15 +62,22 @@ function F.quit_all()
   end
 end
 
+-- check if node term is open first
+-- open node floaterm
+-- call slime send
+-- move back up to file buffer
+
 function F.slime()
-  vim.g.floaterm_autoinsert = false
   F.toggle{wintype='split', height='0.5', name='REPL', cmd='node'}
   local key = utils.get_table_value(ft_table, 'REPL')
   F.toggle{name='REPL'}
   local cmd = 'silent let b:slime_config = {"jobid": '..key..'}'
   vim.cmd(cmd)
-  print("Node.js REPL is alive @ channel "..key)
-  vim.g.floaterm_autoinsert = true
+  vim.cmd[[
+    SlimeSendCurrentLine
+    silent FloatermShow REPL
+  ]]
+  vim.cmd( 'stopinsert | wincmd k')
 end
 
 function F.return_winsize()

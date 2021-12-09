@@ -15,7 +15,7 @@ keys.bind_normal_mode {
   -- -- Toggle mouse
   {'M', '<CMD>lua require"utils.global".toggle_mouse()<CR>'},
   -- Temporarily show file path in status bar
-  {'<C-p>', '<CMD>lua require"utils.global".toggle_path()<CR>'},
+  {'<Leader>p', '<CMD>lua require"utils.global".toggle_path()<CR>'},
   -- Split window vertically right
   {'<Leader>v', '<CMD>vsp<CR>'},
   -- Buffer navigation
@@ -31,10 +31,24 @@ keys.bind_normal_mode {
   {'<Down>', '<C-w>j'},
   -- Set current working directory to directory of opened file
   {'==', '<CMD>cd %:h<CR>'},
+  -- Surround word under cursor with single quotes (prefix with number to surround corresponding number of words with single quotes)
+  {"'", "ciw''<Esc>P"},
+  -- Surround word under cursor with double quotes (prefix with number to surround corresponding number of words with double quotes)
+  {'"', 'ciw""<Esc>P'},
+  -- Remove single quotes from cursor under word
+  {"d;", "di'hPl2x"},
+  -- Remove double quotes from cursor under word
+  {"d'", 'di"hPl2x'},
 }
 
 keys.bind_insert_mode {
   {'jk', '<ESC>'},
+}
+
+-- Surround visual selection with single quotes
+keys.bind_visual_mode {
+  {"'", "c''<Esc>P"},
+  {'"', 'c""<Esc>P'},
 }
 
 keys.bind_command_mode {
@@ -42,7 +56,9 @@ keys.bind_command_mode {
 }
 
 keys.bind_terminal_mode {
-  {'<ESC>','<C-\\><C-n>'}
+  {'<ESC>', '<C-\\><C-n>'},
+  {'<C-k>', '<C-\\><C-n><C-w>k'},
+  {'<Up>', '<C-\\><C-n><C-w>k'},
 }
 
 keys.bind_expr_command_mode {
