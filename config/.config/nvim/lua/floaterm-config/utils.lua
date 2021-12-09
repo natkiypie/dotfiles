@@ -32,7 +32,7 @@ function F.handle(key)
   local channel = eval('&channel')
   local id = utils.get_table_value(ft_table, key)
   if channel == id then
-    F.return_winsize(key)
+    F.return_winsize()
     vim.cmd('silent FloatermHide '..key)
   elseif channel == 0 then
     vim.cmd('silent FloatermShow '..key)
@@ -73,41 +73,39 @@ function F.slime()
   vim.g.floaterm_autoinsert = true
 end
 
-function F.return_winsize(key)
+function F.return_winsize()
   local min_win_height = 19
   local winsize = eval('winheight(0)')
   if winsize > min_win_height then
-    F.toggle_winsize(key)
+    F.toggle_winsize()
   end
 end
-
-local float_winsize = utils.toggle(
-  '--width=0.99 --height=0.99',
-  '--width=0.6 --height=0.6'
-)
 
 local split_winsize = utils.toggle(
   '--height=0.99',
   '--height=0.5'
 )
 
-function F.toggle_winsize(key)
+local float_winsize = utils.toggle(
+  '--width=0.99 --height=0.99',
+  '--width=0.6 --height=0.6'
+)
+
+function F.toggle_winsize()
   local cmd
-  local split_list = {'REPL', 'htop'}
-  if utils.table_contains(split_list, key) == nil then
-    cmd = 'silent FloatermUpdate '..float_winsize()
-  else
+  local split_list = {REPL='REPL', htop='htop'}
+  local channel = eval('&channel')
+  local key = utils.get_table_key(ft_table, channel)
+  if utils.table_contains(split_list, key) then
     cmd = 'silent FloatermUpdate '..split_winsize()
+  else
+    cmd = 'silent FloatermUpdate '..float_winsize()
   end
   vim.cmd(cmd)
 end
 
 function F.test()
-  local win_width = eval('winwidth(0)')
-  local win_height = eval('winheight(0)')
-  local id = eval('&channel')
-  local key = utils.get_table_key(ft_table, id)
-  print(key, 'width:', win_width, 'height:', win_height)
+  print('no tests added')
 end
 
 return F
