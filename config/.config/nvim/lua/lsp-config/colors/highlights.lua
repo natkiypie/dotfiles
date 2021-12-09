@@ -1,10 +1,8 @@
 vim.cmd[[
-  hi FloatBorder guifg=234
-  hi FloatBorder guibg=none
-  hi Float guibg=none
+  hi FloatBorder guibg=none guifg=#c4c4c4
   hi NormalFloat guibg=none
+  hi Pmenu guibg=none
   hi PmenuSbar guibg=None
   hi PmenuThumb guibg=None
-  hi Pmenu guibg=none
   hi PmenuSel guibg=blue
 ]]

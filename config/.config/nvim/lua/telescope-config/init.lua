@@ -55,7 +55,7 @@ require'telescope'.setup {
             ['K'] = actions.toggle_selection + actions.move_selection_better,
             ['<esc>'] = actions.close,
             ['<Tab>'] = false,
-            ['<C-q>'] = false,
+            ['<C-q>'] = actions.close,
             ['s'] = false,
             ['S'] = false,
         }
@@ -176,6 +176,9 @@ require'telescope'.setup {
   extensions = {
     file_browser = {
       theme = 'dropdown',
+      prompt_title = '',
+      results_title = '',
+      preview_title = '',
       previewer = false,
         mappings = {
           n = vim.tbl_extend('force', fb_keybindings, {
