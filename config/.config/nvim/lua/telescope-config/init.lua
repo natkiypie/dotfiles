@@ -171,6 +171,7 @@ require'telescope'.setup {
       prompt_title = '',
       results_title = '',
       preview_title = '',
+      initial_mode = 'normal',
       mappings = {
         i = {
           ['<C-j>'] = actions.close,

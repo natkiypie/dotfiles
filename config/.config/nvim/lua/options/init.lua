@@ -1,9 +1,5 @@
--- VARIABLES:
-
 -- Set map leader key
 vim.g.mapleader = ' '
-
--- OPTIONS
 
 -- Tabline options
 vim.go.showtabline = 2
