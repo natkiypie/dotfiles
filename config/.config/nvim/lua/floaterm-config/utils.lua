@@ -22,9 +22,6 @@ function F.parse_opts(args)
   return opts
 end
 
--- local table = utils.get_table_value(ft_table, args.name)
--- local table_channel = utils.get_table_value(table, 'channel')
--- local table_name = utils.get_table_value(table, 'name')
 function F.create(args)
   vim.cmd('silent FloatermNew'..F.parse_opts(args))
   local channel = eval('&channel')
@@ -33,6 +30,7 @@ function F.create(args)
 end
 
 function F.hide(args)
+  F.return_winsize()
   vim.cmd('silent FloatermHide '..args.name)
 end
 
@@ -60,9 +58,8 @@ function F.toggle(args)
 end
 
 function F.quit()
-  local id = eval('&channel')
-  local key = utils.get_table_key(ft_table, id)
-  utils.remove_from_table(ft_table, key)
+  local name = utils.get_nested_table_value(ft_table, 'name')
+  utils.remove_from_table(ft_table, name)
   vim.cmd('silent FloatermKill')
 end
 
@@ -87,16 +84,36 @@ function F.slime()
 end
 
 function F.return_winsize()
-  local min_win_height = 19
-  local winsize = eval('winheight(0)')
-  if winsize > min_win_height then
-    F.toggle_winsize()
+  local width = eval('winwidth(0)')
+  local height = eval('winheight(0)')
+  local wintype = utils.get_nested_table_value(ft_table, 'wintype')
+  if wintype == 'split' then
+    local min_height = 17
+    if height > min_height then
+      F.toggle_winsize()
+    end
+  elseif wintype == 'vsplit' then
+    print(width)
+    -- local min_width = 19
+    -- if width > min_width then
+    --   F.toggle_winsize()
+    -- end
+  else
+    local min_height = 19
+    if height > min_height then
+      F.toggle_winsize()
+    end
   end
 end
 
 local split_winsize = utils.toggle(
   '--height=0.99',
   '--height=0.5'
+)
+
+local vsplit_winsize = utils.toggle(
+  '--width=0.99',
+  '--width=0.5'
 )
 
 local float_winsize = utils.toggle(
@@ -106,11 +123,11 @@ local float_winsize = utils.toggle(
 
 function F.toggle_winsize()
   local cmd
-  local split_list = {REPL='REPL', htop='htop'}
-  local channel = eval('&channel')
-  local key = utils.get_table_key(ft_table, channel)
-  if utils.table_contains(split_list, key) then
+  local wintype = utils.get_nested_table_value(ft_table, 'wintype')
+  if wintype == 'split' then
     cmd = 'silent FloatermUpdate '..split_winsize()
+  elseif wintype == 'vsplit' then
+    cmd = 'silent FloatermUpdate '..vsplit_winsize()
   else
     cmd = 'silent FloatermUpdate '..float_winsize()
   end

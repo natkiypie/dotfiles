@@ -63,4 +63,24 @@ function H.table_length(table)
   return count
 end
 
+function H.get_nested_table_value(table, key)
+  for _,v in pairs(table) do
+    for k,nv in pairs(v) do
+      if k == key then
+        return nv
+      end
+    end
+  end
+end
+
+function H.get_nested_table_key(table, value)
+  for _,v in pairs(table) do
+    for k,nv in pairs(v) do
+      if nv == value then
+        return k
+      end
+    end
+  end
+end
+
 return H
