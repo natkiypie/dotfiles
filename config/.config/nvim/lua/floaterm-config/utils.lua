@@ -71,16 +71,16 @@ function F.quit_all()
 end
 
 function F.slime()
-  F.toggle{wintype='split', height='0.5', name='REPL', cmd='node'}
-  local key = utils.get_table_value(ft_table, 'REPL')
-  F.toggle{name='REPL'}
-  local cmd = 'silent let b:slime_config = {"jobid": '..key..'}'
-  vim.cmd(cmd)
-  vim.cmd[[
-    SlimeSendCurrentLine
-    silent FloatermShow REPL
-  ]]
-  vim.cmd( 'stopinsert | wincmd k')
+  F.toggle{wintype='vsplit', width='0.4', name='REPL', cmd='node'}
+  -- local key = utils.get_table_value(ft_table, 'REPL')
+  -- F.toggle{name='REPL'}
+  -- local cmd = 'silent let b:slime_config = {"jobid": '..key..'}'
+  -- vim.cmd(cmd)
+  -- vim.cmd[[
+  --   SlimeSendCurrentLine
+  --   silent FloatermShow REPL
+  -- ]]
+  -- vim.cmd( 'stopinsert | wincmd k')
 end
 
 function F.return_winsize()
@@ -94,10 +94,10 @@ function F.return_winsize()
     end
   elseif wintype == 'vsplit' then
     print(width)
-    -- local min_width = 19
-    -- if width > min_width then
-    --   F.toggle_winsize()
-    -- end
+    local min_width = 58
+    if width > min_width then
+      F.toggle_winsize()
+    end
   else
     local min_height = 19
     if height > min_height then
@@ -113,7 +113,7 @@ local split_winsize = utils.toggle(
 
 local vsplit_winsize = utils.toggle(
   '--width=0.99',
-  '--width=0.5'
+  '--width=0.4'
 )
 
 local float_winsize = utils.toggle(
@@ -135,7 +135,8 @@ function F.toggle_winsize()
 end
 
 function F.test()
-  print('no tests added')
+  -- print('no tests added')
+  print(eval('winwidth(0)'))
 end
 
 return F
