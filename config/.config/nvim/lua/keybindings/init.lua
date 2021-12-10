@@ -38,6 +38,10 @@ keys.bind_normal_mode {
   {"d;", "di'hPl2x"},
   -- Remove double quotes from cursor under word
   {"d'", 'di"hPl2x'},
+  -- Yank block
+  {"yb", 'vipy'},
+  -- Yank block and put
+  {'yp', '}o<ESC>2kvipy}p'},
 }
 
 keys.bind_insert_mode {

@@ -3,7 +3,7 @@ local keys = require'utils.keybindings'
 keys.bind_normal_mode {
   {'<C-_>', '<CMD>CommentToggle<CR>'},
   {'<C-_><C-_>', 'vip:CommentToggle<CR>'},
-  {'<C-c><C-o>', 'yy:CommentToggle<CR>p'},
+  {'cp', 'yy:CommentToggle<CR>p'},
   {'<C-c><C-p>', '}o<ESC>2kvipyvip:CommentToggle<CR>}p'},
 }
 

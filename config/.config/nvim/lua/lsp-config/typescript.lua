@@ -1,11 +1,5 @@
 local lspconfig = require'lspconfig'
 
--- local keys = require'utils.keybindings'
--- keys.bind_normal_mode {
---   {'<leader>k', '<CMD>lua vim.lsp.buf.hover()<CR>'},
---   {'<leader>r', '<CMD>LspRestart<CR>'},
--- }
-
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
         silent = true,
