@@ -134,16 +134,14 @@ local float_winsize = utils.toggle(
 )
 
 function F.toggle_winsize()
-  local cmd = ''
   local wintype = utils.get_nested_table_value(ft_table, 'wintype')
   if wintype == 'split' then
-    cmd = 'silent FloatermUpdate '..split_winsize()
+    vim.cmd('silent FloatermUpdate '..split_winsize())
   elseif wintype == 'vsplit' then
-    cmd = 'silent FloatermUpdate '..vsplit_winsize()
+    vim.cmd('silent FloatermUpdate '..vsplit_winsize())
   else
-    cmd = 'silent FloatermUpdate '..float_winsize()
+    vim.cmd('silent FloatermUpdate '..float_winsize())
   end
-  vim.cmd(cmd)
 end
 
 return F
