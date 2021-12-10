@@ -16,14 +16,9 @@ keys.bind_terminal_mode {
   {'<C-t>', '<CMD>lua require"floaterm-config.utils".toggle{name="Terminal"}<CR>'},
   {'<C-l>', '<CMD>lua require"floaterm-config.utils".toggle{name="LazyGit"}<CR>'},
   {'<C-c>', '<CMD>lua require"floaterm-config.utils".toggle{name="Glow"}<CR>'},
-
   {'<C-n>', '<CMD>lua require"floaterm-config.utils".toggle{name="REPL"}<CR>'},
-
   {'<F7>', '<CMD>lua require"floaterm-config.utils".toggle{name="htop"}<CR>'},
   {'<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_winsize()<CR>'},
-  -- {'<', '<CMD>FloatermPrev<CR>'},
-  -- {'>', '<CMD>FloatermNext<CR>'},
   {'q', '<CMD>lua require"floaterm-config.utils".quit()<CR>'},
   {'<C-q>', '<CMD>lua require"floaterm-config.utils".quit_all()<CR>'},
-  -- {'<F5>', '<CMD>lua require"floaterm-config.utils".test()<CR>'},
 }
