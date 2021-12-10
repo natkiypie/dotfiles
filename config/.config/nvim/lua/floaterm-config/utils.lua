@@ -22,29 +22,40 @@ function F.parse_opts(args)
   return opts
 end
 
+-- local table = utils.get_table_value(ft_table, args.name)
+-- local table_channel = utils.get_table_value(table, 'channel')
+-- local table_name = utils.get_table_value(table, 'name')
 function F.create(args)
   vim.cmd('silent FloatermNew'..F.parse_opts(args))
-  local id = eval('&channel')
-  utils.add_to_table(ft_table, args.name, id)
+  local channel = eval('&channel')
+  local opts = utils.add_to_table(args, 'channel', channel)
+  utils.add_to_table_silent(ft_table, args.name, opts)
 end
 
-function F.handle(key)
-  local channel = eval('&channel')
-  local id = utils.get_table_value(ft_table, key)
-  if channel == id then
-    F.return_winsize()
-    vim.cmd('silent FloatermHide '..key)
-  elseif channel == 0 then
-    vim.cmd('silent FloatermShow '..key)
+function F.hide(args)
+  vim.cmd('silent FloatermHide '..args.name)
+end
+
+function F.show(args)
+  vim.cmd('silent FloatermShow '..args.name)
+end
+
+function F.handle(args)
+  if utils.table_contains(ft_table, args.name) then
+    F.show(args)
+  else
+    F.create(args)
   end
 end
 
 function F.toggle(args)
   local channel = eval('&channel')
-  if utils.table_contains(ft_table, args.name) then
-    F.handle(args.name)
-  elseif channel == 0 then
-    F.create(args)
+  if channel == 0 then
+    F.handle(args)
+  else
+    if utils.table_contains(ft_table, args.name) then
+      F.hide(args)
+    end
   end
 end
 
@@ -61,11 +72,6 @@ function F.quit_all()
     utils.remove_from_table(ft_table, key)
   end
 end
-
--- check if node term is open first
--- open node floaterm
--- call slime send
--- move back up to file buffer
 
 function F.slime()
   F.toggle{wintype='split', height='0.5', name='REPL', cmd='node'}

@@ -10,6 +10,11 @@ end
 
 function H.add_to_table(table, key, value)
   table[key] = value
+  return table
+end
+
+function H.add_to_table_silent(table, key, value)
+  table[key] = value
 end
 
 function H.remove_from_table(table, key)
@@ -23,6 +28,10 @@ function H.emty_table(table)
 end
 
 function H.table_contains(table, key)
+  return table[key] ~= nil
+end
+
+function H.table_contains_value(table, key)
   return table[key] ~= nil
 end
 
@@ -44,7 +53,7 @@ end
 
 function H.get_table_contents(table)
   for k,v in pairs(table) do
-    print(k, v)
+    print(k,v)
   end
 end
 
