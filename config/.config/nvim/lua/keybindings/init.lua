@@ -56,9 +56,10 @@ keys.bind_command_mode {
 }
 
 keys.bind_terminal_mode {
-  {'<ESC>', '<C-\\><C-n>'},
-  {'<C-k>', '<C-\\><C-n><C-w>k'},
-  {'<Up>', '<C-\\><C-n><C-w>k'},
+  -- {'<Left>', '<C-\\><C-n><C-w>h'},
+  -- {'<Right>', '<C-\\><C-n><C-w>l'},
+  -- {'<Up>', '<C-\\><C-n><C-w>k'},
+  -- {'<Down>', '<C-\\><C-n><C-w>j'},
 }
 
 keys.bind_expr_command_mode {

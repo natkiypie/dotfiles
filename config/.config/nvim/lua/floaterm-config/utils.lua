@@ -70,7 +70,7 @@ function F.quit_all()
   end
 end
 
-function F.slime()
+function F.slime_send_current_line()
   F.toggle{wintype='vsplit', width='0.4', name='REPL', cmd='node'}
   local channel = utils.get_nested_table_value(ft_table, 'channel')
   F.toggle{name='REPL'}
@@ -78,6 +78,19 @@ function F.slime()
   vim.cmd(cmd)
   vim.cmd[[
     SlimeSendCurrentLine
+    silent FloatermShow REPL
+  ]]
+  vim.cmd( 'stopinsert | wincmd h')
+end
+
+function F.slime_region_send()
+  F.toggle{wintype='vsplit', width='0.4', name='REPL', cmd='node'}
+  local channel = utils.get_nested_table_value(ft_table, 'channel')
+  F.toggle{name='REPL'}
+  local cmd = 'silent let b:slime_config = {"jobid": '..channel..'}'
+  vim.cmd(cmd)
+  vim.cmd[[
+    lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<plug>SlimeRegionSend<cr>',true,false,true),'x',true)
     silent FloatermShow REPL
   ]]
   vim.cmd( 'stopinsert | wincmd h')
@@ -106,17 +119,17 @@ function F.return_winsize()
 end
 
 local split_winsize = utils.toggle(
-  '--height=0.99',
+  '--height=1.0',
   '--height=0.5'
 )
 
 local vsplit_winsize = utils.toggle(
-  '--width=0.99',
+  '--width=1.0',
   '--width=0.4'
 )
 
 local float_winsize = utils.toggle(
-  '--width=0.99 --height=0.99',
+  '--width=1.0 --height=1.0',
   '--width=0.6 --height=0.6'
 )
 
