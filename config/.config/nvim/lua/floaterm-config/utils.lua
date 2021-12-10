@@ -72,15 +72,15 @@ end
 
 function F.slime()
   F.toggle{wintype='vsplit', width='0.4', name='REPL', cmd='node'}
-  -- local key = utils.get_table_value(ft_table, 'REPL')
-  -- F.toggle{name='REPL'}
-  -- local cmd = 'silent let b:slime_config = {"jobid": '..key..'}'
-  -- vim.cmd(cmd)
-  -- vim.cmd[[
-  --   SlimeSendCurrentLine
-  --   silent FloatermShow REPL
-  -- ]]
-  -- vim.cmd( 'stopinsert | wincmd k')
+  local channel = utils.get_nested_table_value(ft_table, 'channel')
+  F.toggle{name='REPL'}
+  local cmd = 'silent let b:slime_config = {"jobid": '..channel..'}'
+  vim.cmd(cmd)
+  vim.cmd[[
+    SlimeSendCurrentLine
+    silent FloatermShow REPL
+  ]]
+  vim.cmd( 'stopinsert | wincmd h')
 end
 
 function F.return_winsize()
@@ -93,7 +93,6 @@ function F.return_winsize()
       F.toggle_winsize()
     end
   elseif wintype == 'vsplit' then
-    print(width)
     local min_width = 58
     if width > min_width then
       F.toggle_winsize()
