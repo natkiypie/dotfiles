@@ -5,4 +5,8 @@ vim.cmd[[
   hi PmenuSbar guibg=None
   hi PmenuThumb guibg=None
   hi PmenuSel guibg=blue
+  hi DiagnosticVirtualTextError guibg=none
+  hi DiagnosticVirtualTextHint guibg=none
+  hi DiagnosticVirtualTextInfo guibg=none
+  hi DiagnosticVirtualTextWarn guibg=none
 ]]
