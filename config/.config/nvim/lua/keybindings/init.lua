@@ -55,7 +55,7 @@ keys.bind_visual_mode {
 }
 
 keys.bind_command_mode {
-  {'q', '<ESC>'},
+  {'jk', '<ESC><C-l>'},
 }
 
 keys.bind_terminal_mode {
