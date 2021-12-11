@@ -28,8 +28,11 @@ keys.bind_normal_mode {
   {'<Right>', '<C-w>l'},
   {'<Up>', '<C-w>k'},
   {'<Down>', '<C-w>j'},
+  -- Split Resize
+  {'-', '<CMD>vertical resize -5<CR>'},
+  {'=', '<CMD>vertical resize +5<CR>'},
   -- Set current working directory to directory of opened file
-  {'==', '<CMD>cd %:h<CR>'},
+  {'++', '<CMD>cd %:h<CR>'},
   -- Surround word under cursor with single quotes (prefix with number to surround corresponding number of words with single quotes)
   {"'", "ciw''<Esc>P"},
   -- Surround word under cursor with double quotes (prefix with number to surround corresponding number of words with double quotes)

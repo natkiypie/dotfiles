@@ -23,10 +23,21 @@ on_attach = function(client, bufnr)
   buffer.buf_map(bufnr, 'n', 'gi', ':TSLspRenameFile<CR>')
   buffer.buf_map(bufnr, 'n', 'go', ':TSLspImportAll<CR>')
   buffer.on_attach(client, bufnr)
+  -- Highlight symbol under cursor: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#highlight-symbol-under-cursor
+  if client.resolved_capabilities.document_highlight then
+    vim.o.updatetime = 400
+    vim.cmd [[
+      augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]]
+  end
 end,
 }
 
--- null-ls
+-- Null-LS
 C.null_ls =  { on_attach = buffer.on_attach }
 
 -- Sumneko

@@ -6,7 +6,28 @@ vim.cmd[[
   hi PmenuThumb guibg=None
   hi PmenuSel guibg=blue
   hi DiagnosticVirtualTextError guibg=none
-  hi DiagnosticVirtualTextHint guibg=none
-  hi DiagnosticVirtualTextInfo guibg=none
   hi DiagnosticVirtualTextWarn guibg=none
+  hi DiagnosticVirtualTextInfo guibg=none
+  hi DiagnosticVirtualTextHint guibg=none
+]]
+-- hi DiagnosticVirtualTextError guibg=none guifg=#b50000
+-- hi DiagnosticVirtualTextWarn guibg=none guifg=yellow
+-- hi DiagnosticVirtualTextInfo guibg=none guifg=#0d6eff
+-- hi DiagnosticVirtualTextHint guibg=none guifg=#45ff0d
+-- hi DiagnosticSignError guifg=#b50000
+-- hi diagnosticsignwarn guifg=yellow
+-- hi diagnosticsigninfo guifg=#0d6eff
+-- hi diagnosticsignhint guifg=#45ff0d
+
+-- Highlight line number instead of having icons in sign column: https://github.com/neovim/nvim-lspconfig/wiki/UI-customization#highlight-line-number-instead-of-having-icons-in-sign-column
+vim.cmd [[
+  highlight DiagnosticLineNrError guibg=#51202A guifg=#FF0000
+  highlight DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500
+  highlight DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF
+  highlight DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF
+
+  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
 ]]

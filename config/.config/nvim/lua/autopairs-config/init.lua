@@ -1,6 +1,5 @@
 require'nvim-autopairs'.setup {
   check_ts = true,
-  map_cr = true
 }
 
 local cmp_autopairs = require'nvim-autopairs.completion.cmp'

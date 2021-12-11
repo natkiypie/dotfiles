@@ -25,7 +25,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- Text does not move if errors or diagnostics
-vim.wo.signcolumn = 'yes'
+-- vim.wo.signcolumn = 'yes'
 
 -- Set tabs to spaces
 vim.bo.softtabstop = 2

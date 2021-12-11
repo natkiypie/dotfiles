@@ -73,10 +73,8 @@ require'telescope'.setup {
       preview_title = '',
       theme = 'dropdown',
       previewer = false,
-      border = {},
       borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
-        prompt = {'─', '│', 'x', '│', '┌', '┐', '│', '│'},
+        prompt = {'─', '│', ' ', '│', '┌', '┐', '', ''},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
       },
@@ -97,9 +95,7 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
       prompt_title = '',
-      border = {},
       borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
         prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
@@ -122,9 +118,7 @@ require'telescope'.setup {
       prompt_title = '',
       theme = 'dropdown',
       previewer = false,
-      border = {},
       borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
         prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
@@ -148,9 +142,7 @@ require'telescope'.setup {
       preview_title = '',
       theme = 'dropdown',
       previewer = false,
-      border = {},
       borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
         prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
@@ -191,9 +183,7 @@ require'telescope'.setup {
       preview_title = '',
       theme = 'dropdown',
       previewer = false,
-      border = {},
       borderchars = {
-        { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
         prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
         results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
         preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
