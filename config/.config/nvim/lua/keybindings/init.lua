@@ -37,10 +37,14 @@ keys.bind_normal_mode {
   {"'", "ciw''<Esc>Pb"},
   -- Surround word under cursor with double quotes (prefix with number to surround corresponding number of words with double quotes)
   {"''", 'ciw""<Esc>Pb'},
-  -- 'Remove' single quotes from cursor under word
+  -- Remove single quotes from cursor under word
   {"d'", "di'hPl2xb"},
   -- Remove double quotes from cursor under word
   {"d''", 'di"hPl2xb'},
+  -- change double quotes to single 'quotes'
+  {"c'", "di\"hPl2xbcw\'\'<Esc>Pb"},
+  -- change single quotes to double quotes
+  {"c''", "di'hPl2xbcw\"\"<Esc>Pb"},
   -- Yank paragraph and put
   {'ypp', '}o<ESC>2kyip}pzz'},
 }
