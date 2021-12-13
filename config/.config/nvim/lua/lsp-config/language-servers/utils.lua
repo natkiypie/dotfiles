@@ -13,6 +13,7 @@ M.commands = function()
   }
   vim.cmd[[
     command! LspDef lua vim.lsp.buf.definition()
+    command! LspRef lua vim.lsp.buf.references()
     command! LspFormatting lua vim.lsp.buf.formatting()
     command! LspCodeAction lua vim.lsp.buf.code_action()
     command! LspHover lua vim.lsp.buf.hover()
@@ -34,7 +35,8 @@ end
 
 M.keybindings = function(bufnr)
   buf_map(bufnr, 'n', 'gd', ':LspDef<CR>')
-  buf_map(bufnr, 'n', 'gr', ':LspRename<CR>')
+  buf_map(bufnr, 'n', 'gr', ':LspRef<CR>')
+  buf_map(bufnr, 'n', 'ge', ':LspRename<CR>')
   buf_map(bufnr, 'n', 'gy', ':LspTypeDef<CR>')
   buf_map(bufnr, 'n', 'gk', ':LspHover<CR>')
   buf_map(bufnr, 'n', 'ga', ':LspCodeAction<CR>')
