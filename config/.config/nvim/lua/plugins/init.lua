@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use'nvim-lua/plenary.nvim'
   use'nvim-telescope/telescope.nvim'
   use'nvim-telescope/telescope-file-browser.nvim'
+  use'jpalardy/vim-slime'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -37,7 +38,8 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use'ThePrimeagen/vim-be-good'
-  use'jpalardy/vim-slime'
+  use'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use'jose-elias-alvarez/null-ls.nvim'
 
   if PACKER_BOOTSTRAP then
     require'packer'.sync()

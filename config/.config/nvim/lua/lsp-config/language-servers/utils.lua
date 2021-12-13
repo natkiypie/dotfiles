@@ -58,12 +58,34 @@ M.highlight = function(client)
   end
 end
 
-M.formatting = function(client)
+M.disable_native_formatting = function(client)
   client.resolved_capabilities.document_formatting = false
   client.resolved_capabilities.document_range_formatting = false
-  if client.resolved_capabilities.document_formatting then
-      vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
-  end
+end
+
+M.ts_utils = function(client, bufnr)
+  local ts_utils = require("nvim-lsp-ts-utils")
+  ts_utils.setup({})
+  ts_utils.setup_client(client)
+  buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+  buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
+  buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+end
+
+M.null_ls = function()
+  local null_ls = require("null-ls")
+  null_ls.setup({
+    sources = {
+      null_ls.builtins.diagnostics.eslint_d,
+      null_ls.builtins.code_actions.eslint_d,
+      null_ls.builtins.formatting.prettierd
+    },
+    on_attach = function(client)
+      if client.resolved_capabilities.document_formatting then
+        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      end
+    end,
+  })
 end
 
 return M
