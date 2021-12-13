@@ -1,6 +1,4 @@
 require'lsp-config/cmp'
-require'lsp-config/diagnostics'
-require'lsp-config/language_servers'
+require'lsp-config/language-servers/init'
 require'lsp-config/options'
-require'lsp-config/keybindings'
 require'lsp-config/colors/init'

@@ -203,10 +203,11 @@ require'telescope'.setup {
         mappings = {
           n = vim.tbl_extend('force', fb_keybindings, {
             ['w'] = false,
+            ['p'] = fb_action'copy_file',
+            ['cw'] = fb_action'rename_file',
             ['h'] = fb_action'goto_parent_dir',
             ['.'] = fb_action'toggle_hidden',
             ['gh'] = fb_action'goto_cwd',
-            ['p'] = fb_action'copy_file',
           }),
       },
     },
