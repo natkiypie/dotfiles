@@ -43,7 +43,22 @@ M.keybindings = function(bufnr)
   buf_map(bufnr, 'i', '<C-f>', '<CMD>LspSignatureHelp<CR>')
 end
 
+M.highlight = function(client)
+  if client.resolved_capabilities.document_highlight then
+    vim.o.updatetime = 400
+    vim.cmd [[
+      augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+      augroup END
+    ]]
+  end
+end
+
 M.formatting = function(client)
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
   if client.resolved_capabilities.document_formatting then
       vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
   end

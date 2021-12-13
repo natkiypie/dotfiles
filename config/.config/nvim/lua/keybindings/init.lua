@@ -34,17 +34,15 @@ keys.bind_normal_mode {
   -- Set current working directory to directory of opened file
   {'++', '<CMD>cd %:h<CR>'},
   -- Surround word under cursor with single quotes (prefix with number to surround corresponding number of words with single quotes)
-  {"'", "ciw''<Esc>P"},
+  {"'", "ciw''<Esc>Pb"},
   -- Surround word under cursor with double quotes (prefix with number to surround corresponding number of words with double quotes)
-  {'"', 'ciw""<Esc>P'},
-  -- Remove single quotes from cursor under word
-  {"d;", "di'hPl2x"},
+  {"''", 'ciw""<Esc>Pb'},
+  -- 'Remove' single quotes from cursor under word
+  {"d'", "di'hPl2xb"},
   -- Remove double quotes from cursor under word
-  {"d'", 'di"hPl2x'},
-  -- Yank block
-  {"yb", 'vipy'},
-  -- Yank block and put
-  {'yp', '}o<ESC>2kvipy}p'},
+  {"d''", 'di"hPl2xb'},
+  -- Yank paragraph and put
+  {'ypp', '}o<ESC>2kyip}pzz'},
 }
 
 keys.bind_insert_mode {
