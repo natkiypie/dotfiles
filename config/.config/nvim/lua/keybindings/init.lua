@@ -41,10 +41,10 @@ keys.bind_normal_mode {
   {"d'", "di'hPl2xb"},
   -- Remove double quotes from cursor under word
   {"d''", 'di"hPl2xb'},
-  -- change double quotes to single 'quotes'
-  {"c'", "di\"hPl2xbcw\'\'<Esc>Pb"},
+  -- change double quotes to single quotes
+  {"c'", "di\"a''<Esc>P2F\"2xl"},
   -- change single quotes to double quotes
-  {"c''", "di'hPl2xbcw\"\"<Esc>Pb"},
+  {"c''", "di'a\"\"<Esc>P2F'2xl"},
   -- Yank paragraph and put
   {'ypp', '}o<ESC>2kyip}pzz'},
 }
