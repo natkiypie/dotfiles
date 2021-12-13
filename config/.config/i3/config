@@ -22,8 +22,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-
+bindsym $mod+d exec dmenu_run -b -nb black -sb white -sf black
 
 # move focused window
 bindsym $mod+Control+h move left

@@ -11,8 +11,6 @@ return require('packer').startup(function(use)
   use'windwp/nvim-autopairs'
   use'terrortylor/nvim-comment'
   use'neovim/nvim-lspconfig'
-  use'jose-elias-alvarez/null-ls.nvim'
-  use'jose-elias-alvarez/nvim-lsp-ts-utils'
   use'onsails/lspkind-nvim'
   use'hrsh7th/cmp-nvim-lsp'
   use'hrsh7th/cmp-buffer'
