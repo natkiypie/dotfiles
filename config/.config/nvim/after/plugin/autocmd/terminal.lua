@@ -1,1 +1,1 @@
-vim.cmd[[autocmd TermOpen * set nonumber | set norelativenumber]]
+vim.cmd([[autocmd TermOpen * set nonumber | set norelativenumber]])

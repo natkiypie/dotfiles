@@ -58,28 +58,8 @@ end
 
 function M.bind_expr_key(mode, keymap)
   local set_keymap = vim.api.nvim_set_keymap
-  local opts = {expr = true, noremap = true}
+  local opts = { expr = true, noremap = true }
   set_keymap(mode, keymap[1], keymap[2], opts)
 end
-
--------------- NEW ----------------
-
--- function M.bind_buf_key(mode, bufmap)
---   local set_bufmap = vim.api.nvim_buf_set_keymap
---   local opts = { noremap = true, silent = true }
---   set_bufmap(bufmap[1], mode, bufmap[2], bufmap[3], opts)
--- end
--- 
--- function M.bind_buf_normal_mode(bufmaps)
---   for _, bufmap in ipairs(bufmaps) do
---     M.bind_key_buf('n', bufmap)
---   end
--- end
--- 
--- function M.bind_buf_insert_mode(bufnr, keymaps)
---   for _, keymap in ipairs(keymaps) do
---     M.bind_key_buf(bufnr, 'i', keymap)
---   end
--- end
 
 return M

@@ -1,22 +1,22 @@
-require'telescope-config/keybindings'
-require'telescope-config/colors/init'
+require 'telescope-config/keybindings'
+require 'telescope-config/colors/init'
 
-local actions = require'telescope.actions'
+local actions = require 'telescope.actions'
 
 local function fb_action(f)
-  return function (b)
-    require'telescope'.extensions.file_browser.actions[f](b)
+  return function(b)
+    require('telescope').extensions.file_browser.actions[f](b)
   end
 end
 
 local fb_keybindings = {}
 
-require'telescope'.setup {
+require('telescope').setup {
   defaults = {
     layout_config = {
       prompt_position = 'top',
     },
-    find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
+    find_command = { 'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' },
     prompt_prefix = ' ',
     selection_caret = ' ',
     entry_prefix = ' ',
@@ -25,40 +25,40 @@ require'telescope'.setup {
     selection_strategy = 'reset',
     sorting_strategy = 'ascending',
     layout_strategy = 'horizontal',
-    file_sorter = require'telescope.sorters'.get_fuzzy_file,
+    file_sorter = require('telescope.sorters').get_fuzzy_file,
     file_ignore_patterns = {},
-    generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
+    generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
     path_display = {},
     border = {},
-    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+    borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
     color_devicons = false,
-    set_env = {['COLORTERM'] = 'truecolor'},
-    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+    set_env = { ['COLORTERM'] = 'truecolor' },
+    file_previewer = require('telescope.previewers').vim_buffer_cat.new,
+    grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
+    qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+    buffer_previewer_maker = require('telescope.previewers').buffer_previewer_maker,
     mappings = {
-        i = {
-            ['J'] = actions.move_selection_next,
-            ['K'] = actions.move_selection_previous,
-            ['L'] = actions.select_default + actions.center,
-            ['Q'] = actions.close,
-            ['<esc>'] = actions.close,
-            ['<Tab>'] = false,
-            ['<C-q>'] = false,
-        },
-        n = {
-            ['l'] = actions.select_default + actions.center,
-            ['q'] = actions.close,
-            ['v'] = actions.toggle_selection,
-            ['J'] = actions.toggle_selection + actions.move_selection_worse,
-            ['K'] = actions.toggle_selection + actions.move_selection_better,
-            ['<esc>'] = actions.close,
-            ['<Tab>'] = false,
-            ['<C-q>'] = actions.close,
-            ['s'] = false,
-            ['S'] = false,
-        }
+      i = {
+        ['J'] = actions.move_selection_next,
+        ['K'] = actions.move_selection_previous,
+        ['L'] = actions.select_default + actions.center,
+        ['Q'] = actions.close,
+        ['<esc>'] = actions.close,
+        ['<Tab>'] = false,
+        ['<C-q>'] = false,
+      },
+      n = {
+        ['l'] = actions.select_default + actions.center,
+        ['q'] = actions.close,
+        ['v'] = actions.toggle_selection,
+        ['J'] = actions.toggle_selection + actions.move_selection_worse,
+        ['K'] = actions.toggle_selection + actions.move_selection_better,
+        ['<esc>'] = actions.close,
+        ['<Tab>'] = false,
+        ['<C-q>'] = actions.close,
+        ['s'] = false,
+        ['S'] = false,
+      },
     },
   },
 
@@ -74,9 +74,9 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
       borderchars = {
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '', ''},
-        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '', '' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
       mappings = {
         i = {
@@ -85,7 +85,7 @@ require'telescope'.setup {
         n = {
           ['<C-f>'] = actions.close,
         },
-      }
+      },
     },
     buffers = {
       layout_config = {
@@ -96,9 +96,9 @@ require'telescope'.setup {
       previewer = false,
       prompt_title = '',
       borderchars = {
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
-        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
       mappings = {
         i = {
@@ -107,7 +107,7 @@ require'telescope'.setup {
         n = {
           ['<C-b>'] = actions.close,
         },
-      }
+      },
     },
     live_grep = {
       layout_config = {
@@ -119,9 +119,9 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
       borderchars = {
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
-        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
       mappings = {
         i = {
@@ -130,7 +130,7 @@ require'telescope'.setup {
         n = {
           ['<C-g>'] = actions.close,
         },
-      }
+      },
     },
     oldfiles = {
       layout_config = {
@@ -143,9 +143,9 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
       borderchars = {
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
-        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
       mappings = {
         i = {
@@ -154,7 +154,7 @@ require'telescope'.setup {
         n = {
           ['<C-h>'] = actions.close,
         },
-      }
+      },
     },
     jumplist = {
       layout_config = {
@@ -171,9 +171,9 @@ require'telescope'.setup {
         n = {
           ['<C-j>'] = actions.close,
         },
-      }
+      },
     },
-     keymaps = {
+    keymaps = {
       layout_config = {
         width = 0.5,
         height = 0.5,
@@ -184,9 +184,9 @@ require'telescope'.setup {
       theme = 'dropdown',
       previewer = false,
       borderchars = {
-        prompt = {'─', '│', ' ', '│', '┌', '┐', '│', '│'},
-        results = {'─', '│', '─', '│', '├', '┤', '┘', '└'},
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
       },
       mappings = {
         i = {
@@ -195,23 +195,23 @@ require'telescope'.setup {
         n = {
           ['<C-k>'] = actions.close,
         },
-      }
+      },
     },
   },
   extensions = {
     file_browser = {
-        mappings = {
-          n = vim.tbl_extend('force', fb_keybindings, {
-            ['w'] = false,
-            ['p'] = fb_action'copy_file',
-            ['cw'] = fb_action'rename_file',
-            ['h'] = fb_action'goto_parent_dir',
-            ['.'] = fb_action'toggle_hidden',
-            ['gh'] = fb_action'goto_cwd',
-          }),
+      mappings = {
+        n = vim.tbl_extend('force', fb_keybindings, {
+          ['w'] = false,
+          ['p'] = fb_action 'copy_file',
+          ['cw'] = fb_action 'rename_file',
+          ['h'] = fb_action 'goto_parent_dir',
+          ['.'] = fb_action 'toggle_hidden',
+          ['gh'] = fb_action 'goto_cwd',
+        }),
       },
     },
   },
 }
 
-require'telescope'.load_extension 'file_browser'
+require('telescope').load_extension 'file_browser'

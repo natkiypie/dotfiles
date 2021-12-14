@@ -1,9 +1,9 @@
-local cmp = require'cmp'
-local lspkind = require'lspkind'
+local cmp = require 'cmp'
+local lspkind = require 'lspkind'
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match '%s' == nil
 end
 
 local feedkey = function(key, mode)
@@ -12,13 +12,13 @@ end
 
 local WIDE_HEIGHT = 40
 
-cmp.setup({
+cmp.setup {
   completion = {
     completeopt = 'menu,menuone,noinsert',
   },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   documentation = {
@@ -30,10 +30,10 @@ cmp.setup({
   mapping = {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    ['<C-e>'] = cmp.mapping.complete({ sources = { { name = 'vsnip' } } }),
+    ['<C-e>'] = cmp.mapping.complete { sources = { { name = 'vsnip' } } },
     ['<C-h>'] = cmp.mapping.close(),
-    ['<C-l>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-l>'] = cmp.mapping.confirm { select = true },
+    ['<Tab>'] = cmp.mapping.confirm { select = true },
     ['<C-j>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -60,6 +60,6 @@ cmp.setup({
     { name = 'buffer' },
   },
   formatting = {
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-  }
-})
+    format = lspkind.cmp_format { with_text = true, maxwidth = 50 },
+  },
+}

@@ -1,17 +1,19 @@
+local utils = require 'utils.helpers'
+
 local M = {}
 
 M.commands = function()
   local diagnostics_border = {
-    {"┌", "FloatBorder"},
-    {"─", "FloatBorder"},
-    {"┐", "FloatBorder"},
-    {"│", "FloatBorder"},
-    {"┘", "FloatBorder"},
-    {"─", "FloatBorder"},
-    {"└", "FloatBorder"},
-    {"│", "FloatBorder"},
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
   }
-  vim.cmd[[
+  vim.cmd [[
     command! LspDef lua vim.lsp.buf.definition()
     command! LspRef lua vim.lsp.buf.references()
     command! LspFormatting lua vim.lsp.buf.formatting()
@@ -24,13 +26,17 @@ M.commands = function()
     command! LspDiag lua vim.diagnostic.show()
     command! LspSignatureHelp lua vim.lsp.buf.signature_help()
   ]]
-  vim.cmd('command! LspDiagLine lua vim.diagnostic.open_float({border='..vim.inspect(diagnostics_border)..', focusable=false})')
+  vim.cmd(
+    'command! LspDiagLine lua vim.diagnostic.open_float({border='
+      .. vim.inspect(diagnostics_border)
+      .. ', focusable=false})'
+  )
 end
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
-    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
-        silent = true,
-    })
+  vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+    silent = true,
+  })
 end
 
 M.keybindings = function(bufnr)
@@ -64,28 +70,43 @@ M.disable_native_formatting = function(client)
 end
 
 M.ts_utils = function(client, bufnr)
-  local ts_utils = require("nvim-lsp-ts-utils")
-  ts_utils.setup({})
+  local ts_utils = require 'nvim-lsp-ts-utils'
+  ts_utils.setup {}
   ts_utils.setup_client(client)
-  buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
-  buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
-  buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+  buf_map(bufnr, 'n', 'gs', ':TSLspOrganize<CR>')
+  buf_map(bufnr, 'n', 'gi', ':TSLspRenameFile<CR>')
+  buf_map(bufnr, 'n', 'go', ':TSLspImportAll<CR>')
 end
 
-M.null_ls = function()
-  local null_ls = require("null-ls")
-  null_ls.setup({
+M.format = function(client)
+  local sources
+  local config = utils.get_table_value(client, 'config')
+  local filetypes = utils.get_table_value(config, 'filetypes')
+  local filetype = utils.get_table_value(filetypes, 1)
+  local null_ls = require 'null-ls'
+  if filetype == 'lua' then
+    sources = {
+      null_ls.builtins.formatting.stylua.with {
+        extra_args = { '--config-path', vim.fn.expand '~/.config/nvim/.stylua.toml' },
+      },
+    }
+  else
     sources = {
       null_ls.builtins.diagnostics.eslint_d,
       null_ls.builtins.code_actions.eslint_d,
-      null_ls.builtins.formatting.prettierd
-    },
+      null_ls.builtins.formatting.prettierd,
+    }
+  end
+  null_ls.setup {
+    sources = sources,
+    ---@diagnostic disable-next-line: redefined-local
     on_attach = function(client)
       if client.resolved_capabilities.document_formatting then
-        vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+        vim.cmd 'autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()'
       end
+      vim.cmd 'echo ""'
     end,
-  })
+  }
 end
 
 return M

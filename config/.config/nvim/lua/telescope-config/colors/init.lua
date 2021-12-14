@@ -1,1 +1,1 @@
-require'telescope-config/colors/highlights'
+require 'telescope-config/colors/highlights'

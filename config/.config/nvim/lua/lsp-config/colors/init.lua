@@ -1,1 +1,1 @@
-require'lsp-config/colors/highlights'
+require 'lsp-config/colors/highlights'

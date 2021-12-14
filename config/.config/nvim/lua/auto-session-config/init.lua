@@ -1,4 +1,4 @@
-require'auto-session-config/options'
+require 'auto-session-config/options'
 
 local opts = {
   log_level = 'info',
@@ -11,7 +11,7 @@ local opts = {
     '~/',
     '~/.dotfiles/bash',
     -- '~/.dotfiles/config/.config/nvim',
-  }
+  },
 }
 
-require'auto-session'.setup(opts)
+require('auto-session').setup(opts)

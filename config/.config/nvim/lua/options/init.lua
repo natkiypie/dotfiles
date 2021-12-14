@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 -- Tabline options
 vim.go.showtabline = 2
 vim.go.tabline = ''
-vim.go.tabline = vim.go.tabline..'%= %M  %t'
+vim.go.tabline = vim.go.tabline .. '%= %M  %t'
 
 -- Enable lazy redraw
 vim.go.lazyredraw = true

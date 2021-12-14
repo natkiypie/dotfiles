@@ -18,6 +18,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
 
+# open browser
+bindsym $mod+b exec brave-browser
+
 # kill focused window
 bindsym $mod+F4 kill
 
