@@ -17,7 +17,10 @@ Source: [shareable configs designed to work with the extends feature of .eslintr
 ```JSON
 {
   "parser": "babel-eslint",
-  "extends": ["standard", "standard-jsx", "standard-react"]
+  "extends": ["standard", "standard-jsx", "standard-react"],
+  "rules": {
+    "space-before-function-paren": ["error", "never"]
+  }
 }
 ```
 
@@ -42,7 +45,8 @@ Source: [shareable configs designed to work with the extends feature of .eslintr
   "trailingComma": "none",
   "useTabs": false,
   "tabWidth": 2,
-  "singleQuote": true
+  "singleQuote": true,
+  "jsxSingleQuote": true
 }
 ```
 
