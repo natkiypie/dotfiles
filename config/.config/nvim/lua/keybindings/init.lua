@@ -65,7 +65,7 @@ keys.bind_command_mode {
 
 -- make <expr> binding (condition: terminal vsplit)
 keys.bind_terminal_mode {
-  { '<', '<C-\\><C-n><C-w>h' },
+  { '<ESC>', '<C-\\><C-n>' },
 }
 
 keys.bind_expr_command_mode {
@@ -73,4 +73,8 @@ keys.bind_expr_command_mode {
   { '<C-j>', 'v:lua.wildm("\\<Right\\>")' },
   { '<C-h>', 'v:lua.wildm("\\<Up\\>")' },
   { '<C-l>', 'v:lua.wildm("\\<CR\\>")' },
+}
+
+keys.bind_expr_terminal_mode {
+  { '<', 'v:lua.vsplit_term("\\<C-\\>\\<C-n\\>\\<C-w\\>h")' },
 }

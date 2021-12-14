@@ -22,6 +22,5 @@ keys.bind_terminal_mode {
   { '<C-n>', '<CMD>lua require"floaterm-config.utils".toggle{name="REPL"}<CR>' },
   { '<F7>', '<CMD>lua require"floaterm-config.utils".toggle{name="htop"}<CR>' },
   { '<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_winsize()<CR>' },
-  { 'q', '<CMD>lua require"floaterm-config.utils".quit()<CR>' },
-  { '<C-q>', '<CMD>lua require"floaterm-config.utils".quit_all()<CR>' },
+  { '<C-q>', '<CMD>lua require"floaterm-config.utils".quit()<CR>' },
 }
