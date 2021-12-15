@@ -1,28 +1,16 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
     <note priority="veryhigh" time="1639467892">
-<<<<<<< HEAD
-        Fix floaterm glow script ✨
-=======
         Fix glow script ✨
->>>>>>> update
     </note>
     <note priority="veryhigh" time="1639540308">
         Add functionality to REPL fterm to allow clearing repl from vim 
     </note>
-<<<<<<< HEAD
-    <note priority="veryhigh" time="1639554872">
-        Refactor floaterm toggle function (maybe we can't use a closure 🤷)
-    </note>
-    <note priority="high" time="1639468082">
-        Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n 
-=======
     <note priority="veryhigh" time="1639555834">
         Refactor floaterm toggle function (maybe can't use a closer 🤷) 
     </note>
     <note priority="high" time="1639468082">
         Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n ﴖ
->>>>>>> update
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
