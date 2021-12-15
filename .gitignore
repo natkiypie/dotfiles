@@ -1,6 +1,5 @@
 config/.config/nvim/language-servers/
 config/.config/nvim/plugin/
-config/.config/nvim/.todo
 config/.config/nvim/sessions/
 bash/.bash_history
 bash/.bash_logout

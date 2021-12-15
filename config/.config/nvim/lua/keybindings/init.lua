@@ -27,6 +27,8 @@ keys.bind_normal_mode {
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   -- Surround word under cursor with single quotes
   { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
+  -- Yank line and put
+  { 'yp', 'yyp' },
   -- Yank paragraph and put
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
@@ -39,6 +41,7 @@ keys.bind_insert_mode {
 keys.bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
+  { 'yp', 'y`]o<Esc>p' },
 }
 
 keys.bind_command_mode {
