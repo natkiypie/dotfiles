@@ -1,7 +1,5 @@
 local helpers = require 'utils.helpers'
 
-local eval = vim.api.nvim_eval
-
 local F = {}
 
 local ft_table = {}
@@ -23,6 +21,7 @@ function F.parse_opts(args)
 end
 
 function F.create(args)
+  local eval = vim.api.nvim_eval
   vim.cmd('silent FloatermNew' .. F.parse_opts(args))
   local channel = eval '&channel'
   local opts = helpers.add_to_table(args, 'channel', channel)
@@ -47,6 +46,7 @@ function F.handle(args)
 end
 
 function F.toggle(args)
+  local eval = vim.api.nvim_eval
   local channel = eval '&channel'
   if channel == 0 then
     F.handle(args)
@@ -71,7 +71,7 @@ function F.quit_all()
 end
 
 function F.slime_send_current_line()
-  F.toggle { wintype = 'vsplit', width = '0.4', name = 'REPL', cmd = 'node' }
+  F.toggle { wintype = 'vsplit', width = '0.4', height = '1.0', name = 'REPL', cmd = 'node' }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
@@ -84,7 +84,7 @@ function F.slime_send_current_line()
 end
 
 function F.slime_region_send()
-  F.toggle { wintype = 'vsplit', width = '0.4', name = 'REPL', cmd = 'node' }
+  F.toggle { wintype = 'vsplit', width = '0.4', height = '1.0', name = 'REPL', cmd = 'node' }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
@@ -96,7 +96,11 @@ function F.slime_region_send()
   vim.cmd 'stopinsert | wincmd h'
 end
 
+-- TODO: get width and height directly from current floaterm's table
+-- local term_height = helpers.get_nested_table_value(ft_table, 'height')
+-- local term_width = helpers.get_nested_table_value(ft_table, 'width')
 function F.return_winsize()
+  local eval = vim.api.nvim_eval
   local width = eval 'winwidth(0)'
   local height = eval 'winheight(0)'
   local wintype = helpers.get_nested_table_value(ft_table, 'wintype')
@@ -118,20 +122,35 @@ function F.return_winsize()
   end
 end
 
-local split_winsize = helpers.toggle('--height=1.0', '--height=0.5')
-
-local vsplit_winsize = helpers.toggle('--width=1.0', '--width=0.4')
-
-local float_winsize = helpers.toggle('--width=1.0 --height=1.0', '--width=0.6 --height=0.6')
+function F._toggle_winsize(term_dim, min)
+  local max = '1.0'
+  if term_dim == min then
+    return max
+  else
+    return min
+  end
+end
 
 function F.toggle_winsize()
   local wintype = helpers.get_nested_table_value(ft_table, 'wintype')
   if wintype == 'split' then
-    vim.cmd('silent FloatermUpdate ' .. split_winsize())
+    local split_min = '0.5'
+    local term_height = helpers.get_nested_table_value(ft_table, 'height')
+    local val = F._toggle_winsize(term_height, split_min)
+    vim.cmd('silent FloatermUpdate --height=' .. val)
+    helpers.update_nested_table_value(ft_table, term_height, val)
   elseif wintype == 'vsplit' then
-    vim.cmd('silent FloatermUpdate ' .. vsplit_winsize())
+    local vsplit_min = '0.4'
+    local term_width = helpers.get_nested_table_value(ft_table, 'width')
+    local val = F._toggle_winsize(term_width, vsplit_min)
+    vim.cmd('silent FloatermUpdate --width=' .. val)
+    helpers.update_nested_table_value(ft_table, term_width, val)
   else
-    vim.cmd('silent FloatermUpdate ' .. float_winsize())
+    local float_min = '0.6'
+    local term_width = helpers.get_nested_table_value(ft_table, 'width')
+    local val = F._toggle_winsize(term_width, float_min)
+    vim.cmd('silent FloatermUpdate --width=' .. val .. ' --height=' .. val)
+    helpers.update_nested_table_value(ft_table, term_width, val)
   end
 end
 

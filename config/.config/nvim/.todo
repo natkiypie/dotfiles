@@ -6,9 +6,6 @@
     <note priority="veryhigh" time="1639540308">
         Add functionality to REPL fterm to allow clearing repl from vim 
     </note>
-    <note priority="veryhigh" time="1639555834">
-        Refactor floaterm toggle function (maybe can't use a closer 🤷) 
-    </note>
     <note priority="high" time="1639468082">
         Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n ﴖ
     </note>

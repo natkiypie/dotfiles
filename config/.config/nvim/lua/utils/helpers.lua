@@ -95,4 +95,14 @@ function H.get_nested_table_key(table, value)
   end
 end
 
+function H.update_nested_table_value(table, value, new_value)
+  for _, v in pairs(table) do
+    for k, nv in pairs(v) do
+      if nv == value then
+        v[k] = new_value
+      end
+    end
+  end
+end
+
 return H
