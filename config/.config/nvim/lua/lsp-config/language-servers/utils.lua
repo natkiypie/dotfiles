@@ -1,4 +1,4 @@
-local utils = require 'utils.helpers'
+local helpers = require 'utils.helpers'
 
 local M = {}
 
@@ -80,9 +80,9 @@ end
 
 M.format = function(client)
   local sources
-  local config = utils.get_table_value(client, 'config')
-  local filetypes = utils.get_table_value(config, 'filetypes')
-  local filetype = utils.get_table_value(filetypes, 1)
+  local config = helpers.get_table_value(client, 'config')
+  local filetypes = helpers.get_table_value(config, 'filetypes')
+  local filetype = helpers.get_table_value(filetypes, 1)
   local null_ls = require 'null-ls'
   if filetype == 'lua' then
     sources = {

@@ -18,23 +18,15 @@ keys.bind_normal_mode {
   { '<Leader>p', '<CMD>lua require"utils.global".toggle_path()<CR>' },
   -- Split window vertically right
   { '<Leader>v', '<CMD>vsp<CR>' },
+  -- Split window horizontally
+  { '<Leader>s', '<CMD>sp<CR>' },
   -- Buffer navigation
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
-  -- Split navigation
-  { '<', '<C-w>h' },
-  { '>', '<C-w>l' },
-  { '<Left>', '<C-w>h' },
-  { '<Right>', '<C-w>l' },
-  { '<Up>', '<C-w>k' },
-  { '<Down>', '<C-w>j' },
-  -- Split Resize
-  { '-', '<CMD>vertical resize -5<CR>' },
-  { '=', '<CMD>vertical resize +5<CR>' },
   -- Set current working directory to directory of opened file
-  { '++', '<CMD>cd %:h<CR>' },
+  { '<Leader>h', '<CMD>cd %:h<CR>' },
   -- Surround word under cursor with single quotes
-  { "'", '<CMD>lua require"utils.keybindings".quote()<CR>B' },
+  { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
   -- Yank paragraph and put
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
@@ -57,6 +49,21 @@ keys.bind_terminal_mode {
   { '<ESC>', '<C-\\><C-n>' },
 }
 
+keys.bind_expr_normal_mode {
+  { '>', 'v:lua.vsplit("\\<C-w\\>l", ">")' },
+  { '<', 'v:lua.vsplit("\\<C-w\\>h", "<")' },
+  { '<Left>', 'v:lua.vsplit("\\<C-w\\>h", "<Left>")' },
+  { '<Right>', 'v:lua.vsplit("\\<C-w\\>l", "<Right>")' },
+  { 'K', 'v:lua.split("\\<C-w\\>k", "K")' },
+  { 'J', 'v:lua.split("\\<C-w\\>j", "J")' },
+  { '<Up>', 'v:lua.split("\\<C-w\\>k", "<Up>")' },
+  { '<Down>', 'v:lua.split("\\<C-w\\>j", "<Down>")' },
+  { '-', 'v:lua.vsplit("\\<CMD\\>vertical resize -5\\<CR\\>", "-")' },
+  { '=', 'v:lua.vsplit("\\<CMD\\>vertical resize +5\\<CR\\>", "=")' },
+  { '_', 'v:lua.split("\\<CMD\\>resize -5\\<CR\\>", "_")' },
+  { '+', 'v:lua.split("\\<CMD\\>resize +5\\<CR\\>", "+")' },
+}
+
 keys.bind_expr_command_mode {
   { '<C-k>', 'v:lua.wildmenu("\\<Left\\>")' },
   { '<C-j>', 'v:lua.wildmenu("\\<Right\\>")' },
@@ -65,5 +72,5 @@ keys.bind_expr_command_mode {
 }
 
 keys.bind_expr_terminal_mode {
-  { '<', 'v:lua.vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h", "<")' },
+  { '<', 'v:lua.repl_vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h", "<")' },
 }

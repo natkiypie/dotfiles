@@ -1,8 +1,5 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1639467822">
-        Where sensible, make keybindings conditional (&lt;expr&gt;)
-    </note>
     <note priority="veryhigh" time="1639467892">
         Fix glow script and look into its toggle full winsize util fn
     </note>
@@ -14,6 +11,9 @@
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode
+    </note>
+    <note priority="medium" time="1639549545">
+        Make visual yank and put keybinding
     </note>
     <note priority="low" time="1639468104">
         Learn LazyGit

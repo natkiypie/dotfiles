@@ -36,4 +36,20 @@ function G.toggle_path()
   vim.cmd(cmd)
 end
 
+function G.quote()
+  local eval = vim.api.nvim_eval
+  local quote = eval 'expand("<cWORD>")'
+  local word = eval 'expand("<cword>")'
+  local marks = string.gsub(quote, word, '')
+  if marks == "''" then
+    word = '"' .. word .. '"'
+    vim.cmd('normal! viWc' .. word)
+  elseif marks == '""' then
+    vim.cmd('normal! viWc' .. word)
+  else
+    word = "'" .. word .. "'"
+    vim.cmd('normal! viWc' .. word)
+  end
+end
+
 return G

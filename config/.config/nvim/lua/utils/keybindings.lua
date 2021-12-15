@@ -1,3 +1,5 @@
+local helpers = require 'utils.helpers'
+
 local M = {}
 
 function M.bind_key(mode, keymap)
@@ -50,30 +52,46 @@ function _G.wildmenu(key)
   return vim.fn.wildmenumode() == 1 and M.replace_termcodes(key)
 end
 
-function _G.vsplit(key, char)
+function _G.split(key, char)
+  local minwin = 1
+  local maxheight = 33
   local eval = vim.api.nvim_eval
-  local win = eval 'winnr()'
+  local tpbl = vim.fn.tabpagebuflist()
+  local len = #tpbl
   local winh = eval 'winheight("$")'
-  if win > 1 and winh > 33 then
+  if len > minwin and winh < maxheight then
     return M.replace_termcodes(key)
   else
     return char
   end
 end
 
-function M.quote()
+function _G.vsplit(key, char)
+  local minwin = 1
+  local filetype = vim.bo.filetype
+  local blacklist = { 'TelescopePrompt' }
+  local maxwidth = 147
   local eval = vim.api.nvim_eval
-  local quote = eval 'expand("<cWORD>")'
-  local word = eval 'expand("<cword>")'
-  local marks = string.gsub(quote, word, '')
-  if marks == "''" then
-    word = '"' .. word .. '"'
-    vim.cmd('normal! viWc' .. word)
-  elseif marks == '""' then
-    vim.cmd('normal! viWc' .. word)
+  local tpbl = vim.fn.tabpagebuflist()
+  local len = #tpbl
+  local winw = eval 'winwidth("$")'
+  if len > minwin and winw < maxwidth and helpers.table_contains_value(blacklist, filetype) == false then
+    return M.replace_termcodes(key)
   else
-    word = "'" .. word .. "'"
-    vim.cmd('normal! viWc' .. word)
+    return char
+  end
+end
+
+function _G.repl_vsplit(key, char)
+  local minwin = 1
+  local minheight = 33
+  local eval = vim.api.nvim_eval
+  local win = eval 'winnr()'
+  local winh = eval 'winheight("$")'
+  if win > minwin and winh > minheight then
+    return M.replace_termcodes(key)
+  else
+    return char
   end
 end
 
