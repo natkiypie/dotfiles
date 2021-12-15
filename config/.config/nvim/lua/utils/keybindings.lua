@@ -46,18 +46,18 @@ function M.replace_termcodes(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-function _G.wildm(key)
+function _G.wildmenu(key)
   return vim.fn.wildmenumode() == 1 and M.replace_termcodes(key)
 end
 
-function _G.vsplit_term(key)
+function _G.vsplit(key, char)
   local eval = vim.api.nvim_eval
   local win = eval 'winnr()'
   local winh = eval 'winheight("$")'
   if win > 1 and winh > 33 then
     return M.replace_termcodes(key)
   else
-    return '<'
+    return char
   end
 end
 

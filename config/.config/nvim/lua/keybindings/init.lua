@@ -53,30 +53,17 @@ keys.bind_command_mode {
   { 'jk', '<ESC><C-l>' },
 }
 
--- make <expr> binding (condition: terminal vsplit)
 keys.bind_terminal_mode {
   { '<ESC>', '<C-\\><C-n>' },
 }
 
--- TEST:
--- some other text 'test' "test"
-
--- NOTES:
--- get word (including quotes) under cursor: echo expand("<cWORD>")
--- get word surrounded by single quotes: echo matchstr(getline('.'), "'\\zs[^']\\+\\ze'")
--- get word surrounded by double quotes: echo matchstr(getline('.'), "'\\zs[^']\\+\\ze'")
-
--- keys.bind_expr_normal_mode {
---   { '<C-p>', 'v:lua.test()' },
--- }
-
 keys.bind_expr_command_mode {
-  { '<C-k>', 'v:lua.wildm("\\<Left\\>")' },
-  { '<C-j>', 'v:lua.wildm("\\<Right\\>")' },
-  { '<C-h>', 'v:lua.wildm("\\<Up\\>")' },
-  { '<C-l>', 'v:lua.wildm("\\<CR\\>")' },
+  { '<C-k>', 'v:lua.wildmenu("\\<Left\\>")' },
+  { '<C-j>', 'v:lua.wildmenu("\\<Right\\>")' },
+  { '<C-h>', 'v:lua.wildmenu("\\<Up\\>")' },
+  { '<C-l>', 'v:lua.wildmenu("\\<CR\\>")' },
 }
 
 keys.bind_expr_terminal_mode {
-  { '<', 'v:lua.vsplit_term("\\<C-\\>\\<C-n\\>\\<C-w\\>h")' },
+  { '<', 'v:lua.vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h", "<")' },
 }

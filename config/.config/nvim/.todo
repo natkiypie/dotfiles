@@ -6,6 +6,9 @@
     <note priority="veryhigh" time="1639467892">
         Fix glow script and look into its toggle full winsize util fn
     </note>
+    <note priority="veryhigh" time="1639540308">
+        Add functionality to REPL fterm to allow clearing repl from vim
+    </note>
     <note priority="high" time="1639468082">
         Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n
     </note>
