@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use 'p00f/nvim-ts-rainbow'
-  use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'
   use 'neovim/nvim-lspconfig'
   use 'onsails/lspkind-nvim'
@@ -34,6 +33,7 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'jpalardy/vim-slime'
+  use 'windwp/nvim-autopairs'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',

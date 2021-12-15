@@ -1,6 +1,5 @@
 local keys = require 'utils.keybindings'
 
--- TODO: pass args as found in the floaterm api (ex: width="--width='0.6'") to minimize parsing
 keys.bind_normal_mode {
   {
     '<C-t>',
@@ -19,6 +18,7 @@ keys.bind_normal_mode {
     '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
   { '<C-n>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
+  { '<C-L>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
 }
 
 keys.bind_x_mode {

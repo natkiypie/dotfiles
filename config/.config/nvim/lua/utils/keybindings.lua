@@ -56,10 +56,9 @@ function _G.split(key, char)
   local minwin = 1
   local maxheight = 33
   local eval = vim.api.nvim_eval
-  local tpbl = vim.fn.tabpagebuflist()
-  local len = #tpbl
+  local wins = #vim.fn.tabpagebuflist()
   local winh = eval 'winheight("$")'
-  if len > minwin and winh < maxheight then
+  if wins > minwin and winh < maxheight then
     return M.replace_termcodes(key)
   else
     return char
@@ -72,10 +71,9 @@ function _G.vsplit(key, char)
   local blacklist = { 'TelescopePrompt' }
   local maxwidth = 147
   local eval = vim.api.nvim_eval
-  local tpbl = vim.fn.tabpagebuflist()
-  local len = #tpbl
+  local wins = #vim.fn.tabpagebuflist()
   local winw = eval 'winwidth("$")'
-  if len > minwin and winw < maxwidth and helpers.table_contains_value(blacklist, filetype) == false then
+  if wins > minwin and winw < maxwidth and helpers.table_contains_value(blacklist, filetype) == false then
     return M.replace_termcodes(key)
   else
     return char
@@ -84,11 +82,11 @@ end
 
 function _G.repl_vsplit(key, char)
   local minwin = 1
-  local minheight = 33
+  local minheight = 27
   local eval = vim.api.nvim_eval
-  local win = eval 'winnr()'
+  local winnr = eval 'winnr()'
   local winh = eval 'winheight("$")'
-  if win > minwin and winh > minheight then
+  if winnr > minwin and winh > minheight then
     return M.replace_termcodes(key)
   else
     return char

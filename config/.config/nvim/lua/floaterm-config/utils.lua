@@ -71,8 +71,14 @@ function F.quit_all()
 end
 
 function F.slime_send_current_line()
-  F.toggle { name = 'REPL', cmd = 'node', wintype = 'vsplit', width = '0.4' }
+  F.toggle {
+    name = 'REPL',
+    cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
+    wintype = 'vsplit',
+    width = '0.4',
+  }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
+
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
   vim.cmd(cmd)
@@ -84,7 +90,13 @@ function F.slime_send_current_line()
 end
 
 function F.slime_region_send()
-  F.toggle { name = 'REPL', cmd = 'node', wintype = 'vsplit', width = '0.4' }
+  F.toggle {
+    name = 'REPL',
+    cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
+    wintype = 'vsplit',
+
+    width = '0.4',
+  }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
@@ -94,6 +106,14 @@ function F.slime_region_send()
     silent FloatermShow REPL
   ]]
   vim.cmd 'stopinsert | wincmd h'
+end
+
+function F.clear_repl(repl)
+  if helpers.table_contains(ft_table, repl) then
+    vim.cmd [[FloatermSend --name=REPL console.log("\u001B[2J\u001B[0;0f");]]
+  else
+    print ''
+  end
 end
 
 function F.return_winsize()

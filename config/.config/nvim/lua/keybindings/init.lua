@@ -60,5 +60,5 @@ keys.bind_expr_command_mode {
 }
 
 keys.bind_expr_terminal_mode {
-  { '<', 'v:lua.repl_vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h", "<")' },
+  { '<', 'v:lua.repl_vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h<C-l>", "<")' },
 }
