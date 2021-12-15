@@ -16,9 +16,6 @@ keys.bind_normal_mode {
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
   { 'yp', 'yyp' },
-  -- Yank line and put
-  { 'yp', 'yyp' },
-  -- Yank paragraph and put
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
 
@@ -29,7 +26,6 @@ keys.bind_insert_mode {
 keys.bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
-  { 'ypp', 'y`]o<Esc>p' },
   { 'yp', 'y`]o<Esc>p' },
 }
 
