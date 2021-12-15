@@ -71,7 +71,7 @@ function F.quit_all()
 end
 
 function F.slime_send_current_line()
-  F.toggle { wintype = 'vsplit', width = '0.4', height = '1.0', name = 'REPL', cmd = 'node' }
+  F.toggle { name = 'REPL', cmd = 'node', wintype = 'vsplit', width = '0.4' }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
@@ -84,7 +84,7 @@ function F.slime_send_current_line()
 end
 
 function F.slime_region_send()
-  F.toggle { wintype = 'vsplit', width = '0.4', height = '1.0', name = 'REPL', cmd = 'node' }
+  F.toggle { name = 'REPL', cmd = 'node', wintype = 'vsplit', width = '0.4' }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')
   F.toggle { name = 'REPL' }
   local cmd = 'silent let b:slime_config = {"jobid": ' .. channel .. '}'
@@ -96,38 +96,26 @@ function F.slime_region_send()
   vim.cmd 'stopinsert | wincmd h'
 end
 
--- TODO: get width and height directly from current floaterm's table
--- local term_height = helpers.get_nested_table_value(ft_table, 'height')
--- local term_width = helpers.get_nested_table_value(ft_table, 'width')
 function F.return_winsize()
-  local eval = vim.api.nvim_eval
-  local width = eval 'winwidth(0)'
-  local height = eval 'winheight(0)'
+  local max_dim = '1.0'
   local wintype = helpers.get_nested_table_value(ft_table, 'wintype')
+  local term_height = helpers.get_nested_table_value(ft_table, 'height')
+  local term_width = helpers.get_nested_table_value(ft_table, 'width')
   if wintype == 'split' then
-    local min_height = 17
-    if height > min_height then
+    if term_height == max_dim then
       F.toggle_winsize()
     end
-  elseif wintype == 'vsplit' then
-    local min_width = 58
-    if width > min_width then
-      F.toggle_winsize()
-    end
-  else
-    local min_height = 19
-    if height > min_height then
-      F.toggle_winsize()
-    end
+  elseif term_width == max_dim then
+    F.toggle_winsize()
   end
 end
 
-function F._toggle_winsize(term_dim, min)
-  local max = '1.0'
-  if term_dim == min then
-    return max
+function F._toggle_winsize(term_dim, min_dim)
+  local max_dim = '1.0'
+  if term_dim == min_dim then
+    return max_dim
   else
-    return min
+    return min_dim
   end
 end
 

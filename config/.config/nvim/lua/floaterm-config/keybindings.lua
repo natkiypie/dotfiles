@@ -8,15 +8,15 @@ keys.bind_normal_mode {
   },
   {
     '<C-g>',
-    '<CMD>lua require"floaterm-config.utils".toggle{name="LazyGit", cmd="lazygit", wintype="float", width="0.6", height="0.6"}<CR>',
+    '<CMD>lua require"floaterm-config.utils".toggle{name="LazyGit", cmd="lazygit", wintype="float", width="0.6"}<CR>',
   },
   {
     '<C-a>',
-    '<CMD>lua require"floaterm-config.utils".toggle{name="Glow", cmd="glow_script.sh", wintype="float", width="0.6", height="0.6"}<CR>',
+    '<CMD>lua require"floaterm-config.utils".toggle{name="Glow", cmd="glow_script.sh", wintype="float", width="0.6"}<CR>',
   },
   {
     '<F7>',
-    '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", width="1.0", height="0.5"}<CR>',
+    '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
   { '<C-n>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
 }
