@@ -33,18 +33,8 @@ keys.bind_normal_mode {
   { '=', '<CMD>vertical resize +5<CR>' },
   -- Set current working directory to directory of opened file
   { '++', '<CMD>cd %:h<CR>' },
-  -- Surround word under cursor with single quotes (prefix with number to surround corresponding number of words with single quotes)
-  { "'", "ciw''<Esc>Pb" },
-  -- Surround word under cursor with double quotes (prefix with number to surround corresponding number of words with double quotes)
-  { "''", 'ciw""<Esc>Pb' },
-  -- Remove single quotes from cursor under word
-  { "d'", "di'hPl2xb" },
-  -- Remove double quotes from cursor under word
-  { "d''", 'di"hPl2xb' },
-  -- change double quotes to single quotes
-  { "c'", 'di"a\'\'<Esc>P2F"2xl' },
-  -- change single quotes to double quotes
-  { "c''", 'di\'a""<Esc>P2F\'2xl' },
+  -- Surround word under cursor with single quotes
+  { "'", '<CMD>lua require"utils.keybindings".quote()<CR>B' },
   -- Yank paragraph and put
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
@@ -67,6 +57,18 @@ keys.bind_command_mode {
 keys.bind_terminal_mode {
   { '<ESC>', '<C-\\><C-n>' },
 }
+
+-- TEST:
+-- some other text 'test' "test"
+
+-- NOTES:
+-- get word (including quotes) under cursor: echo expand("<cWORD>")
+-- get word surrounded by single quotes: echo matchstr(getline('.'), "'\\zs[^']\\+\\ze'")
+-- get word surrounded by double quotes: echo matchstr(getline('.'), "'\\zs[^']\\+\\ze'")
+
+-- keys.bind_expr_normal_mode {
+--   { '<C-p>', 'v:lua.test()' },
+-- }
 
 keys.bind_expr_command_mode {
   { '<C-k>', 'v:lua.wildm("\\<Left\\>")' },

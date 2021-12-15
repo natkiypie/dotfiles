@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
     <note priority="veryhigh" time="1639467822">
-        Where sensible, make keybindings conditional (&lt;expr&gt;) (especially the fucking '&lt;' terminal mode keybinding!)
+        Where sensible, make keybindings conditional (&lt;expr&gt;)
     </note>
     <note priority="veryhigh" time="1639467892">
         Fix glow script and look into its toggle full winsize util fn
