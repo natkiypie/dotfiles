@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
     <note priority="veryhigh" time="1639467892">
-        Fix glow script and look into its toggle full winsize util fn
+        Fix floaterm glow script ✨
     </note>
     <note priority="veryhigh" time="1639540308">
-        Add functionality to REPL fterm to allow clearing repl from vim
+        Add functionality to REPL fterm to allow clearing repl from vim 
+    </note>
+    <note priority="veryhigh" time="1639554872">
+        Refactor floaterm toggle function (maybe we can't use a closure 🤷)
     </note>
     <note priority="high" time="1639468082">
-        Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n
+        Disable auto-session on startup &amp; make function that 1.asks user if they want to save session before quitting 2.saves session if user selects Y 3.doesn't save session if user selects n 
     </note>
     <note priority="medium" time="1639468307">
-        Look into vimwiki &amp; vim-orgmode
-    </note>
-    <note priority="medium" time="1639549545">
-        Make visual yank and put keybinding
+        Look into vimwiki &amp; vim-orgmode 
     </note>
     <note priority="low" time="1639468104">
-        Learn LazyGit
+        Learn LazyGit 
     </note>
     <note priority="low" time="1639468259">
-        Explore telescope built-in pickers
+        Explore telescope built-in pickers 
     </note>
     <note priority="verylow" time="1639468147">
-        Note: &lt;C-y&gt; &amp; &lt;C-p&gt; are free
+        Note: &lt;C-y&gt; &amp; &lt;C-p&gt; are free 
     </note>
 </todo>

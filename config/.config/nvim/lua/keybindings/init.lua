@@ -1,33 +1,21 @@
 local keys = require 'utils.keybindings'
 
 keys.bind_normal_mode {
-  -- Disable wrapped line skips during vertical navigation
   { 'j', 'gj' },
   { 'k', 'gk' },
-  -- Save & Source file
   { '<C-w>', '<CMD>w | so %<CR>' },
-  -- Close all floating windows & delete buffer
   { 'q', '<CMD>lua require"utils.global".close_float_win()<CR>' },
-  -- Save all buffers and exit Vim
   { '<C-q>', '<CMD>wa | qa<CR>' },
-  -- Used to quit splits
   { 'Q', '<CMD>q<CR>' },
-  -- -- Toggle mouse
   { 'M', '<CMD>lua require"utils.global".toggle_mouse()<CR>' },
-  -- Temporarily show file path in status bar
   { '<Leader>p', '<CMD>lua require"utils.global".toggle_path()<CR>' },
-  -- Split window vertically right
   { '<Leader>v', '<CMD>vsp<CR>' },
-  -- Split window horizontally
   { '<Leader>s', '<CMD>sp<CR>' },
-  -- Buffer navigation
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
-  -- Set current working directory to directory of opened file
   { '<Leader>h', '<CMD>cd %:h<CR>' },
-  -- Surround word under cursor with single quotes
   { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
-  -- Yank paragraph and put
+  { 'yp', 'yyp' },
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
 
@@ -35,10 +23,10 @@ keys.bind_insert_mode {
   { 'jk', '<ESC>' },
 }
 
--- Surround visual selection with single quotes
 keys.bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
+  { 'ypp', 'y`]o<Esc>p' },
 }
 
 keys.bind_command_mode {
