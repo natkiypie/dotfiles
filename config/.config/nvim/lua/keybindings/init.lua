@@ -15,7 +15,13 @@ keys.bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
+<<<<<<< HEAD
   { 'yp', 'yyp' },
+=======
+  -- Yank line and put
+  { 'yp', 'yyp' },
+  -- Yank paragraph and put
+>>>>>>> update
   { 'ypp', '}o<ESC>2kyip}pzz' },
 }
 
@@ -26,7 +32,11 @@ keys.bind_insert_mode {
 keys.bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
+<<<<<<< HEAD
   { 'ypp', 'y`]o<Esc>p' },
+=======
+  { 'yp', 'y`]o<Esc>p' },
+>>>>>>> update
 }
 
 keys.bind_command_mode {
