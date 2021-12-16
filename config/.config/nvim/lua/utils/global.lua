@@ -21,8 +21,7 @@ function G.save_session()
 end
 
 function G.close_win_on_last_buf()
-  local eval = vim.api.nvim_eval
-  local buffers = eval "len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))"
+  local buffers = vim.fn.len(vim.fn.filter(vim.fn.range(1, vim.fn.bufnr '$'), 'buflisted(v:val)'))
   if buffers == 1 then
     if #vim.fn.tabpagebuflist() > 1 then
       vim.cmd 'q'
@@ -44,14 +43,12 @@ function G.close_float_win()
   G.close_win_on_last_buf()
 end
 
--- Toggle mouse
 local tm = utils.toggle('a', '')
 function G.toggle_mouse()
   local cmd = 'set mouse=' .. tm()
   vim.cmd(cmd)
 end
 
--- Toggle tabline file path
 local tp = utils.toggle('+=%=\\ %G\\ %f', '+=%=\\ %G\\ %t')
 function G.toggle_path()
   local cmd = 'set tabline=|set tabline' .. tp()
@@ -59,9 +56,8 @@ function G.toggle_path()
 end
 
 function G.quote()
-  local eval = vim.api.nvim_eval
-  local quote = eval 'expand("<cWORD>")'
-  local word = eval 'expand("<cword>")'
+  local quote = vim.fn.expand '<cWORD>'
+  local word = vim.fn.expand '<cword>'
   local marks = string.gsub(quote, word, '')
   if marks == "''" then
     word = '"' .. word .. '"'

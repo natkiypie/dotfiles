@@ -94,7 +94,6 @@ function F.slime_region_send()
     name = 'REPL',
     cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
     wintype = 'vsplit',
-
     width = '0.4',
   }
   local channel = helpers.get_nested_table_value(ft_table, 'channel')

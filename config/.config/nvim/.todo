@@ -3,9 +3,6 @@
     <note priority="veryhigh" time="1639652369">
         Make &lt;expr&gt; key that disables 'q' when in glow floaterm
     </note>
-    <note priority="veryhigh" time="1639652414">
-        Fix: disable '&lt;' key in floaterm other than REPL
-    </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
@@ -17,8 +14,5 @@
     </note>
     <note priority="verylow" time="1639468147">
         Note: &lt;C-y&gt; &amp; &lt;C-p&gt; are free 
-    </note>
-    <note priority="verylow" time="1639603176">
-        Putting this here for later use: ﭾ
     </note>
 </todo>
