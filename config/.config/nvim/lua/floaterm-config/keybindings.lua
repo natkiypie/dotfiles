@@ -18,7 +18,7 @@ keys.bind_normal_mode {
     '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
   { '<C-n>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
-  { '<C-L>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
+  { '<C-c>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
 }
 
 keys.bind_x_mode {

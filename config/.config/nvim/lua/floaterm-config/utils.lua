@@ -112,7 +112,7 @@ function F.clear_repl(repl)
   if helpers.table_contains(ft_table, repl) then
     vim.cmd [[FloatermSend --name=REPL console.log("\u001B[2J\u001B[0;0f");]]
   else
-    print ''
+    print 'repl not found'
   end
 end
 

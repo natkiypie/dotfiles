@@ -3,9 +3,9 @@ local keys = require 'utils.keybindings'
 keys.bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
-  { '<C-w>', '<CMD>w | so %<CR>' },
+  { '<C-w>', '<CMD>w<CR>' },
   { 'q', '<CMD>lua require"utils.global".close_float_win()<CR>' },
-  { '<C-q>', '<CMD>wa | qa<CR>' },
+  { '<C-q>', '<CMD>lua require"utils.global".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
   { 'M', '<CMD>lua require"utils.global".toggle_mouse()<CR>' },
   { '<Leader>p', '<CMD>lua require"utils.global".toggle_path()<CR>' },

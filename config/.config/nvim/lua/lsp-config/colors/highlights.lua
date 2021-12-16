@@ -1,5 +1,5 @@
 vim.cmd [[
-  hi FloatBorder guibg=none guifg=#c4c4c4
+  hi FloatBorder guibg=none guifg=#a9b1d6
   hi NormalFloat guibg=none
   hi Pmenu guibg=none
   hi PmenuSbar guibg=None

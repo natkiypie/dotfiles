@@ -1,13 +1,11 @@
 require 'colors/options'
 
--- Color Scheme
 vim.cmd 'colorscheme tokyonight'
-
--- Highlight Groups
--- Defining syntax/highlights - The syntax API is still a work in progress (https://github.com/nanotee/nvim-lua-guide#defining-syntaxhighlights)
 vim.cmd [[
   hi Statusline guibg=none
   hi StatusLineNC guibg=none
   hi tablinefill guibg=none
-  hi TabLineSel guibg=none guifg=white
+  hi TabLineSel guibg=none guifg=#a9b1d6
+  hi MoreMsg guifg=#a9b1d6
+  hi NormalFloat guifg=#a9b1d6
 ]]
