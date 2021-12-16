@@ -15,7 +15,6 @@ function G.save_session()
   elseif choice == 3 then
     vim.cmd 'DeleteSession'
   else
-    print 'Aborting...'
     return
   end
   vim.cmd 'wa|qa'

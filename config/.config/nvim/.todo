@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1639467892">
-        Fix glow script ✨
+    <note priority="veryhigh" time="1639652369">
+        Make &lt;expr&gt; key that disables 'q' when in glow floaterm
+    </note>
+    <note priority="veryhigh" time="1639652414">
+        Fix: disable '&lt;' key in floaterm other than REPL
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 

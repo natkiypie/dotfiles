@@ -1,5 +1,4 @@
 vim.g.mapleader = ' '
-
 vim.go.showtabline = 2
 vim.go.tabline = ''
 vim.go.tabline = vim.go.tabline .. '%= %M  %t'
