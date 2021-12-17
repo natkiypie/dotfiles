@@ -1,6 +1,7 @@
 require 'colors/options'
 
 vim.cmd 'colorscheme tokyonight'
+
 vim.cmd [[
   hi Statusline guibg=none
   hi StatusLineNC guibg=none

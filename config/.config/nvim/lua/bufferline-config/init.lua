@@ -11,7 +11,7 @@ require('bufferline').setup {
     show_buffer_close_icons = false,
     show_close_icon = false,
     show_tab_indicators = false,
-    separator_style = { '|', '|' },
+    separator_style = { '∣', '∣' },
     tab_size = 10,
     name_formatter = function(buf)
       if buf.name:match '%.*' then

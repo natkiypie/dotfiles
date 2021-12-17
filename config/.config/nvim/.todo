@@ -3,8 +3,14 @@
     <note priority="veryhigh" time="1639652369">
         Make &lt;expr&gt; key that disables 'q' when in glow floaterm
     </note>
+    <note priority="veryhigh" time="1639708412">
+        Make bufferlinepick function that dims highlight of selected buffer
+    </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
+    </note>
+    <note priority="medium" time="1639705395">
+        Resize telescope jumplist preview width and shorten names in result list
     </note>
     <note priority="low" time="1639468104">
         Learn LazyGit 
