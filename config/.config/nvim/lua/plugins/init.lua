@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
   use 'ThePrimeagen/vim-be-good'
   use 'akinsho/bufferline.nvim'
   use 'nvim-telescope/telescope-symbols.nvim'
+  use 'karb94/neoscroll.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
