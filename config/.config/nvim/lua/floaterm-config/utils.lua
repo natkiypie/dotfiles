@@ -1,4 +1,5 @@
 local helpers = require 'utils.helpers'
+local keys = require 'utils.keybindings'
 
 local F = {}
 
@@ -160,5 +161,24 @@ function F.toggle_winsize()
     helpers.update_nested_table_value(ft_table, term_width, val)
   end
 end
+
+function _G.no_q(key, char)
+  local eval = vim.api.nvim_eval
+  local channel = eval '&channel'
+  local blacklist = { 'htop', 'Glow', 'LazyGit' }
+  if channel ~= 0 then
+    local name = helpers.get_nested_table_value(ft_table, 'name')
+    local blisted = helpers.table_contains_value(blacklist, name)
+    if blisted then
+      return keys.replace_termcodes(key)
+    else
+      return char
+    end
+  end
+end
+
+keys.bind_expr_terminal_mode {
+  { 'q', 'v:lua.no_q("\\<CMD\\>lua require\'floaterm-config.utils\'.quit()\\<CR\\>", "q")' },
+}
 
 return F
