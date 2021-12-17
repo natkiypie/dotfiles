@@ -47,7 +47,7 @@ alias freeport='echo $(pass master/natkiypie) | sudo -S fuser -k 3000/tcp'
 # go to scripts directory
 alias scripts='cd ~/.scripts'
 # alias goodbye script
-alias goodbye=goodbye.sh
+alias bye=goodbye.sh
 # set external monitor on only
 alias exmon=ex_mon_only_on.sh
 # set external monitor

@@ -49,12 +49,6 @@ function G.toggle_mouse()
   vim.cmd(cmd)
 end
 
-local tp = utils.toggle('+=%=\\ %G\\ %f', '+=%=\\ %G\\ %t')
-function G.toggle_path()
-  local cmd = 'set tabline=|set tabline' .. tp()
-  vim.cmd(cmd)
-end
-
 function G.quote()
   local quote = vim.fn.expand '<cWORD>'
   local word = vim.fn.expand '<cword>'

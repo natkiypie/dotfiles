@@ -87,28 +87,6 @@ require('telescope').setup {
         },
       },
     },
-    buffers = {
-      layout_config = {
-        width = 0.5,
-        height = 0.4,
-      },
-      theme = 'dropdown',
-      previewer = false,
-      prompt_title = '',
-      borderchars = {
-        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
-        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-      },
-      mappings = {
-        i = {
-          ['<C-b>'] = actions.close,
-        },
-        n = {
-          ['<C-b>'] = actions.close,
-        },
-      },
-    },
     live_grep = {
       layout_config = {
         width = 0.5,

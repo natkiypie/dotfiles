@@ -7,5 +7,5 @@ vim.cmd [[
   hi TelescopePreviewTitle guifg=#a9b1d6
   hi TelescopeResultsNormal guifg=#a9b1d6
   hi TelescopeSelection guibg=blue
-  hi TelescopeMatching guifg=darkblue
+  hi TelescopeMatching guifg=yellow
 ]]

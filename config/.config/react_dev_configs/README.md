@@ -26,6 +26,7 @@ Source: [shareable configs designed to work with the extends feature of .eslintr
 
 ### ESLINTIGNORE
 
+
 ```
 **/node_modules/*
 **/*.min.js

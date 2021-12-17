@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
   use 'terrortylor/nvim-comment'
   use 'neovim/nvim-lspconfig'
   use 'onsails/lspkind-nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
@@ -45,8 +47,7 @@ return require('packer').startup(function(use)
 
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'akinsho/bufferline.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()

@@ -1,7 +1,6 @@
 local keys = require 'utils.keybindings'
 
 keys.bind_normal_mode {
-  { '<C-b>', '<CMD>Telescope buffers<CR>' },
   { '<C-f>', '<CMD>Telescope find_files<CR>' },
   { '<F9>', '<CMD>Telescope live_grep<CR>' },
   { '<C-h>', '<CMD>Telescope oldfiles<CR>' },
