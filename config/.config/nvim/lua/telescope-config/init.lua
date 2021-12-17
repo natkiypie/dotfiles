@@ -1,5 +1,5 @@
 require 'telescope-config/keybindings'
-require 'telescope-config/colors/init'
+require 'telescope-config/highlights'
 
 local actions = require 'telescope.actions'
 
@@ -178,6 +178,20 @@ require('telescope').setup {
   },
   extensions = {
     file_browser = {
+      layout_config = {
+        width = 0.5,
+        height = 0.5,
+      },
+      theme = 'dropdown',
+      prompt_title = '',
+      results_title = '',
+      preview_title = '',
+      previewer = false,
+      borderchars = {
+        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
+        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
+        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
+      },
       mappings = {
         n = vim.tbl_extend('force', fb_keybindings, {
           ['w'] = false,

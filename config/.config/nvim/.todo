@@ -1,16 +1,19 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
     <note priority="veryhigh" time="1639652369">
-        Make &lt;expr&gt; key that disables 'q' when in glow floaterm
+        Make &lt;expr&gt; key that disables 'q' when in glow floaterm ✨
     </note>
     <note priority="veryhigh" time="1639708412">
-        Make bufferlinepick function that dims highlight of selected buffer
+        Make bufferlinepick function that dims highlight of selected buffer ﬘
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
     <note priority="medium" time="1639705395">
-        Resize telescope jumplist preview width and shorten names in result list
+        Resize telescope jumplist preview width and shorten names in result list 
+    </note>
+    <note priority="medium" time="1639710856">
+        Fix: found case where quote util function doesn't work as intended: '&lt;cmd&gt;lua require [']telescope['].extensions.file_browser.file_browser()&lt;CR&gt;' - when trying to change single quotes shown between square brackets in this example 
     </note>
     <note priority="low" time="1639468104">
         Learn LazyGit 
@@ -19,6 +22,6 @@
         Explore telescope built-in pickers 
     </note>
     <note priority="verylow" time="1639468147">
-        Note: &lt;C-y&gt; &amp; &lt;C-p&gt; are free 
+        Note: &lt;C-y&gt;, &lt;C-n&gt; &amp; &lt;C-p&gt; are free 
     </note>
 </todo>

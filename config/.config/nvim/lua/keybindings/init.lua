@@ -14,8 +14,6 @@ keys.bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { "'", '<CMD>lua require"utils.global".quote()<CR>B' },
-  { 'yp', 'yyp' },
-  { 'ypp', '}o<ESC>2kyip}pzz' },
 }
 
 keys.bind_insert_mode {

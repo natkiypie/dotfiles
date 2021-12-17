@@ -12,11 +12,10 @@ require('bufferline').setup {
     show_close_icon = false,
     show_tab_indicators = false,
     separator_style = { '∣', '∣' },
-    tab_size = 10,
+    tab_size = 18,
+    max_name_length = 80,
     name_formatter = function(buf)
-      if buf.name:match '%.*' then
-        return vim.fn.fnamemodify(buf.name, ':t:r')
-      end
+      return vim.fn.fnamemodify(buf.path, ':p:h:t') .. '/' .. buf.name
     end,
   },
 }

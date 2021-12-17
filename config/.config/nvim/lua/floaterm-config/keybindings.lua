@@ -17,19 +17,19 @@ keys.bind_normal_mode {
     '<F7>',
     '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
-  { '<C-n>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
+  { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
   { '<C-c>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
 }
 
 keys.bind_x_mode {
-  { '<C-n>', '<CMD>lua require"floaterm-config.utils".slime_region_send()<CR>' },
+  { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_region_send()<CR>' },
 }
 
 keys.bind_terminal_mode {
   { '<C-t>', '<CMD>lua require"floaterm-config.utils".toggle{name="Terminal"}<CR>' },
   { '<C-g>', '<CMD>lua require"floaterm-config.utils".toggle{name="LazyGit"}<CR>' },
   { '<C-a>', '<CMD>lua require"floaterm-config.utils".toggle{name="Glow"}<CR>' },
-  { '<C-n>', '<CMD>lua require"floaterm-config.utils".toggle{name="REPL"}<CR>' },
+  { '<C-s>', '<CMD>lua require"floaterm-config.utils".toggle{name="REPL"}<CR>' },
   { '<F7>', '<CMD>lua require"floaterm-config.utils".toggle{name="htop"}<CR>' },
   { '<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_winsize()<CR>' },
   { '<C-q>', '<CMD>lua require"floaterm-config.utils".quit()<CR>' },
