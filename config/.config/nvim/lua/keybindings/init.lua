@@ -12,6 +12,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { "'", '<CMD>lua require"keybindings.utils".quote()<CR>B' },
+  { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {

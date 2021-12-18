@@ -1,15 +1,25 @@
 local M = {}
 
+-- function M.toggle(a, b)
+--   local x = b
+--   return function()
+--     if x == a then
+--       x = b
+--     else
+--       x = a
+--     end
+--     return x
+--   end
+-- end
+
 function M.toggle(a, b)
-  local x = b
-  return function()
-    if x == a then
-      x = b
-    else
-      x = a
-    end
-    return x
+  local x
+  if x == a then
+    x = b
+  else
+    x = a
   end
+  return x
 end
 
 function M.add_to_table(table, key, value)

@@ -40,10 +40,12 @@ function M.close_float_win()
   M.close_win_on_last_buf()
 end
 
-local toggle = require('utils.helpers').toggle('a', '')
 function M.toggle_mouse()
-  local cmd = 'set mouse=' .. toggle()
-  vim.cmd(cmd)
+  if vim.go.mouse == '' then
+    vim.go.mouse = 'a'
+  else
+    vim.go.mouse = ''
+  end
 end
 
 function M.quote()
@@ -58,6 +60,16 @@ function M.quote()
   else
     word = "'" .. word .. "'"
     vim.cmd('normal! viWc' .. word)
+  end
+end
+
+function M.toggle_tab()
+  if vim.fn.tabpagenr() <= 1 then
+    vim.cmd 'tab split'
+    vim.go.showtabline = 0
+  else
+    vim.cmd 'tabc'
+    vim.go.showtabline = 2
   end
 end
 
