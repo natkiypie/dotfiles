@@ -1,8 +1,6 @@
-local utils = require 'utils.helpers'
+local M = {}
 
-local G = {}
-
-function G.save_session()
+function M.save_session()
   vim.cmd 'echo ""'
   local choice = vim.fn.confirm(
     'Before you quit, would you like to save the session?',
@@ -20,36 +18,35 @@ function G.save_session()
   vim.cmd 'wa|qa'
 end
 
-function G.close_win_on_last_buf()
+function M.close_win_on_last_buf()
   local buffers = vim.fn.len(vim.fn.filter(vim.fn.range(1, vim.fn.bufnr '$'), 'buflisted(v:val)'))
   if buffers == 1 then
     if #vim.fn.tabpagebuflist() > 1 then
       vim.cmd 'q'
     else
-      G.save_session()
+      M.save_session()
     end
   else
     vim.cmd 'bd'
   end
 end
 
-function G.close_float_win()
+function M.close_float_win()
   for _, win in ipairs(vim.api.nvim_list_wins()) do
-    local config = vim.api.nvim_win_get_config(win)
-    if config.relative ~= '' then
+    if vim.api.nvim_win_get_config(win).relative ~= '' then
       vim.api.nvim_win_close(win, false)
     end
   end
-  G.close_win_on_last_buf()
+  M.close_win_on_last_buf()
 end
 
-local tm = utils.toggle('a', '')
-function G.toggle_mouse()
-  local cmd = 'set mouse=' .. tm()
+local toggle = require('utils.helpers').toggle('a', '')
+function M.toggle_mouse()
+  local cmd = 'set mouse=' .. toggle()
   vim.cmd(cmd)
 end
 
-function G.quote()
+function M.quote()
   local quote = vim.fn.expand '<cWORD>'
   local word = vim.fn.expand '<cword>'
   local marks = string.gsub(quote, word, '')
@@ -64,4 +61,4 @@ function G.quote()
   end
 end
 
-return G
+return M

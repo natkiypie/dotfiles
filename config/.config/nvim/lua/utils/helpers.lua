@@ -1,6 +1,6 @@
-local H = {}
+local M = {}
 
-function H.toggle(a, b)
+function M.toggle(a, b)
   local x = b
   return function()
     if x == a then
@@ -12,30 +12,30 @@ function H.toggle(a, b)
   end
 end
 
-function H.add_to_table(table, key, value)
+function M.add_to_table(table, key, value)
   table[key] = value
   return table
 end
 
-function H.add_to_table_silent(table, key, value)
+function M.add_to_table_silent(table, key, value)
   table[key] = value
 end
 
-function H.remove_from_table(table, key)
+function M.remove_from_table(table, key)
   table[key] = nil
 end
 
-function H.emty_table(table)
+function M.emty_table(table)
   for k in pairs(table) do
     table[k] = nil
   end
 end
 
-function H.table_contains(table, key)
+function M.table_contains(table, key)
   return table[key] ~= nil
 end
 
-function H.table_contains_value(table, value)
+function M.table_contains_value(table, value)
   for _, v in ipairs(table) do
     if v == value then
       return true
@@ -43,7 +43,7 @@ function H.table_contains_value(table, value)
   end
 end
 
-function H.get_table_value(table, key)
+function M.get_table_value(table, key)
   for k, v in pairs(table) do
     if k == key then
       return v
@@ -51,7 +51,7 @@ function H.get_table_value(table, key)
   end
 end
 
-function H.get_table_key(table, value)
+function M.get_table_key(table, value)
   for k, v in pairs(table) do
     if v == value then
       return k
@@ -59,13 +59,13 @@ function H.get_table_key(table, value)
   end
 end
 
-function H.get_table_contents(table)
+function M.get_table_contents(table)
   for k, v in pairs(table) do
     print(k, v)
   end
 end
 
-function H.table_length(table)
+function M.table_length(table)
   local count = 0
   for _ in pairs(table) do
     count = count + 1
@@ -73,7 +73,7 @@ function H.table_length(table)
   return count
 end
 
-function H.get_nested_table_value(table, key)
+function M.get_nested_table_value(table, key)
   for _, v in pairs(table) do
     for k, nv in pairs(v) do
       if k == key then
@@ -83,7 +83,7 @@ function H.get_nested_table_value(table, key)
   end
 end
 
-function H.get_nested_table_key(table, value)
+function M.get_nested_table_key(table, value)
   for _, v in pairs(table) do
     for k, nv in pairs(v) do
       if nv == value then
@@ -93,7 +93,7 @@ function H.get_nested_table_key(table, value)
   end
 end
 
-function H.update_nested_table_value(table, value, new_value)
+function M.update_nested_table_value(table, value, new_value)
   for _, v in pairs(table) do
     for k, nv in pairs(v) do
       if nv == value then
@@ -103,4 +103,4 @@ function H.update_nested_table_value(table, value, new_value)
   end
 end
 
-return H
+return M

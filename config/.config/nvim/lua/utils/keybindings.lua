@@ -1,11 +1,7 @@
-local helpers = require 'utils.helpers'
-
 local M = {}
 
 local function bind_key(mode, keymap)
-  local set_keymap = vim.api.nvim_set_keymap
-  local opts = { noremap = true, silent = true }
-  set_keymap(mode, keymap[1], keymap[2], opts)
+  vim.api.nvim_set_keymap(mode, keymap[1], keymap[2], { noremap = true, silent = true })
 end
 
 function M.bind_normal_mode(keymaps)
@@ -44,21 +40,15 @@ function M.bind_terminal_mode(keymaps)
   end
 end
 
-function M.replace_termcodes(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
 function _G.wildmenu(key)
-  return vim.fn.wildmenumode() == 1 and M.replace_termcodes(key)
+  return vim.fn.wildmenumode() == 1 and vim.api.nvim_replace_termcodes(key, true, true, true)
 end
 
 function _G.split(key, char)
   local minwin = 1
   local maxheight = 33
-  local wins = #vim.fn.tabpagebuflist()
-  local winh = vim.fn.winheight '$'
-  if wins > minwin and winh < maxheight then
-    return M.replace_termcodes(key)
+  if #vim.fn.tabpagebuflist() > minwin and vim.fn.winheight '$' < maxheight then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
   end
@@ -66,13 +56,13 @@ end
 
 function _G.vsplit(key, char)
   local minwin = 1
-  local filetype = vim.bo.filetype
-  local blacklist = { 'TelescopePrompt' }
   local maxwidth = 147
-  local wins = #vim.fn.tabpagebuflist()
-  local winw = vim.fn.winwidth '$'
-  if wins > minwin and winw < maxwidth and helpers.table_contains_value(blacklist, filetype) ~= true then
-    return M.replace_termcodes(key)
+  if
+    #vim.fn.tabpagebuflist() > minwin
+    and vim.fn.winwidth '$' < maxwidth
+    and require('utils.helpers').table_contains_value({ 'TelescopePrompt' }, vim.bo.filetype) ~= true
+  then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
   end
@@ -81,19 +71,15 @@ end
 function _G.repl_vsplit(key, char)
   local minwin = 1
   local minheight = 33
-  local winnr = vim.fn.winnr()
-  local winh = vim.fn.winheight '$'
-  if winnr > minwin and winh > minheight then
-    return M.replace_termcodes(key)
+  if vim.fn.winnr() > minwin and vim.fn.winheight '$' > minheight then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
   end
 end
 
 local function bind_expr_key(mode, keymap)
-  local set_keymap = vim.api.nvim_set_keymap
-  local opts = { expr = true, noremap = true }
-  set_keymap(mode, keymap[1], keymap[2], opts)
+  vim.api.nvim_set_keymap(mode, keymap[1], keymap[2], { expr = true, noremap = true })
 end
 
 function M.bind_expr_normal_mode(keymaps)

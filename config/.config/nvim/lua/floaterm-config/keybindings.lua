@@ -1,6 +1,4 @@
-local keys = require 'utils.keybindings'
-
-keys.bind_normal_mode {
+require('utils.keybindings').bind_normal_mode {
   {
     '<C-t>',
     '<CMD>lua require"floaterm-config.utils".toggle{name="Terminal", wintype="float", width="0.6"}<CR>',
@@ -21,11 +19,11 @@ keys.bind_normal_mode {
   { '<C-c>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
 }
 
-keys.bind_x_mode {
+require('utils.keybindings').bind_x_mode {
   { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_region_send()<CR>' },
 }
 
-keys.bind_terminal_mode {
+require('utils.keybindings').bind_terminal_mode {
   { '<C-t>', '<CMD>lua require"floaterm-config.utils".toggle{name="Terminal"}<CR>' },
   { '<C-g>', '<CMD>lua require"floaterm-config.utils".toggle{name="LazyGit"}<CR>' },
   { '<C-a>', '<CMD>lua require"floaterm-config.utils".toggle{name="Glow"}<CR>' },
@@ -33,4 +31,8 @@ keys.bind_terminal_mode {
   { '<F7>', '<CMD>lua require"floaterm-config.utils".toggle{name="htop"}<CR>' },
   { '<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_winsize()<CR>' },
   { '<C-q>', '<CMD>lua require"floaterm-config.utils".quit()<CR>' },
+}
+
+require('utils.keybindings').bind_expr_terminal_mode {
+  { 'q', 'v:lua.no_q("\\<CMD\\>lua require\'floaterm-config.utils\'.quit()\\<CR\\>", "q")' },
 }

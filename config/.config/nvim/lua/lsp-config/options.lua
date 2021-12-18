@@ -1,5 +1,3 @@
-local lsp = vim.lsp
-local handlers = lsp.handlers
 local opts = { border = 'single', max_width = 80 }
-handlers['textDocument/hover'] = lsp.with(handlers.hover, opts)
-handlers['textDocument/signatureHelp'] = lsp.with(handlers.signature_help, opts)
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, opts)
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, opts)
