@@ -56,8 +56,7 @@ function _G.repl(key, char)
   local bufnr = require('utils.helpers').get_table_value(buf, 1)
   if bufnr then
     local bufname = vim.fn.bufname(bufnr)
-    local is_node = vim.fn.stridx(bufname, 'node')
-    if is_node then
+    if string.find(bufname, 'node') then
       return vim.api.nvim_replace_termcodes(key, true, true, true)
     else
       return char

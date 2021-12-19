@@ -15,7 +15,10 @@ require('utils.keybindings').bind_normal_mode {
     '<F7>',
     '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
-  { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
+  {
+    '<C-s>',
+    '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>',
+  },
 }
 
 require('utils.keybindings').bind_x_mode {

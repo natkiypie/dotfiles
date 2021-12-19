@@ -4,15 +4,12 @@ local M = {}
 
 M.ft_table = {}
 
-local function parse_opts(args)
+local function parse_args(args)
   local opts = ''
   for k, v in pairs(args) do
-    if k ~= 'cmd' and k ~= 'silent' then
+    if k ~= 'cmd' then
       opts = opts .. ' --' .. k .. '=' .. v
     end
-  end
-  if args.silent then
-    opts = '--' .. args.silent .. opts
   end
   if args.cmd then
     opts = opts .. ' ' .. args.cmd
@@ -21,7 +18,7 @@ local function parse_opts(args)
 end
 
 local function create(args)
-  vim.cmd('silent FloatermNew' .. parse_opts(args))
+  vim.cmd(string.gsub('silent FloatermNew args', 'args', parse_args(args)))
   helpers.add_to_table_silent(
     M.ft_table,
     args.name,
@@ -42,11 +39,11 @@ end
 
 local function hide(args)
   return_winsize()
-  vim.cmd('silent FloatermHide ' .. args.name)
+  vim.cmd(string.gsub('silent FloatermHide name', 'name', args.name))
 end
 
 local function show(args)
-  vim.cmd('silent FloatermShow ' .. args.name)
+  vim.cmd(string.gsub('silent FloatermShow name', 'name', args.name))
 end
 
 local function handle(args)
@@ -87,13 +84,15 @@ function M.slime_send_current_line()
     width = '0.4',
   }
   M.toggle { name = 'REPL' }
-  local cmd = 'silent let b:slime_config = {"jobid": ' .. helpers.get_nested_table_value(M.ft_table, 'channel') .. '}'
-  vim.cmd(cmd)
+  local channel = helpers.get_nested_table_value(M.ft_table, 'channel')
+  local set_job_id = string.gsub('silent let b:slime_config = {"jobid": channel}', 'channel', channel)
+  vim.cmd(set_job_id)
   vim.cmd [[
     SlimeSendCurrentLine
     silent FloatermShow REPL
+    stopinsert
+    wincmd h
   ]]
-  vim.cmd 'stopinsert | wincmd h'
 end
 
 function M.slime_region_send()
@@ -104,13 +103,15 @@ function M.slime_region_send()
     width = '0.4',
   }
   M.toggle { name = 'REPL' }
-  local cmd = 'silent let b:slime_config = {"jobid": ' .. helpers.get_nested_table_value(M.ft_table, 'channel') .. '}'
+  local channel = helpers.get_nested_table_value(M.ft_table, 'channel')
+  local cmd = string.gsub('silent let b:slime_config = {"jobid": channel}', 'channel', channel)
   vim.cmd(cmd)
   vim.cmd [[
     lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<plug>SlimeRegionSend<cr>',true,false,true),'x',true)
     silent FloatermShow REPL
+    stopinsert
+    wincmd h
   ]]
-  vim.cmd 'stopinsert | wincmd h'
 end
 
 local function _toggle_winsize(term, min)
@@ -127,19 +128,17 @@ function M.toggle_winsize()
   if wintype == 'split' then
     local min = '0.5'
     local height = helpers.get_nested_table_value(M.ft_table, 'height')
-    vim.cmd('silent FloatermUpdate --height=' .. _toggle_winsize(height, min))
+    vim.cmd(string.gsub('silent FloatermUpdate --height=winheight', 'winheight', _toggle_winsize(height, min)))
     helpers.update_nested_table_value(M.ft_table, height, _toggle_winsize(height, min))
   elseif wintype == 'vsplit' then
     local min = '0.4'
     local width = helpers.get_nested_table_value(M.ft_table, 'width')
-    vim.cmd('silent FloatermUpdate --width=' .. _toggle_winsize(width, min))
+    vim.cmd(string.gsub('silent FloatermUpdate --width=winwidth', 'winwidth', _toggle_winsize(width, min)))
     helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
   else
     local min = '0.6'
     local width = helpers.get_nested_table_value(M.ft_table, 'width')
-    vim.cmd(
-      'silent FloatermUpdate --width=' .. _toggle_winsize(width, min) .. ' --height=' .. _toggle_winsize(width, min)
-    )
+    vim.cmd(string.gsub('silent FloatermUpdate --width=windim --height=windim', 'windim', _toggle_winsize(width, min)))
     helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
   end
 end
