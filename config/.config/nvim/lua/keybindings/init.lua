@@ -15,10 +15,9 @@ require('utils.keybindings').bind_normal_mode {
   { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
 }
 
--- this is a ('testname')
 require('utils.keybindings').bind_insert_mode {
   { 'jk', '<ESC>' },
-  { '<C-a>', '<ESC>2li' },
+  { '<C-a>', '<ESC>la' },
 }
 
 require('utils.keybindings').bind_visual_mode {

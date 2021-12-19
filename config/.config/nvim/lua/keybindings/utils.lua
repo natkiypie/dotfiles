@@ -48,6 +48,8 @@ function M.toggle_mouse()
   end
 end
 
+-- test 'test' "test"
+
 function M.quote()
   local quote = vim.fn.expand '<cWORD>'
   local word = vim.fn.expand '<cword>'
