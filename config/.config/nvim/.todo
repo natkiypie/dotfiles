@@ -1,19 +1,10 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="high" time="1639798629">
-        Look into combining slime floaterm util fns 💦
+    <note priority="high" time="1639710856">
+        Refactor quote util function
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
-    </note>
-    <note priority="medium" time="1639710856">
-        Fix: found case where quote util function doesn't work as intended: '&lt;cmd&gt;lua require [']telescope['].extensions.file_browser.file_browser()&lt;CR&gt;' - when trying to change single quotes shown between square brackets in this example 
-    </note>
-    <note priority="medium" time="1639720701">
-        Write util function that records and returns cursor to last position and apply it to respective keybindings (comment, quote, yank, etc.) 
-    </note>
-    <note priority="medium" time="1639857975">
-        Make nvim startup script that runs :PackerUpdate and puts flag in /tmp
     </note>
     <note priority="low" time="1639468104">
         Learn LazyGit 
