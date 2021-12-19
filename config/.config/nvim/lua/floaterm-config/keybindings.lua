@@ -31,14 +31,14 @@ require('utils.keybindings').bind_terminal_mode {
   { '<C-f>', '<CMD>lua require"floaterm-config.utils".toggle_winsize()<CR>' },
   { '<C-q>', '<CMD>lua require"floaterm-config.utils".quit()<CR>' },
 }
-
 require('utils.keybindings').bind_expr_terminal_mode {
   { 'q', 'v:lua.no_q("\\<CMD\\>lua require\'floaterm-config.utils\'.quit()\\<CR\\>", "q")' },
+  { '<', 'v:lua.repl("\\<C-\\>\\<C-n\\>\\<C-w\\>h<C-l>", "<")' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
   {
     '<BS>',
-    'v:lua.clear_repl("\\<CMD\\>FloatermSend --name=REPL console.log(\'\\\\u001B\\[2J\\\\u001B\\[0;0f\');\\<CR\\>", "<BS>")',
+    'v:lua.repl("\\<CMD\\>FloatermSend --name=REPL console.log(\'\\\\u001B\\[2J\\\\u001B\\[0;0f\');\\<CR\\>", "<BS>")',
   },
 }

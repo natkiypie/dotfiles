@@ -51,7 +51,7 @@ function _G.no_q(key, char)
   end
 end
 
-function _G.clear_repl(key, char)
+function _G.repl(key, char)
   local buf = vim.fn.uniq(vim.fn.map(vim.fn.filter(vim.fn.getwininfo(), 'v:val.terminal'), 'v:val.bufnr'))
   local bufnr = require('utils.helpers').get_table_value(buf, 1)
   if bufnr then
