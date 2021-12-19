@@ -82,25 +82,22 @@ function M.slime_set_job_id()
   vim.cmd(set_job_id)
 end
 
-function M.slime_send(mode)
-  if mode == 'n' then
-    vim.cmd [[
-      SlimeSendCurrentLine
-      silent FloatermShow REPL
-      stopinsert
-      wincmd h
-    ]]
-  else
-    vim.cmd [[
-      lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<plug>SlimeRegionSend',true,false,true),'x',true)
-      silent FloatermShow REPL
-      stopinsert
-      wincmd h
-    ]]
-  end
+function M.slime_send(cmd)
+  vim.cmd(cmd)
+  vim.cmd [[
+    silent FloatermShow REPL
+    stopinsert
+    wincmd h
+  ]]
 end
 
 function M.slime(mode)
+  local cmd
+  if mode == 'n' then
+    cmd = 'SlimeSendCurrentLine'
+  else
+    cmd = 'lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<plug>SlimeRegionSend",true,false,true),"x",true)'
+  end
   M.toggle {
     name = 'REPL',
     cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
@@ -109,7 +106,7 @@ function M.slime(mode)
   }
   M.toggle { name = 'REPL' }
   M.slime_set_job_id()
-  M.slime_send(mode)
+  M.slime_send(cmd)
 end
 
 local function _toggle_winsize(term, min)
