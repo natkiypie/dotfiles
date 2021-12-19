@@ -17,12 +17,12 @@ require('utils.keybindings').bind_normal_mode {
   },
   {
     '<C-s>',
-    '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>',
+    '<CMD>lua require"floaterm-config.utils".slime("n")<CR>',
   },
 }
 
 require('utils.keybindings').bind_x_mode {
-  { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_region_send()<CR>' },
+  { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime("x")<CR>' },
 }
 
 require('utils.keybindings').bind_terminal_mode {

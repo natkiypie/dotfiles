@@ -40,15 +40,15 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
 end
 
 M.keybindings = function(bufnr)
-  buf_map(bufnr, 'n', 'gd', ':LspDef<CR>')
-  buf_map(bufnr, 'n', 'gr', ':LspRef<CR>')
-  buf_map(bufnr, 'n', 'ge', ':LspRename<CR>')
-  buf_map(bufnr, 'n', 'gy', ':LspTypeDef<CR>')
-  buf_map(bufnr, 'n', 'gk', ':LspHover<CR>')
-  buf_map(bufnr, 'n', 'ga', ':LspCodeAction<CR>')
-  buf_map(bufnr, 'n', 'gl', ':LspDiagLine<CR>')
-  buf_map(bufnr, 'n', '<Leader>r', ':LspRestart<CR>')
-  buf_map(bufnr, 'i', '<C-f>', '<CMD>LspSignatureHelp<CR>')
+  buf_map(bufnr, 'n', '<Leader>d', ':LspDef<CR>')
+  buf_map(bufnr, 'n', '<Leader>r', ':LspRef<CR>')
+  buf_map(bufnr, 'n', '<Leader>e', ':LspRename<CR>')
+  buf_map(bufnr, 'n', '<Leader>y', ':LspTypeDef<CR>')
+  buf_map(bufnr, 'n', '<Leader>k', ':LspHover<CR>')
+  buf_map(bufnr, 'n', '<Leader>a', ':LspCodeAction<CR>')
+  buf_map(bufnr, 'n', '<Leader>l', ':LspDiagLine<CR>')
+  buf_map(bufnr, 'n', '<Leader>z', ':LspRestart<CR>')
+  buf_map(bufnr, 'i', '<C-s>', '<CMD>LspSignatureHelp<CR>')
 end
 
 M.highlight = function(client)
@@ -73,9 +73,9 @@ M.ts_utils = function(client, bufnr)
   local ts_utils = require 'nvim-lsp-ts-utils'
   ts_utils.setup {}
   ts_utils.setup_client(client)
-  buf_map(bufnr, 'n', 'gs', ':TSLspOrganize<CR>')
-  buf_map(bufnr, 'n', 'gi', ':TSLspRenameFile<CR>')
-  buf_map(bufnr, 'n', 'go', ':TSLspImportAll<CR>')
+  buf_map(bufnr, 'n', '<Leader>s', ':TSLspOrganize<CR>')
+  buf_map(bufnr, 'n', '<Leader>i', ':TSLspRenameFile<CR>')
+  buf_map(bufnr, 'n', '<Leader>o', ':TSLspImportAll<CR>')
 end
 
 M.format = function(client)

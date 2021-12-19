@@ -26,7 +26,7 @@ function check_connection {
 
 
 function _check_connection {
-  if ping -c1 google.com >/dev/null 2>&1; then
+  if nc -zw1 google.com 443; then
     update_packages.sh
   else
     check_connection

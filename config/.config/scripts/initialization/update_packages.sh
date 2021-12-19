@@ -3,7 +3,7 @@
 # USED BY run_diagnostics.sh
 
 # create flag in tmp dir
-touch /tmp/.flag
+touch /tmp/bash_flag
 # updates /etc/apt/source.list with the latest information about available packages
 echo $(pass master/natkiypie) | sudo -S apt update
 # upgrades all installed packages to the latest versions in accordance with the information in /etc/apt/sources.list

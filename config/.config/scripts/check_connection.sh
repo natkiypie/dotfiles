@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function check_connection {
-  if ping -c1 google.com >/dev/null 2>&1; then
+  if nc -zw1 google.com 443; then
     echo '1'
   else
     echo '0'

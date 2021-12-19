@@ -3,4 +3,4 @@
 # USED BY NEW TERMINAL INSTANCE
 
 # if no .flag in /tmp/ run diagnostics
-[ -f "/tmp/.flag" ] || run_diagnostics.sh
+[ -f "/tmp/bash_flag" ] || run_diagnostics.sh

@@ -76,26 +76,31 @@ function M.quit_all()
   end
 end
 
-function M.slime_send_current_line()
-  M.toggle {
-    name = 'REPL',
-    cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
-    wintype = 'vsplit',
-    width = '0.4',
-  }
-  M.toggle { name = 'REPL' }
+function M.slime_set_job_id()
   local channel = helpers.get_nested_table_value(M.ft_table, 'channel')
   local set_job_id = string.gsub('silent let b:slime_config = {"jobid": channel}', 'channel', channel)
   vim.cmd(set_job_id)
-  vim.cmd [[
-    SlimeSendCurrentLine
-    silent FloatermShow REPL
-    stopinsert
-    wincmd h
-  ]]
 end
 
-function M.slime_region_send()
+function M.slime_send(mode)
+  if mode == 'n' then
+    vim.cmd [[
+      SlimeSendCurrentLine
+      silent FloatermShow REPL
+      stopinsert
+      wincmd h
+    ]]
+  else
+    vim.cmd [[
+      lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<plug>SlimeRegionSend',true,false,true),'x',true)
+      silent FloatermShow REPL
+      stopinsert
+      wincmd h
+    ]]
+  end
+end
+
+function M.slime(mode)
   M.toggle {
     name = 'REPL',
     cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"',
@@ -103,15 +108,8 @@ function M.slime_region_send()
     width = '0.4',
   }
   M.toggle { name = 'REPL' }
-  local channel = helpers.get_nested_table_value(M.ft_table, 'channel')
-  local cmd = string.gsub('silent let b:slime_config = {"jobid": channel}', 'channel', channel)
-  vim.cmd(cmd)
-  vim.cmd [[
-    lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<plug>SlimeRegionSend<cr>',true,false,true),'x',true)
-    silent FloatermShow REPL
-    stopinsert
-    wincmd h
-  ]]
+  M.slime_set_job_id()
+  M.slime_send(mode)
 end
 
 local function _toggle_winsize(term, min)

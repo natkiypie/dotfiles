@@ -1,19 +1,25 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="high" time="1639710856">
+    <note priority="veryhigh" time="1639710856">
         Refactor quote util function
+    </note>
+    <note priority="high" time="1639468104">
+        Learn LazyGit 
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
-    <note priority="low" time="1639468104">
-        Learn LazyGit 
+    <note priority="medium" time="1639900405">
+        Read ts_utils documentation
     </note>
     <note priority="low" time="1639468259">
         Explore telescope built-in pickers 
     </note>
     <note priority="low" time="1639726722">
         Change devicons ugly colors
+    </note>
+    <note priority="low" time="1639898770">
+        Idea: open vim on login; run on_open.sh in vim terminal; close terminal and open file browser 🤨
     </note>
     <note priority="verylow" time="1639468147">
         Note: &lt;C-c&gt;, &lt;C-y&gt; &amp; &lt;C-n&gt; are free 
