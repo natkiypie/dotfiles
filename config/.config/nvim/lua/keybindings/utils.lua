@@ -48,31 +48,4 @@ function M.toggle_mouse()
   end
 end
 
--- test 'test' "test"
-
-function M.quote()
-  local quote = vim.fn.expand '<cWORD>'
-  local word = vim.fn.expand '<cword>'
-  local marks = string.gsub(quote, word, '')
-  if marks == "''" then
-    word = '"' .. word .. '"'
-    vim.cmd('normal! viWc' .. word)
-  elseif marks == '""' then
-    vim.cmd('normal! viWc' .. word)
-  else
-    word = "'" .. word .. "'"
-    vim.cmd('normal! viWc' .. word)
-  end
-end
-
-function M.toggle_tab()
-  if vim.fn.tabpagenr() <= 1 then
-    vim.cmd 'tab split'
-    vim.go.showtabline = 0
-  else
-    vim.cmd 'tabc'
-    vim.go.showtabline = 2
-  end
-end
-
 return M
