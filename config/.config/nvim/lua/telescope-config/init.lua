@@ -28,7 +28,7 @@ require('telescope').setup {
     file_sorter = require('telescope.sorters').get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
-    path_display = {},
+    path_display = { 'truncate' },
     border = {},
     borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
     color_devicons = false,
@@ -136,8 +136,10 @@ require('telescope').setup {
     },
     jumplist = {
       layout_config = {
+        preview_width = 0.6,
         height = 0.65,
       },
+      path_display = { 'shorten' },
       prompt_title = '',
       results_title = '',
       preview_title = '',

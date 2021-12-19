@@ -16,7 +16,6 @@ require('utils.keybindings').bind_normal_mode {
     '<CMD>lua require"floaterm-config.utils".toggle{name="htop", cmd="htop -p `pidof vim`", wintype="split", height="0.5"}<CR>',
   },
   { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime_send_current_line()<CR>' },
-  { '<C-c>', '<CMD>lua require"floaterm-config.utils".clear_repl("REPL")<CR>' },
 }
 
 require('utils.keybindings').bind_x_mode {
@@ -35,4 +34,11 @@ require('utils.keybindings').bind_terminal_mode {
 
 require('utils.keybindings').bind_expr_terminal_mode {
   { 'q', 'v:lua.no_q("\\<CMD\\>lua require\'floaterm-config.utils\'.quit()\\<CR\\>", "q")' },
+}
+
+require('utils.keybindings').bind_expr_normal_mode {
+  {
+    '<BS>',
+    'v:lua.clear_repl("\\<CMD\\>FloatermSend --name=REPL console.log(\'\\\\u001B\\[2J\\\\u001B\\[0;0f\');\\<CR\\>", "<BS>")',
+  },
 }

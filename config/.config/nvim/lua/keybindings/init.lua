@@ -54,7 +54,6 @@ require('utils.keybindings').bind_expr_command_mode {
   { '<C-h>', 'v:lua.wildmenu("\\<Up\\>")' },
   { '<C-l>', 'v:lua.wildmenu("\\<CR\\>")' },
 }
-
 require('utils.keybindings').bind_expr_terminal_mode {
   { '<', 'v:lua.repl_vsplit("\\<C-\\>\\<C-n\\>\\<C-w\\>h<C-l>", "<")' },
 }

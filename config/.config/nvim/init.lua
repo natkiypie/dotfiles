@@ -1,5 +1,6 @@
 require 'plugins'
 require 'options'
+require 'utils.global'
 require 'keybindings'
 require 'treesitter-config'
 require 'telescope-config'
