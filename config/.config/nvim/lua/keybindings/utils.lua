@@ -30,4 +30,14 @@ function M.toggle_mouse()
   end
 end
 
+function M.toggle_tab()
+  if vim.fn.tabpagenr() <= 1 then
+    vim.cmd 'tab split'
+    vim.go.showtabline = 0
+  else
+    vim.cmd 'tabc'
+    vim.go.showtabline = 2
+  end
+end
+
 return M
