@@ -1,6 +1,6 @@
 local M = {}
 
-M.bufferline_pick = function()
+function M.bufferline_pick()
   vim.cmd [[
     hi BufferLineBufferSelected gui=none guifg=#515a82
     hi BufferLineBackground guifg=#a9b1d6

@@ -3,7 +3,7 @@ require('utils.keybindings').bind_normal_mode {
   { 'k', 'gk' },
   { '<C-w>', '<CMD>w<CR>' },
   { 'q', '<CMD>lua require"keybindings.utils".close_float_win()<CR>' },
-  { '<C-q>', '<CMD>lua require"keybindings.utils".save_session()<CR>' },
+  { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
   { 'M', '<CMD>lua require"keybindings.utils".toggle_mouse()<CR>' },
   { '<Leader>v', '<CMD>vsp<CR>' },
@@ -12,6 +12,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
+  { '<C-n>', '<CMD>lua require"utils.startup".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {

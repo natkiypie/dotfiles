@@ -2,7 +2,7 @@ local helpers = require 'utils.helpers'
 
 local M = {}
 
-M.commands = function()
+function M.commands()
   local diagnostics_border = {
     { '┌', 'FloatBorder' },
     { '─', 'FloatBorder' },
@@ -39,7 +39,7 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
   })
 end
 
-M.keybindings = function(bufnr)
+function M.keybindings(bufnr)
   buf_map(bufnr, 'n', '<Leader>d', ':LspDef<CR>')
   buf_map(bufnr, 'n', '<Leader>r', ':LspRef<CR>')
   buf_map(bufnr, 'n', '<Leader>e', ':LspRename<CR>')
@@ -51,7 +51,7 @@ M.keybindings = function(bufnr)
   buf_map(bufnr, 'i', '<C-s>', '<CMD>LspSignatureHelp<CR>')
 end
 
-M.highlight = function(client)
+function M.highlight(client)
   if client.resolved_capabilities.document_highlight then
     vim.o.updatetime = 400
     vim.cmd [[
@@ -64,12 +64,12 @@ M.highlight = function(client)
   end
 end
 
-M.disable_native_formatting = function(client)
+function M.disable_native_formatting(client)
   client.resolved_capabilities.document_formatting = false
   client.resolved_capabilities.document_range_formatting = false
 end
 
-M.ts_utils = function(client, bufnr)
+function M.ts_utils(client, bufnr)
   local ts_utils = require 'nvim-lsp-ts-utils'
   ts_utils.setup {}
   ts_utils.setup_client(client)
@@ -78,7 +78,7 @@ M.ts_utils = function(client, bufnr)
   buf_map(bufnr, 'n', '<Leader>o', ':TSLspImportAll<CR>')
 end
 
-M.format = function(client)
+function M.format(client)
   local sources
   local config = helpers.get_table_value(client, 'config')
   local filetypes = helpers.get_table_value(config, 'filetypes')
@@ -102,7 +102,12 @@ M.format = function(client)
     ---@diagnostic disable-next-line: redefined-local
     on_attach = function(client)
       if client.resolved_capabilities.document_formatting then
-        vim.cmd 'autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()'
+        vim.cmd [[
+          augroup null_ls_formatting_sync
+            autocmd! * <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+          augroup END
+        ]]
       end
       vim.cmd 'echo ""'
     end,

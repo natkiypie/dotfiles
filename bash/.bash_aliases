@@ -20,6 +20,8 @@ alias settings='xfce4-display-settings & disown'
 alias react='cd ~/dev/react'
 # go to development directory
 alias dev='cd ~/dev'
+# vim-floaterm floaterm_opener
+alias f='floaterm'
 # NAND2TETRIS:
 # add nand2tetris tools to PATH environment
 # PATH=$PATH:/home/natkiypie/cs271/nand2tetris/tools/ && export path

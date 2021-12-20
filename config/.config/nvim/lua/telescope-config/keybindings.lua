@@ -10,4 +10,8 @@ bind_normal_mode {
     '<C-e>',
     '<cmd>lua require "telescope".extensions.file_browser.file_browser()<CR>',
   },
+  {
+    '<C-l>',
+    '<CMD>lua require"session-lens".setup { layout_config = { width = 0.5, height = 0.5, }, prompt_title = "", results_title = "", preview_title = "", theme_conf = { borderchars = { { "─", "│", "─", "│", "┌", "┐", "┘", "└"}, prompt = {"─", "│", " ", "│", "┌", "┐", "│", "│"}, results = {"─", "│", "─", "│", "├", "┤", "┘", "└"}, preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└"}, } }, } ; require"session-lens".search_session()<CR>',
+  },
 }
