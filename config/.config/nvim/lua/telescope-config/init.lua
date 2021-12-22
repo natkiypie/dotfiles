@@ -3,14 +3,6 @@ require 'telescope-config/highlights'
 
 local actions = require 'telescope.actions'
 
-local function fb_action(f)
-  return function(b)
-    require('telescope').extensions.file_browser.actions[f](b)
-  end
-end
-
-local fb_keybindings = {}
-
 require('telescope').setup {
   defaults = {
     layout_config = {
@@ -178,35 +170,5 @@ require('telescope').setup {
       },
     },
   },
-  extensions = {
-    file_browser = {
-      layout_config = {
-        width = 0.5,
-        height = 0.5,
-      },
-      theme = 'dropdown',
-      prompt_title = '',
-      results_title = '',
-      preview_title = '',
-      previewer = false,
-      borderchars = {
-        prompt = { '─', '│', ' ', '│', '┌', '┐', '│', '│' },
-        results = { '─', '│', '─', '│', '├', '┤', '┘', '└' },
-        preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
-      },
-      mappings = {
-        n = vim.tbl_extend('force', fb_keybindings, {
-          ['w'] = false,
-          ['p'] = fb_action 'copy_file',
-          ['cw'] = fb_action 'rename_file',
-          ['h'] = fb_action 'goto_parent_dir',
-          ['.'] = fb_action 'toggle_hidden',
-          ['gh'] = fb_action 'goto_cwd',
-        }),
-      },
-    },
-  },
+  extensions = {},
 }
-
-require('telescope').load_extension 'file_browser'
-require('telescope').load_extension 'session-lens'

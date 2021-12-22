@@ -5,7 +5,7 @@ local broot_default_config_path = vim.fn.fnamemodify(vim.fn.expand '$XDG_CONFIG_
 local broot_nvim_config_path = vim.fn.fnamemodify(broot_default_config_path, ':h') .. '/nvim.hjson'
 local broot_config_path = broot_default_config_path .. ';' .. broot_nvim_config_path
 
-local function brootCallback(code)
+local function broot_callback(code)
   if code == 0 then
     vim.cmd 'silent! Bclose!'
   end
@@ -17,7 +17,7 @@ local function brootCallback(code)
   end
 end
 
-function M.OpenBroot()
+function M.open_broot()
   local currentPath = vim.fn.expand '.'
 
   local cmd = vim.fn.printf(
@@ -28,7 +28,7 @@ function M.OpenBroot()
     currentPath
   )
   local on_exit = function(_, code)
-    brootCallback(code)
+    broot_callback(code)
   end
   vim.api.nvim_command 'enew'
   local opts = { name = 'broot', on_exit = on_exit }

@@ -30,13 +30,12 @@ return require('packer').startup(function(use)
   use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
   use 'rmagatti/auto-session'
-  use 'rmagatti/session-lens'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
   use 'jpalardy/vim-slime'
   use 'windwp/nvim-autopairs'
   use 'akinsho/bufferline.nvim'
+  use 'rbgrouleff/bclose.vim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -47,10 +46,6 @@ return require('packer').startup(function(use)
   }
 
   -- Temporary
-  use {
-    'skyuplam/broot.nvim',
-    requires = 'rbgrouleff/bclose.vim',
-  }
   use 'ThePrimeagen/vim-be-good'
   use 'nvim-telescope/telescope-symbols.nvim'
   use 'karb94/neoscroll.nvim'

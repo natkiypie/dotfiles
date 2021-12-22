@@ -20,7 +20,8 @@ end
 
 function M.prompt()
   if vim.fn.empty(vim.fn.bufname()) == 1 then
-    vim.cmd 'Telescope find_files'
+    -- vim.cmd 'Telescope find_files'
+    vim.cmd 'lua require("utils.broot").open_broot()'
   end
 end
 

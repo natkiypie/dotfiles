@@ -1,13 +1,25 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1639969537">
-        Look into adding snippet engine to cmp
-    </note>
     <note priority="veryhigh" time="1640161192">
         Make terminal tripple toggle function (pressing &lt;c-t&gt; will first toggle terminal -&gt; fullscreen -&gt; back to split -&gt; toggle terminal)
     </note>
+    <note priority="veryhigh" time="1640204432">
+        Make keybinding for :browse oldfiles
+    </note>
+    <note priority="veryhigh" time="1640204778">
+        Learn how to grep with broot and then remove telescope live-grep keybinding
+    </note>
+    <note priority="veryhigh" time="1640205444">
+        Organize bash files (create separate file for natkiypie's additions &amp; source it bashrc)
+    </note>
+    <note priority="veryhigh" time="1640205534">
+        Remove floaterm quit keybinding and only allow for toggling - create autocmd to quit all terminals before leaving vim (?)
+    </note>
     <note priority="high" time="1639468104">
         Learn LazyGit 
+    </note>
+    <note priority="high" time="1639969537">
+        Look into adding snippet engine to cmp
     </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
@@ -18,14 +30,11 @@
     <note priority="low" time="1639468259">
         Explore telescope built-in pickers 
     </note>
-    <note priority="low" time="1639726722">
-        Change devicons ugly colors
-    </note>
     <note priority="low" time="1639969573">
         Make README.md for dot files (steps to reproduce)
     </note>
     <note priority="verylow" time="1639468147">
-        Note: &lt;C-c&gt;, &lt;C-y&gt; &amp; &lt;C-n&gt; are free 
+        Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-h&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
     </note>
     <note priority="verylow" time="1639729520">
         Note: how to check if a keymap exists - example: :verbose imap &lt;cr&gt; (checks if Enter key is mapped to anything in insert mode) 
