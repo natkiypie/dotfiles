@@ -40,7 +40,7 @@ function _G.no_q(key, char)
   if vim.api.nvim_eval '&channel' ~= 0 then
     if
       require('utils.helpers').table_contains_value(
-        { 'htop', 'Glow', 'LazyGit' },
+        { 'Htop', 'Glow', 'LazyGit' },
         require('utils.helpers').get_nested_table_value(require('floaterm-config.utils').ft_table, 'name')
       )
     then

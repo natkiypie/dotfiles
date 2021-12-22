@@ -1,0 +1,11 @@
+# $XDG_CONFIG_HOME/broot/nvim.hjson
+{
+  verbs: [
+    {
+      invocation: terminal
+      key: enter
+      execution: ":print_path"
+      apply_to: file
+    }
+  ]
+}

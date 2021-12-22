@@ -47,6 +47,10 @@ return require('packer').startup(function(use)
   }
 
   -- Temporary
+  use {
+    'skyuplam/broot.nvim',
+    requires = 'rbgrouleff/bclose.vim',
+  }
   use 'ThePrimeagen/vim-be-good'
   use 'nvim-telescope/telescope-symbols.nvim'
   use 'karb94/neoscroll.nvim'

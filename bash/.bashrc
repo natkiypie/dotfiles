@@ -71,6 +71,10 @@ export NVM_DIR="$HOME/.nvm"
 unset MANPATH
 # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+# editor
+export EDITOR="nvim"
+# config
+export XDG_CONFIG_HOME="$HOME/.config"
 # STEAM
 # Add /home/natkiypie/.steam/root/steamapps/common/Aseprite to PATH environment
 PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
@@ -80,3 +84,5 @@ mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
 gcu() { git add . ; git commit -m "$1" ; git checkout main ; git merge update ; git push ; git checkout update ; git status ; }
 # run startup script
 on_open.sh
+
+source /home/natkiypie/.config/broot/launcher/bash/br

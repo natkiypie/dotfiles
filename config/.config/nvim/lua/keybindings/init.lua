@@ -6,13 +6,14 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
   { 'M', '<CMD>lua require"keybindings.utils".toggle_mouse()<CR>' },
-  { '<Leader>v', '<CMD>vsp<CR>' },
-  { '<Leader>x', '<CMD>sp<CR>' },
+  -- { '<Leader>v', '<CMD>vsp<CR>' },
+  { '<Leader>v', '<CMD>vsp<CR><C-o><C-w>l' },
+  -- { '<Leader>x', '<CMD>sp<CR>' },
+  { '<Leader>x', '<CMD>sp<CR><C-o><C-w>j' },
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
-  { '<C-n>', '<CMD>lua require"utils.startup".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -31,7 +32,7 @@ require('utils.keybindings').bind_command_mode {
 }
 
 require('utils.keybindings').bind_terminal_mode {
-  { '<ESC>', '<C-\\><C-n>' },
+  { '<Del>', '<C-\\><C-n>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
