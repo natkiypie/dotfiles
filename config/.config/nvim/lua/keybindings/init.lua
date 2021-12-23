@@ -12,6 +12,8 @@ require('utils.keybindings').bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
+  { '<C-t>', '<CMD>lua require"utils.terminal".one()<CR>' },
+  { '<C-e>', '<CMD>lua require"utils.broot".open_broot()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {

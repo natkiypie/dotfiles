@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'windwp/nvim-ts-autotag'
-  use 'voldikss/vim-floaterm'
   use 'kyazdani42/nvim-web-devicons'
   use 'rmagatti/auto-session'
   use 'nvim-lua/plenary.nvim'
