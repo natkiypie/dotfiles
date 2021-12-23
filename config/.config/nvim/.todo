@@ -15,6 +15,21 @@
     <note priority="veryhigh" time="1640248363">
         Make &lt;expr&gt; keybindings to change buffers when in terminal (maybe ?)
     </note>
+    <note priority="veryhigh" time="1640248783">
+        Find solution to the problem of running a command in bash and not having the ability to navigate away or toggle/hide terminal
+    </note>
+    <note priority="veryhigh" time="1640249992">
+        Make autocommand that closes all terminals on VimLeavePre
+    </note>
+    <note priority="veryhigh" time="1640251097">
+        Make &lt;expr&gt; binding: if terminal is open but not focused, pressing &lt;C-t&gt; will focus opened terminal instead of opening a new one
+    </note>
+    <note priority="veryhigh" time="1640251969">
+        See: :h bufhidden
+    </note>
+    <note priority="veryhigh" time="1640252081">
+        Keep searching for better buffer navigation keys
+    </note>
     <note priority="high" time="1639468104">
         Learn LazyGit 
     </note>

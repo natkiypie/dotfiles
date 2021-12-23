@@ -2,7 +2,6 @@ local M = {}
 
 function M.open()
   vim.cmd 'terminal'
-  vim.cmd 'startinsert'
 end
 
 function M.exit()
@@ -24,7 +23,6 @@ function M.issue(cmd)
   vim.api.nvim_command 'enew'
   local opts = { name = cmd, on_exit = on_exit }
   vim.fn.termopen(cmd, opts)
-  vim.cmd 'startinsert'
 end
 
 return M

@@ -26,7 +26,6 @@ function M.open()
   vim.api.nvim_command 'enew'
   local opts = { name = 'broot', on_exit = on_exit }
   vim.fn.termopen(cmd, opts)
-  vim.cmd 'startinsert'
 end
 
 return M

@@ -8,8 +8,10 @@ require('utils.keybindings').bind_normal_mode {
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<Leader>v', '<CMD>vsp<CR><C-o>' },
   { '<Leader>x', '<CMD>sp<CR><C-o>' },
-  { '<S-l>', '<CMD>bn<CR>' },
-  { '<S-h>', '<CMD>bp<CR>' },
+  -- { '<S-l>', '<CMD>bn<CR>' },
+  -- { '<S-h>', '<CMD>bp<CR>' },
+  { '<Left>', '<CMD>bp<CR>' },
+  { '<Right>', '<CMD>bn<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
@@ -36,17 +38,15 @@ require('utils.keybindings').bind_command_mode {
 
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
+  { '<Left>', '<C-\\><C-n><CMD>bp<CR>' },
+  { '<Right>', '<C-\\><C-n><CMD>bn<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
   { '>', 'v:lua.vsplit("\\<C-w\\>l", ">")' },
   { '<', 'v:lua.vsplit("\\<C-w\\>h", "<")' },
-  { '<Left>', 'v:lua.vsplit("\\<C-w\\>h", "<Left>")' },
-  { '<Right>', 'v:lua.vsplit("\\<C-w\\>l", "<Right>")' },
   { 'K', 'v:lua.split("\\<C-w\\>k", "K")' },
   { 'J', 'v:lua.split("\\<C-w\\>j", "J")' },
-  { '<Up>', 'v:lua.split("\\<C-w\\>k", "<Up>")' },
-  { '<Down>', 'v:lua.split("\\<C-w\\>j", "<Down>")' },
   { '-', 'v:lua.vsplit("\\<CMD\\>vertical resize -5\\<CR\\>", "-")' },
   { '=', 'v:lua.vsplit("\\<CMD\\>vertical resize +5\\<CR\\>", "=")' },
   { '_', 'v:lua.split("\\<CMD\\>resize -5\\<CR\\>", "_")' },
@@ -62,7 +62,11 @@ require('utils.keybindings').bind_expr_command_mode {
 
 require('utils.keybindings').bind_expr_terminal_mode {
   {
-    '<C-t>',
+    '<C-q>',
     'v:lua.is_bash("\\<CMD\\>lua require\'utils.terminals.terminal\'.exit()\\<CR\\>2\\<C-o\\>", "\\<C-t\\>")',
   },
+  { '>', 'v:lua.vsplit("\\<C-\\\\>\\<C-n>\\<C-w\\>l", ">")' },
+  { '<', 'v:lua.vsplit("\\<C-\\\\>\\<C-n\\>\\<C-w\\>h", "<")' },
+  { 'K', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>k", "K")' },
+  { 'J', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>j", "J")' },
 }
