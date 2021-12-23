@@ -2,18 +2,18 @@ require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
   { '<C-w>', '<CMD>w<CR>' },
-  { 'q', '<CMD>lua require"keybindings.utils".close_float_win()<CR>' },
+  { 'q', '<CMD>lua require"utils.general".close_float_win()<CR>' },
   { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
-  { 'M', '<CMD>lua require"keybindings.utils".toggle_mouse()<CR>' },
+  { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<Leader>v', '<CMD>vsp<CR><C-o>' },
   { '<Leader>x', '<CMD>sp<CR><C-o>' },
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
-  { '<CR>', '<CMD>lua require"keybindings.utils".toggle_tab()<CR>' },
-  { '<C-t>', '<CMD>lua require"utils.terminal".one()<CR>' },
-  { '<C-e>', '<CMD>lua require"utils.broot".open_broot()<CR>' },
+  { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
+  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".one()<CR>' },
+  { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {

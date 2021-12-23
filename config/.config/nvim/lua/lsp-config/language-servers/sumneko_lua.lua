@@ -1,4 +1,4 @@
-local utils = require 'lsp-config/language-servers/utils'
+local utils = require 'utils.language_servers'
 
 local system_name
 
