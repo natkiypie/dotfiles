@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'akinsho/bufferline.nvim'
   use 'rbgrouleff/bclose.vim'
+  use 'karb94/neoscroll.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
@@ -47,7 +48,6 @@ return require('packer').startup(function(use)
   -- Temporary
   use 'ThePrimeagen/vim-be-good'
   use 'nvim-telescope/telescope-symbols.nvim'
-  use 'karb94/neoscroll.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
