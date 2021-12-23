@@ -15,8 +15,8 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
   { '<C-t>', '<CMD>lua require"utils.terminals.terminal".open()<CR>' },
   { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
-  { '<C-g>', '<CMD>lua require"utils.terminals.lazygit".open()<CR>' },
-  { '<C-a>', '<CMD>lua require"utils.terminals.glow".open()<CR>' },
+  { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
+  { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow")<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -36,8 +36,6 @@ require('utils.keybindings').bind_command_mode {
 
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
-  { '<C-q>', '<CMD>lua require"utils.terminals.terminal".close()<CR>' },
-  { '<C-n>', '<CMD>echo bufname("$")<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
@@ -60,4 +58,11 @@ require('utils.keybindings').bind_expr_command_mode {
   { '<C-j>', 'v:lua.wildmenu("\\<Right\\>")' },
   { '<C-h>', 'v:lua.wildmenu("\\<Up\\>")' },
   { '<C-l>', 'v:lua.wildmenu("\\<CR\\>")' },
+}
+
+require('utils.keybindings').bind_expr_terminal_mode {
+  {
+    '<C-t>',
+    'v:lua.is_bash("\\<CMD\\>lua require\'utils.terminals.terminal\'.exit()\\<CR\\>2\\<C-o\\>", "\\<C-t\\>")',
+  },
 }

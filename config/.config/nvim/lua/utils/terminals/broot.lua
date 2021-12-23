@@ -19,7 +19,6 @@ end
 
 function M.open()
   local currentPath = vim.fn.expand '.'
-
   local cmd = vim.fn.printf('%s --conf "%s" --out "%s" "%s"', command, config_path, out_file_path, currentPath)
   local on_exit = function(_, code)
     callback(code)

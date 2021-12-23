@@ -36,21 +36,6 @@ function _G.repl_vsplit(key, char)
   end
 end
 
--- function _G.no_q(key, char)
---   if vim.api.nvim_eval '&channel' ~= 0 then
---     if
---       require('utils.table').contains_value(
---         { 'Glow', 'LazyGit' },
---         require('utils.table').get_nested_value(require('floaterm-config.utils').ft_table, 'name')
---       )
---     then
---       return vim.api.nvim_replace_termcodes(key, true, true, true)
---     else
---       return char
---     end
---   end
--- end
-
 function _G.repl(key, char)
   local buf = vim.fn.uniq(vim.fn.map(vim.fn.filter(vim.fn.getwininfo(), 'v:val.terminal'), 'v:val.bufnr'))
   local bufnr = require('utils.table').get_value(buf, 1)
@@ -61,6 +46,14 @@ function _G.repl(key, char)
     else
       return char
     end
+  else
+    return char
+  end
+end
+
+function _G.is_bash(key, char)
+  if string.find(vim.b.term_title, 'bash') then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
   end
