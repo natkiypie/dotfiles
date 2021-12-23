@@ -24,22 +24,46 @@ local function create(args)
     args.name,
     helpers.add_to_table(args, 'channel', vim.api.nvim_eval '&channel')
   )
-end
-
-local function return_winsize()
-  local max = '1.0'
-  if helpers.get_nested_table_value(M.ft_table, 'wintype') == 'split' then
-    if helpers.get_nested_table_value(M.ft_table, 'height') == max then
-      M.toggle_winsize()
-    end
-  elseif helpers.get_nested_table_value(M.ft_table, 'width') == max then
-    M.toggle_winsize()
-  end
+  -- WIP...
+  helpers.add_to_table_silent(M.ft_table, args.name, helpers.add_to_table(args, 'resize', true))
 end
 
 local function hide(args)
-  return_winsize()
   vim.cmd(string.gsub('silent FloatermHide name', 'name', args.name))
+end
+
+-- WIP...
+-- I need to make sure this is what I want before I do all the work
+-- Now, have to account for:
+---- if buffer is already full screen...
+---- if file is opened when terminal is in full screen (how to do this 🤨)
+---- maybe keep quit function and check screensize before quitting (if full, toggle_tab before quitting)
+local function resize(args)
+  local min = 17
+  local flag = helpers.get_nested_table_value(M.ft_table, 'resize')
+  if vim.fn.winheight '$' <= min and flag then
+    helpers.update_nested_table_value(M.ft_table, flag, false)
+    -- NEW
+    vim.cmd 'stopinsert'
+    vim.cmd 'tab split'
+    if vim.go.showtabline == 2 then
+      vim.go.showtabline = 0
+    end
+    -- vim.cmd 'stopinsert | lua require"keybindings.utils".toggle_tab()'
+    vim.api.nvim_feedkeys('i', 'n', true)
+  elseif vim.fn.winheight '$' <= min and flag == false then
+    helpers.update_nested_table_value(M.ft_table, flag, true)
+    hide(args)
+  else
+    -- NEW
+    vim.cmd 'stopinsert'
+    vim.cmd 'tabc'
+    if vim.go.showtabline == 0 then
+      vim.go.showtabline = 2
+    end
+    -- vim.cmd 'stopinsert | lua require"keybindings.utils".toggle_tab()'
+    vim.api.nvim_feedkeys('i', 'n', true)
+  end
 end
 
 local function show(args)
@@ -59,22 +83,31 @@ function M.toggle(args)
     handle(args)
   else
     if helpers.table_contains(M.ft_table, args.name) then
-      hide(args)
+      -- WIP...
+      resize(args)
+      -- hide(args)
     end
   end
 end
 
+-- WIP...
 function M.quit()
+  if vim.fn.tabpagenr() > 1 then
+    vim.cmd 'tabc'
+    vim.go.showtabline = 2
+  end
   helpers.remove_from_table(M.ft_table, helpers.get_nested_table_value(M.ft_table, 'name'))
   vim.cmd 'silent FloatermKill'
 end
 
-function M.quit_all()
-  vim.cmd 'silent FloatermKill!'
-  for key in pairs(M.ft_table) do
-    helpers.remove_from_table(M.ft_table, key)
-  end
-end
+-- WIP...
+-- THIS MAY BE USED IN AUTOCMD (VimLeavePre) 👇
+-- function M.quit_all()
+--   vim.cmd 'silent FloatermKill!'
+--   for key in pairs(M.ft_table) do
+--     helpers.remove_from_table(M.ft_table, key)
+--   end
+-- end
 
 function M.slime_set_job_id()
   local channel = helpers.get_nested_table_value(M.ft_table, 'channel')
@@ -109,33 +142,24 @@ function M.slime(mode)
   M.slime_send(cmd)
 end
 
-local function _toggle_winsize(term, min)
-  local max = '1.0'
-  if term == min then
-    return max
-  else
-    return min
-  end
-end
-
-function M.toggle_winsize()
-  local wintype = helpers.get_nested_table_value(M.ft_table, 'wintype')
-  if wintype == 'split' then
-    local min = '0.5'
-    local height = helpers.get_nested_table_value(M.ft_table, 'height')
-    vim.cmd(string.gsub('silent FloatermUpdate --height=winheight', 'winheight', _toggle_winsize(height, min)))
-    helpers.update_nested_table_value(M.ft_table, height, _toggle_winsize(height, min))
-  elseif wintype == 'vsplit' then
-    local min = '0.4'
-    local width = helpers.get_nested_table_value(M.ft_table, 'width')
-    vim.cmd(string.gsub('silent FloatermUpdate --width=winwidth', 'winwidth', _toggle_winsize(width, min)))
-    helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
-  else
-    local min = '0.6'
-    local width = helpers.get_nested_table_value(M.ft_table, 'width')
-    vim.cmd(string.gsub('silent FloatermUpdate --width=windim --height=windim', 'windim', _toggle_winsize(width, min)))
-    helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
-  end
-end
+-- function M.toggle_winsize()
+--   local wintype = helpers.get_nested_table_value(M.ft_table, 'wintype')
+--   if wintype == 'split' then
+--     local min = '0.5'
+--     local height = helpers.get_nested_table_value(M.ft_table, 'height')
+--     vim.cmd(string.gsub('silent FloatermUpdate --height=winheight', 'winheight', _toggle_winsize(height, min)))
+--     helpers.update_nested_table_value(M.ft_table, height, _toggle_winsize(height, min))
+--   elseif wintype == 'vsplit' then
+--     local min = '0.4'
+--     local width = helpers.get_nested_table_value(M.ft_table, 'width')
+--     vim.cmd(string.gsub('silent FloatermUpdate --width=winwidth', 'winwidth', _toggle_winsize(width, min)))
+--     helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
+--   else
+--     local min = '0.6'
+--     local width = helpers.get_nested_table_value(M.ft_table, 'width')
+--     vim.cmd(string.gsub('silent FloatermUpdate --width=windim --height=windim', 'windim', _toggle_winsize(width, min)))
+--     helpers.update_nested_table_value(M.ft_table, width, _toggle_winsize(width, min))
+--   end
+-- end
 
 return M
