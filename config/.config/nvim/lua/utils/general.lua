@@ -13,6 +13,11 @@ function M.close_win_on_last_buf()
   end
 end
 
+-- local table = require 'utils.table'
+local chans = vim.api.nvim_list_chans()
+local length = vim.fn.len(chans)
+print(length)
+
 function M.close_float_win()
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     if vim.api.nvim_win_get_config(win).relative ~= '' then

@@ -1,24 +1,23 @@
 require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
-  { '<C-w>', '<CMD>w<CR>' },
+  { '<C-w>', '<CMD>silent w<CR>' },
   { 'q', '<CMD>lua require"utils.general".close_float_win()<CR>' },
   { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<Leader>v', '<CMD>vsp<CR><C-o>' },
   { '<Leader>x', '<CMD>sp<CR><C-o>' },
-  -- { '<S-l>', '<CMD>bn<CR>' },
-  -- { '<S-h>', '<CMD>bp<CR>' },
-  { '<Left>', '<CMD>bp<CR>' },
-  { '<Right>', '<CMD>bn<CR>' },
+  { '<S-l>', '<CMD>bn<CR>' },
+  { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
-  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".open()<CR>' },
+  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".toggle()<CR>' },
   { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
   { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow")<CR>' },
+  { '<C-n>', '<CMD>lua require"utils.terminals.terminal".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -38,8 +37,10 @@ require('utils.keybindings').bind_command_mode {
 
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
-  { '<Left>', '<C-\\><C-n><CMD>bp<CR>' },
-  { '<Right>', '<C-\\><C-n><CMD>bn<CR>' },
+  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".toggle()<CR>' },
+  -- TODO: make <expr> bindings 👇
+  -- { '<Left>', '<C-\\><C-n><CMD>bp<CR>' },
+  -- { '<Right>', '<C-\\><C-n><CMD>bn<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
@@ -61,10 +62,10 @@ require('utils.keybindings').bind_expr_command_mode {
 }
 
 require('utils.keybindings').bind_expr_terminal_mode {
-  {
-    '<C-q>',
-    'v:lua.is_bash("\\<CMD\\>lua require\'utils.terminals.terminal\'.exit()\\<CR\\>2\\<C-o\\>", "\\<C-t\\>")',
-  },
+  -- {
+  --   '<C-q>',
+  --   'v:lua.is_bash("\\<CMD\\>lua require\'utils.terminals.terminal\'.exit()\\<CR\\>2\\<C-o\\>", "\\<C-t\\>")',
+  -- },
   { '>', 'v:lua.vsplit("\\<C-\\\\>\\<C-n>\\<C-w\\>l", ">")' },
   { '<', 'v:lua.vsplit("\\<C-\\\\>\\<C-n\\>\\<C-w\\>h", "<")' },
   { 'K', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>k", "K")' },

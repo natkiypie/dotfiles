@@ -1,12 +1,7 @@
 local M = {}
 
-function M.open()
-  vim.cmd 'terminal'
-end
-
-function M.exit()
-  vim.cmd 'stopinsert'
-  vim.cmd 'silent! Bclose!'
+function M.toggle()
+  vim.cmd 'call terminal#toggle#()'
 end
 
 local function callback(code)

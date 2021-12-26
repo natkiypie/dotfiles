@@ -13,4 +13,9 @@ vim.cmd [[
     autocmd!
     autocmd TermOpen * startinsert
   augroup END
+
+  augroup unlist
+    autocmd!
+    autocmd TermOpen * if bufwinnr('') > 0 | setlocal nobuflisted | endif
+  augroup END
 ]]
