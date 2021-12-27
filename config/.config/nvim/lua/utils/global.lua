@@ -52,11 +52,3 @@ function _G.repl(key, char)
     return char
   end
 end
-
-function _G.is_bash(key, char)
-  if string.find(vim.b.term_title, 'bash') then
-    return vim.api.nvim_replace_termcodes(key, true, true, true)
-  else
-    return char
-  end
-end

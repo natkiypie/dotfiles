@@ -17,7 +17,6 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
   { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow")<CR>' },
-  { '<C-n>', '<CMD>lua require"utils.terminals.terminal".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -38,9 +37,6 @@ require('utils.keybindings').bind_command_mode {
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
   { '<C-t>', '<CMD>lua require"utils.terminals.terminal".toggle()<CR>' },
-  -- TODO: make <expr> bindings 👇
-  -- { '<Left>', '<C-\\><C-n><CMD>bp<CR>' },
-  -- { '<Right>', '<C-\\><C-n><CMD>bn<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
@@ -62,10 +58,6 @@ require('utils.keybindings').bind_expr_command_mode {
 }
 
 require('utils.keybindings').bind_expr_terminal_mode {
-  -- {
-  --   '<C-q>',
-  --   'v:lua.is_bash("\\<CMD\\>lua require\'utils.terminals.terminal\'.exit()\\<CR\\>2\\<C-o\\>", "\\<C-t\\>")',
-  -- },
   { '>', 'v:lua.vsplit("\\<C-\\\\>\\<C-n>\\<C-w\\>l", ">")' },
   { '<', 'v:lua.vsplit("\\<C-\\\\>\\<C-n\\>\\<C-w\\>h", "<")' },
   { 'K', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>k", "K")' },

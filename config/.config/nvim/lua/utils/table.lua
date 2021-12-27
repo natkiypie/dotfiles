@@ -91,4 +91,12 @@ function M.update_nested_value(table, value, new_value)
   end
 end
 
+function M.update_value(table, value, new_value)
+  for k, v in pairs(table) do
+    if v == value then
+      k[v] = new_value
+    end
+  end
+end
+
 return M
