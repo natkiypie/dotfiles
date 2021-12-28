@@ -30,13 +30,30 @@ function M.toggle_mouse()
   end
 end
 
+local tabline = 2
+local tabpage = 1
+
+function M.get_tabline()
+  return tabline
+end
+
+function M.get_tabpage()
+  return tabpage
+end
+
 function M.toggle_tab()
   if vim.fn.tabpagenr() <= 1 then
     vim.cmd 'tab split'
-    vim.go.showtabline = 0
+    tabline = 0
+    tabpage = 2
+    vim.go.showtabline = tabline
   else
+    local originbufferid = vim.fn.bufnr ''
     vim.cmd 'tabc'
-    vim.go.showtabline = 2
+    tabline = 2
+    tabpage = 1
+    vim.go.showtabline = tabline
+    vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', originbufferid))
   end
 end
 

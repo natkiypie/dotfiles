@@ -57,10 +57,6 @@ require('utils.keybindings').bind_expr_command_mode {
 }
 
 require('utils.keybindings').bind_expr_terminal_mode {
-  { '>', 'v:lua.vsplit("\\<C-\\\\>\\<C-n>\\<C-w\\>l", ">")' },
-  { '<', 'v:lua.vsplit("\\<C-\\\\>\\<C-n\\>\\<C-w\\>h", "<")' },
-  { 'K', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>k", "K")' },
-  { 'J', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>j", "J")' },
   {
     '<C-t>',
     'v:lua.issue_t_mode("/bin/bash", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',

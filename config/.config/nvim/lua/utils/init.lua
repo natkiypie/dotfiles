@@ -13,7 +13,7 @@ function M.update()
         augroup END
       ]]
     else
-      vim.cmd 'echoerr "Update Failed"'
+      error()
       M.prompt()
     end
   else

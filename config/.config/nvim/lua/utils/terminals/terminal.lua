@@ -23,9 +23,17 @@ function M.issue(cmd)
         termbufferid = nil,
       }
     end
+    vim.go.showtabline = require('utils.general').get_tabline()
+    if require('utils.general').get_tabpage() == 1 then
+      vim.cmd 'tabc'
+    end
   end
 
   if not M.terminal.loaded then
+    vim.go.showtabline = 0
+    if require('utils.general').get_tabpage() == 1 then
+      vim.cmd 'tab split'
+    end
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.api.nvim_command 'enew'
     vim.fn.termopen(cmd, M.terminal)
@@ -35,8 +43,16 @@ function M.issue(cmd)
   end
 
   if M.terminal.termbufferid == vim.fn.bufnr '' then
+    vim.go.showtabline = require('utils.general').get_tabline()
+    if require('utils.general').get_tabpage() == 1 then
+      vim.cmd 'tabc'
+    end
     vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', M.terminal.originbufferid))
   else
+    vim.go.showtabline = 0
+    if require('utils.general').get_tabpage() == 1 then
+      vim.cmd 'tab split'
+    end
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.cmd(string.gsub('buffer termbufferid', 'termbufferid', M.terminal.termbufferid))
   end

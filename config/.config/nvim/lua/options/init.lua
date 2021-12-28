@@ -4,7 +4,6 @@ vim.go.hlsearch = false
 vim.go.timeoutlen = 200
 vim.go.laststatus = 0
 vim.go.mouse = ''
-vim.go.showmode = false
 vim.go.guicursor = [[i:block,v:block-vCursor]]
 vim.bo.softtabstop = 2
 vim.bo.shiftwidth = 2
