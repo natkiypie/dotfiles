@@ -30,6 +30,17 @@ function M.toggle_mouse()
   end
 end
 
+function M.vsplit_back(split)
+  if split == 'x' then
+    vim.cmd 'split'
+  else
+    vim.cmd 'vsplit'
+  end
+  if vim.fn.buflisted(vim.fn.bufname '#') == 1 then
+    vim.cmd 'b#'
+  end
+end
+
 local tabline = 2
 local tabpage = 1
 
