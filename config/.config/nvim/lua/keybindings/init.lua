@@ -15,7 +15,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
   { '<C-t>', '<CMD>lua require"utils.terminals.terminal".issue("/bin/bash")<CR>' },
   { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
-  { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow")<CR>' },
+  { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
 }
 
@@ -71,6 +71,6 @@ require('utils.keybindings').bind_expr_terminal_mode {
   },
   {
     '<C-a>',
-    'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'glow\')\\<CR\\>", "\\<C-a\\>")',
+    'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'glow_script.sh\')\\<CR\\>", "\\<C-a\\>")',
   },
 }
