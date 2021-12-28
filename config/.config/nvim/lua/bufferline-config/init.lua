@@ -17,8 +17,5 @@ require('bufferline').setup {
     name_formatter = function(buf)
       return vim.fn.fnamemodify(buf.path, ':p:h:t') .. '/' .. buf.name
     end,
-    custom_filter = function(buf)
-      return not vim.fn.bufname(buf):match 'bash'
-    end,
   },
 }
