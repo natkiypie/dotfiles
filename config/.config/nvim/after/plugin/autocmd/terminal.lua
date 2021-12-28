@@ -4,6 +4,11 @@ vim.cmd [[
     autocmd TermOpen * set nonumber | set norelativenumber
   augroup END
 
+  augroup reset_relnumber
+    autocmd!
+    autocmd TermLeave * set relativenumber
+  augroup END
+
   augroup buffer_start_insert
     autocmd!
     autocmd BufWinEnter,WinEnter term://* startinsert
