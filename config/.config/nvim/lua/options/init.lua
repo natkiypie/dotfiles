@@ -8,3 +8,4 @@ vim.go.guicursor = [[i:block,v:block-vCursor]]
 vim.bo.softtabstop = 2
 vim.bo.shiftwidth = 2
 vim.bo.expandtab = true
+vim.go.showmode = false
