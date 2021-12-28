@@ -1,7 +1,7 @@
 require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
-  { '<C-w>', '<CMD>silent w<CR>' },
+  { '<C-w>', '<CMD>w<CR>' },
   { 'q', '<CMD>lua require"utils.general".close_float_win()<CR>' },
   { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
   { 'Q', '<CMD>q<CR>' },
@@ -13,10 +13,10 @@ require('utils.keybindings').bind_normal_mode {
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
-  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".toggle()<CR>' },
-  { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
+  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".issue("/bin/bash")<CR>' },
   { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow")<CR>' },
+  { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -36,7 +36,6 @@ require('utils.keybindings').bind_command_mode {
 
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
-  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".toggle()<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
@@ -62,4 +61,16 @@ require('utils.keybindings').bind_expr_terminal_mode {
   { '<', 'v:lua.vsplit("\\<C-\\\\>\\<C-n\\>\\<C-w\\>h", "<")' },
   { 'K', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>k", "K")' },
   { 'J', 'v:lua.split("\\<C-\\\\>\\<C-n\\>\\<C-w\\>j", "J")' },
+  {
+    '<C-t>',
+    'v:lua.issue_t_mode("/bin/bash", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
+  },
+  {
+    '<C-g>',
+    'v:lua.issue_t_mode("lazygit", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
+  },
+  {
+    '<C-a>',
+    'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'glow\')\\<CR\\>", "\\<C-a\\>")',
+  },
 }

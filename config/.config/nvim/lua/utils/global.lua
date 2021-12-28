@@ -52,3 +52,11 @@ function _G.repl(key, char)
     return char
   end
 end
+
+function _G.issue_t_mode(cmd, key, char)
+  if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
+  else
+    return char
+  end
+end
