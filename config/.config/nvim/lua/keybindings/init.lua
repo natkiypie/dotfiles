@@ -72,6 +72,6 @@ require('utils.keybindings').bind_expr_terminal_mode {
   },
   {
     '<C-s>',
-    'v:lua.issue_t_mode("node", "\\<CMD\\>lua require\'scripts.terminals.slime\'.test()\\<CR\\>", "\\<C-s\\>")',
+    'v:lua.issue_t_mode("node", "\\<CMD\\>lua require\'scripts.terminals.slime\'.toggle()\\<CR\\>", "\\<C-s\\>")',
   },
 }
