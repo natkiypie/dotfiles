@@ -1,5 +1,3 @@
-_G.term = ''
-
 function _G.wildmenu(key)
   return vim.fn.wildmenumode() == 1 and vim.api.nvim_replace_termcodes(key, true, true, true)
 end

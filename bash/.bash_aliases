@@ -1,3 +1,5 @@
+# exit bash
+alias q='exit'
 # logout
 alias logout='pkill -KILL -u natkiypie'
 # open nvim dotfiles in editor -- temp

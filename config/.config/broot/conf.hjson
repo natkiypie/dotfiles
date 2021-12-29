@@ -173,8 +173,8 @@
 		# A convenient shortcut to create new text files in
 		# the current directory or below
 		{
-			invocation: create {subpath}
-			execution: "$EDITOR {directory}/{subpath}"
+			invocation: touch {subpath}
+			execution: "touch {directory}/{subpath}"
 			leave_broot: false
 		}
 
