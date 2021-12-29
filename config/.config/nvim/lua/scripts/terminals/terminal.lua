@@ -18,7 +18,7 @@ function M.issue(cmd)
   end
 
   M.terminal.on_exit = function(_, code)
-    if code == 0 then
+    if code == 0 or code == 130 then
       buffer(M.terminal.originbufferid)
       exec_arg('Bclose!', M.terminal.termbufferid)
       initialize_terminal()

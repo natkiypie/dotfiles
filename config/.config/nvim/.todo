@@ -28,7 +28,7 @@
         Make README.md for dot files (steps to reproduce)
     </note>
     <note priority="verylow" time="1639468147">
-        Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-h&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
+        Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
     </note>
     <note priority="verylow" time="1639729520">
         Note: how to check if a keymap exists - example: :verbose imap &lt;cr&gt; (checks if Enter key is mapped to anything in insert mode) 

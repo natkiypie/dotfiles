@@ -1,25 +1,62 @@
 local M = {}
 
-function M.close_win_on_last_buf()
+function M.save_session_and_quit()
+  -- TODO: blacklist directories (/, /home/natkiypie, etc.)
+  local choice = vim.fn.confirm(
+    'Before you quit, would you like to save the session?',
+    '&Save\n&Restore previous session\n&Delete all sessions\n&Abort'
+  )
+  if choice == 1 then
+    vim.cmd 'SaveSession'
+  elseif choice == 2 then
+    vim.cmd 'RestoreSession'
+  elseif choice == 3 then
+    vim.cmd 'DeleteSession'
+  else
+    return
+  end
+  vim.cmd 'wa|qa'
+end
+
+local function close_win_on_last_buf()
   local buffers = vim.fn.len(vim.fn.filter(vim.fn.range(1, vim.fn.bufnr '$'), 'buflisted(v:val)'))
   if buffers == 1 then
     if #vim.fn.tabpagebuflist() > 1 then
       vim.cmd 'q'
     else
-      require('auto-session-config.utils').save_session()
+      M.save_session_and_quit()
     end
   else
     vim.cmd 'bd'
   end
 end
 
-function M.close_float_win()
+local function close_float_win()
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     if vim.api.nvim_win_get_config(win).relative ~= '' then
       vim.api.nvim_win_close(win, false)
     end
   end
-  M.close_win_on_last_buf()
+  close_win_on_last_buf()
+end
+
+local function close_split()
+  if vim.fn.winnr() > 1 then
+    vim.cmd 'q'
+  else
+    vim.cmd [[
+      wincmd l
+      q
+    ]]
+  end
+end
+
+function M.close()
+  if vim.fn.len(vim.fn.winlayout()[1]) < 4 and vim.fn.len(vim.fn.winlayout()[1]) > 1 then
+    close_split()
+  else
+    close_float_win()
+  end
 end
 
 function M.toggle_mouse()

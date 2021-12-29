@@ -2,9 +2,8 @@ require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
   { '<C-w>', '<CMD>w<CR>' },
-  { 'q', '<CMD>lua require"utils.general".close_float_win()<CR>' },
-  { '<C-q>', '<CMD>lua require"auto-session-config.utils".save_session()<CR>' },
-  { 'Q', '<CMD>q<CR>' },
+  { 'q', '<CMD>lua require"utils.general".close()<CR>' },
+  { '<C-q>', '<CMD>lua require"utils.general".save_session_and_quit()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<Leader>v', '<CMD>lua require"utils.general".vsplit_back("v")<CR>' },
   { '<Leader>x', '<CMD>lua require"utils.general".vsplit_back("x")<CR>' },
@@ -18,6 +17,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-a>', '<CMD>lua require"scripts.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
   { '<C-s>', '<CMD>lua require"scripts.terminals.slime".test()<CR>' },
+  { '<C-f>', '<CMD>lua require"utils.global".close()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
