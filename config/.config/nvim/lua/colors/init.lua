@@ -11,4 +11,5 @@ vim.cmd [[
   hi MoreMsg guifg=#a9b1d6
   hi NormalFloat guifg=#a9b1d6
   hi vCursor guibg=#33467C
+  hi ModeMsg gui=none
 ]]

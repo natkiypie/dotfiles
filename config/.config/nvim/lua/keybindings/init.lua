@@ -70,4 +70,8 @@ require('utils.keybindings').bind_expr_terminal_mode {
     '<C-a>',
     'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'scripts.terminals.terminal\'.issue(\'glow_script.sh\')\\<CR\\>", "\\<C-a\\>")',
   },
+  {
+    '<C-s>',
+    'v:lua.issue_t_mode("node", "\\<CMD\\>lua require\'scripts.terminals.slime\'.test()\\<CR\\>", "\\<C-s\\>")',
+  },
 }
