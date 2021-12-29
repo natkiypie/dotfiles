@@ -17,6 +17,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
+  { '<C-s>', '<CMD>lua require"utils.terminals.slime".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {

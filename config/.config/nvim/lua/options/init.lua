@@ -5,6 +5,7 @@ vim.go.timeoutlen = 200
 vim.go.laststatus = 0
 vim.go.mouse = ''
 vim.go.guicursor = [[i:block,v:block-vCursor]]
+vim.wo.number = true
 vim.wo.relativenumber = true
 vim.bo.softtabstop = 2
 vim.bo.shiftwidth = 2

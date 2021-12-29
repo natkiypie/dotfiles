@@ -6,7 +6,7 @@ vim.cmd [[
 
   augroup reset_relnumber
     autocmd!
-    autocmd TermLeave * set relativenumber
+    autocmd TermLeave * set number | set relativenumber
   augroup END
 
   augroup buffer_start_insert
