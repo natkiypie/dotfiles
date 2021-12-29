@@ -6,37 +6,38 @@ local default_config_path = vim.fn.fnamemodify(vim.fn.expand '$XDG_CONFIG_HOME/b
 local nvim_config_path = vim.fn.fnamemodify(default_config_path, ':h') .. '/nvim.hjson'
 local config_path = default_config_path .. ';' .. nvim_config_path
 
-local function callback(code)
+local function close()
+  vim.cmd 'silent! Bclose!'
+  require('utils.general').close_tab()
+  exec('buffer', M.originbufferid)
+end
+
+local function edit()
+  for _, f in pairs(vim.fn.readfile(out_file_path)) do
+    vim.cmd('edit ' .. f)
+  end
+  vim.fn.delete(out_file_path)
+end
+
+local function exit(_, code)
   if code == 0 then
-    vim.cmd 'silent! Bclose!'
-    vim.go.showtabline = require('utils.general').get_tabline()
-    if require('utils.general').get_tabpage() == 1 then
-      vim.cmd 'tabc'
-    end
-    vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', M.originbufferid))
+    close()
   end
   if vim.fn.filereadable(out_file_path) then
-    for _, f in pairs(vim.fn.readfile(out_file_path)) do
-      vim.cmd('edit ' .. f)
-    end
-    vim.fn.delete(out_file_path)
+    edit()
   end
 end
 
-function M.open()
+local function cmd()
   local currentPath = vim.fn.expand '.'
-  local cmd = vim.fn.printf('%s --conf "%s" --out "%s" "%s"', command, config_path, out_file_path, currentPath)
-  local on_exit = function(_, code)
-    callback(code)
-  end
+  return vim.fn.printf('%s --conf "%s" --out "%s" "%s"', command, config_path, out_file_path, currentPath)
+end
+
+function M.open()
   M.originbufferid = vim.fn.bufnr ''
-  vim.go.showtabline = 0
-  if require('utils.general').get_tabpage() == 1 then
-    vim.cmd 'tab split'
-  end
+  require('utils.general').split_tab()
   vim.api.nvim_command 'enew'
-  local opts = { name = 'broot', on_exit = on_exit }
-  vim.fn.termopen(cmd, opts)
+  vim.fn.termopen(cmd(), { name = 'broot', on_exit = exit })
   vim.cmd 'startinsert'
 end
 

@@ -5,7 +5,7 @@ function M.issue(cmd)
     return false
   end
 
-  if not M.terminal then
+  local function initialize_terminal()
     M.terminal = {
       loaded = false,
       originbufferid = nil,
@@ -13,27 +13,21 @@ function M.issue(cmd)
     }
   end
 
+  if not M.terminal then
+    initialize_terminal()
+  end
+
   M.terminal.on_exit = function(_, code)
     if code == 0 then
-      vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', M.terminal.originbufferid))
-      vim.cmd(string.gsub('Bclose! termbufferid', 'termbufferid', M.terminal.termbufferid))
-      M.terminal = {
-        loaded = false,
-        originbufferid = nil,
-        termbufferid = nil,
-      }
-    end
-    vim.go.showtabline = require('utils.general').get_tabline()
-    if require('utils.general').get_tabpage() == 1 then
-      vim.cmd 'tabc'
+      exec('buffer', M.terminal.originbufferid)
+      exec('Bclose!', M.terminal.termbufferid)
+      initialize_terminal()
+      require('utils.general').close_tab()
     end
   end
 
   if not M.terminal.loaded then
-    vim.go.showtabline = 0
-    if require('utils.general').get_tabpage() == 1 then
-      vim.cmd 'tab split'
-    end
+    require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.api.nvim_command 'enew'
     vim.fn.termopen(cmd, M.terminal)
@@ -43,18 +37,12 @@ function M.issue(cmd)
   end
 
   if M.terminal.termbufferid == vim.fn.bufnr '' then
-    vim.go.showtabline = require('utils.general').get_tabline()
-    if require('utils.general').get_tabpage() == 1 then
-      vim.cmd 'tabc'
-    end
-    vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', M.terminal.originbufferid))
+    require('utils.general').close_tab()
+    exec('buffer', M.terminal.originbufferid)
   else
-    vim.go.showtabline = 0
-    if require('utils.general').get_tabpage() == 1 then
-      vim.cmd 'tab split'
-    end
+    require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
-    vim.cmd(string.gsub('buffer termbufferid', 'termbufferid', M.terminal.termbufferid))
+    exec('buffer', M.terminal.termbufferid)
   end
 end
 

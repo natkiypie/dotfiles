@@ -44,14 +44,6 @@ end
 local tabline = 2
 local tabpage = 1
 
-function M.get_tabline()
-  return tabline
-end
-
-function M.get_tabpage()
-  return tabpage
-end
-
 function M.toggle_tab()
   if vim.fn.tabpagenr() <= 1 then
     vim.cmd 'tab split'
@@ -64,7 +56,21 @@ function M.toggle_tab()
     tabline = 2
     tabpage = 1
     vim.go.showtabline = tabline
-    vim.cmd(string.gsub('buffer originbufferid', 'originbufferid', originbufferid))
+    exec('buffer', originbufferid)
+  end
+end
+
+function M.split_tab()
+  vim.go.showtabline = 0
+  if tabpage == 1 then
+    vim.cmd 'tab split'
+  end
+end
+
+function M.close_tab()
+  vim.go.showtabline = tabline
+  if tabpage == 1 then
+    vim.cmd 'tabc'
   end
 end
 
