@@ -54,35 +54,25 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-############################################################################
+
 # NATKIYPIE'S ADDITIONS:
+
 PS1=""
-# Remove /snap/bin from PATH environment
-PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
-# Include custom scripts in path
-PATH=$PATH:/home/natkiypie/.config/scripts && export PATH
-# Include initialization scripts in path
-PATH=$PATH:/home/natkiypie/.config/scripts/initialization && export PATH
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH
-# delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-# editor
-export EDITOR="nvim"
-# config
-export XDG_CONFIG_HOME="$HOME/.config"
-# STEAM
-# Add /home/natkiypie/.steam/root/steamapps/common/Aseprite to PATH environment
-PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
-# command to make directory and file
-mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
-# *TEMPORARY* quick git wf for nvim config
-gcu() { git add . ; git commit -m "$1" ; git checkout main ; git merge update ; git push ; git checkout update ; git status ; }
+
+if [ -f ~/.bash_paths ]; then
+    . ~/.bash_paths
+fi
+
+if [ -f ~/.bash_exports ]; then
+    . ~/.bash_exports
+fi
+
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
+# Broot
+source /home/natkiypie/.config/broot/launcher/bash/br
+
 # run startup script
 on_open.sh
-
-source /home/natkiypie/.config/broot/launcher/bash/br
