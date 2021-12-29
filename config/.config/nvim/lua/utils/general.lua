@@ -56,7 +56,7 @@ function M.toggle_tab()
     tabline = 2
     tabpage = 1
     vim.go.showtabline = tabline
-    exec('buffer', originbufferid)
+    buffer(originbufferid)
   end
 end
 

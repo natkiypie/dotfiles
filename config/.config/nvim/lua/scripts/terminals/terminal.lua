@@ -19,8 +19,8 @@ function M.issue(cmd)
 
   M.terminal.on_exit = function(_, code)
     if code == 0 then
-      exec('buffer', M.terminal.originbufferid)
-      exec('Bclose!', M.terminal.termbufferid)
+      buffer(M.terminal.originbufferid)
+      exec_arg('Bclose!', M.terminal.termbufferid)
       initialize_terminal()
       require('utils.general').close_tab()
     end
@@ -38,11 +38,11 @@ function M.issue(cmd)
 
   if M.terminal.termbufferid == vim.fn.bufnr '' then
     require('utils.general').close_tab()
-    exec('buffer', M.terminal.originbufferid)
+    buffer(M.terminal.originbufferid)
   else
     require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
-    exec('buffer', M.terminal.termbufferid)
+    buffer(M.terminal.termbufferid)
   end
 end
 

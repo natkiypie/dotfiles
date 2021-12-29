@@ -99,4 +99,20 @@ function M.update_value(table, value, new_value)
   end
 end
 
+function M.map(f, t)
+  local function apply(values)
+    local results = {}
+    for index, value in pairs(values) do
+      results[index] = f(value)
+    end
+    return results
+  end
+
+  if t then
+    return apply(t)
+  else
+    return apply
+  end
+end
+
 return M

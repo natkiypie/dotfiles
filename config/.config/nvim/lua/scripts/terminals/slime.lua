@@ -46,7 +46,7 @@ end
 function M.test()
   vim.cmd [[
     vsplit
-    wincmd l 
+    wincmd l
   ]]
   open()
   vim.cmd [[

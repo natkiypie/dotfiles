@@ -9,7 +9,7 @@ local config_path = default_config_path .. ';' .. nvim_config_path
 local function close()
   vim.cmd 'silent! Bclose!'
   require('utils.general').close_tab()
-  exec('buffer', M.originbufferid)
+  buffer(M.originbufferid)
 end
 
 local function edit()

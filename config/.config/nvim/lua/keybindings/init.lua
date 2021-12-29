@@ -13,11 +13,11 @@ require('utils.keybindings').bind_normal_mode {
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
   { '<C-h>', '<CMD>browse oldfiles<CR>' },
-  { '<C-t>', '<CMD>lua require"utils.terminals.terminal".issue("/bin/bash")<CR>' },
-  { '<C-g>', '<CMD>lua require"utils.terminals.terminal".issue("lazygit")<CR>' },
-  { '<C-a>', '<CMD>lua require"utils.terminals.terminal".issue("glow_script.sh")<CR>' },
-  { '<C-e>', '<CMD>lua require"utils.terminals.broot".open()<CR>' },
-  { '<C-s>', '<CMD>lua require"utils.terminals.slime".test()<CR>' },
+  { '<C-t>', '<CMD>lua require"scripts.terminals.terminal".issue("/bin/bash")<CR>' },
+  { '<C-g>', '<CMD>lua require"scripts.terminals.terminal".issue("lazygit")<CR>' },
+  { '<C-a>', '<CMD>lua require"scripts.terminals.terminal".issue("glow_script.sh")<CR>' },
+  { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
+  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -60,14 +60,14 @@ require('utils.keybindings').bind_expr_command_mode {
 require('utils.keybindings').bind_expr_terminal_mode {
   {
     '<C-t>',
-    'v:lua.issue_t_mode("/bin/bash", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
+    'v:lua.issue_t_mode("/bin/bash", "\\<CMD\\>lua require\'scripts.terminals.terminal\'.issue(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
   },
   {
     '<C-g>',
-    'v:lua.issue_t_mode("lazygit", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
+    'v:lua.issue_t_mode("lazygit", "\\<CMD\\>lua require\'scripts.terminals.terminal\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
   },
   {
     '<C-a>',
-    'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'utils.terminals.terminal\'.issue(\'glow_script.sh\')\\<CR\\>", "\\<C-a\\>")',
+    'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'scripts.terminals.terminal\'.issue(\'glow_script.sh\')\\<CR\\>", "\\<C-a\\>")',
   },
 }

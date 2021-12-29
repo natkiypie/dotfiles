@@ -1,5 +1,9 @@
-function _G.exec(a, b)
+function _G.exec_arg(a, b)
   vim.cmd(string.gsub(string.gsub('a b', 'b', b), 'a', a))
+end
+
+function _G.buffer(buffer)
+  exec_arg('buffer', buffer)
 end
 
 function _G.wildmenu(key)
