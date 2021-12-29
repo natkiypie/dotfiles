@@ -4,7 +4,10 @@
         Configure Broot and convert config file from .hjson to .toml (will have to change '.hjson' to '.toml' in utils.broot)
     </note>
     <note priority="veryhigh" time="1640238221">
-        Implement slime terminal
+        Slime - implement: send region, clear, quit
+    </note>
+    <note priority="veryhigh" time="1640820613">
+        utils.general.close(): take into consideration if split is node repl terminal
     </note>
     <note priority="high" time="1640204778">
         Learn how to grep with broot and then remove telescope live-grep keybinding

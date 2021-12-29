@@ -17,7 +17,6 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-a>', '<CMD>lua require"scripts.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
   { '<C-s>', '<CMD>lua require"scripts.terminals.slime".test()<CR>' },
-  { '<C-f>', '<CMD>lua require"utils.global".close()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
