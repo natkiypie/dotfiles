@@ -2,17 +2,15 @@ require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
   { '<C-w>', '<CMD>w<CR>' },
-  { 'q', '<CMD>lua require"utils.general".close()<CR>' },
   { '<C-q>', '<CMD>lua require"utils.general".check_cwd()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
-  { '<C-h>', '<CMD>browse oldfiles<CR>' },
   { '<C-t>', '<CMD>lua require"scripts.terminals.bash".toggle()<CR>' },
   { '<C-g>', '<CMD>lua require"scripts.terminals.lazygit".toggle()<CR>' },
-  { '<C-a>', '<CMD>lua require"scripts.terminals.glow".toggle("glow_script.sh")<CR>' },
+  { '<C-a>', '<CMD>lua require"scripts.terminals.glow".toggle()<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
 }
 
@@ -53,8 +51,16 @@ require('utils.keybindings').bind_expr_normal_mode {
     'v:lua.split_nav("\\<CMD\\>lua require\'utils.general\'.vsplit_back(\'x\')\\<CR\\>", "<Leader>x")',
   },
   {
+    '<C-h>',
+    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.help()\\<CR\\>", "<CMD>browse oldfiles<CR>")',
+  },
+  {
     '<C-l>',
-    'v:lua.repl_clear("\\<CMD\\>lua require\'scripts.terminals.slime\'.clear()\\<CR\\>", "<C-l>")',
+    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.clear()\\<CR\\>", "<C-l>")',
+  },
+  {
+    'q',
+    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.exit()\\<CR\\>", "<CMD>lua require\'utils.general\'.close()<CR>")',
   },
   {
     '<C-s>',

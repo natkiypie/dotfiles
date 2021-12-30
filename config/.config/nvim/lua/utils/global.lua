@@ -47,7 +47,7 @@ function _G.toggle_term(cmd, key, char)
 end
 
 function _G.split_no_slime(key, char)
-  if #vim.fn.tabpagebuflist() > 1 then
+  if #vim.fn.tabpagebuflist() > 1 and not repl_alive() then
     error 'Close split before opening REPL'
     return char
   else
@@ -61,7 +61,7 @@ function _G.repl_alive()
   return bufnr
 end
 
-function _G.repl_clear(key, char)
+function _G.repl_cmd(key, char)
   if repl_alive() then
     local bufname = vim.fn.bufname(repl_alive())
     if string.find(bufname, 'node') then

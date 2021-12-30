@@ -87,6 +87,10 @@ function M.send(mode)
   end
 end
 
+function M.help()
+  vim.cmd [[SlimeSend1 .help]]
+end
+
 function M.clear()
   vim.cmd [[SlimeSend1 console.log('\u001B\[2J\u001B\[0;0f')]]
 end

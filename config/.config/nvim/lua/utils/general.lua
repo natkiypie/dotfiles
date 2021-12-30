@@ -60,12 +60,7 @@ local function close_split()
 end
 
 function M.close()
-  if repl_alive() then
-    local bufname = vim.fn.bufname(repl_alive())
-    if string.find(bufname, 'node') then
-      vim.cmd 'lua require"scripts.terminals.slime".exit()'
-    end
-  elseif #vim.fn.tabpagebuflist() > 1 then
+  if #vim.fn.tabpagebuflist() > 1 then
     close_split()
   else
     close_float_win()

@@ -30,7 +30,7 @@ function M.toggle()
     require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.api.nvim_command 'enew'
-    vim.fn.termopen('glow_script.sh', M.terminal)
+    vim.fn.termopen('glow.sh', M.terminal)
     M.terminal['loaded'] = true
     M.terminal['termbufferid'] = vim.fn.bufnr ''
     return true
