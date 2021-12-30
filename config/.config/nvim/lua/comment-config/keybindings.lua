@@ -8,4 +8,5 @@ require('utils.keybindings').bind_normal_mode {
 require('utils.keybindings').bind_visual_mode {
   { '<C-_>', ':CommentToggle<CR>' },
   { '<C-c><C-p>', 'yv`]:CommentToggle<CR>`]p' },
+  { '<C-c><C-y>', 'yv`]:CommentToggle<CR>' },
 }

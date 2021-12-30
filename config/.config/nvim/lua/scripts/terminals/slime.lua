@@ -1,13 +1,11 @@
+-- SEND REGION:
+-- require('utils.keybindings').bind_x_mode {
+--   { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime("x")<CR>' },
+-- }
+
 local M = {}
 
-function M.toggle()
-  vim.cmd [[
-    stopinsert
-    quit
-  ]]
-end
-
-function M.test()
+function M.issue()
   if vim.fn.has 'nvim' == 0 then
     return false
   end
@@ -50,6 +48,7 @@ function M.test()
       vim.cmd [[
         wincmd l
         quit
+        stopinsert
       ]]
       initialize_terminal()
     end
@@ -73,20 +72,19 @@ function M.test()
     set_job_id(channel)
     vim.cmd 'SlimeSendCurrentLine'
     return true
-  end
-
-  if vim.fn.empty(vim.fn.win_findbuf(M.terminal.termbufferid)) == 1 then
-    split()
-    buffer(M.terminal.termbufferid)
-    vim.cmd [[
-    stopinsert
-    vertical-resize 56
-  ]]
-    vim.cmd 'wincmd h'
-    vim.cmd 'SlimeSendCurrentLine'
   else
     vim.cmd 'SlimeSendCurrentLine'
   end
+end
+
+function M.clear()
+  vim.cmd [[SlimeSend1 console.log('\u001B\[2J\u001B\[0;0f')]]
+end
+
+function M.exit()
+  vim.cmd [[
+    SlimeSend1 .exit
+  ]]
 end
 
 return M

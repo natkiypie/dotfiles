@@ -1,5 +1,9 @@
 local M = {}
 
+function M.test()
+  print(vim.fn.getcwd())
+end
+
 function M.save_session_and_quit()
   -- TODO: blacklist directories (/, /home/natkiypie, etc.)
   local choice = vim.fn.confirm(
@@ -52,7 +56,12 @@ local function close_split()
 end
 
 function M.close()
-  if vim.fn.len(vim.fn.winlayout()[1]) < 4 and vim.fn.len(vim.fn.winlayout()[1]) > 1 then
+  if repl_alive() then
+    local bufname = vim.fn.bufname(repl_alive())
+    if string.find(bufname, 'node') then
+      vim.cmd 'lua require"scripts.terminals.slime".exit()'
+    end
+  elseif vim.fn.len(vim.fn.winlayout()[1]) < 4 and vim.fn.len(vim.fn.winlayout()[1]) > 1 then
     close_split()
   else
     close_float_win()

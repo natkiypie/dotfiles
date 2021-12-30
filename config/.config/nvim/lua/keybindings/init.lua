@@ -5,8 +5,6 @@ require('utils.keybindings').bind_normal_mode {
   { 'q', '<CMD>lua require"utils.general".close()<CR>' },
   { '<C-q>', '<CMD>lua require"utils.general".save_session_and_quit()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
-  { '<Leader>v', '<CMD>lua require"utils.general".vsplit_back("v")<CR>' },
-  { '<Leader>x', '<CMD>lua require"utils.general".vsplit_back("x")<CR>' },
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
@@ -16,7 +14,8 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-g>', '<CMD>lua require"scripts.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"scripts.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
-  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".test()<CR>' },
+  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".issue()<CR>' },
+  { '<C-y>', '<CMD>lua require"utils.general".test()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -41,12 +40,24 @@ require('utils.keybindings').bind_terminal_mode {
 require('utils.keybindings').bind_expr_normal_mode {
   { '>', 'v:lua.vsplit("\\<C-w\\>l", ">")' },
   { '<', 'v:lua.vsplit("\\<C-w\\>h", "<")' },
-  { 'K', 'v:lua.split("\\<C-w\\>k", "K")' },
-  { 'J', 'v:lua.split("\\<C-w\\>j", "J")' },
   { '-', 'v:lua.vsplit("\\<CMD\\>vertical resize -5\\<CR\\>", "-")' },
   { '=', 'v:lua.vsplit("\\<CMD\\>vertical resize +5\\<CR\\>", "=")' },
+  { 'K', 'v:lua.split("\\<C-w\\>k", "K")' },
+  { 'J', 'v:lua.split("\\<C-w\\>j", "J")' },
   { '_', 'v:lua.split("\\<CMD\\>resize -5\\<CR\\>", "_")' },
   { '+', 'v:lua.split("\\<CMD\\>resize +5\\<CR\\>", "+")' },
+  {
+    '<Leader>v',
+    'v:lua.split_nav("\\<CMD\\>lua require\'utils.general\'.vsplit_back(\'v\')\\<CR\\>", "<Leader>v")',
+  },
+  {
+    '<Leader>x',
+    'v:lua.split_nav("\\<CMD\\>lua require\'utils.general\'.vsplit_back(\'x\')\\<CR\\>", "<Leader>x")',
+  },
+  {
+    '<C-l>',
+    'v:lua.repl_clear("\\<CMD\\>lua require\'scripts.terminals.slime\'.clear()\\<CR\\>", "<C-l>")',
+  },
 }
 
 require('utils.keybindings').bind_expr_command_mode {
@@ -68,9 +79,5 @@ require('utils.keybindings').bind_expr_terminal_mode {
   {
     '<C-a>',
     'v:lua.issue_t_mode("glow", "\\<CMD\\>lua require\'scripts.terminals.terminal\'.issue(\'glow_script.sh\')\\<CR\\>", "\\<C-a\\>")',
-  },
-  {
-    '<C-s>',
-    'v:lua.issue_t_mode("node", "\\<CMD\\>lua require\'scripts.terminals.slime\'.toggle()\\<CR\\>", "\\<C-s\\>")',
   },
 }

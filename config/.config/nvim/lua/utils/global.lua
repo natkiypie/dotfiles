@@ -27,6 +27,7 @@ function _G.vsplit(key, char)
     #vim.fn.tabpagebuflist() > minwin
     and vim.fn.winwidth '$' < maxwidth
     and require('utils.table').contains_value({ 'TelescopePrompt' }, vim.bo.filetype) ~= true
+    and not repl_alive()
   then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
@@ -34,21 +35,15 @@ function _G.vsplit(key, char)
   end
 end
 
-function _G.repl_vsplit(key, char)
-  local minwin = 1
-  local minheight = 29
-  if vim.fn.winnr() > minwin and vim.fn.winheight '$' >= minheight then
-    return vim.api.nvim_replace_termcodes(key, true, true, true)
-  else
-    return char
-  end
-end
-
-function _G.repl(key, char)
+function _G.repl_alive()
   local buf = vim.fn.uniq(vim.fn.map(vim.fn.filter(vim.fn.getwininfo(), 'v:val.terminal'), 'v:val.bufnr'))
   local bufnr = require('utils.table').get_value(buf, 1)
-  if bufnr then
-    local bufname = vim.fn.bufname(bufnr)
+  return bufnr
+end
+
+function _G.repl_clear(key, char)
+  if repl_alive() then
+    local bufname = vim.fn.bufname(repl_alive())
     if string.find(bufname, 'node') then
       return vim.api.nvim_replace_termcodes(key, true, true, true)
     else
@@ -61,6 +56,14 @@ end
 
 function _G.issue_t_mode(cmd, key, char)
   if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
+  else
+    return char
+  end
+end
+
+function _G.split_nav(key, char)
+  if not repl_alive() then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
