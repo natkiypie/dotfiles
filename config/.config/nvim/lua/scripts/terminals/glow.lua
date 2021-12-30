@@ -1,6 +1,6 @@
 local M = {}
 
-function M.issue(cmd)
+function M.toggle()
   if vim.fn.has 'nvim' == 0 then
     return false
   end
@@ -30,7 +30,7 @@ function M.issue(cmd)
     require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.api.nvim_command 'enew'
-    vim.fn.termopen(cmd, M.terminal)
+    vim.fn.termopen('glow_script.sh', M.terminal)
     M.terminal['loaded'] = true
     M.terminal['termbufferid'] = vim.fn.bufnr ''
     return true

@@ -1,6 +1,6 @@
 local M = {}
 
-function M.issue(mode)
+function M.send(mode)
   if vim.fn.has 'nvim' == 0 then
     return false
   end
@@ -80,11 +80,9 @@ function M.issue(mode)
     open()
     resize()
     set_job_id(M.terminal.channel)
-    -- vim.cmd 'SlimeSendCurrentLine'
     slime_send()
     return true
   else
-    -- vim.cmd 'SlimeSendCurrentLine'
     slime_send()
   end
 end

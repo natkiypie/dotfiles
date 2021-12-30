@@ -54,7 +54,7 @@ function _G.repl_clear(key, char)
   end
 end
 
-function _G.issue_t_mode(cmd, key, char)
+function _G.toggle_term(cmd, key, char)
   if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
