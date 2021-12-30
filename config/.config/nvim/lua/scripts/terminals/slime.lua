@@ -2,6 +2,7 @@
 -- require('utils.keybindings').bind_x_mode {
 --   { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime("x")<CR>' },
 -- }
+-- cmd = 'lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<plug>SlimeRegionSend",true,false,true),"x",true)'
 
 local M = {}
 
@@ -15,27 +16,40 @@ function M.issue()
       loaded = false,
       originbufferid = nil,
       termbufferid = nil,
+      channel = nil,
     }
   end
 
   local function split()
     vim.cmd [[
-    vsplit
-    wincmd l
-  ]]
+      vsplit
+      wincmd l
+    ]]
+  end
+
+  local function unsplit()
+    vim.cmd [[
+      wincmd l
+      quit
+      stopinsert
+    ]]
   end
 
   local function resize()
     vim.cmd [[
-    stopinsert
-    vertical-resize 90
-  ]]
+      stopinsert
+      vertical-resize 90
+      wincmd h
+    ]]
   end
 
   local function set_job_id(channel)
-    local cmd = string.gsub('silent let b:slime_config = {"jobid": "channel"}', 'channel', channel)
-    vim.cmd(cmd)
+    vim.cmd(string.gsub('silent let b:slime_config = {"jobid": "channel"}', 'channel', channel))
   end
+
+  -- local function slime_send(mode)
+  --   print(mode)
+  -- end
 
   if not M.terminal then
     initialize_terminal()
@@ -45,35 +59,32 @@ function M.issue()
     if code == 0 then
       buffer(M.terminal.originbufferid)
       exec_arg('Bclose!', M.terminal.termbufferid)
-      vim.cmd [[
-        wincmd l
-        quit
-        stopinsert
-      ]]
+      unsplit()
       initialize_terminal()
     end
   end
 
   local function open()
-    local cmd = 'node -e "require(\'repl\').start({ignoreUndefined: true})"'
+    local node = 'node -e "require(\'repl\').start({ignoreUndefined: true})"'
     split()
     vim.api.nvim_command 'enew'
-    vim.fn.termopen(cmd, M.terminal)
+    vim.fn.termopen(node, M.terminal)
     M.terminal['loaded'] = true
     M.terminal['termbufferid'] = vim.fn.bufnr ''
+    M.terminal['channel'] = vim.api.nvim_eval '&channel'
   end
 
   if not M.terminal.loaded then
     M.terminal.originbufferid = vim.fn.bufnr ''
     open()
     resize()
-    local channel = vim.api.nvim_eval '&channel'
-    vim.cmd 'wincmd h'
-    set_job_id(channel)
+    set_job_id(M.terminal.channel)
     vim.cmd 'SlimeSendCurrentLine'
+    -- slime_send(mode)
     return true
   else
     vim.cmd 'SlimeSendCurrentLine'
+    -- slime_send(mode)
   end
 end
 
@@ -82,9 +93,7 @@ function M.clear()
 end
 
 function M.exit()
-  vim.cmd [[
-    SlimeSend1 .exit
-  ]]
+  vim.cmd [[SlimeSend1 .exit]]
 end
 
 return M
