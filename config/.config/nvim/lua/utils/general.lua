@@ -1,11 +1,6 @@
 local M = {}
 
-function M.test()
-  print(vim.fn.getcwd())
-end
-
-function M.save_session_and_quit()
-  -- TODO: blacklist directories (/, /home/natkiypie, etc.)
+local function save_session_and_quit()
   local choice = vim.fn.confirm(
     'Before you quit, would you like to save the session?',
     '&Save\n&Restore previous session\n&Delete all sessions\n&Abort'
@@ -22,13 +17,22 @@ function M.save_session_and_quit()
   vim.cmd 'wa|qa'
 end
 
+function M.check_cwd()
+  local supress_dirs = { '/', '/home/natkiypie', '/home/natkiypie/.dotfiles/bash' }
+  if not require('utils.table').contains_value(supress_dirs, vim.fn.getcwd()) then
+    save_session_and_quit()
+  else
+    vim.cmd 'q'
+  end
+end
+
 local function close_win_on_last_buf()
   local buffers = vim.fn.len(vim.fn.filter(vim.fn.range(1, vim.fn.bufnr '$'), 'buflisted(v:val)'))
   if buffers == 1 then
     if #vim.fn.tabpagebuflist() > 1 then
       vim.cmd 'q'
     else
-      M.save_session_and_quit()
+      M.check_cwd()
     end
   else
     vim.cmd 'bd'

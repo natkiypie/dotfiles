@@ -6,11 +6,11 @@
     <note priority="veryhigh" time="1640238221">
         Slime - implement: send region
     </note>
-    <note priority="veryhigh" time="1640838901">
-        utils.general.save_and_quit(): blacklist root &amp; home directories
-    </note>
     <note priority="high" time="1640204778">
         Learn how to grep with broot and then remove telescope live-grep keybinding
+    </note>
+    <note priority="high" time="1640840722">
+        Find out what PackerCompile does
     </note>
     <note priority="medium" time="1639468104">
         Learn LazyGit 
