@@ -14,7 +14,6 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-g>', '<CMD>lua require"scripts.terminals.lazygit".toggle()<CR>' },
   { '<C-a>', '<CMD>lua require"scripts.terminals.glow".toggle("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
-  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".send("n")<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -26,10 +25,6 @@ require('utils.keybindings').bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
   { 'yp', 'y`]o<Esc>p' },
-}
-
-require('utils.keybindings').bind_x_mode {
-  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".send("x")<CR>' },
 }
 
 require('utils.keybindings').bind_command_mode {
@@ -60,6 +55,17 @@ require('utils.keybindings').bind_expr_normal_mode {
   {
     '<C-l>',
     'v:lua.repl_clear("\\<CMD\\>lua require\'scripts.terminals.slime\'.clear()\\<CR\\>", "<C-l>")',
+  },
+  {
+    '<C-s>',
+    'v:lua.split_no_slime("\\<CMD\\>lua require\'scripts.terminals.slime\'.send(\'n\')\\<CR\\>", "<C-s>")',
+  },
+}
+
+require('utils.keybindings').bind_expr_x_mode {
+  {
+    '<C-s>',
+    'v:lua.split_no_slime("\\<CMD\\>lua require\'scripts.terminals.slime\'.send(\'x\')\\<CR\\>", "<C-s>")',
   },
 }
 

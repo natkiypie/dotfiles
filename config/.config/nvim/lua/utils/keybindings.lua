@@ -50,6 +50,12 @@ function M.bind_expr_normal_mode(keymaps)
   end
 end
 
+function M.bind_expr_x_mode(keymaps)
+  for _, keymap in ipairs(keymaps) do
+    bind_expr_key('x', keymap)
+  end
+end
+
 function M.bind_expr_command_mode(keymaps)
   for _, keymap in ipairs(keymaps) do
     bind_expr_key('c', keymap)

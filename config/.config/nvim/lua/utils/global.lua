@@ -12,8 +12,8 @@ end
 
 function _G.split(key, char)
   local minwin = 1
-  local maxheight = 33
-  if #vim.fn.tabpagebuflist() > minwin and vim.fn.winheight '$' < maxheight then
+  local maxheight = 35
+  if #vim.fn.tabpagebuflist() > minwin and vim.fn.winheight '' < maxheight then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
@@ -23,15 +23,35 @@ end
 function _G.vsplit(key, char)
   local minwin = 1
   local maxwidth = 147
-  if
-    #vim.fn.tabpagebuflist() > minwin
-    and vim.fn.winwidth '$' < maxwidth
-    and require('utils.table').contains_value({ 'TelescopePrompt' }, vim.bo.filetype) ~= true
-    and not repl_alive()
-  then
+  if #vim.fn.tabpagebuflist() > minwin and vim.fn.winwidth '' < maxwidth and not repl_alive() then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
+  end
+end
+
+function _G.split_nav(key, char)
+  if not repl_alive() then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
+  else
+    return char
+  end
+end
+
+function _G.toggle_term(cmd, key, char)
+  if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
+  else
+    return char
+  end
+end
+
+function _G.split_no_slime(key, char)
+  if #vim.fn.tabpagebuflist() > 1 then
+    error 'Close split before opening REPL'
+    return char
+  else
+    return vim.api.nvim_replace_termcodes(key, true, true, true)
   end
 end
 
@@ -49,22 +69,6 @@ function _G.repl_clear(key, char)
     else
       return char
     end
-  else
-    return char
-  end
-end
-
-function _G.toggle_term(cmd, key, char)
-  if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
-    return vim.api.nvim_replace_termcodes(key, true, true, true)
-  else
-    return char
-  end
-end
-
-function _G.split_nav(key, char)
-  if not repl_alive() then
-    return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
   end

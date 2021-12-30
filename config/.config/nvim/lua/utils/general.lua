@@ -65,7 +65,7 @@ function M.close()
     if string.find(bufname, 'node') then
       vim.cmd 'lua require"scripts.terminals.slime".exit()'
     end
-  elseif vim.fn.len(vim.fn.winlayout()[1]) < 4 and vim.fn.len(vim.fn.winlayout()[1]) > 1 then
+  elseif #vim.fn.tabpagebuflist() > 1 then
     close_split()
   else
     close_float_win()
