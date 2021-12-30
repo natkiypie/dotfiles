@@ -14,7 +14,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-g>', '<CMD>lua require"scripts.terminals.terminal".issue("lazygit")<CR>' },
   { '<C-a>', '<CMD>lua require"scripts.terminals.terminal".issue("glow_script.sh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
-  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".issue()<CR>' },
+  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".issue("n")<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
@@ -26,6 +26,10 @@ require('utils.keybindings').bind_visual_mode {
   { "'", "c''<Esc>P" },
   { '"', 'c""<Esc>P' },
   { 'yp', 'y`]o<Esc>p' },
+}
+
+require('utils.keybindings').bind_x_mode {
+  { '<C-s>', '<CMD>lua require"scripts.terminals.slime".issue("x")<CR>' },
 }
 
 require('utils.keybindings').bind_command_mode {

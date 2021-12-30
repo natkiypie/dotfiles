@@ -1,12 +1,6 @@
--- SEND REGION:
--- require('utils.keybindings').bind_x_mode {
---   { '<C-s>', '<CMD>lua require"floaterm-config.utils".slime("x")<CR>' },
--- }
--- cmd = 'lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<plug>SlimeRegionSend",true,false,true),"x",true)'
-
 local M = {}
 
-function M.issue()
+function M.issue(mode)
   if vim.fn.has 'nvim' == 0 then
     return false
   end
@@ -47,9 +41,16 @@ function M.issue()
     vim.cmd(string.gsub('silent let b:slime_config = {"jobid": "channel"}', 'channel', channel))
   end
 
-  -- local function slime_send(mode)
-  --   print(mode)
-  -- end
+  local function slime_send()
+    local cmd
+    if mode == 'n' then
+      cmd = 'SlimeSendCurrentLine'
+    elseif mode == 'x' then
+      cmd =
+        'lua vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<plug>SlimeRegionSend",true,false,true),"x",true)'
+    end
+    vim.cmd(cmd)
+  end
 
   if not M.terminal then
     initialize_terminal()
@@ -79,12 +80,12 @@ function M.issue()
     open()
     resize()
     set_job_id(M.terminal.channel)
-    vim.cmd 'SlimeSendCurrentLine'
-    -- slime_send(mode)
+    -- vim.cmd 'SlimeSendCurrentLine'
+    slime_send()
     return true
   else
-    vim.cmd 'SlimeSendCurrentLine'
-    -- slime_send(mode)
+    -- vim.cmd 'SlimeSendCurrentLine'
+    slime_send()
   end
 end
 
