@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.go.lazyredraw = true
 vim.go.hlsearch = false
-vim.go.timeoutlen = 100
+vim.go.timeoutlen = 150
 vim.go.laststatus = 0
 vim.go.mouse = ''
 vim.go.guicursor = [[i:block,v:block-vCursor]]

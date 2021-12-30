@@ -2,8 +2,8 @@ local M = {}
 
 local command = 'broot'
 local out_file_path = vim.fn.tempname()
-local default_config_path = vim.fn.fnamemodify(vim.fn.expand '$XDG_CONFIG_HOME/broot/conf.hjson', ':p')
-local nvim_config_path = vim.fn.fnamemodify(default_config_path, ':h') .. '/nvim.hjson'
+local default_config_path = vim.fn.fnamemodify(vim.fn.expand '$XDG_CONFIG_HOME/broot/conf.toml', ':p')
+local nvim_config_path = vim.fn.fnamemodify(default_config_path, ':h') .. '/nvim.toml'
 local config_path = default_config_path .. ';' .. nvim_config_path
 
 local function close()
