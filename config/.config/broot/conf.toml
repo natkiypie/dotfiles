@@ -23,6 +23,15 @@ show_selection_mark = false
 "*/package-lock.json" = "hide"
 
 ###############################################################
+# Pager
+###############################################################
+[[verbs]]
+name = "view"
+invocation = "view"
+execution = "$PAGER {file}"
+leave_broot = false
+
+###############################################################
 # Verbs and Shortcuts
 ###############################################################
 
@@ -35,8 +44,8 @@ execution = "$EDITOR +{line} {file}"
 leave_broot = false
 
 [[verbs]]
-invocation = "touch"
-execution = "touch {directory}{subpath}"
+invocation = "touch {subpath}"
+execution = "touch {directory}/{subpath}"
 leave_broot = false
 
 # Navigation

@@ -8,24 +8,27 @@
 
 Source: [shareable configs designed to work with the extends feature of .eslintrc files](https://github.com/standard/eslint-config-standard-react#readme) 
 
-1. Install
-
+* Install
 `npm install --save-dev babel-eslint eslint-config-standard eslint-config-standard-jsx eslint-config-standard-react eslint-plugin-promise eslint-plugin-import eslint-plugin-node eslint-plugin-react`
 
-2. Then, add this to your .eslintrc file:
+* Then, add this to your .eslintrc file:
 
 ```JSON
 {
   "parser": "babel-eslint",
   "extends": ["standard", "standard-jsx", "standard-react"],
   "rules": {
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    "multiline-ternary": ["off"],
+    <!-- Until I start using typescript -->
+    "react/prop-types": ["off"]
   }
 }
 ```
 
 ### ESLINTIGNORE
 
+* Add this to your .eslintignore file:
 
 ```
 **/node_modules/*
@@ -37,6 +40,8 @@ Source: [shareable configs designed to work with the extends feature of .eslintr
 ```
 
 ### PRETTIER
+
+* Add this to your .prettierrc.json file:
 
 ```JSON
 {
