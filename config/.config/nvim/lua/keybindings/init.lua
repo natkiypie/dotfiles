@@ -2,7 +2,7 @@ require('utils.keybindings').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
   { '<C-w>', '<CMD>w<CR>' },
-  { '<C-q>', '<CMD>lua require"utils.general".check_cwd()<CR>' },
+  { '<C-q>', '<CMD>lua require"utils.general".close_all()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
   { '<S-l>', '<CMD>bn<CR>' },
   { '<S-h>', '<CMD>bp<CR>' },

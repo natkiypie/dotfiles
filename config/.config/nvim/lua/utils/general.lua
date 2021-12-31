@@ -17,13 +17,9 @@ local function save_session_and_quit()
   vim.cmd 'wa|qa'
 end
 
-function M.check_cwd()
+local function pass_save_criteria()
   local supress_dirs = { '/', '/home/natkiypie', '/home/natkiypie/.dotfiles/bash' }
-  if not require('utils.table').contains_value(supress_dirs, vim.fn.getcwd()) then
-    save_session_and_quit()
-  else
-    vim.cmd 'q'
-  end
+  return not require('utils.table').contains_value(supress_dirs, vim.fn.getcwd()) and vim.api.nvim_eval '&readonly' == 0
 end
 
 local function close_win_on_last_buf()
@@ -32,7 +28,7 @@ local function close_win_on_last_buf()
     if #vim.fn.tabpagebuflist() > 1 then
       vim.cmd 'q'
     else
-      M.check_cwd()
+      M.close_all()
     end
   else
     vim.cmd 'bd'
@@ -64,6 +60,14 @@ function M.close()
     close_split()
   else
     close_float_win()
+  end
+end
+
+function M.close_all()
+  if pass_save_criteria() then
+    save_session_and_quit()
+  else
+    vim.cmd 'q'
   end
 end
 
