@@ -28,6 +28,7 @@ show_selection_mark = false
 [[verbs]]
 name = "view"
 invocation = "view"
+key = "ctrl-v"
 execution = "$EDITOR -R -M {file}"
 leave_broot = false
 
