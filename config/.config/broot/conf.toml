@@ -9,6 +9,7 @@ show_selection_mark = false
 [search-modes]
 "<empty>" = "fuzzy path"
 "/" = "regex name"
+"g/" = "regex content"
 
 ###############################################################
 # Special Paths
