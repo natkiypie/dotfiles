@@ -1,16 +1,7 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1639468104">
-        Learn LazyGit 
-    </note>
     <note priority="veryhigh" time="1639969537">
         Look into adding snippet engine to cmp
-    </note>
-    <note priority="veryhigh" time="1640910019">
-        Continue to style Broot
-    </note>
-    <note priority="veryhigh" time="1640910428">
-        Look into Git Commitizen
     </note>
     <note priority="veryhigh" time="1640910522">
         Fix the wonky terminal number/relativenumber behavior
@@ -21,16 +12,19 @@
     <note priority="high" time="1640910703">
         Think about configuring terminals for specific tasks using SlimeSend1 (such as npm start&amp;, etc.)
     </note>
+    <note priority="medium" time="1639468104">
+        Learn more about lazygit (and git in general) 
+    </note>
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
     <note priority="low" time="1639969573">
         Make README.md for dot files (steps to reproduce)
     </note>
+    <note priority="low" time="1640910019">
+        Continue to style Broot
+    </note>
     <note priority="verylow" time="1639468147">
         Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
-    </note>
-    <note priority="verylow" time="1639729520">
-        Note: how to check if a keymap exists - example: :verbose imap &lt;cr&gt; (checks if Enter key is mapped to anything in insert mode) 
     </note>
 </todo>

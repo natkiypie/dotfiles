@@ -1,12 +1,6 @@
-# Remove /snap/bin from PATH environment
 PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
-# Include custom scripts in path
-PATH=$PATH:/home/natkiypie/.scripts && export PATH
-# Include initialization scripts in path
-PATH=$PATH:/home/natkiypie/.scripts/initialization && export PATH
-# Add /home/natkiypie/.steam/root/steamapps/common/Aseprite to PATH environment
-PATH=$PATH:/home/natkiypie/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+PATH=$PATH:$HOME/.scripts && export PATH
+PATH=$PATH:$HOME/.scripts/initialization && export PATH
+PATH=$PATH:$HOME/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
 unset MANPATH
-# delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
