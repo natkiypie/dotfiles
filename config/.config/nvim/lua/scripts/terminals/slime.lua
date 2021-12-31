@@ -70,6 +70,8 @@ function M.send(mode)
     split()
     vim.api.nvim_command 'enew'
     vim.fn.termopen(node, M.terminal)
+    vim.bo.ft = 'terminal'
+    vim.cmd 'startinsert'
     M.terminal['loaded'] = true
     M.terminal['termbufferid'] = vim.fn.bufnr ''
     M.terminal['channel'] = vim.api.nvim_eval '&channel'

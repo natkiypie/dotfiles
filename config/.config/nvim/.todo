@@ -3,9 +3,6 @@
     <note priority="veryhigh" time="1639969537">
         Look into adding snippet engine to cmp
     </note>
-    <note priority="veryhigh" time="1640910522">
-        Fix the wonky terminal number/relativenumber behavior
-    </note>
     <note priority="veryhigh" time="1640941986">
         utils.general.save_session_and_quit(): look into suppressing files opened by broot ^/v lazygit
     </note>

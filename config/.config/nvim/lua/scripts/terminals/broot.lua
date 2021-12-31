@@ -38,6 +38,7 @@ function M.open()
   require('utils.general').split_tab()
   vim.api.nvim_command 'enew'
   vim.fn.termopen(cmd(), { name = 'broot', on_exit = exit })
+  vim.bo.ft = 'terminal'
   vim.cmd 'startinsert'
 end
 

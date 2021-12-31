@@ -31,6 +31,8 @@ function M.toggle()
     M.terminal.originbufferid = vim.fn.bufnr ''
     vim.api.nvim_command 'enew'
     vim.fn.termopen('lazygit', M.terminal)
+    vim.bo.ft = 'terminal'
+    vim.cmd 'startinsert'
     M.terminal['loaded'] = true
     M.terminal['termbufferid'] = vim.fn.bufnr ''
     return true
@@ -43,6 +45,7 @@ function M.toggle()
     require('utils.general').split_tab()
     M.terminal.originbufferid = vim.fn.bufnr ''
     buffer(M.terminal.termbufferid)
+    vim.cmd 'startinsert'
   end
 end
 
