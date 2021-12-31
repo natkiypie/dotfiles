@@ -28,7 +28,7 @@ show_selection_mark = false
 [[verbs]]
 name = "view"
 invocation = "view"
-execution = "$PAGER {file}"
+execution = "$EDITOR -R -M {file}"
 leave_broot = false
 
 ###############################################################
