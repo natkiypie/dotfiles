@@ -73,9 +73,9 @@ function M.ts_utils(client, bufnr)
   local ts_utils = require 'nvim-lsp-ts-utils'
   ts_utils.setup {}
   ts_utils.setup_client(client)
-  buf_map(bufnr, 'n', '<Leader>s', ':TSLspOrganize<CR>')
-  buf_map(bufnr, 'n', '<Leader>i', ':TSLspRenameFile<CR>')
-  buf_map(bufnr, 'n', '<Leader>o', ':TSLspImportAll<CR>')
+  buf_map(bufnr, 'n', '<Leader>o', ':TSLspOrganize<CR>')
+  buf_map(bufnr, 'n', '<Leader>f', ':TSLspRenameFile<CR>')
+  buf_map(bufnr, 'n', '<Leader>i', ':TSLspImportAll<CR>')
 end
 
 function M.format(client)

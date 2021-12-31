@@ -56,6 +56,22 @@ Source: [shareable configs designed to work with the extends feature of .eslintr
 }
 ```
 
+### JSCONFIG V TSCONFIG
+
+* To enable type checking on JavaScript files and to enable `:TSLspImportAll`, add this to your jsconfig.json or tsconfig.json file:
+
+```JSON
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": true
+  }
+}
+```
+
 ### RELEVANT CONTENT
 
 * [eslint rules](https://eslint.org/docs/rules/) 
