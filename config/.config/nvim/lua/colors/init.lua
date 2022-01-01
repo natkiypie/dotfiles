@@ -15,5 +15,5 @@ vim.cmd [[
   hi LineNr guifg=#6d7494
   hi LineNrAbove guifg=#6d7494
   hi LineNrBelow guifg=#6d7494
-  let g:terminal_color_4 = '#547c99'
+  let g:terminal_color_4 = '#739fcf'
 ]]
