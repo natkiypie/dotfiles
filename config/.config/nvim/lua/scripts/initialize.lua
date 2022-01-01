@@ -6,13 +6,13 @@ local function update_packages()
     PackerUpdate
     augroup update
       autocmd!
-      autocmd User PackerComplete ++once bd | lua require('scripts.initialize').prompt()
+      autocmd User PackerComplete ++once lua require('scripts.initialize').resume()
     augroup END
   ]]
 end
 
 local function check_connection()
-  local connection_status = vim.fn.system '! echo $(~/.config/scripts/check_connection.sh)'
+  local connection_status = vim.fn.system '! echo $(~/.scripts/check_connection.sh)'
   if vim.api.nvim_eval(connection_status) ~= 1 then
     error()
   end
@@ -28,6 +28,15 @@ function M.check_flag()
   else
     M.prompt()
   end
+end
+
+function M.resume()
+  vim.cmd [[
+    augroup resume
+      autocmd!
+      autocmd BufEnter * ++once lua require("scripts.initialize").prompt()
+    augroup END
+  ]]
 end
 
 function M.prompt()
