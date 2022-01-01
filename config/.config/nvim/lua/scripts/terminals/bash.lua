@@ -1,19 +1,19 @@
 local M = {}
 
-local function initialize_terminal()
+local function check_support()
+  if vim.fn.has 'nvim' == 0 then
+    return false
+  end
+end
+
+local function initialize()
   M.terminal = {
     originbufferid = nil,
     termbufferid = nil,
   }
 end
 
-local function open()
-  if vim.fn.has 'nvim' == 0 then
-    return false
-  end
-
-  initialize_terminal()
-
+local function extend_with_on_exit()
   M.terminal.on_exit = function(_, code)
     if code == 0 or code == 130 then
       buffer(M.terminal.originbufferid)
@@ -22,8 +22,9 @@ local function open()
       require('utils.general').close_tab()
     end
   end
+end
 
-  require('utils.general').split_tab()
+local function open()
   M.terminal.originbufferid = vim.fn.bufnr ''
   vim.api.nvim_command 'enew'
   vim.fn.termopen('/bin/bash', M.terminal)
@@ -32,9 +33,17 @@ local function open()
   M.terminal['termbufferid'] = vim.fn.bufnr ''
 end
 
+local function initiate()
+  check_support()
+  initialize()
+  extend_with_on_exit()
+  require('utils.general').split_tab()
+  open()
+end
+
 function M.toggle()
   if not M.terminal then
-    open()
+    initiate()
   else
     if M.terminal.termbufferid == vim.fn.bufnr '' then
       require('utils.general').close_tab()
