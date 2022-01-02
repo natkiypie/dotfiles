@@ -4,6 +4,10 @@
 
 ## This folder contains the config files you will need for your React projects
 
+### NODE.JS GLOBAL PACKAGES
+* Install
+`npm install -g eslint eslint_d @fsouza/prettierd tree-sitter tree-sitter-cli ts-node typescript typescript-language-server vscode-langservers-extracted commitizen cz-conventional-changelog`
+
 ### ESLINT
 
 Source: [shareable configs designed to work with the extends feature of .eslintrc files](https://github.com/standard/eslint-config-standard-react#readme) 
