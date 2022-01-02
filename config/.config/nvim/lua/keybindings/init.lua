@@ -31,9 +31,9 @@ require('utils.keybindings').bind_command_mode {
 
 require('utils.keybindings').bind_terminal_mode {
   { '<Del>', '<C-\\><C-n>' },
-  { '<C-t>', '<CMD>lua require"scripts.terminals.bash".start("/bin/bash")<CR>' },
-  { '<C-a>', '<CMD>lua require"scripts.terminals.bash".start("glow.sh")<CR>' },
-  { '<C-a>', '<CMD>lua require"scripts.terminals.bash".start("lazygit")<CR>' },
+  -- { '<C-t>', '<CMD>lua require"scripts.terminals.bash".start("/bin/bash")<CR>' },
+  -- { '<C-a>', '<CMD>lua require"scripts.terminals.bash".start("glow.sh")<CR>' },
+  -- { '<C-a>', '<CMD>lua require"scripts.terminals.bash".start("lazygit")<CR>' },
 }
 
 require('utils.keybindings').bind_expr_normal_mode {
@@ -86,16 +86,16 @@ require('utils.keybindings').bind_expr_command_mode {
 }
 
 require('utils.keybindings').bind_expr_terminal_mode {
-  -- {
-  --   '<C-t>',
-  --   'v:lua.toggle_term("/bin/bash", "\\<CMD\\>lua require\'scripts.terminals.bash\'.start(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
-  -- },
-  -- {
-  --   '<C-a>',
-  --   'v:lua.toggle_term("glow", "\\<CMD\\>lua require\'scripts.terminals.bash\'.start(\'/glow.sh\')\\<CR\\>", "\\<C-a\\>")',
-  -- },
-  -- {
-  --   '<C-g>',
-  --   'v:lua.toggle_term("lazygit", "\\<CMD\\>lua require\'scripts.terminals.lazygit\'.toggle()\\<CR\\>", "\\<C-g\\>")',
-  -- },
+  {
+    '<C-t>',
+    'v:lua.toggle_term("/bin/bash", "\\<CMD\\>lua require\'scripts.terminals.bash\'.start(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
+  },
+  {
+    '<C-a>',
+    'v:lua.toggle_term("glow", "\\<CMD\\>lua require\'scripts.terminals.bash\'.start(\'glow.sh\')\\<CR\\>", "\\<C-a\\>")',
+  },
+  {
+    '<C-g>',
+    'v:lua.toggle_term("lazygit", "\\<CMD\\>lua require\'scripts.terminals.bash\'.start(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
+  },
 }

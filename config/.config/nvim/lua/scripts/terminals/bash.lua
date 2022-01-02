@@ -57,7 +57,7 @@ end
 function M.start(cmd)
   if M.terminals[cmd] ~= nil then
     toggle(cmd)
-  elseif vim.api.nvim_eval '&channel' == 0 then
+  else
     initiate(cmd)
   end
 end
