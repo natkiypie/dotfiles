@@ -17,8 +17,8 @@ local function add_terminal(cmd)
   M.terminals[cmd] = terminal
 end
 
-local function open(cmd)
-  local on_exit = function(_, code)
+local function on_exit(cmd)
+  return function(_, code)
     if code == 0 or code == 130 then
       buffer(M.terminals[cmd].originbufferid)
       exec_arg('Bclose!', M.terminals[cmd].termbufferid)
@@ -26,9 +26,12 @@ local function open(cmd)
       require('utils.general').close_tab()
     end
   end
+end
+
+local function open(cmd)
   M.terminals[cmd].originbufferid = vim.fn.bufnr ''
   vim.api.nvim_command 'enew'
-  vim.fn.termopen(cmd, { on_exit = on_exit })
+  vim.fn.termopen(cmd, { on_exit = on_exit(cmd) })
   vim.bo.ft = 'terminal'
   M.terminals[cmd].channel = vim.api.nvim_eval '&channel'
   M.terminals[cmd].termbufferid = vim.fn.bufnr ''
@@ -54,8 +57,8 @@ local function toggle(cmd)
   end
 end
 
-function M.start(cmd)
-  if M.terminals[cmd] ~= nil then
+function M.issue(cmd)
+  if M.terminals[cmd] then
     toggle(cmd)
   else
     initiate(cmd)

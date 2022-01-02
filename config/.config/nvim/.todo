@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
+    <note priority="veryhigh" time="1641104450">
+        Get rid of utils.table
+    </note>
+    <note priority="high" time="1641104480">
+        Look into terminal exit codes
+    </note>
     <note priority="medium" time="1639468104">
         Learn more about lazygit (and git in general) 
     </note>
