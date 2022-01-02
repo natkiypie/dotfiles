@@ -13,21 +13,19 @@ local function initialize()
   }
 end
 
-local function extend_with_on_exit()
-  M.terminal.on_exit = function(_, code)
-    if code == 0 or code == 130 then
-      buffer(M.terminal.originbufferid)
-      exec_arg('Bclose!', M.terminal.termbufferid)
-      M.terminal = nil
-      require('utils.general').close_tab()
-    end
+local on_exit = function(_, code)
+  if code == 0 or code == 130 then
+    buffer(M.terminal.originbufferid)
+    exec_arg('Bclose!', M.terminal.termbufferid)
+    M.terminal = nil
+    require('utils.general').close_tab()
   end
 end
 
 local function open()
   M.terminal.originbufferid = vim.fn.bufnr ''
   vim.api.nvim_command 'enew'
-  vim.fn.termopen('/bin/bash', M.terminal)
+  vim.fn.termopen('/bin/bash', { on_exit = on_exit })
   vim.bo.ft = 'terminal'
   vim.cmd 'startinsert'
   M.terminal['termbufferid'] = vim.fn.bufnr ''
@@ -36,7 +34,6 @@ end
 local function initiate()
   check_support()
   initialize()
-  extend_with_on_exit()
   require('utils.general').split_tab()
   open()
 end
