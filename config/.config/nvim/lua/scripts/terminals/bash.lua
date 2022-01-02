@@ -1,6 +1,8 @@
 local M = {}
 
-M.terminals = {}
+local function initialize()
+  M.terminals = {}
+end
 
 local function check_support()
   if vim.fn.has 'nvim' == 0 then
@@ -9,12 +11,11 @@ local function check_support()
 end
 
 local function add_terminal(cmd)
-  local terminal = {
+  M.terminals[cmd] = {
     channel = nil,
     originbufferid = nil,
     termbufferid = nil,
   }
-  M.terminals[cmd] = terminal
 end
 
 local function on_exit(cmd)
@@ -58,6 +59,9 @@ local function toggle(cmd)
 end
 
 function M.issue(cmd)
+  if not M.terminals then
+    initialize()
+  end
   if M.terminals[cmd] then
     toggle(cmd)
   else
