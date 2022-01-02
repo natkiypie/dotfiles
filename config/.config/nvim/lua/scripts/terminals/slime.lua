@@ -38,7 +38,7 @@ function M.send(mode)
   end
 
   local function set_job_id(channel)
-    vim.cmd(string.gsub('silent let b:slime_config = {"jobid": "channel"}', 'channel', channel))
+    vim.b.slime_config = { jobid = channel }
   end
 
   local function slime_send()
