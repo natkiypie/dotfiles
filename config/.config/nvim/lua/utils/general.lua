@@ -19,9 +19,14 @@ end
 
 local function pass_save_criteria()
   local supress_dirs = { '/', '/home/natkiypie', '/home/natkiypie/.dotfiles/bash' }
-  return not require('utils.table').contains_value(supress_dirs, vim.fn.getcwd())
-    and vim.api.nvim_eval '&readonly' == 0
-    and vim.fn.bufname '' ~= ''
+  local function writable()
+    for _, v in ipairs(supress_dirs) do
+      if v == vim.fn.getcwd() then
+        return true
+      end
+    end
+  end
+  return not writable() and vim.api.nvim_eval '&readonly' == 0 and vim.fn.bufname '' ~= ''
 end
 
 local function close_win_on_last_buf()

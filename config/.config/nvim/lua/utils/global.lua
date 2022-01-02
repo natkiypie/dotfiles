@@ -59,9 +59,7 @@ function _G.split_no_slime(key, char)
 end
 
 function _G.repl_alive()
-  local buf = vim.fn.uniq(vim.fn.map(vim.fn.filter(vim.fn.getwininfo(), 'v:val.terminal'), 'v:val.bufnr'))
-  local bufnr = require('utils.table').get_value(buf, 1)
-  return bufnr
+  return vim.fn.uniq(vim.fn.map(vim.fn.filter(vim.fn.getwininfo(), 'v:val.terminal'), 'v:val.bufnr'))[1]
 end
 
 function _G.repl_cmd(key, char)

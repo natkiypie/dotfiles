@@ -1,5 +1,3 @@
-local table = require 'utils.table'
-
 local M = {}
 
 function M.commands()
@@ -80,9 +78,9 @@ end
 
 function M.format(client)
   local sources
-  local config = table.get_value(client, 'config')
-  local filetypes = table.get_value(config, 'filetypes')
-  local filetype = table.get_value(filetypes, 1)
+  local config = client['config']
+  local filetypes = config['filetypes']
+  local filetype = filetypes[1]
   local null_ls = require 'null-ls'
   if filetype == 'lua' then
     sources = {
