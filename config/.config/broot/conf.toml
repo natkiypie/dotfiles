@@ -73,7 +73,11 @@ execution = ":parent"
 
 [[verbs]]
 key = "shift-l"
-execution = ":focus"
+execution = ":open_stay"
+
+[[verbs]]
+key = "enter"
+execution = ":open_stay"
 
 [[verbs]]
 key = "shift-j"

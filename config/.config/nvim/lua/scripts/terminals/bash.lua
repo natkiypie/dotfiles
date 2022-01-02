@@ -19,13 +19,11 @@ local function add_terminal(cmd)
 end
 
 local function on_exit(cmd)
-  return function(_, code)
-    if code == 0 or code == 130 then
-      buffer(M.terminals[cmd].originbufferid)
-      exec_arg('Bclose!', M.terminals[cmd].termbufferid)
-      M.terminals[cmd] = nil
-      require('utils.general').close_tab()
-    end
+  return function()
+    buffer(M.terminals[cmd].originbufferid)
+    exec_arg('Bclose!', M.terminals[cmd].termbufferid)
+    M.terminals[cmd] = nil
+    require('utils.general').close_tab()
   end
 end
 

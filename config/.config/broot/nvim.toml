@@ -1,4 +1,10 @@
-# $XDG_CONFIG_HOME/broot/nvim.toml
+# USED IN: ~/.dotfiles/config/.config/nvim/lua/scripts/terminals/broot.lua"
+[[verbs]]
+invocation = "terminal"
+key = "shift-l"
+execution = ":print_path"
+apply_to = "file"
+
 [[verbs]]
 invocation = "terminal"
 key = "enter"

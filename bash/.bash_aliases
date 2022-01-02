@@ -1,4 +1,3 @@
-alias q='exit'
 alias logout='pkill -KILL -u natkiypie'
 alias n='cd ~/.dotfiles/config/.config/nvim ; vim'
 alias v='vim'

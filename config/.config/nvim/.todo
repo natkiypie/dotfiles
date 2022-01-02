@@ -6,6 +6,12 @@
     <note priority="veryhigh" time="1641117804">
         Make bash script that kills all background jobs and frees ports and include it in scripts.npm
     </note>
+    <note priority="veryhigh" time="1641118028">
+        look into utils.global.exec_arg (it may not be working as intended)
+    </note>
+    <note priority="veryhigh" time="1641118446">
+        Clean up broot &amp; slime terminal scripts
+    </note>
     <note priority="high" time="1641104480">
         Look into terminal exit codes
     </note>
