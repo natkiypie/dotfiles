@@ -1,56 +1,64 @@
 local M = {}
 
+M.terminals = {}
+
 local function check_support()
   if vim.fn.has 'nvim' == 0 then
     return false
   end
 end
 
-local function initialize()
-  M.terminal = {
+local function add_terminal(cmd)
+  local terminal = {
+    channel = nil,
     originbufferid = nil,
     termbufferid = nil,
   }
+  M.terminals[cmd] = terminal
 end
 
-local on_exit = function(_, code)
-  if code == 0 or code == 130 then
-    buffer(M.terminal.originbufferid)
-    exec_arg('Bclose!', M.terminal.termbufferid)
-    M.terminal = nil
+local function open(cmd)
+  local on_exit = function(_, code)
+    if code == 0 or code == 130 then
+      buffer(M.terminals[cmd].originbufferid)
+      exec_arg('Bclose!', M.terminals[cmd].termbufferid)
+      M.terminals[cmd] = nil
+      require('utils.general').close_tab()
+    end
+  end
+  M.terminals[cmd].originbufferid = vim.fn.bufnr ''
+  vim.api.nvim_command 'enew'
+  vim.fn.termopen(cmd, { on_exit = on_exit })
+  vim.bo.ft = 'terminal'
+  M.terminals[cmd].channel = vim.api.nvim_eval '&channel'
+  M.terminals[cmd].termbufferid = vim.fn.bufnr ''
+  vim.cmd 'startinsert'
+end
+
+local function initiate(cmd)
+  check_support()
+  add_terminal(cmd)
+  require('utils.general').split_tab()
+  open(cmd)
+end
+
+local function toggle(cmd)
+  if M.terminals[cmd].termbufferid == vim.fn.bufnr '' then
     require('utils.general').close_tab()
+    buffer(M.terminals[cmd].originbufferid)
+  else
+    require('utils.general').split_tab()
+    M.terminals[cmd].originbufferid = vim.fn.bufnr ''
+    buffer(M.terminals[cmd].termbufferid)
+    vim.cmd 'startinsert'
   end
 end
 
-local function open()
-  M.terminal.originbufferid = vim.fn.bufnr ''
-  vim.api.nvim_command 'enew'
-  vim.fn.termopen('/bin/bash', { on_exit = on_exit })
-  vim.bo.ft = 'terminal'
-  vim.cmd 'startinsert'
-  M.terminal['termbufferid'] = vim.fn.bufnr ''
-end
-
-local function initiate()
-  check_support()
-  initialize()
-  require('utils.general').split_tab()
-  open()
-end
-
-function M.toggle()
-  if not M.terminal then
-    initiate()
-  else
-    if M.terminal.termbufferid == vim.fn.bufnr '' then
-      require('utils.general').close_tab()
-      buffer(M.terminal.originbufferid)
-    else
-      require('utils.general').split_tab()
-      M.terminal.originbufferid = vim.fn.bufnr ''
-      buffer(M.terminal.termbufferid)
-      vim.cmd 'startinsert'
-    end
+function M.start(cmd)
+  if M.terminals[cmd] ~= nil then
+    toggle(cmd)
+  elseif vim.api.nvim_eval '&channel' == 0 then
+    initiate(cmd)
   end
 end
 
