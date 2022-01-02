@@ -3,6 +3,9 @@
     <note priority="veryhigh" time="1641104450">
         Get rid of utils.table
     </note>
+    <note priority="veryhigh" time="1641117804">
+        Make bash script that kills all background jobs and frees ports and include it in scripts.npm
+    </note>
     <note priority="high" time="1641104480">
         Look into terminal exit codes
     </note>

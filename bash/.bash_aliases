@@ -18,7 +18,6 @@ alias 301='cd ~/dev/cf/js/301/curriculum'
 alias play='cd ~/dev/playground'
 alias mongodb='sudo systemctl start mongod'
 alias mongodb='sudo systemctl status mongod'
-alias freeport='echo $(pass master/natkiypie) | sudo -S fuser -k 3000/tcp'
 alias bye=goodbye.sh
 alias exmon=ex_mon_only_on.sh
 alias setex=ex_mon_on.sh
