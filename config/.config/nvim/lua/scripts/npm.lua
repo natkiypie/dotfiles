@@ -15,15 +15,18 @@ local function toggle_bash()
 end
 
 function M.start(cmd)
-  if bash.terminals and bash.terminals['/bin/bash'] then
-    set_slime_jobid()
+  if repl_alive() then
+    error 'Close REPL before using Npm user command'
   else
-    toggle_bash()
-    set_slime_jobid()
+    if bash.terminals and bash.terminals['/bin/bash'] then
+      set_slime_jobid()
+    else
+      toggle_bash()
+      set_slime_jobid()
+    end
+    cmd = string.gsub('npm cmd', 'cmd', cmd)
+    vim.cmd(string.gsub('SlimeSend1 cmd', 'cmd', cmd))
   end
-  cmd = string.gsub('npm cmd', 'cmd', cmd)
-  -- exec_arg('SlimeSend1', cmd)
-  vim.cmd(string.gsub('SlimeSend1 cmd', 'cmd', cmd))
 end
 
 return M
