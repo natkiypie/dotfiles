@@ -62,6 +62,14 @@ local function close_split()
   end
 end
 
+function M.exec_arg(a, b)
+  vim.cmd(string.gsub(string.gsub('a b', 'b', b), 'a', a))
+end
+
+function M.buffer(buffer)
+  M.exec_arg('buffer', buffer)
+end
+
 function M.close()
   if #vim.fn.tabpagebuflist() > 1 then
     close_split()
@@ -112,7 +120,7 @@ function M.toggle_tab()
     tabline = 2
     tabpage = 1
     vim.go.showtabline = tabline
-    buffer(originbufferid)
+    M.buffer(originbufferid)
   end
 end
 

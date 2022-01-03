@@ -1,11 +1,3 @@
-function _G.exec_arg(a, b)
-  vim.cmd(string.gsub(string.gsub('a b', 'b', b), 'a', a))
-end
-
-function _G.buffer(buffer)
-  exec_arg('buffer', buffer)
-end
-
 function _G.wildmenu(key)
   return vim.fn.wildmenumode() == 1 and vim.api.nvim_replace_termcodes(key, true, true, true)
 end

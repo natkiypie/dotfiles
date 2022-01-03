@@ -20,8 +20,8 @@ end
 
 local function on_exit(cmd)
   return function()
-    buffer(M.terminals[cmd].originbufferid)
-    exec_arg('Bclose!', M.terminals[cmd].termbufferid)
+    require('utils.general').buffer(M.terminals[cmd].originbufferid)
+    require('utils.general').exec_arg('Bclose!', M.terminals[cmd].termbufferid)
     M.terminals[cmd] = nil
     require('utils.general').close_tab()
   end
@@ -47,11 +47,11 @@ end
 local function toggle(cmd)
   if M.terminals[cmd].termbufferid == vim.fn.bufnr '' then
     require('utils.general').close_tab()
-    buffer(M.terminals[cmd].originbufferid)
+    require('utils.general').buffer(M.terminals[cmd].originbufferid)
   else
     require('utils.general').split_tab()
     M.terminals[cmd].originbufferid = vim.fn.bufnr ''
-    buffer(M.terminals[cmd].termbufferid)
+    require('utils.general').buffer(M.terminals[cmd].termbufferid)
     vim.cmd 'startinsert'
   end
 end

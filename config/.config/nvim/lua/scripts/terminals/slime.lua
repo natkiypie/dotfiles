@@ -58,8 +58,8 @@ function M.send(mode)
 
   M.terminal.on_exit = function(_, code)
     if code == 0 then
-      buffer(M.terminal.originbufferid)
-      exec_arg('Bclose!', M.terminal.termbufferid)
+      require('utils.general').buffer(M.terminal.originbufferid)
+      require('utils.general').exec_arg('Bclose!', M.terminal.termbufferid)
       unsplit()
       initialize_terminal()
     end
