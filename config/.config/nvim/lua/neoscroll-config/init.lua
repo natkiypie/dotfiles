@@ -5,7 +5,7 @@ require('neoscroll').setup {
 
 local t = {}
 
-t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '400', [['sine']] } }
-t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '400', [['sine']] } }
+t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '200', [['sine']] } }
+t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '200', [['sine']] } }
 
 require('neoscroll.config').set_mappings(t)
