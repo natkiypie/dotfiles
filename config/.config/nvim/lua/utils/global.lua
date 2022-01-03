@@ -39,10 +39,7 @@ function _G.split_nav(key, char)
 end
 
 function _G.toggle_term(cmd, key, char)
-  if
-    require('scripts.terminals.bash').terminals[cmd]
-    and require('scripts.terminals.bash').terminals[cmd].channel == vim.api.nvim_eval '&channel'
-  then
+  if vim.fn.match(vim.fn.bufname '', cmd) > -1 then
     return vim.api.nvim_replace_termcodes(key, true, true, true)
   else
     return char
