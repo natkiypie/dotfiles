@@ -1,0 +1,18 @@
+{
+  "pathname": {
+    "prefix": ["path"],
+    "body": "$TM_FILEPATH"
+  },
+  "filename": {
+    "prefix": ["fname"],
+    "body": "$TM_FILENAME"
+  },
+  "user": {
+    "prefix": "username",
+    "body": "${VIM:\\$USER}"
+  },
+  "date": {
+    "prefix": "date",
+    "body": "-- ${VIM:system('date')}"
+  }
+}

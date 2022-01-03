@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
+    <note priority="veryhigh" time="1639969537">
+        Look into adding snippet engine to cmp
+    </note>
+    <note priority="veryhigh" time="1641201289">
+        Look into lazy loading plugins
+    </note>
     <note priority="high" time="1641187495">
         Look into the autopairs treesitter conf you just included
     </note>
@@ -9,13 +15,13 @@
     <note priority="medium" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
-    <note priority="medium" time="1639969537">
-        Look into adding snippet engine to cmp
-    </note>
     <note priority="low" time="1639969573">
         Expand on dot file's README (steps to reproduce)
     </note>
     <note priority="verylow" time="1639468147">
         Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
+    </note>
+    <note priority="verylow" time="1641202677">
+        Note: use :runtime to source runtime path
     </note>
 </todo>
