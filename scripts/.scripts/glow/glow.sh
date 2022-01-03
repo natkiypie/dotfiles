@@ -9,19 +9,19 @@ else
 fi
 
 _up_find() {
-  while [[ $PWD != /home/natkiypie ]] ; do
+  rootdir=$(git rev-parse --show-toplevel)
+  while [[ $PWD != ${rootdir%/*} ]] ; do
     find "$PWD"/ -maxdepth 1 "$@"
     cd ..
   done
 }
 
 _find_md_files() {
-  FILE=$(_up_find -name '*.md' )
-  if [[ -n $FILE ]]
+  mdfile=$(_up_find -name '*.md' )
+  if [[ -n $mdfile ]]
   then
-    cp $FILE --backup=numbered -t /tmp/glow
-  else
-    print "no file"
+    cp $mdfile --backup=numbered -t /tmp/glow
+    find_md.sh /tmp/glow
   fi
 }
 
