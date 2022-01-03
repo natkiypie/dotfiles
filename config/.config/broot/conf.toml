@@ -95,6 +95,10 @@ execution = ":page_down"
 key = "ctrl-u"
 execution = ":page_up"
 
+[[verbs]]
+key = "ctrl-e"
+execution = ":quit"
+
 # Git
 
 [[verbs]]
