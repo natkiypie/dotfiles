@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'rmagatti/auto-session'
   use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
   use 'jpalardy/vim-slime'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
@@ -44,10 +43,6 @@ return require('packer').startup(function(use)
     'ggandor/lightspeed.nvim',
     requires = 'tpope/vim-repeat',
   }
-
-  -- Temporary
-  use 'ThePrimeagen/vim-be-good'
-  use 'nvim-telescope/telescope-symbols.nvim'
 
   if PACKER_BOOTSTRAP then
     require('packer').sync()
