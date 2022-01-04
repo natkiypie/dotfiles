@@ -3,14 +3,14 @@
     <note priority="veryhigh" time="1641201289">
         Look into lazy loading plugins
     </note>
-    <note priority="medium" time="1639468104">
-        Learn more about lazygit (and git in general) 
-    </note>
-    <note priority="medium" time="1639468307">
+    <note priority="high" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
-    <note priority="low" time="1639969573">
+    <note priority="high" time="1639969573">
         Expand on dot file's README (steps to reproduce)
+    </note>
+    <note priority="medium" time="1639468104">
+        Learn more about lazygit (and git in general) 
     </note>
     <note priority="verylow" time="1639468147">
         Note: &lt;C-c&gt;, &lt;C-y&gt;, &lt;C-f&gt;, &lt;C-j&gt;, &lt;C-k&gt;, &lt;C-l&gt; &amp; &lt;C-n&gt; are free in normal mode 
