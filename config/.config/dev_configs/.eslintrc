@@ -1,0 +1,9 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-jsx", "standard-react"],
+  "rules": {
+    "space-before-function-paren": ["error", "never"],
+    "multiline-ternary": ["off"],
+    "react/prop-types": ["off"]
+  }
+}
