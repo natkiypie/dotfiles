@@ -6,7 +6,7 @@ local function add_user_commands(user_commands)
   end
 end
 
-add_user_commands({
+add_user_commands {
   LspRename = vim.lsp.buf.rename,
   LspRefs = vim.lsp.buf.references,
   LspDiag = vim.diagnostic.show,
@@ -17,8 +17,8 @@ add_user_commands({
   LspFormatting = vim.lsp.buf.formatting,
   LspCodeAction = vim.lsp.buf.code_action,
   LspHover = vim.lsp.buf.hover,
-})
+}
 
 vim.api.nvim_add_user_command('LspDiagLine', function()
-  vim.diagnostic.open_float({border = 'single', focusable = false})
+  vim.diagnostic.open_float { border = 'single', focusable = false }
 end, { nargs = 0 })
