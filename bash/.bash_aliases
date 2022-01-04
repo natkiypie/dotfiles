@@ -22,4 +22,3 @@ alias bye=goodbye.sh
 alias exmon=ex_mon_only_on.sh
 alias setex=ex_mon_on.sh
 alias updatecc=update_code_fellows_git_repos.sh
-alias luamake=/home/natkiypie/.dotfiles/nvim/lua-language-server/3rd/luamake/luamake

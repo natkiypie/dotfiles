@@ -1,6 +1,6 @@
 local M = {}
 
-function M.commands()
+local function commands()
   local diagnostics_border = {
     { '┌', 'FloatBorder' },
     { '─', 'FloatBorder' },
@@ -24,11 +24,7 @@ function M.commands()
     command! LspDiag lua vim.diagnostic.show()
     command! LspSignatureHelp lua vim.lsp.buf.signature_help()
   ]]
-  vim.cmd(
-    'command! LspDiagLine lua vim.diagnostic.open_float({border='
-      .. vim.inspect(diagnostics_border)
-      .. ', focusable=false})'
-  )
+  vim.cmd(string.gsub('command! LspDiagLine lua vim.diagnostic.open_float({border=diagnostics_border, focusable=false})', 'diagnostics_border', vim.inspect(diagnostics_border)))
 end
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
@@ -37,7 +33,7 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
   })
 end
 
-function M.keybindings(bufnr)
+local function keybindings(bufnr)
   buf_map(bufnr, 'n', '<Leader>d', ':LspDef<CR>')
   buf_map(bufnr, 'n', '<Leader>r', ':LspRef<CR>')
   buf_map(bufnr, 'n', '<Leader>e', ':LspRename<CR>')
@@ -49,7 +45,7 @@ function M.keybindings(bufnr)
   buf_map(bufnr, 'i', '<C-s>', '<CMD>LspSignatureHelp<CR>')
 end
 
-function M.highlight(client)
+local function highlight(client)
   if client.resolved_capabilities.document_highlight then
     vim.o.updatetime = 400
     vim.cmd [[
@@ -62,12 +58,12 @@ function M.highlight(client)
   end
 end
 
-function M.disable_native_formatting(client)
+local function disable_native_formatting(client)
   client.resolved_capabilities.document_formatting = false
   client.resolved_capabilities.document_range_formatting = false
 end
 
-function M.ts_utils(client, bufnr)
+local function ts_utils(client, bufnr)
   local ts_utils = require 'nvim-lsp-ts-utils'
   ts_utils.setup {}
   ts_utils.setup_client(client)
@@ -76,25 +72,43 @@ function M.ts_utils(client, bufnr)
   buf_map(bufnr, 'n', '<Leader>i', ':TSLspImportAll<CR>')
 end
 
-function M.format(client)
-  local sources
+-- require("null-ls").setup({
+--     -- you can reuse a shared lspconfig on_attach callback here
+--     on_attach = function(client)
+--         if client.resolved_capabilities.document_formatting then
+--             vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+--         end
+--     end,
+-- })
+
+-- FOR LUA FORMATTING
+-- local on_attach = function(client, bufnr)
+--   utils.disable_native_formatting(client)
+--   utils.commands()
+--   utils.keybindings(bufnr)
+--   utils.format(client)
+-- end
+
+  -- local sources
+  -- if filetype == 'lua' then
+  --   sources = {
+  --     null_ls.builtins.formatting.stylua.with {
+  --       extra_args = { '--config-path', vim.fn.expand '~/.config/nvim/.stylua.toml' },
+  --     },
+  --   }
+  -- else
+  -- end
+
+local function format(client)
   local config = client['config']
   local filetypes = config['filetypes']
   local filetype = filetypes[1]
   local null_ls = require 'null-ls'
-  if filetype == 'lua' then
-    sources = {
-      null_ls.builtins.formatting.stylua.with {
-        extra_args = { '--config-path', vim.fn.expand '~/.config/nvim/.stylua.toml' },
-      },
-    }
-  else
-    sources = {
-      null_ls.builtins.diagnostics.eslint_d,
-      null_ls.builtins.code_actions.eslint_d,
-      null_ls.builtins.formatting.prettierd,
-    }
-  end
+  local sources = {
+    null_ls.builtins.diagnostics.eslint_d,
+    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.formatting.prettierd,
+  }
   null_ls.setup {
     sources = sources,
     ---@diagnostic disable-next-line: redefined-local
@@ -111,5 +125,30 @@ function M.format(client)
     end,
   }
 end
+
+M.on_attach_typescript = function(client, bufnr)
+  disable_native_formatting(client)
+  commands()
+  keybindings(bufnr)
+  highlight(client)
+  ts_utils(client, bufnr)
+  format(client)
+end
+
+M.on_attach_html = function(client, bufnr)
+  disable_native_formatting(client)
+  commands()
+  keybindings(bufnr)
+  highlight(client)
+  format(client)
+end
+
+M.on_attach_css = function(client, bufnr)
+  disable_native_formatting(client)
+  commands()
+  keybindings(bufnr)
+  format(client)
+end
+
 
 return M

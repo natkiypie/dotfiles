@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow'
   use 'terrortylor/nvim-comment'
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
   use 'onsails/lspkind-nvim'
   use 'nvim-lua/plenary.nvim'
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
