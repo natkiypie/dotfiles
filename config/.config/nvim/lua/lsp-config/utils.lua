@@ -19,9 +19,8 @@ local function disable_native_formatting(client)
 end
 
 local function ts_utils(client, bufnr)
-  local ts_utils = require 'nvim-lsp-ts-utils'
-  ts_utils.setup {}
-  ts_utils.setup_client(client)
+  require('nvim-lsp-ts-utils').setup {}
+  require('nvim-lsp-ts-utils').setup_client(client)
   require('lsp-config.keybindings').ts_bind(bufnr)
 end
 
@@ -41,6 +40,11 @@ end
 M.on_attach_css = function(client, bufnr)
   require('lsp-config.keybindings').bind(bufnr)
   disable_native_formatting(client)
+end
+
+M.on_attach_sumneko = function(client, bufnr)
+  disable_native_formatting(client)
+  require('lsp-config.keybindings').bind(bufnr)
 end
 
 return M

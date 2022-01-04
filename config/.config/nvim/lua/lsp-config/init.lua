@@ -1,4 +1,5 @@
 require 'lsp-config/cmp'
+require 'lsp-config/sumneko'
 require 'lsp-config/language-servers'
 require 'lsp-config/options'
 require 'lsp-config/highlights'
