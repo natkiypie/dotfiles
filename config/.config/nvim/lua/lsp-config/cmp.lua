@@ -61,4 +61,7 @@ cmp.setup {
   formatting = {
     format = lspkind.cmp_format { with_text = true, maxwidth = 50 },
   },
+  experimental = {
+    ghost_text = true,
+  },
 }
