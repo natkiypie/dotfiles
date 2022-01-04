@@ -18,9 +18,8 @@ local function save_session_and_quit()
 end
 
 local function pass_save_criteria()
-  local supress_dirs = { '/', '/home/natkiypie', '/home/natkiypie/.dotfiles/bash' }
   local function writable()
-    for _, v in ipairs(supress_dirs) do
+    for _, v in ipairs(require('auto-session-config').auto_session_suppress_dirs) do
       if v == vim.fn.getcwd() then
         return true
       end
