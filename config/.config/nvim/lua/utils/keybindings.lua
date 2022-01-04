@@ -68,4 +68,20 @@ function M.bind_expr_terminal_mode(keymaps)
   end
 end
 
+local function bind_buf_key(bufnr, mode, keymap)
+  vim.api.nvim_buf_set_keymap(bufnr, mode, keymap[1], keymap[2], {silent = true})
+end
+
+function M.bind_buf_normal_mode(bufnr, keymaps)
+  for _, keymap in ipairs(keymaps) do
+    bind_buf_key(bufnr, 'n', keymap)
+  end
+end
+
+function M.bind_buf_insert_mode(bufnr, keymaps)
+  for _, keymap in ipairs(keymaps) do
+    bind_buf_key(bufnr, 'i', keymap)
+  end
+end
+
 return M
