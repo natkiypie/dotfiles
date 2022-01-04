@@ -2,7 +2,7 @@ local M = {}
 
 local function highlight(client)
   if client.resolved_capabilities.document_highlight then
-    vim.o.updatetime = 400
+    vim.o.updatetime = 300
     vim.cmd [[
       augroup lsp_document_highlight
         autocmd! * <buffer>
