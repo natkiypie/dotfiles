@@ -1,3 +1,2 @@
-vim.g.tokyonight_style = 'night'
-vim.g.tokyonight_transparent = true
-vim.cmd 'colorscheme tokyonight'
+vim.g.rose_pine_variant = 'moon'
+vim.cmd 'colorscheme rose-pine'

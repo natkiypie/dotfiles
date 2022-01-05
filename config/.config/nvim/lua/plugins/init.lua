@@ -14,7 +14,7 @@ end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'folke/tokyonight.nvim'
+  use 'rose-pine/neovim'
   use 'p00f/nvim-ts-rainbow'
   use 'terrortylor/nvim-comment'
   use 'neovim/nvim-lspconfig'

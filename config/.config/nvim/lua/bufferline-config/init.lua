@@ -3,7 +3,7 @@ require 'bufferline-config/keybindings'
 require('bufferline').setup {
   options = {
     always_show_bufferline = true,
-    indicator_icon = ' ',
+    indicator_icon = '',
     modified_icon = '+',
     left_trunc_marker = '...',
     right_trunc_marker = '...',
@@ -11,7 +11,7 @@ require('bufferline').setup {
     show_buffer_close_icons = false,
     show_close_icon = false,
     show_tab_indicators = false,
-    separator_style = { '∣', '∣' },
+    separator_style = { '', '' },
     tab_size = 18,
     max_name_length = 80,
     name_formatter = function(buf)
