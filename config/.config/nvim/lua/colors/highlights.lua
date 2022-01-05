@@ -7,8 +7,5 @@ vim.cmd [[
   hi NormalFloat guifg=#a9b1d6
   hi vCursor guibg=#33467C
   hi ModeMsg gui=none
-  hi LineNr guifg=#6d7494
-  hi LineNrAbove guifg=#6d7494
-  hi LineNrBelow guifg=#6d7494
   let g:terminal_color_4 = '#739fcf'
 ]]
