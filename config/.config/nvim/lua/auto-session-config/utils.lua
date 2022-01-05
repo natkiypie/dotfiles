@@ -1,30 +1,52 @@
 local M = {}
 
-local function append_dir(suppressed_dirs)
+local function append_dir(suppress_dirs)
   local addition = {}
-  for _, line in pairs(vim.fn.readfile(suppressed_dirs)) do
+  for _, line in pairs(vim.fn.readfile(suppress_dirs)) do
     table.insert(addition, line)
   end
   return addition
 end
 
 function M.get_suppressed_dirs()
-  local suppressed_dirs = vim.fn.expand '~/.auto_session_suppress_dirs.txt'
-  if vim.fn.filereadable(suppressed_dirs) == 1 then
-    return append_dir(suppressed_dirs)
+  local suppress_dirs = vim.fn.expand '~/.auto_session_suppress_dirs.txt'
+  if vim.fn.filereadable(suppress_dirs) == 1 then
+    return append_dir(suppress_dirs)
   else
-    error(string.gsub('file does not exist', 'file', suppressed_dirs))
+    error(string.gsub('file does not exist', 'file', suppress_dirs))
   end
 end
 
 function M.suppress_dir()
   local cwd = vim.fn.getcwd()
-  local suppressed_dirs = vim.fn.expand '~/.auto_session_suppress_dirs.txt'
-  if vim.fn.filereadable(suppressed_dirs) == 1 then
-    vim.fn.system(string.gsub(string.gsub('! echo cwd >> file', 'file', suppressed_dirs), 'cwd', cwd))
-    require('auto-session-config').auto_session_suppress_dirs = append_dir(suppressed_dirs)
+  local suppress_dirs = vim.fn.expand '~/.auto_session_suppress_dirs.txt'
+  if vim.fn.filereadable(suppress_dirs) == 1 then
+    local cmd = string.gsub(
+      string.gsub('silent ! echo cwd >> suppress_dirs', 'suppress_dirs', suppress_dirs),
+      'cwd',
+      cwd
+    )
+    vim.cmd(cmd)
+    require('auto-session-config').auto_session_suppress_dirs = append_dir(suppress_dirs)
   else
-    error(string.gsub('file does not exist', 'file', suppressed_dirs))
+    vim.cmd(string.gsub('silent ! touch suppress_dirs', 'suppress_dirs', suppress_dirs))
+    M.suppress_dir()
+  end
+end
+
+function M.sanction_dir()
+  local cwd = vim.fn.getcwd()
+  local suppress_dirs = vim.fn.expand '~/.auto_session_suppress_dirs.txt'
+  if vim.fn.filereadable(suppress_dirs) == 1 then
+    local cmd = string.gsub(
+      string.gsub('! grep -v cwd suppress_dirs > tmpfile && mv tmpfile suppress_dirs', 'suppress_dirs', suppress_dirs),
+      'cwd',
+      cwd
+    )
+    vim.fn.system(cmd)
+    require('auto-session-config').auto_session_suppress_dirs = append_dir(suppress_dirs)
+  else
+    error(string.gsub('file does not exist', 'file', suppress_dirs))
   end
 end
 
@@ -44,6 +66,5 @@ function M.save_session_and_quit()
   end
   vim.cmd 'wa|qa'
 end
-
 
 return M

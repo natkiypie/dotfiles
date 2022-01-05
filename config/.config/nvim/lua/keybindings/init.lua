@@ -12,6 +12,7 @@ require('utils.keybindings').bind_normal_mode {
   { '<C-f>', '<CMD>lua require"scripts.terminals.bash".issue("glow.sh")<CR>' },
   { '<C-g>', '<CMD>lua require"scripts.terminals.bash".issue("lazygit")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
+  { '<C-n>', '<CMD>lua require"auto-session-config.utils".sanction_dir()<CR>' },
 }
 
 require('utils.keybindings').bind_insert_mode {
