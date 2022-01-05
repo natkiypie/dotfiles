@@ -2,11 +2,7 @@ local M = {}
 
 local function cwd_suppressed(cwd, suppress_dirs)
   local cmd = string.gsub(string.gsub('! grep cwd suppress_dirs', 'suppress_dirs', suppress_dirs), 'cwd', cwd)
-  if vim.fn.empty(vim.fn.system(cmd)) == 0 then
-    return true
-  else
-    return false
-  end
+  return vim.fn.empty(vim.fn.system(cmd)) == 0
 end
 
 local function update_suppress_dirs(suppress_dirs)
