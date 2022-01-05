@@ -1,25 +1,8 @@
 local M = {}
 
-local function save_session_and_quit()
-  local choice = vim.fn.confirm(
-    'Before you quit, would you like to save the session?',
-    '&Save\n&Restore previous session\n&Delete all sessions\n&Abort'
-  )
-  if choice == 1 then
-    vim.cmd 'SaveSession'
-  elseif choice == 2 then
-    vim.cmd 'RestoreSession'
-  elseif choice == 3 then
-    vim.cmd 'DeleteSession'
-  else
-    return
-  end
-  vim.cmd 'wa|qa'
-end
-
 local function pass_save_criteria()
   local function writable()
-    for _, v in ipairs(require('auto-session-config').auto_session_suppress_dirs) do
+    for _, v in ipairs(require('auto-session-config/utils').get_suppressed_dirs()) do
       if v == vim.fn.getcwd() then
         return true
       end
@@ -79,7 +62,7 @@ end
 
 function M.close_all()
   if pass_save_criteria() then
-    save_session_and_quit()
+    require('auto-session-config/utils').save_session_and_quit()
   else
     vim.cmd 'q'
   end

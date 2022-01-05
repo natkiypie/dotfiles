@@ -1,0 +1,2 @@
+/home/natkiypie
+/home/natkiypie/.dotfiles/bash
