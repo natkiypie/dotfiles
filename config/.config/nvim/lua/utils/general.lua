@@ -64,7 +64,7 @@ function M.close_all()
   if pass_save_criteria() then
     require('auto-session-config/utils').save_session_and_quit()
   else
-    vim.cmd 'q'
+    vim.cmd 'silent wa|qa'
   end
 end
 
