@@ -9,7 +9,7 @@ local opts = {
   auto_session_enabled = true,
   auto_save_enabled = false,
   auto_restore_enabled = true,
-  auto_session_suppress_dirs = require('auto-session-config/utils').get_suppressed_dirs(),
+  auto_session_suppress_dirs = require('auto-session-config/utils').get_suppress_dirs(),
 }
 
 require('auto-session').setup(opts)

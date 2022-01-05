@@ -2,7 +2,7 @@ local M = {}
 
 local function pass_save_criteria()
   local function writable()
-    for _, v in ipairs(require('auto-session-config/utils').get_suppressed_dirs()) do
+    for _, v in ipairs(require('auto-session-config/utils').get_suppress_dirs()) do
       if v == vim.fn.getcwd() then
         return true
       end

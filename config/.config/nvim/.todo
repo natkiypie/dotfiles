@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1641353771">
-        feat(auto-session): include ability to remove cwd from auto_session_suppress_dirs table
-    </note>
-    <note priority="veryhigh" time="1641353838">
-        feat(auto-session): make user command for removing cwd to auto_session_suppress_dirs table
-    </note>
-    <note priority="veryhigh" time="1641355271">
-        feat(auto-session): include vim.fn.confirm in suppress_dir and sanction_dir utils &amp; clean up
-    </note>
     <note priority="high" time="1639468307">
         Look into vimwiki &amp; vim-orgmode 
     </note>
