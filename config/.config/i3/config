@@ -1,6 +1,7 @@
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
 
+# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
 gaps inner 15
 gaps outer 15
 gaps right 0
@@ -130,10 +131,6 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id synergy
-
-#Border Size
-default_border pixel 1
-hide_edge_borders smart
 
 # load compositor for transparency
 exec compton

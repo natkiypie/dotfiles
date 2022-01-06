@@ -16,6 +16,7 @@ require('utils.keybindings').bind_normal_mode {
 
 require('utils.keybindings').bind_insert_mode {
   { 'jk', '<ESC>l' },
+  { '<C-c>', '<ESC>l' },
   { '<C-a>', '<ESC>la' },
 }
 
