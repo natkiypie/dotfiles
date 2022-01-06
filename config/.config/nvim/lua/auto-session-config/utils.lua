@@ -1,5 +1,18 @@
 local M = {}
 
+local function not_git_repo()
+  return vim.fn.match(vim.fn.system '! git rev-parse --show-toplevel', 'fatal') > -1
+end
+
+function M.get_cwd()
+  if not_git_repo() then
+    return vim.fn.getcwd()
+  else
+    local cwd = vim.fn.system "git rev-parse --show-toplevel | tr -d '\\n'"
+    return cwd
+  end
+end
+
 local function cwd_suppressed(cwd, suppress_dirs)
   local cmd = string.gsub(string.gsub('! grep cwd suppress_dirs', 'suppress_dirs', suppress_dirs), 'cwd', cwd)
   return vim.fn.empty(vim.fn.system(cmd)) == 0

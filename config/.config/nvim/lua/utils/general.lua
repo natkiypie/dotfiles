@@ -2,8 +2,9 @@ local M = {}
 
 local function pass_save_criteria()
   local function writable()
+    local cwd = require('auto-session-config.utils').get_cwd()
     for _, v in ipairs(require('auto-session-config/utils').get_suppress_dirs()) do
-      if v == vim.fn.getcwd() then
+      if v == cwd then
         return true
       end
     end

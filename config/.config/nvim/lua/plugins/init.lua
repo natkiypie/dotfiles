@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/vim-vsnip-integ'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'rmagatti/auto-session'
   use 'jpalardy/vim-slime'
