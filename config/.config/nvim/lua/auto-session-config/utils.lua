@@ -35,7 +35,7 @@ local function sanction_dir(cwd, suppress_dirs)
   if vim.fn.filereadable(suppress_dirs) == 1 then
     local cmd = string.gsub(
       string.gsub(
-        '! grep -v cwd suppress_dirs > ~/tmpfile \\&& mv ~/tmpfile suppress_dirs',
+        '! grep -v cwd suppress_dirs > ~/tmpfile ; mv ~/tmpfile suppress_dirs',
         'suppress_dirs',
         suppress_dirs
       ),
