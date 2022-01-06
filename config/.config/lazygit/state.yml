@@ -7,5 +7,6 @@ recentrepos:
 - /home/natkiypie/dev/react/redux/t3
 - /home/natkiypie/temp
 startuppopupversion: 5
-customcommandshistory: []
+customcommandshistory:
+- git rm -r --cached gitconfig
 hidecommandlog: true
