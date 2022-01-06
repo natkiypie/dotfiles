@@ -1,5 +1,6 @@
+bash/.bash_history
+bash/.bash_logout
 config/.config/nvim/language-servers/
 config/.config/nvim/plugin/
 config/.config/nvim/sessions/
-bash/.bash_history
-bash/.bash_logout
+gitconfig/
