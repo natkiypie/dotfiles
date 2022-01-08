@@ -6,7 +6,7 @@ local function update_packages()
     PackerUpdate
     augroup update
       autocmd!
-      autocmd User PackerComplete ++once lua require('scripts.initialize').resume()
+      autocmd User PackerComplete ++once lua require('scripts.vimenter').resume()
     augroup END
   ]]
 end
@@ -34,7 +34,7 @@ function M.resume()
   vim.cmd [[
     augroup resume
       autocmd!
-      autocmd BufEnter * ++once lua require("scripts.initialize").prompt()
+      autocmd BufEnter * ++once lua require("scripts.vimenter").prompt()
     augroup END
   ]]
 end
