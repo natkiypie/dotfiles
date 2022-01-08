@@ -1,1 +1,1 @@
-vim.g.vsnip_snippet_dir = '~/.dotfiles/natkiypie/.config/vsnip'
+vim.g.vsnip_snippet_dir = vim.fn.expand '~/.config/vsnip'
