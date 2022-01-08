@@ -14,6 +14,8 @@ shopt -s checkwinsize
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+PS1=""
+
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -46,7 +48,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-PS1=""
 
 on_open.sh
