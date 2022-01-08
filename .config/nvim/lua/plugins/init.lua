@@ -12,7 +12,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
   }
 end
 
-return require('packer').startup(function(use)
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+  return
+end
+
+return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'rose-pine/neovim'
   use 'p00f/nvim-ts-rainbow'
