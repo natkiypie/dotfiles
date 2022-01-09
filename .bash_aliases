@@ -28,3 +28,5 @@ alias setex=ex_mon_on.sh
 alias updatecc=update_code_fellows_git_repos.sh
 alias luamake=/home/natkiypie/.dotfiles/natkiypie/.config/nvim/language-servers/lua-language-server/3rd/luamake/luamake
 alias lmp=list_man_pack.sh
+alias mkfile=mkfile.sh
+alias freeport=freeport.sh

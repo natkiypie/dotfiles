@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mv_md() {
+_parse() {
   if [[ "$1" == *"~"* ]]; then
     path="$1"
     file=$(basename $path)
@@ -14,4 +14,4 @@ mv_md() {
   fi
 }
 
-mv_md $1
+_parse $1

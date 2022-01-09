@@ -21,7 +21,7 @@ _find_md_files() {
   if [[ -n $mdfile ]]
   then
     cp $mdfile --backup=numbered -t /tmp/glow
-    find_md.sh /tmp/glow
+    find.sh /tmp/glow
   fi
 }
 
