@@ -1,7 +1,0 @@
-PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
-PATH=$PATH:$HOME/.scripts && export PATH
-PATH=$PATH:$HOME/.scripts/initialization && export PATH
-PATH=$PATH:$HOME/.scripts/glow && export PATH
-PATH=$PATH:$HOME/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
-unset MANPATH
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"

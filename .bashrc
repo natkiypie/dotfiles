@@ -32,10 +32,6 @@ if [ -f ~/.bash_exports ]; then
     . ~/.bash_exports
 fi
 
-if [ -f ~/.bash_paths ]; then
-    . ~/.bash_paths
-fi
-
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion

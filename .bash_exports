@@ -2,5 +2,12 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
+PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
+PATH=$PATH:$HOME/.scripts && export PATH
+PATH=$PATH:$HOME/.scripts/initialization && export PATH
+PATH=$PATH:$HOME/.scripts/glow && export PATH
+PATH=$PATH:$HOME/.steam/root/steamapps/common/Aseprite/aseprite && export PATH
