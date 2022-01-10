@@ -7,7 +7,7 @@ echo -e "\033[0;36mUpdating Debian packages...\033[0m"
 # create flag in tmp dir
 touch /tmp/bash_flag
 # updates /etc/apt/source.list with the latest information about available packages
-echo $(pass master/natkiypie) | sudo -S apt update
+echo $(pass master/$USER) | sudo -S apt update
 # upgrades all installed packages to the latest versions in accordance with the information in /etc/apt/sources.list
 sudo apt upgrade
 # remove packages that were automatically installed to satisfy dependencies for packages that are no longer needed
