@@ -134,3 +134,6 @@ exec --no-startup-id synergy
 
 # load compositor for transparency
 exec compton
+
+#TESTING
+bindsym F7 exec gnome-screenshot

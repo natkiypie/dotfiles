@@ -28,6 +28,10 @@ function check_connection {
 function _check_connection {
   # if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
   if ping -c1 google.com >/dev/null 2>&1; then
+    # if there is an external monitor plugged in, set only external monitor on
+    ex_mon_only_on.sh
+    # if there is a mouse plugged in, don't tune usb device with powertop
+    mouse_on.sh
     update_packages.sh
   else
     check_connection

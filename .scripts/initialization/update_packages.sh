@@ -2,6 +2,8 @@
 
 # USED BY run_diagnostics.sh
 
+# deb update message with color
+echo -e "\033[0;36mUpdating Debian packages...\033[0m"
 # create flag in tmp dir
 touch /tmp/bash_flag
 # updates /etc/apt/source.list with the latest information about available packages
@@ -16,9 +18,9 @@ sudo apt-get check
 sudo apt install -f
 # removes unneeded package information files and logs
 sudo apt clean
-# if there is an external monitor plugged in, set only external monitor on
-ex_mon_only_on.sh
-# if there is a mouse plugged in, don't tune usb device with powertop
-mouse_on.sh
 # success message with color
-echo -e "\033[0;32mPackages updated successfully\033[0m"
+echo -e "\033[0;32mDebian packages updated successfully\033[0m"
+# npm update message with color
+echo -e "\033[0;36mUpdating Node packages...\033[0m"
+# update node packages
+ncu -g
