@@ -721,5 +721,5 @@ xset r rate 250 66
 ##
 
 <p align="center">
-  <a href="https://github.com/natkiypie/dotfiles-readme#natkiypies-dotfiles">Back to Top</a>
+  <a href="https://github.com/natkiypie/dotfiles#natkiypies-dotfiles">Back to Top</a>
 </p>
