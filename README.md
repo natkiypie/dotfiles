@@ -327,7 +327,7 @@ sudo apt install build-essential compton feh lm-sensors ninja-build stow
 
   > A small build system with a focus on speed.
 
-- `stow` - required in [step 3 of Dotfiles](https://github.com/natkiypie/dotfiles-readme#dotfiles)
+- `stow` - required in [step 3 of Dotfiles](https://github.com/natkiypie/dotfiles#dotfiles)
 
   > Manage farms of symbolic links.
 
