@@ -6,6 +6,8 @@ unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
+export NVIM_CONFIG="$HOME/.config/nvim"
+export DOT_FILES="$HOME/.dotfiles/$USER"
 PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
 PATH=$PATH:$HOME/.scripts && export PATH
 PATH=$PATH:$HOME/.scripts/initialization && export PATH
