@@ -6,24 +6,24 @@
 
 ## Table of Contents (Steps to Reproduce)
 
-- [Git]()
-- [Github CLI]()
-- [Pass]()
-- [Node Version Manager]()
-- [Npm Global Packages]()
-- [Debian Packages]()
-- [Optional Packages]()
-- [Terminal Utilities]()
-  - [Broot]()
-  - [Delta]()
-  - [Glow]()
-  - [Lazygit]()
-  - [StyLua]()
-- [Dotfiles]()
-- [Neovim]()
-- [Sumneko Lua Language Server]()
-- [i3]()
-- [Other Useful Features & Settings]()
+- [Git](https://github.com/natkiypie/dotfiles#git)
+- [Github CLI](https://github.com/natkiypie/dotfiles#github-cli)
+- [Pass](https://github.com/natkiypie/dotfiles#pass)
+- [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
+- [Npm Global Packages](https://github.com/natkiypie/dotfiles#npm-global-packages)
+- [Debian Packages](https://github.com/natkiypie/dotfiles#debian-packages)
+- [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
+- [Terminal Utilities](https://github.com/natkiypie/dotfiles#terminal-utilities)
+  - [Broot](https://github.com/natkiypie/dotfiles#broot)
+  - [Delta](https://github.com/natkiypie/dotfiles#delta)
+  - [Glow](https://github.com/natkiypie/dotfiles#glow)
+  - [Lazygit](https://github.com/natkiypie/dotfiles#lazygit)
+  - [StyLua](https://github.com/natkiypie/dotfiles#stylua)
+- [Dotfiles](https://github.com/natkiypie/dotfiles#dotfiles)
+- [Neovim](https://github.com/natkiypie/dotfiles#neovim)
+- [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
+- [i3](https://github.com/natkiypie/dotfiles#i3-xubuntu)
+- [Other Useful Features & Settings](https://github.com/natkiypie/dotfiles#other-useful-features--settings)
 
 ## Git
 
@@ -715,8 +715,7 @@ xset r rate 250 66
 
 ## TODO
 
-- [ ] Link Table of Contents
-- [ ] Replace images in section: [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles-readme#i3-xubuntu)
+- [ ] Replace images in section: [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu)
 - [ ] Write README.md for [nvim](/.config/nvim)
 
 ##
