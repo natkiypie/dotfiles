@@ -1,4 +1,4 @@
-# Nvim
+# nvim
 
 ### TODO:
 
