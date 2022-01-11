@@ -19,7 +19,7 @@
   - [Glow](https://github.com/natkiypie/dotfiles#glow)
   - [Lazygit](https://github.com/natkiypie/dotfiles#lazygit)
   - [StyLua](https://github.com/natkiypie/dotfiles#stylua)
-- [Dotfiles](https://github.com/natkiypie/dotfiles#dotfiles)
+- [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
 - [i3](https://github.com/natkiypie/dotfiles#i3-xubuntu)
@@ -327,7 +327,7 @@ sudo apt install build-essential compton feh lm-sensors ninja-build stow
 
   > A small build system with a focus on speed.
 
-- `stow` - required in [step 3 of Dotfiles](https://github.com/natkiypie/dotfiles#dotfiles)
+- `stow` - required in [step 3 of Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 
   > Manage farms of symbolic links.
 
@@ -495,7 +495,7 @@ tar -zxvf lazygit_x.xx.x_Linux_x86_64.tar.gz; rm LICENSE README.md *.tar.gz; sud
 unzip stylua-x.xx.x-linux.zip; rm *.zip; chmod a+x stylua; sudo mv stylua /usr/local/bin/
 ```
 
-## Dotfiles
+## Dot Files
 
 > User-specific application configuration is traditionally stored in so called dotfiles (files whose filename starts with a dot).
 
