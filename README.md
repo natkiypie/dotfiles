@@ -22,7 +22,7 @@
 
 ## Debian Packages
 
-### Required
+### _Required_
 
 #### Installation
 
@@ -74,7 +74,7 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 </p>
 </details>
 
-### Optional
+### _Optional_
 
 #### Installation
 
