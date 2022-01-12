@@ -130,21 +130,19 @@ sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot hto
 
 #### Installation & Setup
 
-1. Install vim
+1. Install vim:
 
 ```
 sudo apt install vim
 ```
 
-2. Set default editor
+2. Update default editor:
 
 ```
 sudo update-alternatives --config editor
 ```
 
-<p align="center">
-Output:
-</p>
+2. Make Selection:
 
 ```
   Selection    Path                Priority   Status
@@ -174,11 +172,13 @@ sudo apt install pass
 
 2. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 
-3. List gpg key ID - in this example, the gpg key ID is **3AA5C34371567BD2**:
+3. List secret keys:
 
 ```
 gpg --list-secret-keys --keyid-format=long
 ```
+
+4. Get key ID from output - in this example, the key ID is **3AA5C34371567BD2**:
 
 ```
 /Users/hubot/.gnupg/secring.gpg
@@ -188,7 +188,7 @@ uid                          Hubot
 ssb   4096R/42B317FD4BA89E7A 2016-03-10
 ```
 
-4. Initialize the password store - here, the password storage key is the gpg key ID from previous step:
+5. Initialize the password store - the password storage key in this example is the key ID from the previous step:
 
 ```
 pass init 3AA5C34371567BD2
@@ -196,11 +196,13 @@ pass init 3AA5C34371567BD2
 
 #### Copy GPG Private Key, Trust Database & Password Store to Trusted Machines
 
-1. Get key ID - in this example, the key ID is **KLVP1DFUW09SK6XB2CDA84BX3AA5C34371567BD2**:
+1. List keys:
 
 ```
 gpg --list-keys
 ```
+
+2. Get key ID from output - in this example, the key ID is **KLVP1DFUW09SK6XB2CDA84BX3AA5C34371567BD2**:
 
 ```
 /Users/hubot/.gnupg/pubring.gpg
@@ -211,27 +213,27 @@ uid         Hubot
 ssb   4096R 2016-03-10
 ```
 
-2. Export secret key:
+3. Export secret key:
 
 ```
 gpg --export-secret-key KLVP1DFUW09SK6XB2CDA84BX3AA5C34371567BD2 > secret.key
 ```
 
-3. Export trust database:
+4. Export trust database:
 
 ```
 gpg --export-ownertrust > trust.txt
 ```
 
-4. Copy password store:
+5. Copy password store:
 
 ```
 cp -r ~/.password-store password-store
 ```
 
-5. Transport `secret.key` `trust.txt` & `password-store` to new machine
+6. Transport `secret.key` `trust.txt` & `password-store` to new machine
 
-6. Rename password store, import trust db & import gpg secret key - you will be prompted to enter the passphrase used when first generating your gpg key:
+7. Rename password store, import trust db & import gpg secret key - you will be prompted to enter the passphrase used when first generating your gpg key:
 
 ```
 mv password-store .password-store; gpg --import-ownertrust < trust.txt; gpg --import secret.key
@@ -545,23 +547,25 @@ mv dotfiles $USER; mkdir $HOME/.dotfiles; mv $USER $HOME/.dotfiles; cd $HOME/.do
 
 #### Installation & Setup
 
-1. Install neovim nightly
+1. Install neovim nightly:
 
 ```
 sudo add-apt-repository ppa:neovim-ppa/unstable; sudo apt update; sudo apt install neovim
 ```
 
-2. Add nvim as vim alternative
+2. Add nvim as vim alternative:
 
 ```
 sudo update-alternatives --install $(which vim) vim $(which nvim) 10
 ```
 
-3. Set nvim as alternative to vim
+3. Update vim alternatives:
 
 ```
 sudo update-alternatives --config vim
 ```
+
+4. Make selection:
 
 ```
   Selection    Path                Priority   Status
