@@ -31,6 +31,8 @@
 sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build python3-pip stow
 ```
 
+#### Package Information
+
 - `build-essential` - required by [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
 
   > Meta-packages that are necessary for compiling software.
@@ -76,6 +78,8 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 ```
 sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot htop lightdm-gtk-greeter-settings powertop tlp
 ```
+
+#### Package Information
 
 - `apt-transport-https`
 
