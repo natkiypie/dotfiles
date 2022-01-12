@@ -55,7 +55,7 @@ sudo apt install build-essential compton curl feh lm-sensors ninja-build python3
 
   > A compositor for X11.
 
-- `curl` - required in [step 1 of Github CLI](https://github.com/natkiypie/dotfiles#github-cli) & [step 1 of Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
+- `curl` - required in step 1 of [Github CLI](https://github.com/natkiypie/dotfiles#github-cli) & step 1 of [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
 
   > A tool to transfer data from or to a server.
 
