@@ -795,7 +795,7 @@ EOF
 systemctl daemon-reload; systemctl enable powertop.service
 ```
 
-#### Set Icons:
+#### Set Icons
 
 1. Get archive file:
 
@@ -815,7 +815,7 @@ systemctl daemon-reload; systemctl enable powertop.service
 sudo mv /tmp/Flat-Remix-Blue-Dark /usr/share/icons/
 ```
 
-4. Set icons:
+4. Set icons
 
 ```
 xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue
@@ -829,7 +829,7 @@ gtk-update-icon-cache /usr/share/icons/Flat-Remix-Blue/; cd -
 
 ```
 
-#### Set Theme:
+#### Set Theme
 
 1. Get zip file:
 
