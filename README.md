@@ -815,14 +815,14 @@ systemctl daemon-reload; systemctl enable powertop.service
 sudo mv /tmp/Flat-Remix-Blue-Dark /usr/share/icons/
 ```
 
-2. Set icons:
+4. Set icons:
 
 ```
 xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue
 
 ```
 
-3. Update icon cache:
+5. Update icon cache:
 
 ```
 gtk-update-icon-cache /usr/share/icons/Flat-Remix-Blue/; cd -
