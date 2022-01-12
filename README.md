@@ -6,7 +6,8 @@
 
 ## Table of Contents (Steps to Reproduce in Sequential Order)
 
-- [Debian Packages](https://github.com/natkiypie/dotfiles#debian-packages)
+- [Required Packages](https://github.com/natkiypie/dotfiles#required-packages)
+- [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
 - [Vim](https://github.com/natkiypie/dotfiles#vim)
 - [Pass](https://github.com/natkiypie/dotfiles#pass)
 - [Git](https://github.com/natkiypie/dotfiles#git)
@@ -20,9 +21,7 @@
 - [i3](https://github.com/natkiypie/dotfiles#i3)
 - [Other Useful Settings](https://github.com/natkiypie/dotfiles#other-useful-settings)
 
-## Debian Packages
-
-### Required
+## Required Packages
 
 #### Installation
 
@@ -74,7 +73,7 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 </p>
 </details>
 
-### Optional
+## Optional Packages
 
 #### Installation
 
