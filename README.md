@@ -31,7 +31,8 @@
 sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build python3-pip stow
 ```
 
-#### Package Information
+<details><summary><b>Package Information</b></summary>
+<p>
 
 - `build-essential` - required by [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
 
@@ -69,6 +70,9 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 
   > Manage farms of symbolic links.
 
+</p>
+</details>
+
 ## Optional Packages
 
 #### Installation
@@ -79,7 +83,8 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot htop lightdm-gtk-greeter-settings powertop tlp
 ```
 
-#### Package Information
+<details><summary><b>Package Information</b></summary>
+<p>
 
 - `apt-transport-https`
 
@@ -112,6 +117,9 @@ sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot hto
 - `tlp`
 
   > Apply laptop power saving settings
+
+</p>
+</details>
 
 ## Vim
 
