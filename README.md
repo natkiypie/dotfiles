@@ -4,7 +4,7 @@
 
 > We were always alone, never lonely.
 
-## Table of Contents or Steps to Reproduce in Sequential Order
+## Table of Contents or Steps to Reproduce (in Sequential Order)
 
 - [Required Packages](https://github.com/natkiypie/dotfiles#required-packages)
 - [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
