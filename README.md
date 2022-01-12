@@ -24,7 +24,7 @@
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
 - [i3](https://github.com/natkiypie/dotfiles#i3-xubuntu)
-- [Useful Settings](https://github.com/natkiypie/dotfiles#useful-settings)
+- [Other Settings](https://github.com/natkiypie/dotfiles#other-settings)
 
 ## Required Packages
 
@@ -696,7 +696,7 @@ sudo add-apt-repository ppa:regolith-linux/release; sudo apt update; sudo apt in
 reboot
 ```
 
-## Useful Settings
+## Other Settings
 
 #### Increase Key Speed
 
