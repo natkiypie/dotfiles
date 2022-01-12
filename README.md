@@ -143,7 +143,7 @@ sudo update-alternatives --config editor
 ```
 
 <p align="center">
-  Output:
+Output:
 </p>
 
 ```
