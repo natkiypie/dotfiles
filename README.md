@@ -71,11 +71,11 @@ sudo apt install build-essential compton curl feh lm-sensors ninja-build python3
 
   > A small build system with a focus on speed.
 
-- `python3-pip` - required by nvim provider-python
+- `python3-pip` - required by nvim's [provider-python](https://neovim.io/doc/user/provider.html)
 
   > A tool for installing and managing Python3 packages
 
-- `stow` - required in [step 3 of Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
+- `stow` - required in step 3 of [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 
   > Manage farms of symbolic links.
 
