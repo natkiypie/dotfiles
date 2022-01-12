@@ -4,7 +4,7 @@
 
 > We were always alone, never lonely.
 
-## Table of Contents (Steps to Reproduce)
+## Table of Contents or Steps to Reproduce in Sequential Order
 
 - [Required Packages](https://github.com/natkiypie/dotfiles#required-packages)
 - [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
@@ -190,7 +190,7 @@ ssb   4096R/42B317FD4BA89E7A 2016-03-10
 pass init 3AA5C34371567BD2
 ```
 
-#### Copy GPG Private Key, Trust Database & Password Store To Trusted Machines
+#### Copy GPG Private Key, Trust Database & Password Store to Trusted Machines
 
 1. Get key ID - in this example, the key ID is **KLVP1DFUW09SK6XB2CDA84BX3AA5C34371567BD2**:
 
@@ -735,7 +735,7 @@ position = 50%,center -60%,center
 EOF
 ```
 
-#### Add Applications To Autostart
+#### Add Applications to Autostart
 
 1. Configure xfce4-terminal to autostart:
 
