@@ -6,14 +6,13 @@
 
 ## Table of Contents or Steps to Reproduce (in Sequential Order)
 
-- [Required Packages](https://github.com/natkiypie/dotfiles#required-packages)
-- [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
+- [Debian Packages](https://github.com/natkiypie/dotfiles#debian-packages)
 - [Vim](https://github.com/natkiypie/dotfiles#vim)
 - [Pass](https://github.com/natkiypie/dotfiles#pass)
 - [Git](https://github.com/natkiypie/dotfiles#git)
 - [Github CLI](https://github.com/natkiypie/dotfiles#github-cli)
 - [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
-- [Npm Global Packages](https://github.com/natkiypie/dotfiles#npm-global-packages)
+- [Node Global Packages](https://github.com/natkiypie/dotfiles#node-global-packages)
 - [Terminal Utilities](https://github.com/natkiypie/dotfiles#terminal-utilities)
 - [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
@@ -21,7 +20,9 @@
 - [i3](https://github.com/natkiypie/dotfiles#i3)
 - [Other Useful Settings](https://github.com/natkiypie/dotfiles#other-useful-settings)
 
-## Required Packages
+## Debian Packages
+
+### Required
 
 #### Installation
 
@@ -73,7 +74,7 @@ sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build pyt
 </p>
 </details>
 
-## Optional Packages
+### Optional
 
 #### Installation
 
@@ -116,14 +117,14 @@ sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot hto
 
 - `tlp`
 
-  > Apply laptop power saving settings
+  > Apply laptop power saving settings.
 
 </p>
 </details>
 
 ## Vim
 
-> Vi IMproved, a programmer's text editor
+> Vi IMproved, a programmer's text editor.
 
 - https://www.vim.org/
 - https://github.com/vim/vim
@@ -170,7 +171,7 @@ Press <enter> to keep the current choice[*], or type selection number: 3
 sudo apt install pass
 ```
 
-2. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+2. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-private-key-trust-database--password-store-to-other-trusted-machines) step. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 
 3. List secret keys:
 
@@ -194,7 +195,7 @@ ssb   4096R/42B317FD4BA89E7A 2016-03-10
 pass init 3AA5C34371567BD2
 ```
 
-#### Copy GPG Private Key, Trust Database & Password Store to Trusted Machines
+#### Copy Private Key, Trust Database & Password Store to Other Trusted Machines
 
 1. List keys:
 
@@ -213,7 +214,7 @@ uid         Hubot
 ssb   4096R 2016-03-10
 ```
 
-3. Export secret key:
+3. Export secret key - the secret key in this example is the key ID from the previous step:
 
 ```
 gpg --export-secret-key KLVP1DFUW09SK6XB2CDA84BX3AA5C34371567BD2 > secret.key
@@ -233,7 +234,7 @@ cp -r ~/.password-store password-store
 
 6. Transport `secret.key` `trust.txt` & `password-store` to new machine
 
-7. Rename password store, import trust db & import gpg secret key - you will be prompted to enter the passphrase used when first generating your gpg key:
+7. Rename password store, import trust db & import secret key - you will be prompted to enter the passphrase used when first generating your gpg key:
 
 ```
 mv password-store .password-store; gpg --import-ownertrust < trust.txt; gpg --import secret.key
@@ -300,7 +301,7 @@ git config --list
 
 ## Github CLI
 
-> GitHub CLI is an open source tool for using GitHub from your computer's command line. When you're working from the command line, you can use the GitHub CLI to save time and avoid switching context.
+> GitHub CLI is an open source tool for using GitHub from your computer's ~~command line~~ terminal. When you're working from the ~~command line~~ terminal, you can use the GitHub CLI to save time and avoid switching context.
 
 - https://docs.github.com/en/github-cli/github-cli/quickstart
 - https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources
@@ -321,7 +322,7 @@ gh auth login
 
 ## Node Version Manager
 
-> Nvm allows you to quickly install and use different versions of node via the command line.
+> Nvm allows you to quickly install and use different versions of node via the ~~command line~~ terminal.
 
 - https://github.com/nvm-sh/nvm
 
@@ -347,7 +348,7 @@ command -v nvm
 nvm install node
 ```
 
-## Npm Global Packages
+## Node Global Packages
 
 > Installing a package globally allows you to use the code in the package as a set of tools on your local computer.
 
