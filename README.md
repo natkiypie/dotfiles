@@ -41,7 +41,7 @@
 1. Install packages:
 
 ```
-sudo apt install build-essential compton curl feh lm-sensors ninja-build python3-pip stow
+sudo apt install build-essential compton curl feh gpg lm-sensors ninja-build python3-pip stow
 ```
 
 <details><summary><b>Package Information</b></summary>
@@ -60,6 +60,10 @@ sudo apt install build-essential compton curl feh lm-sensors ninja-build python3
   > A tool to transfer data from or to a server.
 
 - `feh` - required by [set_background_img.sh](/.scripts/initialization/set_background_img.sh)
+
+  > Image viewer and cataloguer.
+
+- `gpg` - required in step 2 of [Pass](https://github.com/natkiypie/dotfiles#pass)
 
   > Image viewer and cataloguer.
 
@@ -171,27 +175,15 @@ Press <enter> to keep the current choice[*], or type selection number: 3
 
 #### Installation & Setup
 
-1. Make sure gpg - encryption and signing tool - is installed:
-
-```
-sudo apt policy gpg
-```
-
-2. If not, install it:
-
-```
-sudo apt install gpg
-```
-
-3. Install pass:
+1. Install pass:
 
 ```
 sudo apt install pass
 ```
 
-4. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+2. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 
-5. List gpg key ID - in this example, the gpg key ID is **3AA5C34371567BD2**:
+3. List gpg key ID - in this example, the gpg key ID is **3AA5C34371567BD2**:
 
 ```
 gpg --list-secret-keys --keyid-format=long
@@ -205,7 +197,7 @@ uid                          Hubot
 ssb   4096R/42B317FD4BA89E7A 2016-03-10
 ```
 
-6. Initialize the password store - here, the password storage key is the gpg key ID from previous step:
+4. Initialize the password store - here, the password storage key is the gpg key ID from previous step:
 
 ```
 pass init 3AA5C34371567BD2
