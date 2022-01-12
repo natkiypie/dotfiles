@@ -6,13 +6,14 @@
 
 ## Table of Contents (Steps to Reproduce)
 
+- [Required Packages](https://github.com/natkiypie/dotfiles#required-packages)
+- [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
+- [Vim](https://github.com/natkiypie/dotfiles#vim)
+- [Pass](https://github.com/natkiypie/dotfiles#pass)
 - [Git](https://github.com/natkiypie/dotfiles#git)
 - [Github CLI](https://github.com/natkiypie/dotfiles#github-cli)
-- [Pass](https://github.com/natkiypie/dotfiles#pass)
 - [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
 - [Npm Global Packages](https://github.com/natkiypie/dotfiles#npm-global-packages)
-- [Debian Packages](https://github.com/natkiypie/dotfiles#debian-packages)
-- [Optional Packages](https://github.com/natkiypie/dotfiles#optional-packages)
 - [Terminal Utilities](https://github.com/natkiypie/dotfiles#terminal-utilities)
   - [Broot](https://github.com/natkiypie/dotfiles#broot)
   - [Delta](https://github.com/natkiypie/dotfiles#delta)
@@ -23,65 +24,135 @@
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
 - [i3](https://github.com/natkiypie/dotfiles#i3-xubuntu)
-- [Other Useful Features & Settings](https://github.com/natkiypie/dotfiles#other-useful-features--settings)
+- [Useful Settings](https://github.com/natkiypie/dotfiles#useful-settings)
 
-## Git
+## Required Packages
 
-> Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+#### Installation
 
-- https://git-scm.com/
-- https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+1. Install packages:
+
+```
+sudo apt install build-essential compton curl feh lm-sensors ninja-build python3-pip stow
+```
+
+<details><summary><b>Package Information</b></summary>
+<p>
+
+- `build-essential` - required by [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
+
+  > Meta-packages that are necessary for compiling software.
+
+- `compton` - required in [i3 config](/.config/i3/config)
+
+  > A compositor for X11.
+
+- `curl` - required in [step 1 of Github CLI](https://github.com/natkiypie/dotfiles#github-cli) & [step 1 of Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
+
+  > A tool to transfer data from or to a server.
+
+- `feh` - required by [set_background_img.sh](/.scripts/initialization/set_background_img.sh)
+
+  > Image viewer and cataloguer.
+
+- `lm-sensors` - required by [run_diagnostics.sh](/.scripts/initialization/run_diagnostics.sh)
+
+  > Show the current readings of all sensor chips.
+
+- `ninja-build` - required by [sumneko lua-language-server](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run)
+
+  > A small build system with a focus on speed.
+
+- `python3-pip` - required by nvim provider-python
+
+  > A tool for installing and managing Python3 packages
+
+- `stow` - required in [step 3 of Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
+
+  > Manage farms of symbolic links.
+
+</p>
+</details>
+
+## Optional Packages
+
+#### Installation
+
+1. Install packages:
+
+```
+sudo apt install apt-transport-https devtodo fonts-firacode gnome-screenshot htop lightdm-gtk-greeter-settings powertop tlp
+```
+
+<details><summary><b>Package Information</b></summary>
+<p>
+
+- `apt-transport-https`
+
+  > APT transport for downloading via the HTTP Secure protocol (HTTPS).
+
+- `devtodo`
+
+  > A reminder / task program aimed at developers.
+
+- `fonts-firacode`
+
+  > An extension of the Fira Mono font containing a set of ligatures for common programming multi-character combinations.
+
+- `gnome-screenshot`
+
+  > Capture the screen, a window, or an user-defined area and save the snapshot image to a file.
+
+- `htop`
+
+  > An interactive process viewer.
+
+- `lightdm-gtk-greeter-settings`
+
+  > Settings editor for LightDM GTK+ Greeter
+
+- `powertop`
+
+  > A power consumption and power management diagnosis tool.
+
+- `tlp`
+
+  > Apply laptop power saving settings
+
+</p>
+</details>
+
+## Vim
+
+> Vi IMproved, a programmer's text editor
+
+- https://www.vim.org/
+- https://github.com/vim/vim
 
 #### Installation & Setup
 
-1. Install git:
+1. Install vim
 
 ```
-sudo apt install git
+sudo apt install vim
 ```
 
-2. Set user name and email address:
+2. Set default editor
 
 ```
-git config --global user.name "Max Demian"; git config --global user.email maxdemian@example.com
+sudo update-alternatives --config editor
 ```
 
-3. Configure default editor:
-
 ```
-git config --global core.editor vim
-```
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+  0            /bin/nano            40        auto mode
+  1            /bin/ed             -100       manual mode
+  2            /bin/nano            40        manual mode
+* 3            /usr/bin/vim.basic   30        manual mode
+  4            /usr/bin/vim.tiny    15        manual mode
 
-4. Set default initial branch:
-
-```
-git config --global init.defaultBranch main
-```
-
-5. Check settings:
-
-```
-git config --list
-```
-
-## Github CLI
-
-> GitHub CLI is an open source tool for using GitHub from your computer's command line. When you're working from the command line, you can use the GitHub CLI to save time and avoid switching context.
-
-- https://docs.github.com/en/github-cli/github-cli/quickstart
-
-#### Installation & Setup
-
-1. Install gh:
-
-```
-sudo apt install gh
-```
-
-2. Authenticate to github
-
-```
-gh auth login
+Press <enter> to keep the current choice[*], or type selection number: 3
 ```
 
 ## Pass
@@ -110,7 +181,7 @@ sudo apt install gpg
 sudo apt install pass
 ```
 
-4. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles-readme#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+4. If a gpg key & password store have already been generated, skip to [this](https://github.com/natkiypie/dotfiles#copy-gpg-private-key-trust-database--password-store-to-trusted-machines) section. Otherwise, generate a new gpg key: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 
 5. List gpg key ID - in this example, the gpg key ID is **3AA5C34371567BD2**:
 
@@ -167,14 +238,12 @@ gpg --export-ownertrust > trust.txt
 cp -r ~/.password-store password-store
 ```
 
-5. Transport `secret.key` & `password-store` to new machine
+5. Transport `secret.key` `trust.txt` & `password-store` to new machine
 
 6. Rename password store, import trust db & import gpg secret key - you will be prompted to enter the passphrase used when first generating your gpg key:
 
 ```
-mv password-store .password-store
-gpg --import-ownertrust < trust.txt
-gpg --import secret.key
+mv password-store .password-store; gpg --import-ownertrust < trust.txt; gpg --import secret.key
 ```
 
 8. Remove secret key and trust database files
@@ -197,6 +266,66 @@ pass edit master/$USER
 pass edit master/$USER
 ```
 
+## Git
+
+> Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+
+- https://git-scm.com/
+- https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+
+#### Installation & Setup
+
+1. Install git:
+
+```
+sudo apt install git
+```
+
+2. Set user name and email address:
+
+```
+git config --global user.name "Max Demian"; git config --global user.email maxdemian@example.com
+```
+
+3. Configure default editor:
+
+```
+git config --global core.editor vim
+```
+
+4. Set default initial branch:
+
+```
+git config --global init.defaultBranch main
+```
+
+5. Check settings:
+
+```
+git config --list
+```
+
+## Github CLI
+
+> GitHub CLI is an open source tool for using GitHub from your computer's command line. When you're working from the command line, you can use the GitHub CLI to save time and avoid switching context.
+
+- https://docs.github.com/en/github-cli/github-cli/quickstart
+- https://github.com/cli/cli/blob/trunk/docs/install_linux.md#official-sources
+
+#### Installation & Setup
+
+1. Install gh:
+
+```
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg; echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null; sudo apt update; sudo apt install gh
+```
+
+2. Authenticate to github
+
+```
+gh auth login
+```
+
 ## Node Version Manager
 
 > Nvm allows you to quickly install and use different versions of node via the command line.
@@ -205,44 +334,21 @@ pass edit master/$USER
 
 #### Installation & Setup
 
-1. Make sure `curl` is installed:
+1. Run latest nvm install script found here: https://github.com/nvm-sh/nvm#install--update-script
 
-```
-sudo apt policy curl
-```
-
-2. If not, install it:
-
-```
-sudo apt install curl
-```
-
-3. Run latest nvm install script found here: https://github.com/nvm-sh/nvm#install--update-script
-
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/vx.xx.x/install.sh | bash
-```
-
-> Running either of the above commands downloads a script and runs it. The script clones the nvm repository to \~/.nvm, and attempts to add the source lines from the snippet below to the correct profile file (\~/.bash_profile, \~/.zshrc, \~/.profile, or \~/.bashrc).
-
-```bash
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-```
-
-4. Refresh the current shell environment:
+2. Refresh the current shell environment:
 
 ```
 source ~/.bashrc
 ```
 
-5. Verify install - will output `nvm` on success:
+3. Verify install - will output `nvm` on success:
 
 ```
 command -v nvm
 ```
 
-6. Download, compile & install latest release of node:
+4. Download, compile & install latest release of node:
 
 ```
 nvm install node
@@ -294,90 +400,6 @@ npm install -g @fsouza/prettierd commitizen cz-conventional-changelog eslint esl
 </p>
 </details>
 
-## Debian Packages
-
-#### Installation
-
-1. Install packages:
-
-```
-sudo apt install build-essential compton feh lm-sensors ninja-build stow
-```
-
-<details><summary><b>Package Information</b></summary>
-<p>
-
-- `build-essential` - required by [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-
-  > Meta-packages that are necessary for compiling software.
-
-- `compton` - required in [i3 config](/.config/i3/config)
-
-  > A compositor for X11.
-
-- `feh` - required by [set_background_img.sh](/.scripts/initialization/set_background_img.sh)
-
-  > Image viewer and cataloguer.
-
-- `lm-sensors` - required by [run_diagnostics.sh](/.scripts/initialization/run_diagnostics.sh)
-
-  > Show the current readings of all sensor chips.
-
-- `ninja-build` - required by [sumneko lua-language-server](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run)
-
-  > A small build system with a focus on speed.
-
-- `stow` - required in [step 3 of Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
-
-  > Manage farms of symbolic links.
-
-</p>
-</details>
-
-## Optional Packages
-
-#### Installation
-
-1. Install packages:
-
-```
-sudo apt install apt-transport-https devtodo gnome-screenshot htop lightdm-gtk-greeter-settings powertop tlp
-```
-
-<details><summary><b>Package Information</b></summary>
-<p>
-
-- `apt-transport-https`
-
-  > APT transport for downloading via the HTTP Secure protocol (HTTPS).
-
-- `devtodo`
-
-  > A reminder / task program aimed at developers.
-
-- `gnome-screenshot`
-
-  > Capture the screen, a window, or an user-defined area and save the snapshot image to a file.
-
-- `htop`
-
-  > An interactive process viewer.
-
-- `lightdm-gtk-greeter-settings`
-
-  > Settings editor for LightDM GTK+ Greeter
-
-- `powertop`
-
-  > A power consumption and power management diagnosis tool.
-
-- `tlp`
-
-  > Apply laptop power saving settings
-
-</p>
-</details>
-
 ## Terminal Utilities
 
 ### Broot
@@ -407,12 +429,12 @@ chmod a+x broot; sudo mv broot /usr/local/bin/
 
 #### Installation & Setup
 
-1. Download archive file `git-delta_x.xx.x_arm64.deb` found here: https://github.com/dandavison/delta/releases
+1. Download archive file `git-delta_x.xx.x_amd64.deb` found here: https://github.com/dandavison/delta/releases
 
-2. Install deb file & store in location for non-operating system programs:
+2. Install deb file, clear additional files & store executable in location for non-operating system programs:
 
 ```
-sudo dpkg -i git-delta_x.xx.x_arm64.deb; mv /usr/bin/delta /usr/local/bin/
+sudo dpkg -i git-delta_x.xx.x_amd64.deb; rm *.deb; mv /usr/bin/delta /usr/local/bin/
 ```
 
 3. Add delta configuration to `~/.gitconfig` or `~/.config/git/config`:
@@ -453,7 +475,7 @@ grep $(sha256sum glow_x.x.x_linux_x86_64.tar.gz) checksums.txt
 - If checksums match, extract executable from archive, clear additional files & store executable in location for non-operating system programs:
 
 ```
-tar -zxvf glow_x.x.x_linux_x86_64.tar.gz; rm LICENSE README.md *.tar.gz; sudo mv glow /usr/local/bin/
+tar -zxvf glow_x.x.x_linux_x86_64.tar.gz; rm checksums.txt LICENSE README.md *.tar.gz; sudo mv glow /usr/local/bin/
 ```
 
 ### Lazygit
@@ -475,7 +497,7 @@ grep $(sha256sum lazygit_x.xx.x_Linux_x86_64.tar.gz) checksums.txt
 - If checksums match, extract executable from archive, clear additional files & store executable in location for non-operating system programs:
 
 ```
-tar -zxvf lazygit_x.xx.x_Linux_x86_64.tar.gz; rm LICENSE README.md *.tar.gz; sudo mv lazygit /usr/local/bin/
+tar -zxvf lazygit_x.xx.x_Linux_x86_64.tar.gz; rm checksums.txt LICENSE README.md *.tar.gz; sudo mv lazygit /usr/local/bin/
 ```
 
 ### StyLua
@@ -516,10 +538,10 @@ git clone https://github.com/natkiypie/dotfiles.git
 rm -rf $HOME/.bashrc $HOME/.bash_aliases $HOME/.config/broot
 ```
 
-3. Mirror user's home directory structure & create symbolic links from dotfiles:
+3. Mirror home directory structure, create symbolic links from dotfiles & refesh shell environment:
 
 ```
-mv dotfiles $USER; mkdir $HOME/.dotfiles; mv $USER $HOME/.dotfiles; cd $HOME/.dotfiles; stow $USER
+mv dotfiles $USER; mkdir $HOME/.dotfiles; mv $USER $HOME/.dotfiles; cd $HOME/.dotfiles; stow $USER; source ~/.bashrc
 ```
 
 ## Neovim
@@ -529,41 +551,22 @@ mv dotfiles $USER; mkdir $HOME/.dotfiles; mv $USER $HOME/.dotfiles; cd $HOME/.do
 - https://neovim.io/
 - https://github.com/neovim/neovim
 - https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable
-- https://thomasventurini.com/articles/install-neovim-05-in-ubuntu
 
 #### Installation & Setup
 
-1. Install vim & neovim nightly
+1. Install neovim nightly
 
 ```
-sudo add-apt-repository ppa:neovim-ppa/unstable; sudo apt update; sudo apt install vim neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable; sudo apt update; sudo apt install neovim
 ```
 
-2. Set default editor
-
-```
-sudo update-alternatives --config editor
-```
-
-```
-  Selection    Path                Priority   Status
-------------------------------------------------------------
-  0            /bin/nano            40        auto mode
-  1            /bin/ed             -100       manual mode
-  2            /bin/nano            40        manual mode
-* 3            /usr/bin/vim.basic   30        manual mode
-  4            /usr/bin/vim.tiny    15        manual mode
-
-Press <enter> to keep the current choice[*], or type selection number: 3
-```
-
-3. Add nvim as vim alternative
+2. Add nvim as vim alternative
 
 ```
 sudo update-alternatives --install $(which vim) vim $(which nvim) 10
 ```
 
-4. Set nvim as alternative to vim
+3. Set nvim as alternative to vim
 
 ```
 sudo update-alternatives --config vim
@@ -582,16 +585,22 @@ Press <enter> to keep the current choice[*], or type selection number: 1
 
 #### Running Nvim For The First Time
 
-1. Check health:
+1. Update & compile plugins:
 
 ```
-:checkhealth
+:PackerSync
 ```
 
 2. Install language servers:
 
 ```
 :LspInstall tsserver cssls html
+```
+
+3. Check health:
+
+```
+:checkhealth
 ```
 
 ## Sumneko Lua Language Server
@@ -641,6 +650,14 @@ cd ../..; ./3rd/luamake/luamake rebuild
 - https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html
 - https://github.com/Airblader/i3/wiki/installation#ubuntu
 
+#### Set Background Image
+
+1. Store image with architecture-independent data & set with script:
+
+```
+sudo cp -r $DOT_FILES/assets/images/bg.png /usr/share/xfce4/backdrops/; set_background_img.sh
+```
+
 #### Installation & Setup
 
 1. Install i3 & i3-gaps:
@@ -649,7 +666,7 @@ cd ../..; ./3rd/luamake/luamake rebuild
 sudo add-apt-repository ppa:regolith-linux/release; sudo apt update; sudo apt install i3 i3-gaps
 ```
 
-2. Open `Session and Startup`, and go to the `Session` tab:
+2. Open `Session and Startup` and go to the `Session` tab:
 
 <p align="center">
   <img src="assets/images/sessionandstartup.png" alt="session and startup">
@@ -667,33 +684,21 @@ sudo add-apt-repository ppa:regolith-linux/release; sudo apt update; sudo apt in
   <img src="assets/images/sessionandstartupadd.png" alt="session and startup add">
 </p>
 
-5. Add `xfce4-terminal` to startup applications by going to `Application Autostart` tab:
-
-<p align="center">
-  <img src="assets/images/startupterminal.png" alt="startup terminal" width="320">
-</p>
-
-6. Open `Keyboard` dialogue, go to `Application Shortcuts` tab & remove keyboard shortcuts:
+5. Open `Keyboard` dialogue, go to `Application Shortcuts` tab & remove keyboard shortcuts:
 
 <p align="center">
   <img src="assets/images/keyboard.png" alt="keyboard">
 </p>
 
-7. Restart computer for changes to take effect
+6. Restart computer for changes to take effect
 
 ```
 reboot
 ```
 
-## Other Useful Features & Settings
+## Useful Settings
 
-#### Increase Cursor Speed (Keyboard Settings)
-
-1. Set repeat delay: `250`
-
-2. Set repeat speed: `65`
-
-#### Increase Key Speed (Terminal)
+#### Increase Key Speed
 
 1. Check autorepeat rate:
 
@@ -707,15 +712,101 @@ xset -q | grep delay | grep repeat
 xset r rate 250 66
 ```
 
-#### Install Nerd Fonts
+#### Remove Splash Screen
 
-1. Go here: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts
+```
+sudo sed -i 's/quiet splash//g' /etc/default/grub; update-grub
+```
 
-2. Choose your font, download & install into `~/.local/share/fonts`
+#### Hide Users
+
+1. Configure display manager user settings:
+
+```
+cat << EOF | sudo tee /etc/lightdm/lightdm.conf.d/00-hide-user-list.conf
+[SeatDefaults]
+greeter-hide-users=true
+greeter-show-manual-login=true
+allow-guest=false
+EOF
+```
+
+#### Configure Greeter Settings
+
+1. Configure display manager greeter settings:
+
+```
+cat << EOF | sudo tee /etc/lightdm/lightdm-gtk-greeter.conf
+[greeter]
+background = /usr/share/xfce4/backdrops/bg.png
+theme-name = Numix
+icon-theme-name = Flat-Remix-Blue
+indicators =
+clock-format =
+default-user-image = /usr/share/icons/Flat-Remix-Blue/apps/scalable/armitage.svg
+position = 50%,center -60%,center
+EOF
+```
+
+#### Add Applications To Autostart
+
+1. Configure xfce4-terminal to autostart
+
+```
+cat << EOF | sudo tee $XDG_CONFIG_HOME/autostart/Terminal.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Terminal
+Comment=Startup Terminal
+Exec=xfce4-terminal
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
+EOF
+```
+
+#### Powertop Auto Tune
+
+1. Create powertop service:
+
+```
+cat << EOF | sudo tee /etc/systemd/system/powertop.service
+[Unit]
+Description=PowerTOP auto tune
+
+[Service]
+Type=oneshot
+Environment="TERM=dumb"
+RemainAfterExit=true
+ExecStart=/usr/sbin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+2. Reload systemd manager configuration & enable powertop service:
+
+```
+systemctl daemon-reload; systemctl enable powertop.service
+```
+
+#### Set Icons & Theme:
+
+1. Store files with architecture-independent data & set icons & theme:
+
+```
+sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r $DOT_FILES/assets/xfce4/Ultimate-Plata-Dark /usr/share/themes/; xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue; xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark;
+
+```
 
 ## TODO
 
-- [ ] Replace images in section: [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu)
+- [ ] Rewrite section to configure via terminal instead of gui [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu)
 - [ ] Write README.md for [nvim](/.config/nvim)
 
 ##
