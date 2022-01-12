@@ -795,12 +795,64 @@ EOF
 systemctl daemon-reload; systemctl enable powertop.service
 ```
 
-#### Set Icons & Theme:
+#### Set Icons:
 
-1. Store files with architecture-independent data, set icons & theme & update icon cache:
+1. Get archive file:
 
 ```
-sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r $DOT_FILES/assets/xfce4/Ultimate-Plata-Dark /usr/share/themes/; xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue; xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark; gtk-update-icon-cache /usr/share/icons/Flat-Remix-Blue/
+(cd /tmp; curl -O https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2Mzk0OTM0MzkiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjFjY2M3OGJhNTkwYTUzZmVkN2I0N2NlMGE2MWMwNzU2YzU1YzM5NWU2MTEwMjA0ZmJhNWY3M2I2NmNiOGIwMGQ0NTRiMjg5MTg1ZGNmZDAwY2E1YjM3MGM2NzQ5YTg1Y2Q0MDc4Y2FkYWRhZTY2MDJiMGRhNDM4ZjU2NjMwYWZlIiwidCI6MTY0MTk3MTc4OSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.Dxlw_-7wr7ZzvWqIz3ly5q0f7M_18h7RCFGOSJpKvr4/01-Flat-Remix-Blue_20211214.tar.xz)
+```
+
+2. Extract archive files:
+
+```
+(cd /tmp; tar -xf 01-Flat-Remix-Blue_20211214.tar.xz)
+```
+
+3. Store with architecture-independent files:
+
+```
+sudo mv /tmp/Flat-Remix-Blue-Dark /usr/share/icons/
+```
+
+2. Set icons:
+
+```
+xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue
+
+```
+
+3. Update icon cache:
+
+```
+gtk-update-icon-cache /usr/share/icons/Flat-Remix-Blue/; cd -
+
+```
+
+#### Set Theme:
+
+1. Get zip file:
+
+```
+(cd /tmp; curl -O https://dl2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE1OTIyNDk1OTAiLCJ1IjpudWxsLCJsdCI6ImRvd25sb2FkIiwicyI6IjNmYjk4ZTkyYzlhMzcyNDI0OWM3ODQ3NGM2NjdhNjUxZWNmNzZlNjYzZGQ1NzhjZmY1Yzg0OGVlMzVmOTE1YjQ1MTc5YTAzMzA2YzBjZWFmZDRmMDVhMDc4ZmY4YmRkYjIyMjRjNzE4N2FjYjUzYWExMDIxZTM1ZjVmMDMxZjcxIiwidCI6MTY0MTk3MjM3MSwic3RmcCI6IjhkN2M4MGJkZDMyMzBhNDQzMzc4NTM0MDg4NjU5ZmZhIiwic3RpcCI6IjI2MDA6MTAwZjpiMTFjOmE5ZTg6NmRlOTozODE1OjJjNGU6NGQzZCJ9.ARnIMyxoq_wHv7tAQq7o_g0m_T2BtdtyO7R1Kk2GER0/Ultimate-Plata-Dark-3.36_1.9.5.zip)
+```
+
+2. Unzip compressed files:
+
+```
+(cd /tmp; unzip Ultimate-Plata-Dark-3.36_1.9.5.zip)
+```
+
+3. Store with architecture-independent files:
+
+```
+sudo mv /tmp/Ultimate-Plata-Dark-3.36 /usr/share/themes/
+```
+
+4. Set theme:
+
+```
+xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark
 
 ```
 
@@ -814,3 +866,4 @@ sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r
 <p align="center">
   <a href="https://github.com/natkiypie/dotfiles#natkiypies-dotfiles">Back to Top</a>
 </p>
+````
