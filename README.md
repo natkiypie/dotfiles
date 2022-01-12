@@ -142,6 +142,8 @@ sudo apt install vim
 sudo update-alternatives --config editor
 ```
 
+Output:
+
 ```
   Selection    Path                Priority   Status
 ------------------------------------------------------------
