@@ -23,8 +23,8 @@
 - [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
-- [i3](https://github.com/natkiypie/dotfiles#i3-xubuntu)
-- [Other Settings](https://github.com/natkiypie/dotfiles#other-settings)
+- [i3](https://github.com/natkiypie/dotfiles#i3)
+- [Other Useful Settings](https://github.com/natkiypie/dotfiles#other-useful-settings)
 
 ## Required Packages
 
@@ -642,7 +642,7 @@ cd 3rd/luamake; ./compile/install.sh
 cd ../..; ./3rd/luamake/luamake rebuild
 ```
 
-## i3 (Xubuntu)
+## i3
 
 > i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license.
 
@@ -690,13 +690,13 @@ sudo add-apt-repository ppa:regolith-linux/release; sudo apt update; sudo apt in
   <img src="assets/images/keyboard.png" alt="keyboard">
 </p>
 
-6. Restart computer for changes to take effect
+6. Restart computer for changes to take effect:
 
 ```
 reboot
 ```
 
-## Other Settings
+## Other Useful Settings
 
 #### Increase Key Speed
 
@@ -706,7 +706,7 @@ reboot
 xset -q | grep delay | grep repeat
 ```
 
-2. Set autorepeat rate
+2. Set autorepeat rate:
 
 ```
 xset r rate 250 66
@@ -750,7 +750,7 @@ EOF
 
 #### Add Applications To Autostart
 
-1. Configure xfce4-terminal to autostart
+1. Configure xfce4-terminal to autostart:
 
 ```
 cat << EOF | sudo tee $XDG_CONFIG_HOME/autostart/Terminal.desktop
@@ -858,7 +858,7 @@ xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark
 
 ## TODO
 
-- [ ] Rewrite [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu) to configure via terminal instead of gui
+- [ ] Rewrite [i3](https://github.com/natkiypie/dotfiles#i3) to configure via terminal instead of gui
 - [ ] Write README.md for [nvim](/.config/nvim)
 
 ##
