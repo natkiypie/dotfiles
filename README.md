@@ -874,4 +874,3 @@ xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark
 <p align="center">
   <a href="https://github.com/natkiypie/dotfiles#natkiypies-dotfiles">Back to Top</a>
 </p>
-````
