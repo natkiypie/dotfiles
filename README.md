@@ -25,6 +25,14 @@
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
 - [i3](https://github.com/natkiypie/dotfiles#i3)
 - [Other Useful Settings](https://github.com/natkiypie/dotfiles#other-useful-settings)
+  - [Increase Key Speed](https://github.com/natkiypie/dotfiles#increase-key-speed)
+  - [Remove Splash Screen](https://github.com/natkiypie/dotfiles#remove-splash-screen)
+  - [Hide Users](https://github.com/natkiypie/dotfiles#hide-users)
+  - [Configure Greeter Settings](https://github.com/natkiypie/dotfiles#configure-greeter-settings)
+  - [Add Applications To Autostart](https://github.com/natkiypie/dotfiles#add-applications-to-autostart)
+  - [Auto Tune Powertop](https://github.com/natkiypie/dotfiles#auto-tune-powertop)
+  - [Set Icons](https://github.com/natkiypie/dotfiles#set-icons)
+  - [Set Theme](https://github.com/natkiypie/dotfiles#set-theme)
 
 ## Required Packages
 
