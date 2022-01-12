@@ -864,11 +864,6 @@ xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark
 
 ```
 
-## TODO
-
-- [ ] Rewrite [i3](https://github.com/natkiypie/dotfiles#i3) to configure via terminal instead of gui
-- [ ] Write README.md for [nvim](/.config/nvim)
-
 ##
 
 <p align="center">
