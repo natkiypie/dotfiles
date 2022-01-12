@@ -769,7 +769,7 @@ Hidden=false
 EOF
 ```
 
-#### Powertop Auto Tune
+#### Auto Tune Powertop
 
 1. Create powertop service:
 
@@ -797,10 +797,10 @@ systemctl daemon-reload; systemctl enable powertop.service
 
 #### Set Icons & Theme:
 
-1. Store files with architecture-independent data & set icons & theme:
+1. Store files with architecture-independent data, set icons & theme & update icon cache:
 
 ```
-sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r $DOT_FILES/assets/xfce4/Ultimate-Plata-Dark /usr/share/themes/; xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue; xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark;
+sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r $DOT_FILES/assets/xfce4/Ultimate-Plata-Dark /usr/share/themes/; xfconf-query -c xsettings -p /Net/IconThemeName -s Flat-Remix-Blue; xfconf-query -c xsettings -p /Net/ThemeName -s Ultimate-Plata-Dark; gtk-update-icon-cache /usr/share/icons/Flat-Remix-Blue/
 
 ```
 
