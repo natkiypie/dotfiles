@@ -4,7 +4,7 @@
 
 > We were always alone, never lonely.
 
-## Table of Contents or Steps to Reproduce (in Sequential Order)
+## Table of Contents (Steps to Reproduce in Sequential Order)
 
 - [Debian Packages](https://github.com/natkiypie/dotfiles#debian-packages)
 - [Vim](https://github.com/natkiypie/dotfiles#vim)
