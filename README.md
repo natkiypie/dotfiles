@@ -142,7 +142,7 @@ sudo apt install vim
 sudo update-alternatives --config editor
 ```
 
-2. Make Selection:
+3. Make Selection:
 
 ```
   Selection    Path                Priority   Status
@@ -404,14 +404,13 @@ npm install -g @fsouza/prettierd commitizen cz-conventional-changelog eslint esl
 
 #### Installation & Setup
 
-1. Download pre-compiled binary `x86-64-linux` found here: https://dystroy.org/broot/install/
-2. Change file mode to executable for all users & store in location for non-operating system programs:
+1. Transfer pre-compiled binary, change file mode to executable for all users & store in location for non-operating system programs:
 
 ```
-chmod a+x broot; sudo mv broot /usr/local/bin/
+curl -O https://dystroy.org/broot/download/x86_64-linux/broot; chmod a+x broot; sudo mv broot /usr/local/bin/
 ```
 
-3. Refuse shell function install when launching broot for the first time
+2. Refuse shell function install when launching broot for the first time
 
 ### Delta
 
