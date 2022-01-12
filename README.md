@@ -806,7 +806,7 @@ sudo cp -r $DOT_FILES/assets/xfce4/Flat-Remix-Blue /usr/share/icons/; sudo cp -r
 
 ## TODO
 
-- [ ] Rewrite section to configure via terminal instead of gui [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu)
+- [ ] Rewrite [i3 (Xubuntu)](https://github.com/natkiypie/dotfiles#i3-xubuntu) to configure via terminal instead of gui
 - [ ] Write README.md for [nvim](/.config/nvim)
 
 ##
