@@ -13,7 +13,7 @@
 - [Github CLI](https://github.com/natkiypie/dotfiles#github-cli)
 - [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
 - [Node Global Packages](https://github.com/natkiypie/dotfiles#node-global-packages)
-- [Terminal Utilities](https://github.com/natkiypie/dotfiles#terminal-utilities)
+- [Neovim Peripherals](https://github.com/natkiypie/dotfiles#neovim-peripherals)
 - [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
 - [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
@@ -394,7 +394,7 @@ npm install -g @fsouza/prettierd commitizen cz-conventional-changelog eslint esl
 </p>
 </details>
 
-## Terminal Utilities
+## Neovim Peripherals
 
 ### Broot
 
