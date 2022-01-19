@@ -31,3 +31,4 @@ alias luamake=$NVIM_CONFIG/language-servers/lua-language-server/3rd/luamake/luam
 alias lmp=list_man_pack.sh
 alias mkfile=mkfile.sh
 alias freeport=freeport.sh
+alias dood='cd ~/dev/ccdoodles'

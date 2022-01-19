@@ -1,14 +1,3 @@
-# You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 0
-
-# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
-gaps inner 15
-gaps outer 15
-gaps right 0
-gaps left 0
-gaps top 0
-gaps bottom 0
-
 # Set mod key
 set $mod Mod1
 
@@ -128,6 +117,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# disable i3 keybindings
+mode "disable" {
+  # enable i3 keybindings
+  bindsym $mod+i mode "default"
+}
+
+bindsym $mod+i mode "disable"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id synergy
@@ -135,5 +132,16 @@ exec --no-startup-id synergy
 # load compositor for transparency
 exec compton
 
-#TESTING
-bindsym F7 exec gnome-screenshot
+# I3-GAPS:
+
+# You can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 0
+
+# gaps inner|outer|horizontal|vertical|top|right|bottom|left current|all set|plus|minus|toggle <px>
+gaps inner 15
+gaps outer 15
+gaps right 0
+gaps left 0
+gaps top 0
+gaps bottom 0
+
