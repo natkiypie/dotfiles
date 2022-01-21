@@ -47,7 +47,7 @@ bindsym $mod+plus split h
 bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym F11 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -131,6 +131,9 @@ exec --no-startup-id synergy
 
 # load compositor for transparency
 exec compton
+
+# open gui file finder
+bindsym $mod+f exec thunar
 
 # I3-GAPS:
 
