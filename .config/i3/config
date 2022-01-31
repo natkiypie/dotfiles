@@ -10,6 +10,9 @@ bindsym $mod+Return exec xfce4-terminal
 # open browser
 bindsym $mod+b exec brave-browser
 
+# open xfce4 settings
+bindsym Super_L exec xfce4-settings-manager
+
 # kill focused window
 bindsym $mod+F4 kill
 
