@@ -1,6 +1,6 @@
 local function add_user_commands(user_commands)
   for name, command in pairs(user_commands) do
-    vim.api.nvim_add_user_command(name, function()
+    vim.api.nvim_create_user_command(name, function()
       command()
     end, { nargs = 0 })
   end
@@ -19,6 +19,6 @@ add_user_commands {
   LspHover = vim.lsp.buf.hover,
 }
 
-vim.api.nvim_add_user_command('LspDiagLine', function()
+vim.api.nvim_create_user_command('LspDiagLine', function()
   vim.diagnostic.open_float { border = 'single', focusable = false }
 end, { nargs = 0 })

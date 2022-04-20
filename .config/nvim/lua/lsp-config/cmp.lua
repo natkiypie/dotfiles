@@ -10,7 +10,7 @@ local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
-local WIDE_HEIGHT = 40
+-- local WIDE_HEIGHT = 40
 
 cmp.setup {
   completion = {
@@ -21,11 +21,14 @@ cmp.setup {
       vim.fn['vsnip#anonymous'](args.body)
     end,
   },
-  documentation = {
-    border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
-    winhighlight = 'NormalFloat:NormalFloat,FloatBorder:NormalFloat',
-    maxwidth = math.floor((WIDE_HEIGHT * 2) * (vim.o.columns / (WIDE_HEIGHT * 2 * 16 / 9))),
-    maxheight = math.floor(WIDE_HEIGHT * (WIDE_HEIGHT / vim.o.lines)),
+  -- documentation = {
+  --   border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
+  --   winhighlight = 'NormalFloat:NormalFloat,FloatBorder:NormalFloat',
+  --   maxwidth = math.floor((WIDE_HEIGHT * 2) * (vim.o.columns / (WIDE_HEIGHT * 2 * 16 / 9))),
+  --   maxheight = math.floor(WIDE_HEIGHT * (WIDE_HEIGHT / vim.o.lines)),
+  -- },
+  window = {
+    documentation = "native"
   },
   mapping = {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
