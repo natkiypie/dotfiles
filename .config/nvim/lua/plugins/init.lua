@@ -39,9 +39,9 @@ return packer.startup(function(use)
   use 'jpalardy/vim-slime'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use 'akinsho/bufferline.nvim'
   use 'rbgrouleff/bclose.vim'
   use 'karb94/neoscroll.nvim'
+  use { 'akinsho/bufferline.nvim', tag = '*' }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
