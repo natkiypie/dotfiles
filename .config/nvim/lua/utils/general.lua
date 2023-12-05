@@ -2,8 +2,8 @@ local M = {}
 
 local function pass_save_criteria()
   local function writable()
-    local cwd = require('auto-session-config.utils').get_cwd()
-    for _, v in ipairs(require('auto-session-config/utils').get_suppress_dirs()) do
+    local cwd = require('utils/auto-session').get_cwd()
+    for _, v in ipairs(require('utils/auto-session').get_suppress_dirs()) do
       if v == cwd then
         return true
       end
@@ -63,7 +63,7 @@ end
 
 function M.close_all()
   if pass_save_criteria() then
-    require('auto-session-config/utils').save_session_and_quit()
+    require('utils/auto-session').save_session_and_quit()
   else
     vim.cmd 'silent wa|qa'
   end
