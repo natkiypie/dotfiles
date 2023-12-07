@@ -1,14 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/natkiypie/.dotfiles/natkiypie
-- /home/natkiypie/test
-- /home/natkiypie/dotfiles-readme
-- /home/natkiypie/.dotfiles
 - /home/natkiypie/dev/cf/js/301/curriculum
 - /home/natkiypie/dev/react
 - /home/natkiypie/dev/react/redux/t3
-- /home/natkiypie/temp
 startuppopupversion: 5
 customcommandshistory:
 - git rm -r --cached gitconfig
 hidecommandlog: true
+ignorewhitespaceindiffview: false
