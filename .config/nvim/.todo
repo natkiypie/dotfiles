@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
     <note priority="veryhigh" time="1701551092">
-        Debug vim-slime util functions
+        Remove vim-slime - keep what you can of util and expr functions
     </note>
-    <note priority="high" time="1641971786">
-        Write README
+    <note priority="high" time="1701917268">
+        Find new .md file viewer plugin
     </note>
     <note priority="medium" time="1701742173">
         Read up on how to use Broot and its keybindings
@@ -12,11 +12,11 @@
     <note priority="low" time="1639468104">
         Learn more about lazygit (and git in general) 
     </note>
-    <note priority="low" time="1701841409">
-        Look into vim fugative (for git integration)
-    </note>
-    <note priority="verylow" time="1701841539">
+    <note priority="low" time="1701841539">
         Refactor close with 'q' function to include edge case: closing [No Name] buffers
+    </note>
+    <note priority="verylow" time="1641971786">
+        Update README
     </note>
     <note priority="verylow" time="1701842621">
         Look into writing Neovim plugin (for Broot)

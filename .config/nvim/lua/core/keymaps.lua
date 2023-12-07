@@ -11,7 +11,7 @@ require('utils.keymaps').bind_normal_mode {
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
   { '<C-t>', '<CMD>lua require"scripts.terminals.bash".issue("/bin/bash")<CR>' },
   { '<C-f>', '<CMD>lua require"scripts.terminals.bash".issue("glow.sh")<CR>' },
-  { '<C-g>', '<CMD>lua require"scripts.terminals.bash".issue("lazygit")<CR>' },
+  { '<C-g>', '<CMD>lua require"scripts.terminals.bash".issue("lazygitsh")<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
   { 'm', '<CMD>lua require"utils.bufferline".bufferline_pick()<CR>' },
   { '<C-_>', '<CMD>CommentToggle<CR>' },
@@ -103,6 +103,6 @@ require('utils.keymaps').bind_expr_terminal_mode {
   },
   {
     '<C-g>',
-    'v:lua.toggle_term("lazygit", "\\<CMD\\>lua require\'scripts.terminals.bash\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
+    'v:lua.toggle_term("lazygitsh", "\\<CMD\\>lua require\'scripts.terminals.bash\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
   },
 }

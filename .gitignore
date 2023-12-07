@@ -2,3 +2,5 @@
 .config/nvim/language-servers/
 .config/nvim/plugin/
 .config/nvim/sessions/*
+.config/nvim/lazy-lock.json
+.config/lazygit/state.yml
