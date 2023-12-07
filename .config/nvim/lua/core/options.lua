@@ -10,3 +10,5 @@ vim.bo.softtabstop = 2
 vim.bo.shiftwidth = 2
 vim.bo.expandtab = true
 vim.o.sessionoptions = 'buffers,curdir,folds,help,tabpages,winsize'
+vim.opt.clipboard:append 'unnamedplus'
+vim.opt.iskeyword:append '-'

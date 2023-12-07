@@ -1,7 +1,7 @@
 # USED IN: ~/.dotfiles/config/.config/nvim/lua/scripts/terminals/broot.lua"
 [[verbs]]
 invocation = "terminal"
-key = "shift-l"
+key = "ctrl-l"
 execution = ":print_path"
 apply_to = "file"
 

@@ -30,7 +30,7 @@ end
 
 local function cmd()
   local currentPath = vim.fn.expand '.'
-  return vim.fn.printf('%s --conf "%s" --out "%s" "%s"', command, config_path, out_file_path, currentPath)
+  return vim.fn.printf('%s --conf "%s" > "%s" "%s"', command, config_path, out_file_path, currentPath)
 end
 
 function M.open()

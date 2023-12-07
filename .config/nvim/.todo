@@ -3,22 +3,22 @@
     <note priority="veryhigh" time="1701551092">
         Debug vim-slime util functions
     </note>
-    <note priority="veryhigh" time="1701648773">
-        In lspconfig.lua, remove telescope from lsp functions (also, look in after/plugin/user-commands)
-    </note>
     <note priority="high" time="1641971786">
         Write README
     </note>
-    <note priority="medium" time="1701741488">
-        make expr function to use shift+jkl to navigate completion menu
-    </note>
     <note priority="medium" time="1701742173">
-        Read up on how to us Broot and its keybindings
+        Read up on how to use Broot and its keybindings
     </note>
     <note priority="low" time="1639468104">
         Learn more about lazygit (and git in general) 
     </note>
-    <note priority="verylow" time="1639468307">
-        Look into vimwiki &amp; vim-orgmode 
+    <note priority="low" time="1701841409">
+        Look into vim fugative (for git integration)
+    </note>
+    <note priority="verylow" time="1701841539">
+        Refactor close with 'q' function to include edge case: closing [No Name] buffers
+    </note>
+    <note priority="verylow" time="1701842621">
+        Look into writing Neovim plugin (for Broot)
     </note>
 </todo>

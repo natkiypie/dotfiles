@@ -15,12 +15,12 @@ show_selection_mark = false
 # Special Paths
 ###############################################################
 [special-paths]
-"*/node_modules" = "no-enter"
-"*/node_modules" = "hide"
-"*/build" = "no-enter"
-"*/build" = "hide"
-"*/package-lock.json" = "no-enter"
-"*/package-lock.json" = "hide"
+# "*/node_modules" = "no-enter"
+# "*/node_modules" = "hide"
+# "*/build" = "no-enter"
+# "*/build" = "hide"
+# "*/package-lock.json" = "no-enter"
+# "*/package-lock.json" = "hide"
 
 ###############################################################
 # Pager
@@ -51,9 +51,9 @@ leave_broot = false
 
 # Navigation
 
-[[verbs]]
-key = "ctrl-h"
-execution = ":toggle_hidden"
+# [[verbs]]
+# key = "ctrl-h"
+# execution = ":toggle_hidden"
 
 [[verbs]]
 invocation = "home"
@@ -68,23 +68,23 @@ key = "right"
 execution = ":focus"
 
 [[verbs]]
-key = "shift-h"
+key = "ctrl-h"
 execution = ":parent"
 
-[[verbs]]
-key = "shift-l"
-execution = ":open_stay"
+# [[verbs]]
+# key = "ctrl-l"
+# execution = ":open_stay"
+#
+# [[verbs]]
+# key = "enter"
+# execution = ":open_stay"
 
 [[verbs]]
-key = "enter"
-execution = ":open_stay"
-
-[[verbs]]
-key = "shift-j"
+key = "ctrl-j"
 execution = ":line_down"
 
 [[verbs]]
-key = "shift-k"
+key = "ctrl-k"
 execution = ":line_up"
 
 [[verbs]]

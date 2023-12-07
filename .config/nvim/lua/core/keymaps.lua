@@ -1,6 +1,7 @@
 require('utils.keymaps').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
+  { 'x', '"_x' },
   { '<C-w>', '<CMD>w<CR>' },
   { '<C-q>', '<CMD>lua require"utils.general".close_all()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
