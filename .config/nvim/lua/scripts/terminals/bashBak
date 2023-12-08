@@ -1,5 +1,7 @@
 local M = {}
 
+-- autocmd TermClose term://*lazygit lua vim.api.nvim_input("<CR>")
+
 local function initialize()
   M.terminals = {}
 end
@@ -21,7 +23,7 @@ end
 local function on_exit(cmd)
   return function()
     require('utils.general').buffer(M.terminals[cmd].originbufferid)
-    require('utils.general').exec_arg('Bclose!', M.terminals[cmd].termbufferid)
+    require('utils.general').exec_arg(require('utils.general').close(), M.terminals[cmd].termbufferid)
     M.terminals[cmd] = nil
     require('utils.general').close_tab()
   end

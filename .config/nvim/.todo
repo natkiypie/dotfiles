@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1701551092">
-        Remove vim-slime - keep what you can of util and expr functions
+    <note priority="veryhigh" time="1701918284">
+        Debug lazygit quit and toggle functions
     </note>
-    <note priority="high" time="1701917268">
-        Find new .md file viewer plugin
-    </note>
-    <note priority="medium" time="1701742173">
-        Read up on how to use Broot and its keybindings
+    <note priority="veryhigh" time="1701924128">
+        Figure out how to assign new buffer number to terminals after exiting terminal in Neovim
     </note>
     <note priority="low" time="1639468104">
         Learn more about lazygit (and git in general) 
+    </note>
+    <note priority="low" time="1701742173">
+        Read up on how to use Broot and its keybindings
     </note>
     <note priority="low" time="1701841539">
         Refactor close with 'q' function to include edge case: closing [No Name] buffers

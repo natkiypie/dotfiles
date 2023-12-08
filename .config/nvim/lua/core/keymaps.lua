@@ -1,7 +1,6 @@
 require('utils.keymaps').bind_normal_mode {
   { 'j', 'gj' },
   { 'k', 'gk' },
-  { 'x', '"_x' },
   { '<C-w>', '<CMD>w<CR>' },
   { '<C-q>', '<CMD>lua require"utils.general".close_all()<CR>' },
   { 'M', '<CMD>lua require"utils.general".toggle_mouse()<CR>' },
@@ -9,15 +8,17 @@ require('utils.keymaps').bind_normal_mode {
   { '<S-h>', '<CMD>bp<CR>' },
   { '<Leader>h', '<CMD>cd %:h<CR>' },
   { '<CR>', '<CMD>lua require"utils.general".toggle_tab()<CR>' },
-  { '<C-t>', '<CMD>lua require"scripts.terminals.bash".issue("/bin/bash")<CR>' },
-  { '<C-f>', '<CMD>lua require"scripts.terminals.bash".issue("glow.sh")<CR>' },
-  { '<C-g>', '<CMD>lua require"scripts.terminals.bash".issue("lazygitsh")<CR>' },
+  { '<C-f>', '<CMD>PeekOpen<CR>' },
+  { '<C-t>', '<CMD>ToggleTerm<CR>' },
+  { '<C-g>', '<CMD>lua require"scripts.terminals.lazygit".toggle()<CR>' },
   { '<C-e>', '<CMD>lua require"scripts.terminals.broot".open()<CR>' },
   { 'm', '<CMD>lua require"utils.bufferline".bufferline_pick()<CR>' },
   { '<C-_>', '<CMD>CommentToggle<CR>' },
   { '<C-p>', 'vip:CommentToggle<CR>' },
   { 'clp', 'yy:CommentToggle<CR>p' },
   { '<C-c><C-p>', '}o<ESC>2kyipvip:CommentToggle<CR>}p' },
+  { '<Leader>v', '<CMD>lua require"utils.general".vsplit_back("v")<CR>' },
+  { '<Leader>x', '<CMD>lua require"utils.general".vsplit_back("x")<CR>' },
 }
 
 require('utils.keymaps').bind_insert_mode {
@@ -53,35 +54,8 @@ require('utils.keymaps').bind_expr_normal_mode {
   { '_', 'v:lua.split("\\<CMD\\>resize -5\\<CR\\>", "_")' },
   { '+', 'v:lua.split("\\<CMD\\>resize +5\\<CR\\>", "+")' },
   {
-    '<Leader>v',
-    'v:lua.split_nav("\\<CMD\\>lua require\'utils.general\'.vsplit_back(\'v\')\\<CR\\>", "<Leader>v")',
-  },
-  {
-    '<Leader>x',
-    'v:lua.split_nav("\\<CMD\\>lua require\'utils.general\'.vsplit_back(\'x\')\\<CR\\>", "<Leader>x")',
-  },
-  {
-    '<C-h>',
-    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.help()\\<CR\\>", "<CMD>browse oldfiles<CR>")',
-  },
-  {
-    '<C-l>',
-    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.clear()\\<CR\\>", "<C-l>")',
-  },
-  {
     'q',
-    'v:lua.repl_cmd("\\<CMD\\>lua require\'scripts.terminals.slime\'.exit()\\<CR\\>", "<CMD>lua require\'utils.general\'.close()<CR>")',
-  },
-  {
-    '<C-s>',
-    'v:lua.split_no_slime("\\<CMD\\>lua require\'scripts.terminals.slime\'.send(\'n\')\\<CR\\>", "<C-s>")',
-  },
-}
-
-require('utils.keymaps').bind_expr_x_mode {
-  {
-    '<C-s>',
-    'v:lua.split_no_slime("\\<CMD\\>lua require\'scripts.terminals.slime\'.send(\'x\')\\<CR\\>", "<C-s>")',
+    'v:lua.peek_open("\\<CMD\\>PeekClose\\<CR\\>", "<CMD>lua require\'utils.general\'.close()<CR>")',
   },
 }
 
@@ -95,14 +69,10 @@ require('utils.keymaps').bind_expr_command_mode {
 require('utils.keymaps').bind_expr_terminal_mode {
   {
     '<C-t>',
-    'v:lua.toggle_term("/bin/bash", "\\<CMD\\>lua require\'scripts.terminals.bash\'.issue(\'/bin/bash\')\\<CR\\>", "\\<C-t\\>")',
-  },
-  {
-    '<C-f>',
-    'v:lua.toggle_term("glow.sh", "\\<CMD\\>lua require\'scripts.terminals.bash\'.issue(\'glow.sh\')\\<CR\\>", "\\<C-f\\>")',
+    'v:lua.toggle_term("/bin/bash", "\\<CMD\\>ToggleTerm\\<CR\\>", "\\<C-t\\>")',
   },
   {
     '<C-g>',
-    'v:lua.toggle_term("lazygitsh", "\\<CMD\\>lua require\'scripts.terminals.bash\'.issue(\'lazygit\')\\<CR\\>", "\\<C-g\\>")',
+    'v:lua.toggle_term("lazygitsh", "\\<CMD\\>lua require\'scripts.terminals.lazygit\'.toggle()\\<CR\\>", "\\<C-g\\>")',
   },
 }
