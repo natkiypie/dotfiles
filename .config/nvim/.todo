@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
-    <note priority="veryhigh" time="1701918284">
-        Debug lazygit quit and toggle functions
-    </note>
-    <note priority="veryhigh" time="1701924128">
-        Figure out how to assign new buffer number to terminals after exiting terminal in Neovim
+    <note priority="high" time="1702073342">
+        Read up on how to avoid Eslint and Prettier confilicts
     </note>
     <note priority="low" time="1639468104">
         Learn more about lazygit (and git in general) 
