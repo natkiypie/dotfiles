@@ -3,5 +3,5 @@
 .config/nvim/plugin/
 .config/nvim/sessions/*
 .config/nvim/lazy-lock.json
-.config/lazygit/state.yml
 .config/nvim/lua/custom/.todo
+.config/lazygit/state.yml
