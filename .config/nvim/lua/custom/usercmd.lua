@@ -130,7 +130,7 @@ M.toggle_tab = {
 
 M.write = {
   function()
-    vim.api.nvim_command 'write'
+    vim.cmd 'write'
   end,
   'Write buffer to file',
 }
