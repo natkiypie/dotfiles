@@ -1,5 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/natkiypie/.config/nvim
+- /home/natkiypie/.config/nvim/lua/custom
 - /home/natkiypie/.dotfiles/natkiypie
 - /home/natkiypie/dev/cf/js/301/curriculum
 - /home/natkiypie/dev/react

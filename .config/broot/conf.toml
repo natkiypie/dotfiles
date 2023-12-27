@@ -50,10 +50,13 @@ execution = "touch {directory}/{subpath}"
 leave_broot = false
 
 # Navigation
-
 # [[verbs]]
 # key = "ctrl-h"
 # execution = ":toggle_hidden"
+
+[[verbs]]
+key = "ctrl-g"
+execution = ":toggle_git_ignore"
 
 [[verbs]]
 invocation = "home"
@@ -70,14 +73,6 @@ execution = ":focus"
 [[verbs]]
 key = "ctrl-h"
 execution = ":parent"
-
-# [[verbs]]
-# key = "ctrl-l"
-# execution = ":open_stay"
-#
-# [[verbs]]
-# key = "enter"
-# execution = ":open_stay"
 
 [[verbs]]
 key = "ctrl-j"
