@@ -5,7 +5,7 @@ local highlights = require 'custom.highlights'
 local M = {}
 
 M.ui = {
-  theme = 'monochrome',
+  theme = 'mountain',
   tabufline = {
     lazyload = false,
   },
