@@ -1,7 +1,5 @@
 # natkiypie's dotfiles
 
-<img src="assets/images/zero_theorem.jpg" alt="dot files" width="1012">
-
 > We were always alone, never lonely.
 
 ## Table of Contents (Steps to Reproduce in Sequential Order)
@@ -14,10 +12,8 @@
 - [Github CLI](https://github.com/natkiypie/dotfiles#github-cli)
 - [Node Version Manager](https://github.com/natkiypie/dotfiles#node-version-manager)
 - [Node Global Packages](https://github.com/natkiypie/dotfiles#node-global-packages)
-- [Neovim Peripherals](https://github.com/natkiypie/dotfiles#neovim-peripherals)
 - [Dot Files](https://github.com/natkiypie/dotfiles#dot-files)
 - [Neovim](https://github.com/natkiypie/dotfiles#neovim)
-- [Sumneko Lua Language Server](https://github.com/natkiypie/dotfiles#sumneko-lua-language-server)
 - [i3](https://github.com/natkiypie/dotfiles#i3)
 - [Other Useful Settings](https://github.com/natkiypie/dotfiles#other-useful-settings)
 
@@ -393,25 +389,6 @@ npm install -g @fsouza/prettierd commitizen cz-conventional-changelog eslint esl
 </p>
 </details>
 
-## Neovim Peripherals
-
-### Broot
-
-> Get an overview of a directory, even a big one.
-
-- https://dystroy.org/broot
-- https://github.com/Canop/broot
-
-#### Installation & Setup
-
-1. Transfer pre-compiled binary, change file mode to executable for all users & store in location for non-operating system programs:
-
-```
-curl -O https://dystroy.org/broot/download/x86_64-linux/broot; chmod a+x broot; sudo mv broot /usr/local/bin/
-```
-
-2. Refuse shell function install when launching broot for the first time
-
 ### Delta
 
 > A syntax-highlighting pager for git, diff, and grep output.
@@ -446,50 +423,6 @@ sudo dpkg -i git-delta_x.xx.x_amd64.deb; rm *.deb; mv /usr/bin/delta /usr/local/
 
 [diff]
     colorMoved = default
-```
-
-### Glow
-
-> Render markdown on the CLI, with pizzazz!
-
-- https://github.com/charmbracelet/glow
-
-#### Installation & Setup
-
-1. Download archive file `glow_x.x.x_linux_x86_64.tar.gz` & `checksums.txt` found here: https://github.com/charmbracelet/glow/releases
-
-2. Check SHA256 (256-bit) checksums:
-
-```
-grep $(sha256sum glow_x.x.x_linux_x86_64.tar.gz) checksums.txt
-```
-
-- If checksums match, extract executable from archive, clear additional files & store executable in location for non-operating system programs:
-
-```
-tar -zxvf glow_x.x.x_linux_x86_64.tar.gz; rm checksums.txt LICENSE README.md *.tar.gz; sudo mv glow /usr/local/bin/
-```
-
-### Lazygit
-
-> A simple terminal UI for git commands, written in Go with the [gocui](https://github.com/jroimartin/gocui) library.
-
-- https://github.com/jesseduffield/lazygit
-
-#### Installation & Setup
-
-1. Download archive file `lazygit_x.xx.x_Linux_x86_64.tar.gz` & `checksums.txt` found here: https://github.com/jesseduffield/lazygit/releases
-
-2. Check SHA256 (256-bit) checksums:
-
-```
-grep $(sha256sum lazygit_x.xx.x_Linux_x86_64.tar.gz) checksums.txt
-```
-
-- If checksums match, extract executable from archive, clear additional files & store executable in location for non-operating system programs:
-
-```
-tar -zxvf lazygit_x.xx.x_Linux_x86_64.tar.gz; rm checksums.txt LICENSE README.md *.tar.gz; sudo mv lazygit /usr/local/bin/
 ```
 
 ### StyLua
@@ -597,45 +530,6 @@ Press <enter> to keep the current choice[*], or type selection number: 1
 :checkhealth
 ```
 
-## Sumneko Lua Language Server
-
-> [Sumneko lua-language-server](https://github.com/sumneko/lua-language-server) is currently the only full-featured [Lua](https://www.lua.org/) language server available. However, the project's development is becoming increasingly focused on optimization for a single client, [VSCode](https://code.visualstudio.com/). Consequently, its compatibility with other clients, such as [Neovim's built-in language server client](https://neovim.io/doc/user/lsp.html), becomes [increasingly diminished](https://github.com/microsoft/vscode/issues/115872). We need to adjust the installation process accordingly.
-
-- https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
-- https://github.com/natkiypie/dotfiles/commit/caef6de3150356e07958678f3b1df767a9171f92
-
-#### Installation & Setup
-
-1. Make language servers directory:
-
-```
-mkdir $NVIM_CONFIG/language-servers
-```
-
-2. Clone sumneko lua-language-server and revert to compatible state:
-
-```
-cd $NVIM_CONFIG/language-servers; git clone -n https://github.com/sumneko/lua-language-server.git; cd lua-language-server; git checkout -b main 9f236d0485ac4cee2b62261b84ef93f473596495; git branch -d master
-```
-
-3. Update submodules:
-
-```
-git submodule update --init --recursive
-```
-
-4. Compile:
-
-```
-cd 3rd/luamake; ./compile/install.sh
-```
-
-5. Build:
-
-```
-cd ../..; ./3rd/luamake/luamake rebuild
-```
-
 ## i3
 
 > i3 is a tiling window manager, completely written from scratch. The target platforms are GNU/Linux and BSD operating systems, our code is Free and Open Source Software (FOSS) under the BSD license.
@@ -660,29 +554,13 @@ sudo cp -r $DOT_FILES/assets/images/bg.png /usr/share/xfce4/backdrops/; set_back
 sudo add-apt-repository ppa:regolith-linux/release; sudo apt update; sudo apt install i3 i3-gaps
 ```
 
-2. Open `Session and Startup` and go to the `Session` tab:
+2. Open `Session and Startup` and go to the `Session` tab
 
-<p align="center">
-  <img src="assets/images/sessionandstartup.png" alt="session and startup">
-</p>
+3. Change `xfwm4` & `xfdesktop` settings from `Immediately` to `Never` and save session by clicking `Save Session`
 
-3. Change `xfwm4` & `xfdesktop` settings from `Immediately` to `Never` and save session by clicking `Save Session`:
+4. Add i3 to startup applications by going to `Application Autostart` tab
 
-<p align="center">
-  <img src="assets/images/startup.png" alt="startup">
-</p>
-
-4. Add i3 to startup applications by going to `Application Autostart` tab:
-
-<p align="center">
-  <img src="assets/images/sessionandstartupadd.png" alt="session and startup add">
-</p>
-
-5. Open `Keyboard` dialogue, go to `Application Shortcuts` tab & remove keyboard shortcuts:
-
-<p align="center">
-  <img src="assets/images/keyboard.png" alt="keyboard">
-</p>
+5. Open `Keyboard` dialogue, go to `Application Shortcuts` tab & remove keyboard shortcuts
 
 6. Restart computer for changes to take effect:
 
