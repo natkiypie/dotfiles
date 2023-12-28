@@ -11,6 +11,8 @@ M.cmp = {
     ['<C-c>'] = cmp.mapping.complete(),
     ['q'] = cmp.mapping.abort(),
     ['<C-l>'] = cmp.mapping.confirm { select = false },
+    ['<tab>'] = cmp.mapping.confirm { select = false },
+    ['<CR>'] = cmp.mapping.select_next_item(),
   },
 }
 
