@@ -119,15 +119,11 @@ M.tabline = {
 M.telescope = {
   n = {
     ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
-    ['<C-b>'] = {
+    ['<leader>b'] = {
       '<cmd> Telescope git_branches initial_mode=normal <CR>',
       'List branches for current directory, with output from git log --oneline shown in the preview window',
     },
-    ['<C-k>'] = {
-      '<cmd> Telescope keymaps initial_mode=normal <CR>',
-      'Lists normal mode keymappings, runs the selected keymap on <cr>',
-    },
-    ['/'] = {
+    ['<C-s>'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       'Live fuzzy search inside of the currently open buffer',
       opts = { nowait = true },
@@ -147,10 +143,9 @@ M.terminal = {
 
 M.user = {
   n = {
-    ['<C-l>'] = { '<cmd> echo "" <CR>', 'Clear statusline' },
+    -- ['<C-l>'] = { '<cmd> echo "" <CR>', 'Clear statusline' },
     ['<C-n>'] = usercmd.notes,
     ['<C-q>'] = usercmd.close_all,
-    ['<C-s>'] = usercmd.spell,
     ['<C-w>'] = usercmd.write,
     ['M'] = usercmd.mouse,
     ['q'] = expr.quit,

@@ -100,17 +100,6 @@ M.sp_v = {
   'Create a vertical split',
 }
 
-M.spell = {
-  function()
-    if vim.wo.spell == true then
-      vim.wo.spell = false
-    else
-      vim.wo.spell = true
-    end
-  end,
-  'Toggle spell check',
-}
-
 M.toggle_tab = {
   function()
     if vim.fn.tabpagenr() <= 1 then

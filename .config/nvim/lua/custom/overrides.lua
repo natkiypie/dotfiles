@@ -81,27 +81,20 @@ M.telescope = {
     git_branches = {
       mappings = {
         i = {
-          ['<C-b>'] = require('telescope.actions').close,
+          ['<leader>b'] = require('telescope.actions').close,
         },
         n = {
-          ['<C-b>'] = require('telescope.actions').close,
-        },
-      },
-    },
-    keymaps = {
-      mappings = {
-        i = {
-          ['<C-k>'] = require('telescope.actions').close,
-        },
-        n = {
-          ['<C-k>'] = require('telescope.actions').close,
+          ['<leader>b'] = require('telescope.actions').close,
         },
       },
     },
     current_buffer_fuzzy_find = {
       mappings = {
         n = {
-          ['/'] = require('telescope.actions').close,
+          ['<C-s>'] = require('telescope.actions').close,
+        },
+        i = {
+          ['<C-s>'] = require('telescope.actions').close,
         },
       },
     },
