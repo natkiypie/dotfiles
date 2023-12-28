@@ -45,3 +45,10 @@ autocmd('BufEnter', {
   end,
   desc = 'Prevent auto comment new line',
 })
+
+--Spellcheck
+autocmd({ 'FileType', 'BufWinEnter' }, {
+  pattern = { 'gitcommit', 'norg', 'text' },
+  command = 'lua vim.opt_local.spell = true',
+  desc = 'Disable status column in the following files',
+})
