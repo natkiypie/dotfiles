@@ -79,7 +79,6 @@ local plugins = {
         load = {
           ['core.defaults'] = {},
           ['core.concealer'] = {},
-          ['core.keybinds'] = {},
           ['core.dirman'] = {
             config = {
               workspaces = {
