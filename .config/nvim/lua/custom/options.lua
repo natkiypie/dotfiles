@@ -1,3 +1,4 @@
+vim.g.mapleader = ','
 vim.go.hlsearch = false
 vim.go.timeoutlen = 150
 vim.go.laststatus = 0
