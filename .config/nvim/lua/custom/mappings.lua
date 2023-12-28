@@ -75,7 +75,6 @@ M.git = {
     },
     ['<leader>sh'] = { '<cmd> Gitsigns stage_hunk <CR>', 'Stage hunk' },
     ['<leader>rh'] = { '<cmd> Gitsigns undo_stage_hunk <CR>', 'Undo staged hunk' },
-    ['<leader>b'] = { '<cmd> Telescope git_branches initial_mode=normal <CR>', 'View & checkout git branches' },
     ['<C-c>'] = { '<cmd> Git commit <CR>', 'git commit' },
     ['<C-p>'] = { '<cmd> Git push <CR>', 'git push' },
   },
@@ -83,7 +82,7 @@ M.git = {
 
 M.nvim_tree = {
   n = {
-    ['<C-e>'] = { '<cmd> NvimTreeToggle <CR>', 'Toggle nvimtree' },
+    ['<leader>e'] = { '<cmd> NvimTreeToggle <CR>', 'Toggle nvimtree' },
   },
 }
 
@@ -117,6 +116,7 @@ M.tabline = {
 M.telescope = {
   n = {
     ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Toggle telescope find_files' },
+    ['<C-b>'] = { '<cmd> Telescope git_branches initial_mode=normal <CR>', 'View & checkout git branches' },
   },
 }
 
