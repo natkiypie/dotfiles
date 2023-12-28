@@ -1,5 +1,5 @@
 /.config/git/
 /.config/nvim/lua/custom/.todo
 /.config/nvim/.stylua.toml
-/.notes
+/.neorg
 /.stow-local-ignore
