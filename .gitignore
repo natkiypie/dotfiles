@@ -3,4 +3,5 @@
 /.config/nvim/.luarc.json
 /.config/nvim/.stylua.toml
 /.neorg/
+/.neorg/*
 /.stow-local-ignore
