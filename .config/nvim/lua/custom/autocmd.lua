@@ -27,6 +27,17 @@ autocmd('LspAttach', {
   desc = 'Fix semantic tokens for lsp',
 })
 
+--[No Name] buffers,
+autocmd('BufHidden', {
+  callback = function(event)
+    if event.file == '' and vim.bo[event.buf].buftype == '' and not vim.bo[event.buf].modified then
+      vim.schedule(function()
+        pcall(vim.api.nvim_buf_delete, event.buf, {})
+      end)
+    end
+  end,
+})
+
 --Nvim-Comment
 autocmd('BufEnter', {
   callback = function()
