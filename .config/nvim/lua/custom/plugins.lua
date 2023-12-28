@@ -66,6 +66,28 @@ local plugins = {
     end,
   },
   {
+    'nvim-neorg/neorg',
+    cmd = 'Neorg',
+    build = ':Neorg sync-parsers',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('neorg').setup {
+        load = {
+          ['core.defaults'] = {},
+          ['core.concealer'] = {},
+          ['core.keybinds'] = {},
+          ['core.dirman'] = {
+            config = {
+              workspaces = {
+                notes = '~/.notes',
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
+  {
     'karb94/neoscroll.nvim',
     keys = { '<C-u>', '<C-d>' },
     config = function()
