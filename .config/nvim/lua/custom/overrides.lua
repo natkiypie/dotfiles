@@ -86,6 +86,26 @@ M.telescope = {
         },
       },
     },
+    keymaps = {
+      mappings = {
+        i = {
+          ['<C-k>'] = require('telescope.actions').close,
+        },
+        n = {
+          ['<C-k>'] = require('telescope.actions').close,
+        },
+      },
+    },
+    current_buffer_fuzzy_find = {
+      mappings = {
+        i = {
+          ['/'] = require('telescope.actions').close,
+        },
+        n = {
+          ['/'] = require('telescope.actions').close,
+        },
+      },
+    },
   },
 }
 

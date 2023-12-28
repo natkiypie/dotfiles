@@ -34,12 +34,16 @@ M.comments = {
   },
 }
 
-M.cmd = {
+M.command = {
   n = {
     ['<C-h>'] = { '<cmd> lua print(vim.fn.expand("%:p")) <CR>', 'Print current working directory' },
   },
   c = {
-    ['jk'] = { '<esc>', 'Escape command mode', opts = { nowait = true } },
+    -- ['jk'] = { '<esc>', 'Escape command mode' },
+    ['jk'] = { '<esc>', 'Escape insert mode', opts = { nowait = true } },
+    ['K'] = { '<up>', 'Search up through command history' },
+    ['J'] = { '<down>', 'Search down through command history' },
+    ['L'] = { '<CR>', 'Select item in command history' },
   },
 }
 
@@ -115,8 +119,20 @@ M.tabline = {
 
 M.telescope = {
   n = {
-    ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Toggle telescope find_files' },
-    ['<C-b>'] = { '<cmd> Telescope git_branches initial_mode=normal <CR>', 'View & checkout git branches' },
+    ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
+    ['<C-b>'] = {
+      '<cmd> Telescope git_branches initial_mode=normal <CR>',
+      'List branches for current directory, with output from git log --oneline shown in the preview window',
+    },
+    ['<C-k>'] = {
+      '<cmd> Telescope keymaps initial_mode=normal <CR>',
+      'Lists normal mode keymappings, runs the selected keymap on <cr>',
+    },
+    ['/'] = {
+      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
+      'Live fuzzy search inside of the currently open buffer',
+      opts = { nowait = true },
+    },
   },
 }
 
