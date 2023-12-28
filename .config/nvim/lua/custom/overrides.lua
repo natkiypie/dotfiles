@@ -98,9 +98,6 @@ M.telescope = {
     },
     current_buffer_fuzzy_find = {
       mappings = {
-        i = {
-          ['/'] = require('telescope.actions').close,
-        },
         n = {
           ['/'] = require('telescope.actions').close,
         },
