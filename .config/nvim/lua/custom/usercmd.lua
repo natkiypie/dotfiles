@@ -137,7 +137,8 @@ M.write = {
 
 M.notes = {
   function()
-    vim.cmd 'Neorg workspace notes'
+    -- vim.cmd 'Neorg workspace notes'
+    vim.cmd 'Neorg index'
   end,
   'Go to Neorg notes workspace',
 }

@@ -81,6 +81,7 @@ local plugins = {
               workspaces = {
                 notes = '~/.neorg',
               },
+              default_workspace = 'notes',
             },
           },
         },
