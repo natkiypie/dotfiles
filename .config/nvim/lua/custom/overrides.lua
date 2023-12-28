@@ -14,6 +14,14 @@ M.cmp = {
   },
 }
 
+M.gitsigns = {
+  on_attach = function(bufnr)
+    if vim.api.nvim_buf_get_name(bufnr):match 'norg' then
+      return false
+    end
+  end,
+}
+
 M.mason = {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',

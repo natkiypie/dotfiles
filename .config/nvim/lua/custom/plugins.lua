@@ -27,6 +27,10 @@ local plugins = {
     end,
   },
   {
+    'lewis6991/gitsigns.nvim',
+    opts = overrides.gitsigns,
+  },
+  {
     'ggandor/leap.nvim',
     lazy = false,
     dependencies = { 'tpope/vim-repeat' },
