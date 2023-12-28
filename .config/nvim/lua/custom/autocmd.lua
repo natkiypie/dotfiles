@@ -16,6 +16,7 @@ autocmd('User', {
     vim.cmd.hi('Cursor', 'blend=0')
     vim.opt.guicursor:remove { 'a:Cursor/lCursor' }
   end,
+  desc = 'Workaround for the duplicate cursor bug when autojumping until neovim/neovim#20793 is fixed',
 })
 
 --LSP

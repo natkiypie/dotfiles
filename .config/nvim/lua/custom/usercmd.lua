@@ -128,6 +128,13 @@ M.toggle_tab = {
   'Fill window with buffer',
 }
 
+M.toggle_term = {
+  function()
+    require('nvterm.terminal').toggle 'horizontal'
+  end,
+  'Toggle horizontal term',
+}
+
 M.write = {
   function()
     vim.cmd 'write'

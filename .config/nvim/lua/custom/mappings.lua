@@ -137,21 +137,11 @@ M.telescope = {
 
 M.terminal = {
   n = {
-    ['<C-t>'] = {
-      function()
-        require('nvterm.terminal').toggle 'horizontal'
-      end,
-      'Toggle horizontal term',
-    },
+    ['<C-t>'] = usercmd.toggle_term,
   },
   t = {
     ['<del>'] = { '<C-\\><C-n>', 'Escape insert mode' },
-    ['<C-t>'] = {
-      function()
-        require('nvterm.terminal').toggle 'horizontal'
-      end,
-      'Toggle horizontal term',
-    },
+    ['<C-t>'] = usercmd.toggle_term,
   },
 }
 
