@@ -7,6 +7,15 @@ autocmd('User', {
     vim.cmd.hi('Cursor', 'blend=100')
     vim.opt.guicursor:append { 'a:Cursor/lCursor' }
   end,
+  desc = 'Workaround for the duplicate cursor bug when autojumping until neovim/neovim#20793 is fixed',
+})
+
+autocmd('User', {
+  pattern = 'LeapLeave',
+  callback = function()
+    vim.cmd.hi('Cursor', 'blend=0')
+    vim.opt.guicursor:remove { 'a:Cursor/lCursor' }
+  end,
 })
 
 --LSP
@@ -16,14 +25,6 @@ autocmd('LspAttach', {
     client.server_capabilities.semanticTokensProvider = nil
   end,
   desc = 'Fix semantic tokens for lsp',
-})
-
-autocmd('User', {
-  pattern = 'LeapLeave',
-  callback = function()
-    vim.cmd.hi('Cursor', 'blend=0')
-    vim.opt.guicursor:remove { 'a:Cursor/lCursor' }
-  end,
 })
 
 --Nvim-Comment
