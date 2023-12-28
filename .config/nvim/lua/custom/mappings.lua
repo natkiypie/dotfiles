@@ -49,6 +49,10 @@ M.disabled = {
     ['<A-i>'] = '',
     ['<A-v>'] = '',
     ['<C-c>'] = '',
+    ['<C-h>'] = '',
+    ['<C-j>'] = '',
+    ['<C-k>'] = '',
+    ['<C-l>'] = '',
     ['<C-n>'] = '',
     ['<C-w>'] = '',
     ['<leader>b'] = '',
@@ -138,12 +142,13 @@ M.terminal = {
 
 M.user = {
   n = {
-    ['q'] = expr.quit,
+    ['<C-l>'] = { '<cmd> echo "" <CR>', 'Clear statusline' },
+    ['<C-n>'] = usercmd.notes,
     ['<C-q>'] = usercmd.close_all,
+    ['<C-s>'] = usercmd.spell,
     ['<C-w>'] = usercmd.write,
     ['M'] = usercmd.mouse,
-    ['<C-s>'] = usercmd.spell,
-    ['<C-n>'] = usercmd.notes,
+    ['q'] = expr.quit,
   },
   i = {
     ['jk'] = { '<esc>', 'Escape insert mode', opts = { nowait = true } },
