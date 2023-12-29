@@ -9,7 +9,6 @@ M.cmp = {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-c>'] = cmp.mapping.complete(),
-    ['q'] = cmp.mapping.abort(),
     ['<C-l>'] = cmp.mapping.confirm { select = false },
     ['<tab>'] = cmp.mapping.confirm { select = false },
     ['<CR>'] = cmp.mapping.select_next_item(),
