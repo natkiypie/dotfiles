@@ -26,6 +26,7 @@ M.comments = {
     ['<C-_>'] = { '<cmd>CommentToggle <CR>', 'Toggle comment linewise' },
     ['clp'] = { 'yy:CommentToggle <CR>p', 'Comment line and paste below' },
     ['<C-c><C-p>'] = { '}o<ESC>2kyipvip:CommentToggle <CR>}p', 'Comment block and paste below' },
+    ['cip'] = { 'vip:CommentToggle<CR>', 'Comment block' },
   },
   v = {
     ['<C-_>'] = { ':CommentToggle <CR>', 'Toggle linewise comment on visual selection' },
