@@ -1,5 +1,30 @@
 local M = {}
 
+--Git
+M.git = {
+  function()
+    if vim.bo.filetype ~= 'fugitive' then
+      return '<cmd> tab Git <CR>'
+    else
+      return '<cmd> tabc <CR>'
+    end
+  end,
+  'Call any arbitrary Git command',
+  opts = { expr = true },
+}
+
+M.diff = {
+  function()
+    if vim.api.nvim_win_get_option(0, 'diff') then
+      return '<cmd> tabc <CR>'
+    else
+      return '<cmd> tab Gvdiffsplit <CR>'
+    end
+  end,
+  'Show changes between commits, commit and working tree, etc',
+  opts = { expr = true },
+}
+
 -- Splits:
 M.sp_right = {
   function()
@@ -176,31 +201,6 @@ M.wm_close = {
     end
   end,
   'Close wildmenu',
-  opts = { expr = true },
-}
-
---Git
-M.git = {
-  function()
-    if vim.bo.filetype ~= 'fugitive' then
-      return '<cmd> tab Git <CR>'
-    else
-      return '<cmd> tabc <CR>'
-    end
-  end,
-  'Call any arbitrary Git command',
-  opts = { expr = true },
-}
-
-M.diff = {
-  function()
-    if vim.api.nvim_win_get_option(0, 'diff') then
-      return '<cmd> tabc <CR>'
-    else
-      return '<cmd> tab Gvdiffsplit <CR>'
-    end
-  end,
-  'Show changes between commits, commit and working tree, etc',
   opts = { expr = true },
 }
 
