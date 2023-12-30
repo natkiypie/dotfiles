@@ -79,7 +79,7 @@ M.git = {
     },
     ['<leader>sh'] = { '<cmd> Gitsigns stage_hunk <CR>', 'Stage hunk' },
     ['<leader>rh'] = { '<cmd> Gitsigns undo_stage_hunk <CR>', 'Undo staged hunk' },
-    ['<C-c>'] = { '<cmd> Git commit <CR>', 'git commit' },
+    ['<leader>c'] = { '<cmd> Git commit <CR>', 'git commit' },
     ['<C-p>'] = { '<cmd> Git push <CR>', 'git push' },
   },
 }
