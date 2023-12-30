@@ -131,11 +131,4 @@ M.write = {
   'Write buffer to file',
 }
 
-M.notes = {
-  function()
-    vim.cmd 'Neorg index'
-  end,
-  'Go to Neorg notes workspace',
-}
-
 return M
