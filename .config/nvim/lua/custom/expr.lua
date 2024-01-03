@@ -37,7 +37,7 @@ M.neorg = {
   opts = { expr = true },
 }
 
--- Splits:
+--Splits:
 M.sp_right = {
   function()
     local minwin = 1
@@ -52,7 +52,7 @@ M.sp_right = {
   opts = { expr = true },
 }
 
--- Usercmd:
+--Usercmd:
 M.quit = {
   function()
     if require('nvim-tree.view').is_visible() then
@@ -167,7 +167,7 @@ M.sp_vdecrease = {
   opts = { expr = true },
 }
 
--- Wildmenu:
+--Wildmenu:
 M.wm_up = {
   function()
     if vim.fn.wildmenumode() == 1 then
