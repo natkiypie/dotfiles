@@ -94,7 +94,7 @@ M.git = {
 
 M.nvim_tree = {
   n = {
-    ['<leader>e'] = { '<cmd> NvimTreeToggle <CR>', 'Toggle nvimtree' },
+    ['<C-e>'] = { '<cmd> NvimTreeToggle <CR>', 'Toggle nvimtree' },
   },
 }
 
