@@ -1,11 +1,14 @@
 local M = {}
 
-M.override = {}
+M.override = {
+  Visual = { bg = 'none', fg = '#c1f12e' },
+}
 
 M.add = {}
 
 M.leap = {
   vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' }),
+
   vim.api.nvim_set_hl(0, 'LeapMatch', {
     fg = 'white',
     bold = true,
@@ -17,6 +20,7 @@ M.leap = {
     bold = true,
     nocombine = true,
   }),
+
   vim.api.nvim_set_hl(0, 'LeapLabelSecondary', {
     fg = '#399d9f',
     bold = true,

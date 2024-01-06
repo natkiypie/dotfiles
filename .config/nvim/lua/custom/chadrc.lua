@@ -6,9 +6,11 @@ local M = {}
 
 M.ui = {
   theme = 'mountain',
+
   tabufline = {
     lazyload = false,
   },
+
   hl_override = highlights.override,
   hl_add = highlights.add,
 }
