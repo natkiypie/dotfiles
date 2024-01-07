@@ -25,6 +25,21 @@ M.diff = {
   opts = { expr = true },
 }
 
+--Quit:
+M.quit = {
+  function()
+    if require('nvim-tree.view').is_visible() then
+      return '<cmd> NvimTreeClose <CR>'
+    elseif require('peek').is_open() then
+      return '<cmd> PeekClose <CR>'
+    else
+      return '<cmd> lua require"custom.userfn".close() <CR>'
+    end
+  end,
+  'Close NvimTree, Peek preview, buffer, or quit',
+  opts = { expr = true },
+}
+
 --Splits:
 M.sp_right = {
   function()
@@ -37,21 +52,6 @@ M.sp_right = {
     end
   end,
   'Move to right split',
-  opts = { expr = true },
-}
-
---Usercmd:
-M.quit = {
-  function()
-    if require('nvim-tree.view').is_visible() then
-      return '<cmd> NvimTreeClose <CR>'
-    elseif require('peek').is_open() then
-      return '<cmd> PeekClose <CR>'
-    else
-      return '<cmd> lua require"custom.usercmd".close() <CR>'
-    end
-  end,
-  'Close NvimTree, Peek preview, buffer, or quit',
   opts = { expr = true },
 }
 

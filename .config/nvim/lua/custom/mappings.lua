@@ -1,5 +1,5 @@
 local expr = require 'custom.expr'
-local usercmd = require 'custom.usercmd'
+local userfn = require 'custom.userfn'
 
 local M = {}
 
@@ -7,8 +7,8 @@ M.buffers = {
   n = {
     ['L'] = { '<cmd> bn <CR>', 'Go to next buffer' },
     ['H'] = { '<cmd> bp <CR>', 'Go to previous buffer' },
-    ['<right>'] = usercmd.buf_right,
-    ['<left>'] = usercmd.buf_left,
+    ['<right>'] = userfn.buf_right,
+    ['<left>'] = userfn.buf_left,
   },
 }
 
@@ -106,8 +106,8 @@ M.peek = {
 
 M.splits = {
   n = {
-    ['<leader>v'] = usercmd.sp_v,
-    ['<leader>x'] = usercmd.sp_h,
+    ['<leader>v'] = userfn.sp_v,
+    ['<leader>x'] = userfn.sp_h,
     ['>'] = expr.sp_right,
     ['<'] = expr.sp_left,
     ['K'] = expr.sp_up,
@@ -121,7 +121,7 @@ M.splits = {
 
 M.tabline = {
   n = {
-    ['<space>'] = usercmd.toggle_tab,
+    ['<space>'] = userfn.toggle_tab,
   },
 }
 
@@ -142,20 +142,20 @@ M.telescope = {
 
 M.terminal = {
   n = {
-    ['<C-t>'] = usercmd.toggle_term,
+    ['<C-t>'] = userfn.toggle_term,
   },
   t = {
     ['<del>'] = { '<C-\\><C-n>', 'Escape insert mode' },
-    ['<C-t>'] = usercmd.toggle_term,
+    ['<C-t>'] = userfn.toggle_term,
   },
 }
 
 M.user = {
   n = {
     ['<C-l>'] = { '<cmd> echo "" <CR>', 'Clear command line' },
-    ['<C-q>'] = usercmd.close_all,
-    ['<C-w>'] = usercmd.write,
-    ['M'] = usercmd.mouse,
+    ['<C-q>'] = userfn.close_all,
+    ['<C-w>'] = userfn.write,
+    ['M'] = userfn.mouse,
     ['q'] = expr.quit,
   },
   i = {
