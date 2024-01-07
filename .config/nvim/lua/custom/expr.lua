@@ -25,18 +25,6 @@ M.diff = {
   opts = { expr = true },
 }
 
-M.neorg = {
-  function()
-    if vim.bo.filetype == 'norg' then
-      return '<cmd> Neorg return <CR>'
-    else
-      return '<cmd> Neorg index <CR>'
-    end
-  end,
-  'Toggle Neorg notes',
-  opts = { expr = true },
-}
-
 --Splits:
 M.sp_right = {
   function()

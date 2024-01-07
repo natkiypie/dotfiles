@@ -70,15 +70,6 @@ local plugins = {
     end,
   },
   {
-    'nvim-neorg/neorg',
-    cmd = 'Neorg',
-    build = ':Neorg sync-parsers',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require 'custom.configs.neorg'
-    end,
-  },
-  {
     'karb94/neoscroll.nvim',
     keys = { '<C-u>', '<C-d>' },
     config = function()
