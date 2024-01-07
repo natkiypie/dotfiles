@@ -8,7 +8,7 @@ neorg.setup {
     ['core.dirman'] = {
       config = {
         workspaces = {
-          notes = '~/.neorg',
+          notes = '$HOME/.neorg',
         },
         default_workspace = 'notes',
       },
