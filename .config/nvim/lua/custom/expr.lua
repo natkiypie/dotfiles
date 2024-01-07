@@ -59,8 +59,6 @@ M.quit = {
       return '<cmd> NvimTreeClose <CR>'
     elseif require('peek').is_open() then
       return '<cmd> PeekClose <CR>'
-    elseif vim.bo.filetype == 'norg' then
-      return '<cmd> Neorg return <CR>'
     else
       return '<cmd> lua require"custom.usercmd".close() <CR>'
     end
