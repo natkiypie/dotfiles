@@ -84,7 +84,6 @@ M.telescope = {
         },
         n = {
           ['<leader>b'] = require('telescope.actions').close,
-          ['m'] = require('telescope.actions').git_merge_branch,
         },
       },
     },
