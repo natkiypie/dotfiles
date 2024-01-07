@@ -3,7 +3,7 @@ local neorg = require 'neorg'
 neorg.setup {
   load = {
     ['core.defaults'] = {},
-    ['core.completion'] = {},
+    -- ['core.completion'] = {}, -- Wait until wiki links are working to see documentation
     ['core.concealer'] = {},
     ['core.dirman'] = {
       config = {
