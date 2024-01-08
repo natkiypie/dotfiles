@@ -4,7 +4,7 @@ local usercmd = vim.api.nvim_create_user_command
 usercmd('Cppath', function()
   local path = vim.fn.expand '%:p'
   vim.fn.setreg('+', path)
-  vim.notify('Copied "' .. path .. '" to the clipboard!')
+  vim.notify('Copied "' .. path .. '" to the clipboard')
 end, {})
 
 --Notes
@@ -17,7 +17,7 @@ local function clear_prompt()
 end
 
 local input_opts = {
-  prompt = 'New note: ',
+  prompt = 'Create or edit note: ',
   default = notes_dir,
   completion = 'file',
 }
@@ -29,7 +29,7 @@ usercmd('NewNote', function()
       return
     end
     if vim.fn.filereadable(new_file_path) == 1 then
-      vim.notify('Cannot create note: file already exists', vim.log.levels.WARN, {})
+      vim.cmd('edit' .. new_file_path)
       return
     end
     if string.match(new_file_path, '.md') == nil and string.match(new_file_path, '.txt') == nil then

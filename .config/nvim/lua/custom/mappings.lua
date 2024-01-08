@@ -94,7 +94,7 @@ M.git = {
 
 M.notes = {
   n = {
-    ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create a note' },
+    ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create or edit a note' },
   },
 }
 
@@ -130,11 +130,7 @@ M.tabline = {
     ['<space>'] = userfn.toggle_tab,
   },
 }
--- local builtin = require("telescope.builtin")
--- local utils = require("telescope.utils")
 
--- ["<leader>ff"] = { function() builtin.find_files({ cwd = utils.buffer_dir() }) end,
--- desc = "Find files in cwd" }
 M.telescope = {
   n = {
     ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
