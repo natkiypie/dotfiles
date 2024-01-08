@@ -131,4 +131,34 @@ M.write = {
   'Write buffer to file',
 }
 
+function M.clear_prompt()
+  if vim.opt.cmdheight._value ~= 0 then
+    vim.cmd 'normal! :'
+  end
+end
+
+function M.mkdir(path)
+  if vim.fn.isdirectory(path) == 0 then
+    vim.cmd('silent exec "!mkdir ' .. path .. '"')
+  end
+end
+
+function M.touch(path)
+  if vim.fn.filereadable(path) == 1 then
+    vim.cmd('edit' .. path)
+  else
+    vim.cmd('silent exec "!touch ' .. path .. '"')
+    vim.cmd('edit' .. path)
+    vim.cmd 'startinsert'
+  end
+end
+
+function M.check_file_ext(file, ext)
+  if string.match(file, ext) == nil then
+    return false
+  else
+    return true
+  end
+end
+
 return M

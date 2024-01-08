@@ -1,4 +1,5 @@
 local usercmd = vim.api.nvim_create_user_command
+local userfn = require 'custom.userfn'
 
 --File Manipulation
 usercmd('Cppath', function()
@@ -8,36 +9,23 @@ usercmd('Cppath', function()
 end, {})
 
 --Notes
-local notes_dir = vim.fn.expand '$HOME/.notes/'
-
-local function clear_prompt()
-  if vim.opt.cmdheight._value ~= 0 then
-    vim.cmd 'normal! :'
-  end
-end
-
-local input_opts = {
-  prompt = 'Create or edit note: ',
-  default = notes_dir,
-  completion = 'file',
-}
-
 usercmd('NewNote', function()
+  local notes_dir = vim.fn.expand '$HOME/.notes/'
+  local input_opts = {
+    prompt = 'Create or edit note: ',
+    default = notes_dir,
+    completion = 'file',
+  }
+  userfn.clear_prompt()
+  userfn.mkdir(notes_dir)
   vim.ui.input(input_opts, function(new_file_path)
-    clear_prompt()
+    userfn.clear_prompt()
     if not new_file_path or new_file_path == notes_dir then
       return
     end
-    if vim.fn.filereadable(new_file_path) == 1 then
-      vim.cmd('edit' .. new_file_path)
-      return
+    if not userfn.check_file_ext(new_file_path, '.md') and not userfn.check_file_ext(new_file_path, '.txt') then
+      return vim.notify('Cannot create note: file must be of type "markdown" or "text"', vim.log.levels.WARN, {})
     end
-    if string.match(new_file_path, '.md') == nil and string.match(new_file_path, '.txt') == nil then
-      vim.notify('Cannot create note: file must be of type "markdown" or "text"', vim.log.levels.WARN, {})
-      return
-    end
-    vim.cmd('silent exec "!touch ' .. new_file_path .. '"')
-    vim.cmd('edit' .. new_file_path)
-    vim.cmd 'startinsert'
+    userfn.touch(new_file_path)
   end)
 end, {})
