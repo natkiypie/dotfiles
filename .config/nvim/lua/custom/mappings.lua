@@ -92,6 +92,12 @@ M.git = {
   },
 }
 
+M.notes = {
+  n = {
+    ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create a note' },
+  },
+}
+
 M.nvim_tree = {
   n = {
     ['<C-e>'] = { '<cmd> NvimTreeToggle <CR>', 'Toggle nvimtree' },
@@ -124,13 +130,21 @@ M.tabline = {
     ['<space>'] = userfn.toggle_tab,
   },
 }
+-- local builtin = require("telescope.builtin")
+-- local utils = require("telescope.utils")
 
+-- ["<leader>ff"] = { function() builtin.find_files({ cwd = utils.buffer_dir() }) end,
+-- desc = "Find files in cwd" }
 M.telescope = {
   n = {
     ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
     ['<leader>b'] = {
       '<cmd> Telescope git_branches initial_mode=normal <CR>',
       'List branches for current directory, with output from git log --oneline shown in the preview window',
+    },
+    ['<C-n>'] = {
+      '<cmd> lua require"telescope.builtin".find_files({ cwd = "$HOME/.notes", initial_mode = "normal" }) <CR>',
+      'Search for notes',
     },
     ['<C-s>'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
