@@ -162,7 +162,7 @@ M.terminal = {
 
 M.user = {
   n = {
-    ['<C-l>'] = { '<cmd> echo "" <CR>', 'Clear command line' },
+    ['<C-l>'] = { '<cmd> normal! : <CR>', 'Clear command line' },
     ['<C-q>'] = userfn.close_all,
     ['<C-w>'] = userfn.write,
     ['M'] = userfn.mouse,
