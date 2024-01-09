@@ -35,6 +35,15 @@ local function close_split()
   end
 end
 
+local function set_contains(t, e)
+  for i = 1, #t do
+    if t[i] == e then
+      return true
+    end
+  end
+  return false
+end
+
 local function vsplit_back(split)
   if split == 'x' then
     vim.cmd 'split'
@@ -46,12 +55,39 @@ local function vsplit_back(split)
   end
 end
 
+function M.clear_cmdline()
+  if vim.opt.cmdheight._value ~= 0 then
+    vim.cmd 'normal! :'
+  end
+end
+
 function M.close()
   if #vim.fn.tabpagebuflist() > 1 then
     close_split()
   else
     close_float_win()
   end
+end
+
+function M.mkdir(dir)
+  if vim.fn.isdirectory(dir) == 0 then
+    vim.fn.mkdir(dir)
+  end
+end
+
+function M.mkfile(file)
+  if vim.fn.filereadable(file) == 1 then
+    vim.cmd('edit' .. file)
+  else
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ':p:h'), 'p')
+    vim.cmd('edit' .. file)
+    vim.cmd 'startinsert'
+  end
+end
+
+function M.is_filetype(file, filetypes)
+  local ext = vim.fn.fnamemodify(file, ':e')
+  return set_contains(filetypes, ext)
 end
 
 M.close_all = {
@@ -130,35 +166,5 @@ M.write = {
   end,
   'Write buffer to file',
 }
-
-function M.clear_prompt()
-  if vim.opt.cmdheight._value ~= 0 then
-    vim.cmd 'normal! :'
-  end
-end
-
-function M.mkdir(path)
-  if vim.fn.isdirectory(path) == 0 then
-    vim.cmd('silent exec "!mkdir ' .. path .. '"')
-  end
-end
-
-function M.touch(path)
-  if vim.fn.filereadable(path) == 1 then
-    vim.cmd('edit' .. path)
-  else
-    vim.cmd('silent exec "!touch ' .. path .. '"')
-    vim.cmd('edit' .. path)
-    vim.cmd 'startinsert'
-  end
-end
-
-function M.check_file_ext(file, ext)
-  if string.match(file, ext) == nil then
-    return false
-  else
-    return true
-  end
-end
 
 return M

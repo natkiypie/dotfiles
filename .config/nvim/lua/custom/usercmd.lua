@@ -16,16 +16,16 @@ usercmd('NewNote', function()
     default = notes_dir,
     completion = 'file',
   }
-  userfn.clear_prompt()
+  userfn.clear_cmdline()
   userfn.mkdir(notes_dir)
   vim.ui.input(input_opts, function(new_file_path)
-    userfn.clear_prompt()
+    userfn.clear_cmdline()
     if not new_file_path or new_file_path == notes_dir then
       return
     end
-    if not userfn.check_file_ext(new_file_path, '.md') and not userfn.check_file_ext(new_file_path, '.txt') then
+    if not userfn.is_filetype(new_file_path, { 'md', 'txt' }) then
       return vim.notify('Cannot create note: file must be of type "markdown" or "text"', vim.log.levels.WARN, {})
     end
-    userfn.touch(new_file_path)
+    userfn.mkfile(new_file_path)
   end)
 end, {})
