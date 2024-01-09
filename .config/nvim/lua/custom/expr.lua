@@ -30,8 +30,6 @@ M.quit = {
   function()
     if require('nvim-tree.view').is_visible() then
       return '<cmd> NvimTreeClose <CR>'
-    elseif require('peek').is_open() then
-      return '<cmd> PeekClose <CR>'
     else
       return '<cmd> lua require"custom.userfn".close() <CR>'
     end
