@@ -136,7 +136,7 @@ M.sp_v = {
   'Create a vertical split',
 }
 
-M.toggle_tab = {
+M.toggle_tabline = {
   function()
     if vim.fn.tabpagenr() <= 1 then
       vim.cmd 'tab split'

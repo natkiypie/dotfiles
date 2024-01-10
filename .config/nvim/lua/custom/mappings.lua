@@ -127,7 +127,7 @@ M.splits = {
 
 M.tabline = {
   n = {
-    ['<space>'] = userfn.toggle_tab,
+    ['<CR>'] = userfn.toggle_tabline,
   },
 }
 
