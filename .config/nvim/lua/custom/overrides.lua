@@ -2,6 +2,7 @@ local M = {}
 
 local cmp = require 'cmp'
 
+--Cmp
 M.cmp = {
   mapping = cmp.mapping.preset.insert {
     ['<C-k>'] = cmp.mapping.select_prev_item(),
@@ -15,6 +16,7 @@ M.cmp = {
   },
 }
 
+--Git Signs
 M.gitsigns = {
   on_attach = function(bufnr)
     if vim.api.nvim_buf_get_name(bufnr):match 'norg' then
@@ -23,6 +25,7 @@ M.gitsigns = {
   end,
 }
 
+--Mason
 M.mason = {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
@@ -30,6 +33,7 @@ M.mason = {
   },
 }
 
+--Nvim Tree
 M.nvimtree = {
   actions = {
     open_file = {
@@ -52,6 +56,7 @@ M.nvimtree = {
   end,
 }
 
+--Telescope
 M.telescope = {
   defaults = {
     mappings = {
