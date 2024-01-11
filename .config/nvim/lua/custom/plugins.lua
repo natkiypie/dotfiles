@@ -143,6 +143,10 @@ local plugins = {
     opts = overrides.telescope,
   },
   {
+    'nvim-telescope/telescope-symbols.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+  {
     'tpope/vim-fugitive',
     event = { 'BufReadPre', 'BufNewFile' },
   },
