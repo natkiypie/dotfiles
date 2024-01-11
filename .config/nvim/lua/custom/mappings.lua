@@ -112,8 +112,8 @@ M.peek = {
 
 M.splits = {
   n = {
-    ['<leader>v'] = userfn.sp_v,
-    ['<leader>x'] = userfn.sp_h,
+    ['<Space>v'] = userfn.sp_v,
+    ['<Space>x'] = userfn.sp_h,
     ['>'] = expr.sp_right,
     ['<'] = expr.sp_left,
     ['K'] = expr.sp_up,
