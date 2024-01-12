@@ -4,6 +4,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 unset MANPATH
 export MANPATH=":$NPM_PACKAGES/share/man:$(manpath)"
+unset MANPATH
+export MANPATH=":$OPAM_CONFIG_ENV/man:$(manpath)"
 export EDITOR="nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 export NVIM_CONFIG="$HOME/.config/nvim/lua/custom"
@@ -11,7 +13,6 @@ export DOT_FILES="$HOME/.dotfiles/$USER"
 export DENO_INSTALL="/home/natkiypie/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export OPAM_CONFIG_ENV="$HOME/.opam/default"
-export MANPATH=":$OPAM_CONFIG_ENV/man:$(manpath)"
 PATH=$(echo "$PATH" | sed -e 's/:\/snap\/bin$//')
 PATH=$PATH:$HOME/.scripts && export PATH
 PATH=$PATH:$HOME/.scripts/initialization && export PATH
