@@ -166,7 +166,7 @@ M.user = {
     ['<C-l>'] = { '<cmd> normal! : <CR>', 'Clear command line' },
     ['<C-q>'] = userfn.close_all,
     ['<C-w>'] = userfn.write,
-    ['M'] = userfn.mouse,
+    ['<leader>ms'] = userfn.mouse,
     ['q'] = expr.quit,
   },
   i = {
