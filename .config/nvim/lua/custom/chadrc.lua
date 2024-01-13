@@ -8,7 +8,7 @@ M.ui = {
   theme = 'mountain',
 
   tabufline = {
-    lazyload = false,
+    enabled = false,
   },
 
   hl_override = highlights.override,

@@ -127,7 +127,7 @@ M.splits = {
 
 M.tabline = {
   n = {
-    ['<CR>'] = userfn.toggle_tabline,
+    ['<CR>'] = userfn.toggle_fullscreen,
   },
 }
 
@@ -157,7 +157,7 @@ M.terminal = {
   t = {
     ['<del>'] = { '<C-\\><C-n>', 'Escape insert mode' },
     ['<C-t>'] = userfn.toggle_term,
-    ['<C-f>'] = userfn.toggle_tabline,
+    ['<C-f>'] = userfn.toggle_fullscreen,
   },
 }
 

@@ -3,6 +3,7 @@ local M = {}
 M.override = {
   Visual = { bg = 'none', fg = '#c1f12e' },
   Comment = { fg = '#4f4f4f' },
+  StatusLine = { bg = 'none' },
 }
 
 M.add = {}

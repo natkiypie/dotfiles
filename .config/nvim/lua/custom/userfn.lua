@@ -1,11 +1,5 @@
 local M = {}
 
-local tabline = 2
-
-local function exec_arg(a, b)
-  vim.cmd(string.gsub(string.gsub('a b', 'b', b), 'a', a))
-end
-
 local function close_win_on_last_buf()
   local buffers = vim.fn.len(vim.fn.filter(vim.fn.range(1, vim.fn.bufnr '$'), 'buflisted(v:val)'))
   if buffers == 1 then
@@ -136,18 +130,12 @@ M.sp_v = {
   'Create a vertical split',
 }
 
-M.toggle_tabline = {
+M.toggle_fullscreen = {
   function()
     if vim.fn.tabpagenr() <= 1 then
       vim.cmd 'tab split'
-      tabline = 0
-      vim.go.showtabline = tabline
     else
-      local originbufferid = vim.fn.bufnr ''
       vim.cmd 'tabc'
-      tabline = 2
-      vim.go.showtabline = tabline
-      exec_arg('buffer', originbufferid)
     end
   end,
   'Fill window with buffer',

@@ -39,6 +39,14 @@ autocmd('BufHidden', {
   end,
 })
 
+--Nvchad/ui
+autocmd({ 'BufEnter', 'BufWritePost' }, {
+  callback = function()
+    vim.opt.statusline = '%=%t%m%='
+  end,
+  desc = 'Disable NvChad statusline',
+})
+
 --Nvim-Comment
 autocmd('BufEnter', {
   callback = function()
@@ -52,4 +60,12 @@ autocmd({ 'FileType', 'BufWinEnter' }, {
   pattern = { 'gitcommit', 'norg', 'text' },
   command = 'lua vim.opt_local.spell = true',
   desc = 'Disable status column in the following files',
+})
+
+--Tabs
+autocmd('TabEnter', {
+  callback = function()
+    vim.go.showtabline = 0
+  end,
+  desc = 'Disable tabline when tab is opened',
 })
