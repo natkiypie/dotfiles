@@ -77,6 +77,10 @@ M.disabled = {
 
 M.git = {
   n = {
+    ['<leader>b'] = {
+      '<cmd> Telescope git_branches initial_mode=normal <CR>',
+      'List branches for current directory, with output from git log --oneline shown in the preview window',
+    },
     ['<leader>g'] = expr.git,
     ['<leader>st'] = { '<cmd> Git status <CR>', 'git status' },
     ['<leader>d'] = expr.diff,
@@ -89,6 +93,24 @@ M.git = {
     ['<leader>rh'] = { '<cmd> Gitsigns undo_stage_hunk <CR>', 'Undo staged hunk' },
     ['<leader>c'] = { '<cmd> Git commit | startinsert <CR>', 'git commit' },
     ['<C-p>'] = { '<cmd> Git push <CR>', 'git push' },
+  },
+}
+
+M.jumps = {
+  n = {
+    ['<C-j>'] = {
+      '<cmd> Telescope jumplist initial_mode=normal <CR>',
+      'List items from Vim jumplist, jumps to location on',
+    },
+  },
+}
+
+M.marks = {
+  n = {
+    ['<leader>m'] = {
+      '<cmd> Telescope marks initial_mode=normal <CR>',
+      'List vim marks and their value, jumps to the mark on <cr>',
+    },
   },
 }
 
@@ -114,6 +136,16 @@ M.peek = {
   },
 }
 
+M.search = {
+  n = {
+    ['<C-f>'] = { '<cmd> Telescope find_files <CR>', 'Search for files (respecting .gitignore)' },
+    ['<C-s>'] = {
+      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
+      'Live fuzzy search inside of the currently open buffer',
+    },
+  },
+}
+
 M.splits = {
   n = {
     ['<Space>v'] = userfn.sp_v,
@@ -132,28 +164,6 @@ M.splits = {
 M.tabline = {
   n = {
     ['<CR>'] = userfn.toggle_fullscreen,
-  },
-}
-
-M.telescope = {
-  n = {
-    ['<C-f>'] = { '<cmd> Telescope find_files <CR>', 'Search for files (respecting .gitignore)' },
-    ['<leader>b'] = {
-      '<cmd> Telescope git_branches initial_mode=normal <CR>',
-      'List branches for current directory, with output from git log --oneline shown in the preview window',
-    },
-    ['<C-s>'] = {
-      '<cmd> Telescope current_buffer_fuzzy_find <CR>',
-      'Live fuzzy search inside of the currently open buffer',
-    },
-    ['<C-j>'] = {
-      '<cmd> Telescope jumplist initial_mode=normal <CR>',
-      'List items from Vim jumplist, jumps to location on',
-    },
-    ['<leader>m'] = {
-      '<cmd> Telescope marks initial_mode=normal <CR>',
-      'List vim marks and their value, jumps to the mark on <cr>',
-    },
   },
 }
 
