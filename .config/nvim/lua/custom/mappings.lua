@@ -77,6 +77,10 @@ M.disabled = {
 
 M.git = {
   n = {
+    ['<leader>b'] = {
+      '<cmd> Telescope git_branches initial_mode=normal <CR>',
+      'List branches for current directory, with output from git log --oneline shown in the preview window',
+    },
     ['<leader>g'] = expr.git,
     ['<leader>st'] = { '<cmd> Git status <CR>', 'git status' },
     ['<leader>d'] = expr.diff,
@@ -95,7 +99,7 @@ M.git = {
 M.notes = {
   n = {
     ['<C-n>'] = {
-      '<cmd> lua require"telescope.builtin".find_files({ cwd = "$HOME/.notes", initial_mode = "normal" }) <CR>',
+      '<cmd> Telescope file_browser initial_mode=normal path=$HOME/.notes <CR>',
       'Search for notes',
     },
     ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create or edit a note' },
@@ -137,11 +141,7 @@ M.tabline = {
 
 M.telescope = {
   n = {
-    ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
-    ['<leader>b'] = {
-      '<cmd> Telescope git_branches initial_mode=normal <CR>',
-      'List branches for current directory, with output from git log --oneline shown in the preview window',
-    },
+    ['<C-f>'] = { '<cmd>  Telescope file_browser  <CR>', 'Search for files (respecting .gitignore)' },
     ['<C-s>'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       'Live fuzzy search inside of the currently open buffer',
