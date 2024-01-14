@@ -119,9 +119,7 @@ M.telescope = {
         n = {
           ['<leader>m'] = require('telescope.actions').close,
         },
-        i = {
-          ['<leader>m'] = require('telescope.actions').close,
-        },
+        i = {},
       },
     },
   },

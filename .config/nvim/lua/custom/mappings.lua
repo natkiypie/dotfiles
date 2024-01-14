@@ -95,7 +95,7 @@ M.git = {
 M.notes = {
   n = {
     ['<C-n>'] = {
-      '<cmd> lua require"telescope.builtin".find_files({ cwd = "$HOME/.notes", initial_mode = "normal" }) <CR>',
+      '<cmd> Telescope find_files cwd=$HOME/.notes initial_mode=normal <CR>',
       'Search for notes',
     },
     ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create or edit a note' },
@@ -137,7 +137,7 @@ M.tabline = {
 
 M.telescope = {
   n = {
-    ['<C-f>'] = { '<cmd> lua require"telescope.builtin".find_files() <CR>', 'Search for files (respecting .gitignore)' },
+    ['<C-f>'] = { '<cmd> Telescope find_files <CR>', 'Search for files (respecting .gitignore)' },
     ['<leader>b'] = {
       '<cmd> Telescope git_branches initial_mode=normal <CR>',
       'List branches for current directory, with output from git log --oneline shown in the preview window',
@@ -148,11 +148,11 @@ M.telescope = {
     },
     ['<C-j>'] = {
       '<cmd> Telescope jumplist initial_mode=normal <CR>',
-      'Lists items from Vim jumplist, jumps to location on',
+      'List items from Vim jumplist, jumps to location on',
     },
     ['<leader>m'] = {
       '<cmd> Telescope marks initial_mode=normal <CR>',
-      'Lists vim marks and their value, jumps to the mark on <cr>',
+      'List vim marks and their value, jumps to the mark on <cr>',
     },
   },
 }
