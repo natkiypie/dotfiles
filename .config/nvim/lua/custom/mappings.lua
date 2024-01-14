@@ -178,6 +178,12 @@ M.terminal = {
   },
 }
 
+M.test = {
+  n = {
+    ['<leader>t'] = { '<cmd> Test <CR>', 'Test user commands', opts = { nowait = true } },
+  },
+}
+
 M.user = {
   n = {
     ['<C-l>'] = { '<cmd> normal! : <CR>', 'Clear command line' },

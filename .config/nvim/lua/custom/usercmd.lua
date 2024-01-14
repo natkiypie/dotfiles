@@ -29,3 +29,19 @@ usercmd('NewNote', function()
     userfn.mkfile(new_file_path)
   end)
 end, {})
+
+--Test
+usercmd('Test', function()
+  if not userfn.is_git_repo() then
+    return
+  end
+  local branch = userfn.get_branch()
+  if branch == 'main' then
+    vim.cmd [[
+      Git merge update
+      Git push
+    ]]
+  else
+    return vim.notify('Not on main', vim.log.levels.WARN, {})
+  end
+end, {})

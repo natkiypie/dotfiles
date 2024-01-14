@@ -29,6 +29,16 @@ local function close_split()
   end
 end
 
+local function find_git_repo()
+  local git_repo = vim.fs.find('.git', {
+    upward = true,
+    stop = vim.uv.os_homedir(),
+    type = 'directory',
+    path = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
+  })
+  return git_repo
+end
+
 local function set_contains(t, e)
   for i = 1, #t do
     if t[i] == e then
@@ -36,6 +46,10 @@ local function set_contains(t, e)
     end
   end
   return false
+end
+
+local function set_is_empty(t)
+  return next(t) == nil
 end
 
 local function vsplit_back(split)
@@ -61,6 +75,17 @@ function M.close()
   else
     close_float_win()
   end
+end
+
+function M.get_branch()
+  local branch = vim.fn.system "git branch --show-current 2> /dev/null | tr -d '\n'"
+  if branch ~= '' then
+    return branch
+  end
+end
+
+function M.is_git_repo()
+  return not set_is_empty(find_git_repo())
 end
 
 function M.mkdir(dir)
