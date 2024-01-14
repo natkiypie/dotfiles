@@ -94,6 +94,10 @@ M.git = {
 
 M.notes = {
   n = {
+    ['<C-n>'] = {
+      '<cmd> lua require"telescope.builtin".find_files({ cwd = "$HOME/.notes", initial_mode = "normal" }) <CR>',
+      'Search for notes',
+    },
     ['<leader>n'] = { '<cmd> NewNote <CR>', 'Create or edit a note' },
   },
 }
@@ -137,10 +141,6 @@ M.telescope = {
     ['<leader>b'] = {
       '<cmd> Telescope git_branches initial_mode=normal <CR>',
       'List branches for current directory, with output from git log --oneline shown in the preview window',
-    },
-    ['<C-n>'] = {
-      '<cmd> lua require"telescope.builtin".find_files({ cwd = "$HOME/.notes", initial_mode = "normal" }) <CR>',
-      'Search for notes',
     },
     ['<C-s>'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
