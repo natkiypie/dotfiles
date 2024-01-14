@@ -31,6 +31,8 @@ usercmd('NewNote', function()
 end, {})
 
 --Test
+--Test
+--Test
 usercmd('Test', function()
   if not userfn.is_git_repo() then
     return
