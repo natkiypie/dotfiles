@@ -102,6 +102,26 @@ M.telescope = {
         },
       },
     },
+    jumplist = {
+      mappings = {
+        n = {
+          ['<C-j>'] = require('telescope.actions').close,
+        },
+        i = {
+          ['<C-j>'] = require('telescope.actions').close,
+        },
+      },
+    },
+    marks = {
+      mappings = {
+        n = {
+          ['<leader>m'] = require('telescope.actions').close,
+        },
+        i = {
+          ['<leader>m'] = require('telescope.actions').close,
+        },
+      },
+    },
   },
 }
 

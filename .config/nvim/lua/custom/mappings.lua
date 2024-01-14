@@ -145,7 +145,14 @@ M.telescope = {
     ['<C-s>'] = {
       '<cmd> Telescope current_buffer_fuzzy_find <CR>',
       'Live fuzzy search inside of the currently open buffer',
-      opts = { nowait = true },
+    },
+    ['<C-j>'] = {
+      '<cmd> Telescope jumplist initial_mode=normal <CR>',
+      'Lists items from Vim jumplist, jumps to location on',
+    },
+    ['<leader>m'] = {
+      '<cmd> Telescope marks initial_mode=normal <CR>',
+      'Lists vim marks and their value, jumps to the mark on <cr>',
     },
   },
 }
