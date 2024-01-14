@@ -40,6 +40,7 @@ usercmd('Test', function()
     vim.cmd [[
       Git merge update
       Git push
+      Git checkout update
     ]]
   else
     return vim.notify('Not on main', vim.log.levels.WARN, {})
