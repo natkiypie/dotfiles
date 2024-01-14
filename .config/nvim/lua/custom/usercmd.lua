@@ -8,6 +8,25 @@ usercmd('Cppath', function()
   vim.notify('Copied "' .. path .. '" to the clipboard')
 end, {})
 
+--Git
+-- TODO: check if there is uncommitted work on update branch
+usercmd('GitMergeUpdate', function()
+  if not userfn.is_git_repo() then
+    return
+  end
+  local branch = userfn.get_branch()
+  -- if branch == 'update' then
+  if branch == 'main' then
+    -- add Git checkout main | Git checkout update
+    vim.cmd [[
+      Git merge update
+      Git push
+    ]]
+  else
+    return vim.notify('Not on main', vim.log.levels.WARN, {})
+  end
+end, {})
+
 --Notes
 usercmd('NewNote', function()
   local notes_dir = vim.fn.expand '$HOME/.notes/'
@@ -31,20 +50,6 @@ usercmd('NewNote', function()
 end, {})
 
 --Test
---Test
---Test
 usercmd('Test', function()
-  if not userfn.is_git_repo() then
-    return
-  end
-  local branch = userfn.get_branch()
-  if branch == 'main' then
-    vim.cmd [[
-      Git merge update
-      Git push
-      Git checkout update
-    ]]
-  else
-    return vim.notify('Not on main', vim.log.levels.WARN, {})
-  end
+  print 'Hello world.'
 end, {})
