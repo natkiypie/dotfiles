@@ -76,9 +76,11 @@ M.telescope = {
       mappings = {
         i = {
           ['<C-f>'] = require('telescope.actions').close,
+          ['<C-n>'] = require('telescope.actions').close,
         },
         n = {
           ['<C-f>'] = require('telescope.actions').close,
+          ['<C-n>'] = require('telescope.actions').close,
         },
       },
     },

@@ -143,13 +143,6 @@ local plugins = {
     opts = overrides.telescope,
   },
   {
-    'nvim-telescope/telescope-file-browser.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require 'custom.configs.telescope-file-browser'
-    end,
-  },
-  {
     'nvim-telescope/telescope-symbols.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
   },
