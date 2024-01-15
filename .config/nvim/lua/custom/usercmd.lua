@@ -24,7 +24,7 @@ usercmd('GitMergeUpdate', function()
       Git checkout update
     ]]
   else
-    return vim.notify('Not on update', vim.log.levels.INFO, {})
+    return vim.notify('Not on branch update', vim.log.levels.INFO, {})
   end
 end, {})
 
@@ -52,5 +52,5 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  -- print 'hello world'
+  print 'hello world'
 end, {})
