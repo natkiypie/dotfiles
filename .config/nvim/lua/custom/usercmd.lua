@@ -31,12 +31,18 @@ end, {})
 
 --Jumps
 usercmd('ClearJumps', function()
-  vim.cmd 'clearjumps'
+  vim.cmd [[
+    clearjumps
+    wshada!
+  ]]
 end, {})
 
 --Marks
 usercmd('DelMarks', function()
-  vim.cmd 'delm! | delm A-Z0-9 | delmarks delmarks ^.[]" | delmarks "'
+  vim.cmd [[
+    delm! | delm A-Z0-9 | delmarks delmarks ^.[]" | delmarks "
+    wshada!
+  ]]
 end, {})
 
 --Notes
