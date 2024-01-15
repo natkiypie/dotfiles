@@ -9,7 +9,6 @@ usercmd('Cppath', function()
 end, {})
 
 --Git
--- TODO: check if there is uncommitted work on update branch
 usercmd('GitMergeUpdate', function()
   if not userfn.is_git_repo() then
     return
@@ -51,5 +50,10 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  print 'Hello world.'
+  local test = vim.cmd 'silent! Git status --porcelain'
+  if test then
+    print 'true'
+  else
+    print 'false'
+  end
 end, {})
