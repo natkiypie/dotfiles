@@ -16,17 +16,16 @@ usercmd('GitMergeUpdate', function()
   if not userfn.git_working_tree_clean() then
     return vim.notify('There are still changes not staged for commit', vim.log.levels.INFO, {})
   end
-  -- local branch = userfn.get_git_branch()
-  -- if branch == 'update' then
-  --   vim.cmd [[
-  --     Git checkout main
-  --     Git merge update
-  --     Git push
-  --     Git checkout update
-  --   ]]
-  -- else
-  --   return vim.notify('Not on update', vim.log.levels.INFO, {})
-  -- end
+  if userfn.get_git_branch() == 'update' then
+    vim.cmd [[
+      Git checkout main
+      Git merge update
+      Git push
+      Git checkout update
+    ]]
+  else
+    return vim.notify('Not on update', vim.log.levels.INFO, {})
+  end
 end, {})
 
 --Notes
