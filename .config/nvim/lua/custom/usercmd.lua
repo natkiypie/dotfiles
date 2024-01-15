@@ -50,11 +50,8 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  -- local test = vim.cmd 'silent! Git status --porcelain'
-  local test = vim.cmd 'silent! Git diff-index HEAD'
-  if test then
-    print 'true'
-  else
-    print 'false'
-  end
+  -- local test = vim.cmd 'Git status --porcelain'
+  -- local test = vim.cmd 'silent! Git diff-index HEAD'
+  local test = vim.fn.systemlist { 'git', 'status', '--porcelain=v1' }
+  print(vim.inspect(test))
 end, {})
