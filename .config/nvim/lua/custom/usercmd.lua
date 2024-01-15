@@ -29,6 +29,16 @@ usercmd('GitMergeUpdate', function()
   end
 end, {})
 
+--Jumps
+usercmd('ClearJumps', function()
+  vim.cmd 'clearjumps'
+end, {})
+
+--Marks
+usercmd('DelMarks', function()
+  vim.cmd 'delm! | delm A-Z0-9 | delmarks delmarks ^.[]" | delmarks "'
+end, {})
+
 --Notes
 usercmd('NewNote', function()
   local notes_dir = vim.fn.expand '$HOME/.notes/'
@@ -53,5 +63,5 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  print 'hello world'
+  vim.cmd 'clearjumps'
 end, {})
