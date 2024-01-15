@@ -44,7 +44,7 @@ usercmd('NewNote', function()
       return
     end
     if not userfn.is_filetype(new_file_path, { 'md', 'txt' }) then
-      return vim.notify('Cannot create note: file must be of type "markdown" or "text"', vim.log.levels.WARN, {})
+      return vim.notify('Cannot create note: file must be of type "markdown" or "text"', vim.log.levels.INFO, {})
     end
     userfn.mkfile(new_file_path)
   end)
