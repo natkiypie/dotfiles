@@ -63,5 +63,5 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  vim.cmd 'clearjumps'
+  print 'This is a test function found in: $XDG_CONFIG_HOME/nvim/lua/custom/usercmd.lua'
 end, {})
