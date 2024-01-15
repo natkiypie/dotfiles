@@ -13,6 +13,7 @@ usercmd('GitMergeUpdate', function()
   if not userfn.is_git_repo() then
     return
   end
+  userfn.clear_cmdline()
   if not userfn.git_working_tree_clean() then
     return vim.notify('There are still changes not staged for commit', vim.log.levels.INFO, {})
   end
