@@ -77,11 +77,16 @@ function M.close()
   end
 end
 
-function M.get_branch()
+function M.get_git_branch()
   local branch = vim.fn.system "git branch --show-current 2> /dev/null | tr -d '\n'"
   if branch ~= '' then
     return branch
   end
+end
+
+function M.git_working_tree_clean()
+  local status = vim.fn.systemlist { 'git', 'status', '--porcelain=v1' }
+  return set_is_empty(status)
 end
 
 function M.is_git_repo()

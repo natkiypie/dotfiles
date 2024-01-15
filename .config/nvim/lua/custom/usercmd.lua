@@ -13,16 +13,19 @@ usercmd('GitMergeUpdate', function()
   if not userfn.is_git_repo() then
     return
   end
-  local branch = userfn.get_branch()
-  -- if branch == 'update' then
-  if branch == 'main' then
-    -- add Git checkout main | Git checkout update
+  if userfn.git_working_tree_clean() then
+    return vim.notify('Changes not staged for commit', vim.log.levels.INFO, {})
+  end
+  local branch = userfn.get_git_branch()
+  if branch == 'update' then
     vim.cmd [[
+      Git checkout main
       Git merge update
       Git push
+      Git checkout update
     ]]
   else
-    return vim.notify('Not on main', vim.log.levels.WARN, {})
+    return vim.notify('Not on update', vim.log.levels.INFO, {})
   end
 end, {})
 
@@ -50,8 +53,7 @@ end, {})
 
 --Test
 usercmd('Test', function()
-  -- local test = vim.cmd 'Git status --porcelain'
-  -- local test = vim.cmd 'silent! Git diff-index HEAD'
-  local test = vim.fn.systemlist { 'git', 'status', '--porcelain=v1' }
-  print(vim.inspect(test))
+  -- print 'hello world'
+  local status = vim.fn.systemlist { 'git', 'status', '--porcelain=v1' }
+  print(vim.inspect(status))
 end, {})
