@@ -40,10 +40,9 @@ M.command = {
     ['<C-h>'] = { '<cmd> lua print(vim.fn.expand("%:p")) <CR>', 'Print current working directory' },
   },
   c = {
-    ['jk'] = { '<C-C>', 'Escape command mode' },
+    ['<C-q>'] = { '<C-C>', 'Escape command mode' },
     ['K'] = { '<up>', 'Search up through command history' },
     ['J'] = { '<down>', 'Search down through command history' },
-    ['L'] = { '<CR>', 'Select item in command history' },
   },
 }
 
