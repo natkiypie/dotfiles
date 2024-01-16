@@ -11,3 +11,4 @@ vim.bo.shiftwidth = 2
 vim.bo.expandtab = true
 vim.opt.clipboard:append 'unnamedplus'
 vim.opt.iskeyword:append '-'
+vim.opt.keywordprg = ':help'
