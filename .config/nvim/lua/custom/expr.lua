@@ -18,7 +18,7 @@ M.diff = {
     if vim.api.nvim_win_get_option(0, 'diff') then
       return '<cmd> tabc <CR>'
     else
-      return '<cmd> tab Gvdiffsplit <CR>'
+      return '<cmd> tab topleft Gvdiffsplit <CR>'
     end
   end,
   'Show changes between commits, commit and working tree, etc',
