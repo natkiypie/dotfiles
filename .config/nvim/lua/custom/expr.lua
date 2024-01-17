@@ -28,7 +28,7 @@ M.diff = {
 --Quit:
 M.quit = {
   function()
-    if vim.api.nvim_wih_get_option(0, 'diff') then
+    if vim.api.nvim_win_get_option(0, 'diff') then
       return '<cmd> tabc <CR>'
     elseif require('nvim-tree.view').is_visible() then
       return '<cmd> NvimTreeClose <CR>'
