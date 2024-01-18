@@ -1,5 +1,23 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+--Gdiff
+autocmd('DiffUpdated', {
+  callback = function()
+    if vim.opt.diff:get() then
+      vim.bo.modifiable = false
+    end
+  end,
+  desc = 'Set modifable to false in diff mode',
+})
+
+autocmd('TabClosed', {
+  callback = function()
+    if not vim.opt.diff:get() then
+      vim.bo.modifiable = true
+    end
+  end,
+  desc = 'Set modifable to true when leaving diff mode',
+})
 --Leap
 autocmd('User', {
   pattern = 'LeapEnter',
