@@ -18,7 +18,7 @@ M.diff = {
     if vim.opt.diff:get() then
       return '<cmd> tabc <CR>'
     else
-      return '<cmd> tab topleft Gvdiffsplit <CR>'
+      return '<cmd> tab Gvdiffsplit | wincmd h | Gitsigns next_hunk <CR>'
     end
   end,
   'Show changes between commits, commit and working tree, etc',
