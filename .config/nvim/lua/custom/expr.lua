@@ -15,7 +15,7 @@ M.git = {
 
 M.diff = {
   function()
-    if vim.api.nvim_win_get_option(0, 'diff') then
+    if vim.opt.diff:get() then
       return '<cmd> tabc <CR>'
     else
       return '<cmd> tab topleft Gvdiffsplit <CR>'
