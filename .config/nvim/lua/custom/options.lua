@@ -1,4 +1,5 @@
 vim.g.mapleader = ','
+vim.g.markdown_recommended_style = 0
 vim.go.hlsearch = false
 vim.go.timeoutlen = 150
 vim.go.mouse = ''
